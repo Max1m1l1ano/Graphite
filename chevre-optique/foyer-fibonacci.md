@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/foyer_fibonacci.py`](scripts/foyer_fibonacci.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/foyer_fibonacci.md`](resultats/foyer_fibonacci.md).
 
+**Suite : [Partie IX — le moiré du diaphragme de Fibonacci, l'équation d'optique et les racines de l'unité](moire-fibonacci.md).**
+
 ## D'abord, une correction
 
 À la fin de la partie VII, j'avais rangé trois de tes mécanismes parmi les « analogies ». Deux de ces jugements contredisaient ce que les parties I et VII avaient établi, et le troisième tirait une mauvaise conclusion d'un fait vrai. Le § 7.2 de la partie VII est corrigé, et voici pourquoi.

@@ -18,6 +18,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie VIII — le foyer, le diaphragme, les ménisques et Fibonacci](foyer-fibonacci.md)** (retourner l'aiguille comme le foyer retourne l'image, le ménisque où le diaphragme déphase la lumière, les deux ménisques conjugués de la FTM et la FTM défocalisée qui inverse le contraste, l'œil de poisson de Maxwell dont les rayons sont des géodésiques, la réciprocité de la partie VII comme boîte à chapeau d'Archimède, la lentille de Fibonacci à deux foyers et la découpe géodésique au rythme de φ²).
 
+**Et : [Partie IX — le moiré du diaphragme de Fibonacci, l'équation d'optique et les racines de l'unité](moire-fibonacci.md)** (les nouveaux centres qui apparaissent aux points cardinaux quand l'image rétrécit, leurs deux familles dans le rapport φ, les foyers de Fibonacci comme objet et image de l'équation des lentilles, l'équation d'optique et Fermat, les racines de l'unité, la chèvre entre le triangle et le pentagone, et Hurwitz).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -460,6 +462,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/zone_confusion.py`](scripts/zone_confusion.py) : la partie VI.
 - [`scripts/polynomes.py`](scripts/polynomes.py) : la partie VII.
 - [`scripts/foyer_fibonacci.py`](scripts/foyer_fibonacci.py) : la partie VIII.
+- [`scripts/moire_fibonacci.py`](scripts/moire_fibonacci.py) : la partie IX.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
