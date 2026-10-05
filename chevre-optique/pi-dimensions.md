@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/pi_dimensions.py`](scripts/pi_dimensions.py) ; les tableaux sont dans [`resultats/pi_dimensions.md`](resultats/pi_dimensions.md).
 
+**Suite : [Partie IV — la suite des trois solides](trois-solides.md)**, où la « rectification par retenues » trouve sa forme exacte avec l'hémisphère, le cylindre et le cône.
+
 ## En bref
 
 - **Ta suite, prise à la lettre, converge vers 3,160993…**, pas vers π. Elle dépasse π dès le 3e terme.

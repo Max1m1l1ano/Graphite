@@ -8,6 +8,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie III — π, √2 et les dimensions](pi-dimensions.md)** (la suite 3 + √2/10 + √3/100…, les vraies formules de π qui partent de 3 ou de √2, le produit de Wallis tiré des intégrales de la chèvre, le nombre plastique et la dimension 7).
 
+**Et : [Partie IV — la suite des trois solides](trois-solides.md)** (hémisphère, cylindre et cône en dimension n, la suite π = 2 + ⅓(2 + ⅖(2 + …)) faite de demi-anneaux d'Archimède, les cordes de partage, et ce qui converge comme la division des intégrales).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -445,6 +447,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/figures.py`](scripts/figures.py) : les figures.
 - [`scripts/archimede.py`](scripts/archimede.py), [`scripts/calculs_archimede.py`](scripts/calculs_archimede.py), [`scripts/figures_archimede.py`](scripts/figures_archimede.py) : la partie II.
 - [`scripts/pi_dimensions.py`](scripts/pi_dimensions.py) : la partie III.
+- [`scripts/trois_solides.py`](scripts/trois_solides.py) : la partie IV.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
