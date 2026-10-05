@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>La chèvre et la lumière</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+</head>
+<body>
+<style>
+/* Mise en page : banc d'optique. Une colonne de lecture (~68 caractères) pour le texte,
+   des panneaux d'instrument en grille qui passent sur une colonne sous 860 px. */
+:root {
+  --bg: #f3f5f8;
+  --panel: #ffffff;
+  --ink: #12151c;
+  --ink-2: #454c5a;
+  --muted: #6b7383;
+  --rule: #dce1e9;
+  --accent: #9a6400;
+  --sodium: #f2b632;
+  --glass: #2a78d6;
+  --glass-wash: rgba(42, 120, 214, .14);
+  --focus: #2a78d6;
+  --meadow: #dcebd2; --meadow-edge: #5f7f52; --soil: #d9c19a;
+  --sky: #d3e2f4; --sun: #f2b632; --moon: #262931;
+  --night: #121417; --bokeh: #fff1c2; --pupil-edge: #8a8f99;
+  --m0: #fbfcfe; --m1: #e6f0fd; --m2: #cde2fb; --m3: #b7d3f6; --m4: #9ec5f4; --m5: #86b6ef; --m6: #6da7ec; --m7: #5598e7;
+  --u0: #f2f6fc; --u1: #cde2fb; --u2: #9ec5f4; --u3: #6da7ec; --u4: #3987e5; --u5: #1c5cab;
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --s-1: .8125rem; --s0: 1rem; --s1: 1.2rem; --s2: 1.55rem; --s3: 2.35rem;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0f14; --panel: #151820; --ink: #e9ecf2; --ink-2: #b9c0cd; --muted: #8b93a3; --rule: #272c37;
+    --accent: #f7c548; --sodium: #f7c548; --glass: #5b9be8; --glass-wash: rgba(91, 155, 232, .2); --focus: #8fb9ef;
+    --meadow: #1d2b1e; --meadow-edge: #77a368; --soil: #5a4a31;
+    --sky: #0b1424; --sun: #f7c548; --moon: #040507;
+    --night: #07080a; --bokeh: #ffe9a8; --pupil-edge: #5f6574;
+    --m0: #151820; --m1: #172338; --m2: #1a2d4b; --m3: #1d3960; --m4: #224677; --m5: #28558f; --m6: #3066aa; --m7: #3b78c6;
+    --u0: #10141c; --u1: #172338; --u2: #1d3960; --u3: #28558f; --u4: #3b78c6; --u5: #6da7ec;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0f14; --panel: #151820; --ink: #e9ecf2; --ink-2: #b9c0cd; --muted: #8b93a3; --rule: #272c37;
+  --accent: #f7c548; --sodium: #f7c548; --glass: #5b9be8; --glass-wash: rgba(91, 155, 232, .2); --focus: #8fb9ef;
+  --meadow: #1d2b1e; --meadow-edge: #77a368; --soil: #5a4a31;
+  --sky: #0b1424; --sun: #f7c548; --moon: #040507;
+  --night: #07080a; --bokeh: #ffe9a8; --pupil-edge: #5f6574;
+  --m0: #151820; --m1: #172338; --m2: #1a2d4b; --m3: #1d3960; --m4: #224677; --m5: #28558f; --m6: #3066aa; --m7: #3b78c6;
+  --u0: #10141c; --u1: #172338; --u2: #1d3960; --u3: #28558f; --u4: #3b78c6; --u5: #6da7ec;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--s0); line-height: 1.55;
+}
+.page {
+  max-width: 1160px; margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 40px); padding-block: 40px 64px;
+  display: grid; gap: 28px;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: var(--s3); letter-spacing: -.01em; }
+h2 { font-size: var(--s2); }
+h3 { font-size: var(--s1); }
+p { margin: 0; }
+a { color: var(--glass); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.eyebrow { font-size: var(--s-1); text-transform: uppercase; letter-spacing: .12em; color: var(--accent); font-weight: 600; }
+.masthead { display: grid; gap: 12px; max-width: 68ch; }
+.lede { font-size: 1.08rem; color: var(--ink-2); }
+.num, .mono { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: clamp(16px, 2.6vw, 28px); display: grid; gap: 20px; min-width: 0;
+}
+.panel-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+.panel-head .intro { max-width: 68ch; color: var(--ink-2); display: grid; gap: 8px; }
+.panel-head .intro p { font-size: .96rem; }
+
+.tabs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; gap: 2px; background: var(--bg); }
+.tabs button {
+  font: inherit; font-size: .92rem; font-weight: 500; border: 0; background: transparent; color: var(--ink-2);
+  padding: 6px 14px; border-radius: 999px; cursor: pointer;
+}
+.tabs button[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+
+.labo-grid {
+  display: grid; gap: 20px 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "scene map" "controls readout";
+}
+.labo-grid > .scene { grid-area: scene; } .labo-grid > .map { grid-area: map; }
+.labo-grid > .controls { grid-area: controls; } .labo-grid > .readout { grid-area: readout; }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; position: relative; }
+figcaption { font-size: var(--s-1); color: var(--muted); }
+canvas { display: block; width: 100%; border-radius: 8px; }
+#scene { aspect-ratio: 1 / 1; }
+#map { aspect-ratio: 1 / 1.02; cursor: crosshair; touch-action: none; }
+
+.controls, .readout { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.field-row { display: grid; gap: 6px; }
+.field-row label { font-size: .92rem; font-weight: 500; display: flex; justify-content: space-between; gap: 8px; }
+.field-row label span { color: var(--muted); font-weight: 400; }
+.slider-line { display: grid; grid-template-columns: minmax(0, 1fr) 6.2em; gap: 10px; align-items: center; }
+input[type="range"] { width: 100%; accent-color: var(--glass); }
+input[type="number"] {
+  width: 100%; font: 500 .92rem var(--font-data); color: var(--ink); background: var(--bg);
+  border: 1px solid var(--rule); border-radius: 6px; padding: 5px 6px;
+}
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button, .chip-btn, .action {
+  font: inherit; font-size: .88rem; border: 1px solid var(--rule); background: var(--bg); color: var(--ink);
+  border-radius: 999px; padding: 4px 11px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+.chip-btn:hover, .seg button:hover, .action:hover { border-color: var(--glass); }
+.action { background: var(--glass); color: #fff; border-color: var(--glass); font-weight: 600; padding: 7px 14px; justify-self: start; }
+:root[data-theme="dark"] .action { color: #0d0f14; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .action { color: #0d0f14; } }
+.presets { display: grid; gap: 8px; }
+.presets .label, .kicker { font-size: var(--s-1); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; }
+
+.big { display: grid; gap: 2px; }
+.big .value { font-family: var(--font-display); font-size: 3.1rem; line-height: 1; font-weight: 600; }
+.big .what { color: var(--ink-2); }
+.state {
+  display: inline-flex; align-items: center; gap: 8px; justify-self: start;
+  font-size: .86rem; font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  background: var(--glass-wash); color: var(--ink);
+}
+.state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--glass); }
+dl.facts { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 14px; font-size: .94rem; }
+dl.facts dt { color: var(--muted); }
+dl.facts dd { margin: 0; min-width: 0; }
+.note { font-size: .9rem; color: var(--ink-2); max-width: 60ch; }
+
+.tip {
+  position: absolute; pointer-events: none; z-index: 2;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 4px 8px; font: 500 .8rem var(--font-data); white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+/* Ullisch */
+.ull-grid { display: grid; gap: 20px 28px; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+#plane { aspect-ratio: 6 / 3.4; }
+.formula {
+  font-family: var(--font-display); font-size: 1.12rem; text-align: center; padding: 12px; border-radius: 8px;
+  background: var(--bg); overflow-x: auto; white-space: nowrap;
+}
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .2em; }
+.frac > span:first-child { border-bottom: 1px solid currentColor; padding: 0 .3em; }
+.frac > span:last-child { padding: 0 .3em; }
+.ull-read { display: grid; gap: 6px; font-size: .92rem; }
+.ull-read .row { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 4px; }
+.ull-read .row span:first-child { color: var(--muted); }
+.ull-read .row span:last-child { text-align: right; overflow-wrap: anywhere; }
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { font-family: var(--font-data); font-size: 10.5px; fill: var(--muted); }
+.chart .lbl { font-family: var(--font-body); font-size: 11.5px; fill: var(--ink-2); }
+.radio-row { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .92rem; }
+.radio-row label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+
+/* Dimension */
+.dim-grid { display: grid; gap: 20px 28px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.dim-read { display: grid; gap: 12px; align-content: start; }
+
+/* Repères */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: var(--s-1); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+td.num { white-space: nowrap; }
+footer { color: var(--muted); font-size: .88rem; display: grid; gap: 6px; max-width: 80ch; }
+
+@media (max-width: 860px) {
+  .labo-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "scene" "readout" "controls" "map"; }
+  .ull-grid, .dim-grid { grid-template-columns: minmax(0, 1fr); }
+  .big .value { font-size: 2.6rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<main class="page">
+  <header class="masthead">
+    <p class="eyebrow">Problème de la chèvre · optique</p>
+    <h1>La chèvre et la lumière</h1>
+    <p class="lede">Une chèvre attachée sur la clôture d'un champ rond broute la moitié de l'herbe quand sa corde mesure 1,1587 fois le rayon. La même aire, celle de deux disques qui se recouvrent, fixe l'ombre d'une éclipse et la lumière qui traverse un objectif. Déplacez le piquet, allongez la corde, changez de dimension.</p>
+  </header>
+
+  <!-- ================= LABORATOIRE ================= -->
+  <section class="panel" id="labo" aria-labelledby="labo-title">
+    <div class="panel-head">
+      <div class="intro">
+        <h2 id="labo-title">Deux cercles, trois lectures</h2>
+        <p>Un disque de rayon 1 (le champ, le Soleil, la pupille) et un disque de rayon <i>k</i> dont le centre est à la distance <i>δ</i>. La carte à droite montre la fraction couverte pour toutes les valeurs de (<i>δ</i>, <i>k</i>) : cliquez dessus pour déplacer le point.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Lecture">
+        <button role="tab" id="tab-chevre" aria-selected="true" data-mode="chevre">Chèvre</button>
+        <button role="tab" id="tab-eclipse" aria-selected="false" data-mode="eclipse">Éclipse</button>
+        <button role="tab" id="tab-photo" aria-selected="false" data-mode="photo">Photo</button>
+      </div>
+    </div>
+
+    <div class="labo-grid">
+      <figure class="scene">
+        <canvas id="scene" role="img" aria-label="Dessin des deux disques"></canvas>
+        <figcaption id="scene-cap"></figcaption>
+      </figure>
+
+      <figure class="map">
+        <canvas id="map" role="img" aria-label="Carte de la fraction couverte selon δ et k"></canvas>
+        <div class="tip" id="map-tip" hidden></div>
+        <figcaption id="map-cap"></figcaption>
+      </figure>
+
+      <div class="controls">
+        <div class="field-row">
+          <label for="d-range" id="d-label">Distance des centres δ <span id="d-hint">piquet ↔ centre du champ</span></label>
+          <div class="slider-line">
+            <input type="range" id="d-range" min="0" max="3" step="0.001" value="1">
+            <input type="number" id="d-num" min="0" max="3" step="0.001" value="1" aria-label="δ">
+          </div>
+        </div>
+        <div class="field-row">
+          <label for="k-range" id="k-label">Rayon k <span id="k-hint">longueur de corde</span></label>
+          <div class="slider-line">
+            <input type="range" id="k-range" min="0.01" max="3.3" step="0.001" value="1.1587">
+            <input type="number" id="k-num" min="0.01" max="3.3" step="0.001" value="1.1587" aria-label="k">
+          </div>
+        </div>
+        <div class="field-row" id="dim-row">
+          <span class="kicker" id="dim-kicker">Dimension du champ</span>
+          <div class="seg" id="dim-seg" role="group" aria-labelledby="dim-kicker"></div>
+        </div>
+        <button class="action" id="half-btn" type="button">Ajuster k pour 50 %</button>
+        <div class="presets">
+          <span class="label">Configurations</span>
+          <div class="seg" id="presets"></div>
+        </div>
+      </div>
+
+      <div class="readout" aria-live="polite">
+        <div class="big">
+          <span class="value num" id="big-value">50,0 %</span>
+          <span class="what" id="big-what">de l'herbe broutée</span>
+        </div>
+        <span class="state" id="state">Recouvrement partiel</span>
+        <dl class="facts" id="facts"></dl>
+        <p class="note" id="mode-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ULLISCH ================= -->
+  <section class="panel" id="ullisch" aria-labelledby="ull-title">
+    <div class="panel-head">
+      <div class="intro">
+        <h2 id="ull-title">La division de deux intégrales complexes</h2>
+        <p>Ingo Ullisch (2020) écrit la réponse exacte de la chèvre comme un quotient de deux intégrales sur un cercle du plan complexe. Le théorème des résidus donne chacune à un facteur inconnu près, <span class="mono">2πi/f′(β)</span>, et la division fait disparaître ce facteur. Le contour doit entourer exactement un zéro de <i>f</i>.</p>
+      </div>
+    </div>
+    <div class="formula" aria-label="β égale l'intégrale de z sur f divisée par l'intégrale de 1 sur f">
+      β =
+      <span class="frac"><span>∮ z dz / f(z)</span><span>∮ dz / f(z)</span></span>
+      , &nbsp; f(z) = sin z − z cos z − π/2, &nbsp; r = 2R cos(β/2)
+    </div>
+    <div class="ull-grid">
+      <figure>
+        <canvas id="plane" role="img" aria-label="Plan complexe : contour, points d'échantillonnage et zéros de f"></canvas>
+        <div class="tip" id="plane-tip" hidden></div>
+        <figcaption>Fond : |f(z)| (clair = petit). Points orange : les zéros de <i>f</i>. Cercle : le contour, échantillonné en <i>N</i> points.</figcaption>
+      </figure>
+      <div class="controls">
+        <div class="field-row">
+          <label for="n-pts">Points sur le cercle <span>règle des trapèzes</span></label>
+          <div class="slider-line">
+            <input type="range" id="n-pts" min="4" max="64" step="1" value="12">
+            <input type="number" id="n-pts-num" min="4" max="64" step="1" value="12" aria-label="N">
+          </div>
+        </div>
+        <div class="radio-row" role="radiogroup" aria-label="Contour">
+          <label><input type="radio" name="contour" id="c-good" value="good" checked> |z − 3π/4| = π/4 (corrigé en 2023)</label>
+          <label><input type="radio" name="contour" id="c-print" value="print"> |z − 3π/8| = π/4 (imprimé en 2020)</label>
+        </div>
+        <div class="ull-read" id="ull-read"></div>
+        <figure>
+          <svg class="chart" id="err-chart" viewBox="0 0 360 170" role="img" aria-label="Erreur du quotient selon le nombre de points"></svg>
+          <figcaption>Erreur sur β selon <i>N</i> (échelle log). Tirets : la prévision (ρ/d)<sup>N</sup>, où <i>d</i> est la distance au zéro voisin hors du contour.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIMENSION ================= -->
+  <section class="panel" id="dimension" aria-labelledby="dim-title">
+    <div class="panel-head">
+      <div class="intro">
+        <h2 id="dim-title">Sphère dans une sphère, puis n dimensions</h2>
+        <p>La fraction broutée est la probabilité qu'un point tiré au hasard dans la boule soit à moins de <i>r</i> du piquet. La corde de la chèvre est donc la distance médiane. En grande dimension, presque tout le volume est sur la peau et à angle droit du piquet : la distance typique devient la diagonale du carré de côté <i>R</i>, soit √2 <i>R</i>.</p>
+      </div>
+    </div>
+    <div class="field-row" style="max-width: 560px">
+      <label for="n-dim">Dimension n <span>piquet sur le bord</span></label>
+      <div class="slider-line">
+        <input type="range" id="n-dim" min="1" max="300" step="1" value="2">
+        <input type="number" id="n-dim-num" min="1" max="300" step="1" value="2" aria-label="n">
+      </div>
+    </div>
+    <div class="dim-grid">
+      <figure>
+        <svg class="chart" id="cdf-chart" viewBox="0 0 420 270" role="img" aria-label="Fraction broutée selon la longueur de corde"></svg>
+        <div class="tip" id="cdf-tip" hidden></div>
+        <figcaption>Fraction du volume broutée selon la corde. Trait bleu : dimension choisie ; gris : le plan (n = 2) ; tirets : la limite n → ∞, une marche en √2.</figcaption>
+      </figure>
+      <figure>
+        <svg class="chart" id="rn-chart" viewBox="0 0 420 270" role="img" aria-label="Corde de la moitié selon la dimension"></svg>
+        <div class="tip" id="rn-tip" hidden></div>
+        <figcaption>Corde de la moitié selon la dimension (échelle log). Bande grise : la loi √(2n/(n+1)) ; tirets : √2.</figcaption>
+      </figure>
+    </div>
+    <div class="dim-read">
+      <dl class="facts" id="dim-facts"></dl>
+      <span class="state" id="dim-nature"></span>
+    </div>
+  </section>
+
+  <!-- ================= REPÈRES ================= -->
+  <section class="panel" id="reperes" aria-labelledby="rep-title">
+    <div class="panel-head">
+      <div class="intro">
+        <h2 id="rep-title">Repères</h2>
+        <p>Les valeurs clés de l'analyse, toutes recalculées par les scripts du dépôt.</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Grandeur</th><th>Valeur</th><th>D'où elle vient</th></tr></thead>
+        <tbody>
+          <tr><td>Corde de la chèvre, plan</td><td class="num">1,158 728 473 R</td><td>sin β − β cos β = π/2 ; forme close d'Ullisch (2020). Nombre transcendant.</td></tr>
+          <tr><td>Corde de la chèvre, boule</td><td class="num">1,228 544 864 R</td><td>3r⁴ − 8r³ + 8 = 0, résoluble par radicaux (Ferrari).</td></tr>
+          <tr><td>Corde en dimension n</td><td class="num">r² ≈ 2n/(n+1) + 2/(3n²)</td><td>Le plan d'intersection glisse vers le centre : à R/(n+1).</td></tr>
+          <tr><td>Limite n → ∞</td><td class="num">√2 R = 1,414 214 R</td><td>Diagonale du carré construit sur deux rayons perpendiculaires.</td></tr>
+          <tr><td>Piquet au centre (plan)</td><td class="num">R/√2 = 0,707 107 R</td><td>La moitié de l'aire : un cran de diaphragme.</td></tr>
+          <tr><td>FTM50 d'un objectif parfait</td><td class="num">0,404 / (λN)</td><td>ψ − sin ψ = π/2 : l'équation de Kepler avec e = 1. À f/8 et 550 nm : 92 cycles/mm.</td></tr>
+          <tr><td>Tache d'Airy, 50 % de l'énergie</td><td class="num">rayon 0,535 λN</td><td>J₀² + J₁² = 1/2 ; premier anneau noir à 1,22 λN (83,8 %).</td></tr>
+          <tr><td>Éclipse à 50 % d'obscuration</td><td class="num">magnitude ≈ 0,6</td><td>De 0,59 à 0,61 selon le rapport Lune/Soleil (0,90 à 1,08).</td></tr>
+          <tr><td>Cône d'ombre de la Lune</td><td class="num">≈ 374 500 km</td><td>Tangentes extérieures communes au Soleil et à la Lune ; la Lune est à 356 400–406 700 km.</td></tr>
+          <tr><td>Anneaux de Newton</td><td class="num">ρₘ = √(mλR)</td><td>Anneaux d'aires égales ; le 2ᵉ a un rayon √2 fois celui du 1ᵉʳ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Analyse complète, démonstrations, scripts et sources : dossier <a href="https://github.com/Max1m1l1ano/Graphite/tree/claude/complex-integrals-optics-b9196y/chevre-optique">chevre-optique</a> du dépôt Graphite.</p>
+    <p>Références principales : I. Ullisch, <i>Math. Intelligencer</i> 42 (2020) et erratum (2023) ; M. Fraser et M. D. Meyerson, <i>College Math. J.</i> 15 (1984) ; L. N. Trefethen et J. A. C. Weideman, <i>SIAM Review</i> 56 (2014) ; J. W. Goodman, <i>Introduction to Fourier Optics</i>.</p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  // ------------------------------------------------------------------ outils
+  const $ = (id) => document.getElementById(id);
+  const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+  const fmt = (x, d = 3) => new Intl.NumberFormat("fr-FR", { minimumFractionDigits: d, maximumFractionDigits: d }).format(x);
+  const pct = (x, d = 1) => new Intl.NumberFormat("fr-FR", { style: "percent", minimumFractionDigits: d, maximumFractionDigits: d }).format(x);
+  const SQRT2 = Math.SQRT2;
+  const BETA = 1.9056957293098838; // racine de sin β − β cos β = π/2
+  const R2 = 2 * Math.cos(BETA / 2);
+
+  // ---------------------------------------------------- géométrie, n dimensions
+  // Calotte d'angle au centre t de la boule unité de R^n : fraction I_{sin²t}((n+1)/2, 1/2)/2 si t ≤ π/2.
+  // Fonction bêta incomplète régularisée par fraction continue (Lentz), calculée en log :
+  // stable même en dimension 1000, là où la récurrence sur ∫ sin^n perd tous ses chiffres.
+  function lnGamma(z) {
+    const g = 7, c = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313,
+      -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    if (z < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * z)) - lnGamma(1 - z);
+    z -= 1;
+    let x = c[0];
+    for (let i = 1; i < g + 2; i++) x += c[i] / (z + i);
+    const t = z + g + 0.5;
+    return 0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x);
+  }
+  function betacf(a, b, x) {
+    const TINY = 1e-300;
+    const qab = a + b, qap = a + 1, qam = a - 1;
+    let c = 1, d = 1 - qab * x / qap;
+    if (Math.abs(d) < TINY) d = TINY;
+    d = 1 / d;
+    let h = d;
+    for (let m = 1; m <= 400; m++) {
+      const m2 = 2 * m;
+      let aa = m * (b - m) * x / ((qam + m2) * (a + m2));
+      d = 1 + aa * d; if (Math.abs(d) < TINY) d = TINY;
+      c = 1 + aa / c; if (Math.abs(c) < TINY) c = TINY;
+      d = 1 / d; h *= d * c;
+      aa = -(a + m) * (qab + m) * x / ((a + m2) * (qap + m2));
+      d = 1 + aa * d; if (Math.abs(d) < TINY) d = TINY;
+      c = 1 + aa / c; if (Math.abs(c) < TINY) c = TINY;
+      d = 1 / d;
+      const del = d * c;
+      h *= del;
+      if (Math.abs(del - 1) < 1e-15) break;
+    }
+    return h;
+  }
+  // log I_x(a, b)
+  function logIbeta(a, b, x) {
+    if (x <= 0) return -Infinity;
+    if (x >= 1) return 0;
+    const lbt = lnGamma(a + b) - lnGamma(a) - lnGamma(b) + a * Math.log(x) + b * Math.log(1 - x);
+    if (x < (a + 1) / (a + b + 2)) return lbt + Math.log(betacf(a, b, x)) - Math.log(a);
+    return Math.log1p(-Math.exp(lbt + Math.log(betacf(b, a, 1 - x)) - Math.log(b)));
+  }
+  // log de la fraction de volume de la calotte d'angle t (0 ≤ t ≤ π)
+  function logCap(n, t) {
+    const lI = logIbeta((n + 1) / 2, 0.5, Math.sin(t) ** 2);
+    return t <= Math.PI / 2 ? lI - Math.LN2 : Math.log1p(-Math.exp(lI) / 2);
+  }
+
+  // fraction du disque/boule unité couverte par la boule (centre à δ, rayon k)
+  function frac(n, d, k) {
+    if (k <= 0) return 0;
+    if (n === Infinity) {
+      const lim = Math.sqrt(1 + d * d);
+      if (d === 0) return k >= 1 ? 1 : 0;
+      return Math.abs(k - lim) < 1e-9 ? 0.5 : (k > lim ? 1 : 0);
+    }
+    if (d >= 1 + k) return 0;
+    if (d <= k - 1) return 1;
+    if (d <= 1 - k) return Math.pow(k, n);
+    const x0 = (1 + d * d - k * k) / (2 * d);
+    const t1 = Math.acos(clamp(x0, -1, 1));
+    const t2 = Math.acos(clamp((d - x0) / k, -1, 1));
+    return Math.exp(logCap(n, t1)) + Math.exp(n * Math.log(k) + logCap(n, t2));
+  }
+
+  // corde des 50 % pour un piquet à la distance δ
+  function k50(n, d) {
+    if (n === Infinity) return Math.sqrt(1 + d * d);
+    const kin = Math.pow(2, -1 / n);
+    if (d + kin <= 1) return kin;
+    let lo = Math.max(kin, Math.abs(1 - d)), hi = 1 + d;
+    for (let i = 0; i < 60; i++) {
+      const mid = (lo + hi) / 2;
+      if (frac(n, d, mid) < 0.5) lo = mid; else hi = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
+  // ------------------------------------------------------- canvas utilitaire
+  function fitCanvas(cv) {
+    const r = cv.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    const ctx = cv.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  // =================================================================== LABO
+  const state = { mode: "chevre", d: 1, k: R2, n: 2 };
+  const DIMS = [1, 2, 3, 10, 100, Infinity];
+  const MODES = {
+    chevre: {
+      dLabel: "Distance du piquet au centre δ", dHint: "en rayons du champ",
+      kLabel: "Longueur de corde k", kHint: "en rayons du champ",
+      what: (n) => n === 2 ? "de l'herbe broutée" : (n === Infinity ? "du volume brouté (dimension infinie)" : `du volume brouté (dimension ${n})`),
+      half: "Ajuster la corde pour 50 %",
+      presets: () => [
+        ["Chèvre classique", 1, k50(state.n, 1)],
+        ["Piquet au centre", 0, k50(state.n, 0)],
+        ["Corde inscrite", 1 - k50(state.n, 0), k50(state.n, 0)],
+        ["Piquet dehors", 2, k50(state.n, 2)],
+        ["Corde √2", 1, SQRT2],
+      ],
+    },
+    eclipse: {
+      dLabel: "Distance Lune–Soleil δ", dHint: "en rayons solaires",
+      kLabel: "Rapport Lune/Soleil k", kHint: "réel : 0,90 à 1,08",
+      what: () => "du Soleil caché (obscuration)",
+      half: "Ajuster la Lune pour 50 %",
+      presets: () => [
+        ["1er contact", 1.95, 0.95],
+        ["Partielle", 1.0, 0.95],
+        ["2e contact", 0.06, 0.94],
+        ["Annulaire", 0.0, 0.94],
+        ["Totale", 0.02, 1.05],
+        ["Chèvre (irréelle)", 1, R2],
+      ],
+    },
+    photo: {
+      dLabel: "Décentrement du cache δ", dHint: "en rayons de pupille",
+      kLabel: "Rayon du cache k", kHint: "monture d'une lentille",
+      what: () => "de la lumière transmise",
+      half: "Ajuster le cache pour 1 IL",
+      presets: () => [
+        ["Un cran au centre", 0, 1 / SQRT2],
+        ["Œil de chat", 0.6, 1.1],
+        ["1 IL pile (chèvre)", 1, R2],
+        ["FTM50 (cercles égaux)", 0.8079455, 1],
+        ["Vesica piscis", 1, 1],
+      ],
+    },
+  };
+
+  const dRange = $("d-range"), dNum = $("d-num"), kRange = $("k-range"), kNum = $("k-num");
+
+  function setDK(d, k, from) {
+    state.d = clamp(+d, 0, 3);
+    state.k = clamp(+k, 0.01, 3.3);
+    if (from !== "dr") dRange.value = state.d;
+    if (from !== "dn") dNum.value = state.d.toFixed(3);
+    if (from !== "kr") kRange.value = state.k;
+    if (from !== "kn") kNum.value = state.k.toFixed(4);
+    renderLabo();
+  }
+  dRange.addEventListener("input", () => setDK(dRange.value, state.k, "dr"));
+  kRange.addEventListener("input", () => setDK(state.d, kRange.value, "kr"));
+  dNum.addEventListener("input", () => { if (dNum.value !== "" && isFinite(+dNum.value)) setDK(dNum.value, state.k, "dn"); });
+  kNum.addEventListener("input", () => { if (kNum.value !== "" && isFinite(+kNum.value)) setDK(state.d, kNum.value, "kn"); });
+  $("half-btn").addEventListener("click", () => setDK(state.d, k50(nEff(), state.d)));
+
+  const nEff = () => (state.mode === "chevre" ? state.n : 2);
+
+  function buildDims() {
+    const seg = $("dim-seg");
+    seg.textContent = "";
+    for (const n of DIMS) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = n === Infinity ? "∞" : String(n);
+      b.setAttribute("aria-pressed", String(n === state.n));
+      b.addEventListener("click", () => { state.n = n; buildDims(); mapCache = null; renderLabo(); });
+      seg.appendChild(b);
+    }
+  }
+  function buildPresets() {
+    const box = $("presets");
+    box.textContent = "";
+    for (const [name, d, k] of MODES[state.mode].presets()) {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip-btn"; b.textContent = name;
+      b.addEventListener("click", () => setDK(d, k));
+      box.appendChild(b);
+    }
+  }
+  for (const t of document.querySelectorAll(".tabs button")) {
+    t.addEventListener("click", () => {
+      state.mode = t.dataset.mode;
+      for (const u of document.querySelectorAll(".tabs button")) u.setAttribute("aria-selected", String(u === t));
+      $("dim-row").hidden = state.mode !== "chevre";
+      mapCache = null;
+      buildPresets();
+      renderLabo();
+    });
+  }
+
+  function configuration(d, k) {
+    const e = 0.004;
+    if (d > 1 + k + e) return "Disques séparés";
+    if (Math.abs(d - (1 + k)) <= e) return "Tangence extérieure";
+    if (d < e && Math.abs(k - 1) <= e) return "Disques confondus";
+    if (Math.abs(d - Math.abs(1 - k)) <= e) return "Tangence intérieure";
+    if (d < Math.abs(1 - k)) return d < e ? "Cercles concentriques" : (k < 1 ? "Petit disque à l'intérieur" : "Grand disque englobant");
+    return "Recouvrement partiel : une lentille";
+  }
+
+  function renderReadout() {
+    const { d, k, mode } = state;
+    const n = nEff();
+    const F = frac(n, d, k);
+    const M = MODES[mode];
+    $("d-label").firstChild.nodeValue = M.dLabel + " ";
+    $("d-hint").textContent = M.dHint;
+    $("k-label").firstChild.nodeValue = M.kLabel + " ";
+    $("k-hint").textContent = M.kHint;
+    $("half-btn").textContent = M.half;
+    $("big-value").textContent = n === Infinity ? (F === 1 ? "100 %" : F === 0 ? "0 %" : "50 %") : pct(F, 1);
+    $("big-what").textContent = M.what(n);
+    $("state").textContent = configuration(d, k);
+    const facts = [];
+    const kh = k50(n, d);
+    if (mode === "chevre") {
+      facts.push(["Corde des 50 %", `${fmt(kh, 4)} pour ce piquet`]);
+      if (n === Infinity) facts.push(["Règle", "tout ou rien : 50 % quand k = √(1 + δ²)"]);
+      else facts.push(["Loi approchée", `√(δ² + (n−1)/(n+1)) = ${fmt(Math.sqrt(d * d + (n - 1) / (n + 1)), 4)}`]);
+      facts.push(["Plan des intersections", d > 0 && F > 0 && F < 1 && d > Math.abs(1 - k) ? `à ${fmt((1 + d * d - k * k) / (2 * d), 3)} R du centre` : "aucun"]);
+      $("mode-note").textContent = n === 2
+        ? "Piquet sur la clôture (δ = 1) : la corde des 50 % vaut 1,1587. Au centre, 1/√2. Dehors, environ δ + 1/(6δ)."
+        : "En dimension n, la fraction est un rapport de volumes de calottes. Quand n grandit, la courbe des 50 % de la carte tend vers k = √(1 + δ²).";
+    } else if (mode === "eclipse") {
+      const partial = d < 1 + k && d > Math.abs(1 - k);
+      const mag = d >= 1 + k ? 0 : partial ? (1 + k - d) / 2 : k;
+      facts.push(["Magnitude", partial ? `${fmt(mag, 3)} (fraction du diamètre)` : d >= 1 + k ? "0" : `${fmt(k, 3)} (rapport des diamètres)`]);
+      let phase = "pas d'éclipse";
+      if (Math.abs(d - (1 + k)) <= 0.004) phase = "1er ou 4e contact (tangence extérieure)";
+      else if (partial) phase = "partielle";
+      else if (Math.abs(d - Math.abs(1 - k)) <= 0.004) phase = "2e ou 3e contact (tangence intérieure)";
+      else if (d < Math.abs(1 - k)) phase = k < 1 ? "annulaire : la Lune est dans le Soleil" : "totale : le Soleil est caché";
+      facts.push(["Phase", phase]);
+      facts.push(["Lune pour 50 %", `k = ${fmt(kh, 4)} à cette distance`]);
+      $("mode-note").textContent = k > 1.08 || k < 0.9
+        ? "Ce rapport de tailles n'existe pas pour le Soleil et la Lune vus de la Terre (0,90 à 1,08)."
+        : "Les quatre contacts sont des tangences : extérieures au début et à la fin, intérieures autour de la totalité ou de l'annularité.";
+    } else {
+      const loss = F > 0 ? -Math.log2(F) : Infinity;
+      facts.push(["Perte", F > 0 ? `${fmt(loss, 2)} IL (crans)` : "toute la lumière"]);
+      facts.push(["Tache floue", F === 0 ? "aucune" : (d <= Math.abs(1 - k) ? "disque plein" : "œil de chat (lentille)")]);
+      if (Math.abs(k - 1) < 0.005 && d <= 2) {
+        facts.push(["FTM d'un objectif parfait", `${fmt(F, 3)} à ν = ${fmt(d / 2, 3)} ν_c`]);
+      } else {
+        facts.push(["Cache pour 1 IL", `k = ${fmt(kh, 4)} à ce décentrement`]);
+      }
+      $("mode-note").textContent = "La courbe bleue de la carte est la courbe du vignettage d'un cran pile. Avec deux cercles égaux (k = 1), la fraction est la FTM d'un objectif limité par la diffraction.";
+    }
+    const dl = $("facts");
+    dl.textContent = "";
+    for (const [a, b] of facts) {
+      const dt = document.createElement("dt"); dt.textContent = a;
+      const dd = document.createElement("dd"); dd.textContent = b;
+      dl.append(dt, dd);
+    }
+  }
+
+  // ---------------------------------------------------------------- dessin
+  function drawScene() {
+    const cv = $("scene");
+    const { ctx, w } = fitCanvas(cv);
+    const { d, k, mode } = state;
+    const xmin = Math.min(-1, d - k), xmax = Math.max(1, d + k), ymax = Math.max(1, k);
+    const span = Math.max(xmax - xmin, 2 * ymax) * 1.16;
+    const cx = (xmin + xmax) / 2, s = w / span;
+    const P = (x, y) => [w / 2 + (x - cx) * s, w / 2 - y * s];
+    const circle = (x, y, r) => { const [px, py] = P(x, y); ctx.beginPath(); ctx.arc(px, py, Math.max(r * s, 0.5), 0, 2 * Math.PI); };
+
+    const bg = mode === "chevre" ? css("--panel") : mode === "eclipse" ? css("--sky") : css("--night");
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, w, w);
+
+    if (mode === "chevre") {
+      circle(0, 0, 1); ctx.fillStyle = css("--meadow"); ctx.fill();
+      ctx.save(); circle(0, 0, 1); ctx.clip(); circle(d, 0, k); ctx.fillStyle = css("--soil"); ctx.fill(); ctx.restore();
+      circle(0, 0, 1); ctx.lineWidth = 2; ctx.strokeStyle = css("--meadow-edge"); ctx.stroke();
+      circle(d, 0, k); ctx.lineWidth = 1.5; ctx.strokeStyle = css("--glass"); ctx.setLineDash([5, 4]); ctx.stroke(); ctx.setLineDash([]);
+      // corde tendue vers un point d'intersection
+      if (d > 0 && d < 1 + k && d > Math.abs(1 - k)) {
+        const x0 = (1 + d * d - k * k) / (2 * d), y0 = Math.sqrt(Math.max(0, 1 - x0 * x0));
+        const [a, b] = P(d, 0), [c2, e] = P(x0, y0);
+        ctx.beginPath(); ctx.moveTo(a, b); ctx.lineTo(c2, e); ctx.lineWidth = 1.6; ctx.strokeStyle = css("--ink"); ctx.stroke();
+        dot(ctx, c2, e, 3.5, css("--ink"), bg);
+        label(ctx, "Q", c2 + 8, e - 8, css("--ink"));
+      }
+      const [ox, oy] = P(0, 0), [px, py] = P(d, 0);
+      dot(ctx, ox, oy, 3.5, css("--ink"), bg); label(ctx, "O", ox - 14, oy + 16, css("--ink"));
+      dot(ctx, px, py, 5, css("--accent"), bg); label(ctx, "P", px + 9, py + 16, css("--ink"));
+    } else if (mode === "eclipse") {
+      const [sx, sy] = P(0, 0);
+      const g = ctx.createRadialGradient(sx, sy, s * 0.9, sx, sy, s * 1.45);
+      g.addColorStop(0, css("--sun")); g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.globalAlpha = 0.28; ctx.fillStyle = g; ctx.fillRect(0, 0, w, w); ctx.globalAlpha = 1;
+      circle(0, 0, 1); ctx.fillStyle = css("--sun"); ctx.fill();
+      circle(d, 0, k); ctx.fillStyle = css("--moon"); ctx.fill();
+      circle(d, 0, k); ctx.lineWidth = 1; ctx.strokeStyle = css("--pupil-edge"); ctx.stroke();
+    } else {
+      circle(0, 0, 1); ctx.lineWidth = 1.2; ctx.strokeStyle = css("--pupil-edge"); ctx.stroke();
+      ctx.save(); circle(0, 0, 1); ctx.clip(); circle(d, 0, k); ctx.fillStyle = css("--bokeh"); ctx.fill(); ctx.restore();
+      circle(d, 0, k); ctx.lineWidth = 1.2; ctx.strokeStyle = css("--pupil-edge"); ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]);
+    }
+    const caps = {
+      chevre: "Vert : le champ. Brun : l'herbe broutée. Tirets bleus : le cercle que la corde permet d'atteindre.",
+      eclipse: "Le Soleil (rayon 1) et la Lune (rayon k), vus de la Terre. La partie cachée est l'aire commune.",
+      photo: "La pupille (cercle plein) rognée par la monture (tirets). La tache claire est la lumière qui passe : un bokeh « œil de chat ».",
+    };
+    $("scene-cap").textContent = caps[mode];
+  }
+  function dot(ctx, x, y, r, fill, ring) {
+    ctx.beginPath(); ctx.arc(x, y, r + 2, 0, 2 * Math.PI); ctx.fillStyle = ring; ctx.fill();
+    ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fillStyle = fill; ctx.fill();
+  }
+  function label(ctx, t, x, y, color, size = 13, align = "left") {
+    ctx.font = `600 ${size}px ${css("--font-body")}`; ctx.fillStyle = color; ctx.textAlign = align; ctx.fillText(t, x, y);
+  }
+
+  // ------------------------------------------------------------------ carte
+  const MAP = { d0: 0, d1: 3, k0: 0, k1: 3.3, padL: 34, padB: 30, padT: 8, padR: 8 };
+  let mapCache = null;
+  function mapGeom(w, h) {
+    const pw = w - MAP.padL - MAP.padR, ph = h - MAP.padT - MAP.padB;
+    return {
+      pw, ph,
+      X: (d) => MAP.padL + (d - MAP.d0) / (MAP.d1 - MAP.d0) * pw,
+      Y: (k) => MAP.padT + (1 - (k - MAP.k0) / (MAP.k1 - MAP.k0)) * ph,
+      D: (x) => MAP.d0 + (x - MAP.padL) / pw * (MAP.d1 - MAP.d0),
+      K: (y) => MAP.k0 + (1 - (y - MAP.padT) / ph) * (MAP.k1 - MAP.k0),
+    };
+  }
+  const LEVELS = [1e-9, 0.1, 0.25, 0.5, 0.75, 0.9, 1 - 1e-9];
+  function band(F) { let i = 0; while (i < LEVELS.length && F >= LEVELS[i]) i++; return i; }
+  function hexToRgb(h) {
+    h = h.replace("#", "");
+    if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+    const v = parseInt(h, 16);
+    return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+  }
+  function buildMapImage(n, cols, rows) {
+    const off = document.createElement("canvas");
+    off.width = cols; off.height = rows;
+    const octx = off.getContext("2d");
+    const img = octx.createImageData(cols, rows);
+    const ramp = [0, 1, 2, 3, 4, 5, 6, 7].map((i) => hexToRgb(css(`--m${i}`)));
+    for (let j = 0; j < rows; j++) {
+      const k = MAP.k1 - (j + 0.5) / rows * (MAP.k1 - MAP.k0);
+      for (let i = 0; i < cols; i++) {
+        const d = MAP.d0 + (i + 0.5) / cols * (MAP.d1 - MAP.d0);
+        const c = ramp[band(frac(n === Infinity ? 2 : n, d, k))];
+        const p = 4 * (j * cols + i);
+        img.data[p] = c[0]; img.data[p + 1] = c[1]; img.data[p + 2] = c[2]; img.data[p + 3] = 255;
+      }
+    }
+    octx.putImageData(img, 0, 0);
+    return off;
+  }
+  function drawMap() {
+    const cv = $("map");
+    const { ctx, w, h } = fitCanvas(cv);
+    const G = mapGeom(w, h);
+    const n = nEff();
+    const key = `${n}|${css("--m4")}`;
+    if (!mapCache || mapCache.key !== key) {
+      const cols = Math.min(220, Math.round(G.pw / 2)), rows = Math.min(240, Math.round(G.ph / 2));
+      mapCache = { key, img: buildMapImage(n, cols, rows), half: [] };
+      for (let i = 0; i <= 150; i++) { const d = 3 * i / 150; mapCache.half.push([d, k50(n, d)]); }
+    }
+    ctx.fillStyle = css("--panel"); ctx.fillRect(0, 0, w, h);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(mapCache.img, MAP.padL, MAP.padT, G.pw, G.ph);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(MAP.padL, MAP.padT, G.pw, G.ph); ctx.clip();
+    if (state.mode === "eclipse") {
+      ctx.fillStyle = css("--sodium"); ctx.globalAlpha = 0.22;
+      ctx.fillRect(MAP.padL, G.Y(1.08), G.pw, G.Y(0.9) - G.Y(1.08)); ctx.globalAlpha = 1;
+    }
+    const line = (pts, color, width, dash) => {
+      ctx.beginPath(); pts.forEach(([a, b], i) => (i ? ctx.lineTo(G.X(a), G.Y(b)) : ctx.moveTo(G.X(a), G.Y(b))));
+      ctx.strokeStyle = color; ctx.lineWidth = width; ctx.setLineDash(dash || []); ctx.stroke(); ctx.setLineDash([]);
+    };
+    const ink2 = css("--ink-2");
+    line([[0, 1], [1, 0]], ink2, 1); line([[1, 0], [3, 2]], ink2, 1); line([[0, 1], [2.3, 3.3]], ink2, 1);
+    if (state.mode === "chevre" && state.n !== Infinity) {
+      const hyp = []; for (let i = 0; i <= 60; i++) { const d = 3 * i / 60; hyp.push([d, Math.sqrt(1 + d * d)]); }
+      line(hyp, css("--ink"), 1.2, [5, 4]);
+    }
+    line(mapCache.half, css("--glass"), 2.6);
+    ctx.restore();
+    // repères
+    const marks = state.mode === "eclipse" ? [] : [["G", 1, R2], ["√2", 1, SQRT2]];
+    if (state.mode === "photo") marks.push(["M", 0.8079455, 1]);
+    for (const [t, a, b] of marks) {
+      const x = G.X(a), y = G.Y(b);
+      ctx.beginPath(); ctx.arc(x, y, 3, 0, 2 * Math.PI); ctx.fillStyle = css("--ink"); ctx.fill();
+      label(ctx, t, x - 6, y - 6, css("--ink"), 11, "right");
+    }
+    // axes
+    ctx.fillStyle = css("--muted"); ctx.font = `500 11px ${css("--font-data")}`; ctx.textAlign = "center";
+    for (const v of [0, 1, 2, 3]) ctx.fillText(String(v), G.X(v), h - MAP.padB + 15);
+    ctx.textAlign = "right";
+    for (const v of [0, 1, 2, 3]) ctx.fillText(String(v), MAP.padL - 6, G.Y(v) + 4);
+    ctx.font = `600 12px ${css("--font-body")}`; ctx.fillStyle = css("--ink-2");
+    ctx.textAlign = "right"; ctx.fillText("δ", w - MAP.padR, h - 6);
+    ctx.textAlign = "left"; ctx.fillText("k", 6, MAP.padT + 10);
+    // point courant
+    dot(ctx, G.X(state.d), G.Y(state.k), 5.5, css("--accent"), css("--panel"));
+    const cap = state.mode === "chevre"
+      ? `Bleu : la courbe des 50 % (dimension ${state.n === Infinity ? "∞" : state.n}). Tirets : sa limite k = √(1 + δ²). Droites : les tangences. G : la chèvre classique.`
+      : state.mode === "eclipse"
+        ? "Bandeau : les rapports Lune/Soleil réels. Bleu : 50 % d'obscuration. Droites : les contacts (tangences)."
+        : "Bleu : un cran de vignettage (50 %). M : la FTM50 d'un objectif parfait, sur la droite k = 1.";
+    $("map-cap").textContent = cap;
+  }
+  (function mapEvents() {
+    const cv = $("map"), tip = $("map-tip");
+    let dragging = false;
+    const pick = (ev) => {
+      const r = cv.getBoundingClientRect();
+      const G = mapGeom(r.width, r.height);
+      const x = ev.clientX - r.left, y = ev.clientY - r.top;
+      return { d: clamp(G.D(x), 0, 3), k: clamp(G.K(y), 0.01, 3.3), x, y, r };
+    };
+    cv.addEventListener("pointerdown", (ev) => { dragging = true; cv.setPointerCapture(ev.pointerId); const p = pick(ev); setDK(p.d, p.k); });
+    cv.addEventListener("pointermove", (ev) => {
+      const p = pick(ev);
+      if (dragging) setDK(p.d, p.k);
+      const F = frac(nEff() === Infinity ? 2 : nEff(), p.d, p.k);
+      tip.hidden = false;
+      tip.textContent = `δ ${fmt(p.d, 2)} · k ${fmt(p.k, 2)} · ${pct(F, 1)}`;
+      tip.style.left = `${Math.min(p.x + 14, p.r.width - 150)}px`;
+      tip.style.top = `${Math.max(p.y - 30, 0)}px`;
+    });
+    const stop = () => { dragging = false; };
+    cv.addEventListener("pointerup", stop);
+    cv.addEventListener("pointercancel", stop);
+    cv.addEventListener("pointerleave", () => { tip.hidden = true; });
+  })();
+
+  function renderLabo() { renderReadout(); drawScene(); drawMap(); }
+
+  // ================================================================ ULLISCH
+  const C = {
+    add: (a, b) => [a[0] + b[0], a[1] + b[1]],
+    mul: (a, b) => [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]],
+    div: (a, b) => { const q = b[0] * b[0] + b[1] * b[1]; return [(a[0] * b[0] + a[1] * b[1]) / q, (a[1] * b[0] - a[0] * b[1]) / q]; },
+    sin: (z) => [Math.sin(z[0]) * Math.cosh(z[1]), Math.cos(z[0]) * Math.sinh(z[1])],
+    cos: (z) => [Math.cos(z[0]) * Math.cosh(z[1]), -Math.sin(z[0]) * Math.sinh(z[1])],
+  };
+  const fz = (z) => { const v = C.add(C.sin(z), C.mul([-z[0], -z[1]], C.cos(z))); return [v[0] - Math.PI / 2, v[1]]; };
+  const ZEROS = [[1.9056957, 0], [4.0903295, 0], [-0.70571226, 1.4268094], [-0.70571226, -1.4268094]];
+  const ull = { N: 12, contour: "good" };
+  const contourOf = (c) => (c === "good" ? { c: 3 * Math.PI / 4, rho: Math.PI / 4 } : { c: 3 * Math.PI / 8, rho: Math.PI / 4 });
+
+  function quotient(N, c, rho) {
+    let num = [0, 0], den = [0, 0];
+    for (let j = 0; j < N; j++) {
+      const th = 2 * Math.PI * j / N;
+      const wj = [Math.cos(th), Math.sin(th)];
+      const z = [c + rho * wj[0], rho * wj[1]];
+      const t = C.div(wj, fz(z));
+      den = C.add(den, t);
+      num = C.add(num, C.mul(z, t));
+    }
+    const k = [0, 2 * Math.PI * rho / N]; // ∮ ≈ (2πiρ/N) Σ
+    return { I1: C.mul(k, num), I0: C.mul(k, den), q: C.div(num, den) };
+  }
+  // distance du centre au zéro le plus proche hors du contour (taux de convergence)
+  function rate(c, rho) {
+    let dmin = Infinity;
+    for (const [x, y] of ZEROS) { const dd = Math.hypot(x - c, y); if (dd > rho + 1e-9) dmin = Math.min(dmin, dd); }
+    return rho / dmin;
+  }
+
+  const PLANE = { x0: -1.4, x1: 4.75, y0: -1.75, y1: 1.75 };
+  let planeCache = null;
+  function drawPlane() {
+    const cv = $("plane");
+    const { ctx, w, h } = fitCanvas(cv);
+    const X = (x) => (x - PLANE.x0) / (PLANE.x1 - PLANE.x0) * w;
+    const Y = (y) => (1 - (y - PLANE.y0) / (PLANE.y1 - PLANE.y0)) * h;
+    const key = css("--u3");
+    if (!planeCache || planeCache.key !== key) {
+      const cols = 240, rows = Math.round(240 * (PLANE.y1 - PLANE.y0) / (PLANE.x1 - PLANE.x0));
+      const off = document.createElement("canvas"); off.width = cols; off.height = rows;
+      const octx = off.getContext("2d"), img = octx.createImageData(cols, rows);
+      const ramp = [0, 1, 2, 3, 4, 5].map((i) => hexToRgb(css(`--u${i}`)));
+      for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+        const z = [PLANE.x0 + (i + 0.5) / cols * (PLANE.x1 - PLANE.x0), PLANE.y1 - (j + 0.5) / rows * (PLANE.y1 - PLANE.y0)];
+        const v = fz(z), L = Math.log10(Math.hypot(v[0], v[1]) + 1e-12);
+        const t = clamp((L + 1) / 3.2, 0, 0.9999) * 5, a = Math.floor(t), f = t - a;
+        const c0 = ramp[a], c1 = ramp[a + 1], p = 4 * (j * cols + i);
+        img.data[p] = c0[0] + (c1[0] - c0[0]) * f; img.data[p + 1] = c0[1] + (c1[1] - c0[1]) * f;
+        img.data[p + 2] = c0[2] + (c1[2] - c0[2]) * f; img.data[p + 3] = 255;
+      }
+      octx.putImageData(img, 0, 0);
+      planeCache = { key, off };
+    }
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(planeCache.off, 0, 0, w, h);
+    // axes réel / imaginaire
+    ctx.strokeStyle = css("--muted"); ctx.lineWidth = 1; ctx.globalAlpha = 0.6;
+    ctx.beginPath(); ctx.moveTo(0, Y(0)); ctx.lineTo(w, Y(0)); ctx.moveTo(X(0), 0); ctx.lineTo(X(0), h); ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = css("--ink-2"); ctx.font = `500 11px ${css("--font-data")}`; ctx.textAlign = "center";
+    for (const v of [1, 2, 3, 4]) ctx.fillText(String(v), X(v), Y(0) + 14);
+    // contour + points
+    const { c, rho } = contourOf(ull.contour);
+    ctx.beginPath(); ctx.arc(X(c), Y(0), rho / (PLANE.x1 - PLANE.x0) * w, 0, 2 * Math.PI);
+    ctx.strokeStyle = css("--ink"); ctx.lineWidth = 1.6; ctx.stroke();
+    for (let j = 0; j < ull.N; j++) {
+      const th = 2 * Math.PI * j / ull.N;
+      dot(ctx, X(c + rho * Math.cos(th)), Y(rho * Math.sin(th)), 3, css("--glass"), css("--panel"));
+    }
+    for (const [x, y] of ZEROS) dot(ctx, X(x), Y(y), 4.5, "#eb6834", css("--panel"));
+    label(ctx, "β", X(1.9057) - 4, Y(0) - 10, css("--ink"), 13, "right");
+    label(ctx, "4,09", X(4.0903), Y(0) - 10, css("--ink"), 11, "center");
+  }
+  (function planeEvents() {
+    const cv = $("plane"), tip = $("plane-tip");
+    cv.addEventListener("pointermove", (ev) => {
+      const r = cv.getBoundingClientRect();
+      const x = PLANE.x0 + (ev.clientX - r.left) / r.width * (PLANE.x1 - PLANE.x0);
+      const y = PLANE.y1 - (ev.clientY - r.top) / r.height * (PLANE.y1 - PLANE.y0);
+      const v = fz([x, y]);
+      tip.hidden = false;
+      tip.textContent = `z = ${fmt(x, 2)} ${y < 0 ? "−" : "+"} ${fmt(Math.abs(y), 2)}i · |f| = ${fmt(Math.hypot(v[0], v[1]), 3)}`;
+      tip.style.left = `${Math.min(ev.clientX - r.left + 14, r.width - 230)}px`;
+      tip.style.top = `${Math.max(ev.clientY - r.top - 30, 0)}px`;
+    });
+    cv.addEventListener("pointerleave", () => { tip.hidden = true; });
+  })();
+
+  const cfmt = (z, d = 6) => { const re = Math.abs(z[0]) < 5e-13 ? 0 : z[0]; return `${fmt(re, d)} ${z[1] < 0 ? "−" : "+"} ${fmt(Math.abs(z[1]), d)} i`; };
+  function renderUllisch() {
+    const { c, rho } = contourOf(ull.contour);
+    const { I1, I0, q } = quotient(ull.N, c, rho);
+    const err = Math.abs(q[0] - BETA) + Math.abs(q[1]);
+    const digits = err > 0 ? Math.min(16, -Math.log10(err)) : 16;
+    const rows = [
+      ["∮ z dz / f(z)", cfmt(I1)],
+      ["∮ dz / f(z)", cfmt(I0)],
+      ["quotient β", fmt(q[0], 12)],
+      ["erreur", err < 2e-16 ? "< 10⁻¹⁵ (limite de la machine)" : sci(err)],
+      ["chiffres exacts", `≈ ${fmt(Math.max(0, digits), 1)}`],
+      ["corde r = 2 cos(β/2)", fmt(2 * Math.cos(q[0] / 2), 12)],
+    ];
+    const box = $("ull-read");
+    box.textContent = "";
+    for (const [a, b] of rows) {
+      const row = document.createElement("div"); row.className = "row";
+      const s1 = document.createElement("span"); s1.textContent = a;
+      const s2 = document.createElement("span"); s2.className = "num"; s2.textContent = b;
+      row.append(s1, s2); box.appendChild(row);
+    }
+    drawPlane();
+    drawErrChart();
+  }
+  function drawErrChart() {
+    const svg = $("err-chart");
+    const W = 360, H = 170, L = 40, Rr = 10, T = 10, B = 26;
+    const X = (N) => L + (N - 4) / 60 * (W - L - Rr);
+    const Y = (lg) => T + (-lg) / 16 * (H - T - B);
+    const { c, rho } = contourOf(ull.contour);
+    const pts = [];
+    for (let N = 4; N <= 64; N += 2) {
+      const q = quotient(N, c, rho).q;
+      const e = Math.max(Math.abs(q[0] - BETA) + Math.abs(q[1]), 1e-16);
+      pts.push([N, Math.log10(e)]);
+    }
+    const rt = Math.log10(rate(c, rho));
+    const pred = [[4, pts[0][1]], [64, pts[0][1] + 60 * rt]].map(([n, v]) => [n, Math.max(v, -16)]);
+    const nCut = 4 + (-16 - pts[0][1]) / rt;
+    const predLine = nCut < 64 ? [[4, pts[0][1]], [nCut, -16]] : pred;
+    const ink = css("--ink"), glass = css("--glass"), rule = css("--rule");
+    let s = "";
+    for (const lg of [0, -4, -8, -12, -16]) {
+      s += `<line x1="${L}" x2="${W - Rr}" y1="${Y(lg)}" y2="${Y(lg)}" stroke="${rule}" stroke-width="1"/>`;
+      s += `<text x="${L - 6}" y="${Y(lg) + 3.5}" text-anchor="end">10${lg === 0 ? "⁰" : sup(lg)}</text>`;
+    }
+    for (const N of [4, 16, 32, 48, 64]) s += `<text x="${X(N)}" y="${H - 8}" text-anchor="middle">${N}</text>`;
+    s += `<polyline points="${predLine.map(([n, v]) => `${X(n)},${Y(v)}`).join(" ")}" fill="none" stroke="${ink}" stroke-width="1.2" stroke-dasharray="5 4"/>`;
+    s += `<polyline points="${pts.map(([n, v]) => `${X(n)},${Y(v)}`).join(" ")}" fill="none" stroke="${glass}" stroke-width="2" stroke-linejoin="round"/>`;
+    for (const [n, v] of pts) s += `<circle cx="${X(n)}" cy="${Y(v)}" r="2.6" fill="${glass}"/>`;
+    const q = quotient(ull.N, c, rho).q;
+    const ec = Math.log10(Math.max(Math.abs(q[0] - BETA) + Math.abs(q[1]), 1e-16));
+    s += `<circle cx="${X(ull.N)}" cy="${Y(ec)}" r="5" fill="${css("--accent")}" stroke="${css("--panel")}" stroke-width="2"/>`;
+    s += `<text class="lbl" x="${W - Rr}" y="${T + 12}" text-anchor="end">taux ${fmt(rate(c, rho), 3)} par point</text>`;
+    svg.innerHTML = s;
+  }
+  function sci(x) {
+    const e = Math.floor(Math.log10(x)), m = x / Math.pow(10, e);
+    return `${fmt(m, 1)} × 10${sup(e)}`;
+  }
+  function sup(v) {
+    const m = { "-": "⁻", 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" };
+    return String(v).split("").map((ch) => m[ch] || ch).join("");
+  }
+  const nPts = $("n-pts"), nPtsNum = $("n-pts-num");
+  const setN = (v, from) => {
+    ull.N = clamp(Math.round(+v), 4, 64);
+    if (from !== "r") nPts.value = ull.N;
+    if (from !== "n") nPtsNum.value = ull.N;
+    renderUllisch();
+  };
+  nPts.addEventListener("input", () => setN(nPts.value, "r"));
+  nPtsNum.addEventListener("input", () => { if (nPtsNum.value !== "") setN(nPtsNum.value, "n"); });
+  for (const r of document.querySelectorAll('input[name="contour"]')) r.addEventListener("change", () => { ull.contour = r.value; renderUllisch(); });
+
+  // ============================================================== DIMENSION
+  const dim = { n: 2 };
+  const N_SET = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 25, 30, 40, 50, 70, 100, 150, 200, 300, 500, 700, 1000];
+  let rnTable = null;
+  const rn = (n) => (n === 1 ? 1 : k50(n, 1));
+
+  function drawCdf() {
+    const svg = $("cdf-chart");
+    const W = 420, H = 270, L = 44, Rr = 12, T = 12, B = 34;
+    const X = (r) => L + r / 2 * (W - L - Rr);
+    const Y = (f) => T + (1 - f) * (H - T - B);
+    const n = dim.n;
+    const curve = (m) => { const p = []; for (let i = 0; i <= 200; i++) { const r = 2 * i / 200; p.push([r, m === 1 ? clamp(r / 2, 0, 1) : frac(m, 1, Math.max(r, 1e-6))]); } return p; };
+    const rule = css("--rule"), ink = css("--ink"), glass = css("--glass"), muted = css("--muted");
+    let s = "";
+    for (const f of [0, 0.25, 0.5, 0.75, 1]) {
+      s += `<line x1="${L}" x2="${W - Rr}" y1="${Y(f)}" y2="${Y(f)}" stroke="${rule}"/>`;
+      s += `<text x="${L - 6}" y="${Y(f) + 3.5}" text-anchor="end">${pct(f, 0)}</text>`;
+    }
+    for (const [r, t] of [[0, "0"], [0.5, "0,5"], [1, "1"], [1.5, "1,5"], [2, "2"]]) s += `<text x="${X(r)}" y="${H - 16}" text-anchor="middle">${t}</text>`;
+    s += `<text class="lbl" x="${W - Rr}" y="${H - 2}" text-anchor="end">corde r / R</text>`;
+    s += `<polyline points="${X(0)},${Y(0)} ${X(SQRT2)},${Y(0)} ${X(SQRT2)},${Y(1)} ${X(2)},${Y(1)}" fill="none" stroke="${ink}" stroke-width="1.3" stroke-dasharray="5 4"/>`;
+    if (n !== 2) s += `<polyline points="${curve(2).map(([a, b]) => `${X(a)},${Y(b)}`).join(" ")}" fill="none" stroke="${muted}" stroke-width="1.4"/>`;
+    s += `<polyline points="${curve(n).map(([a, b]) => `${X(a)},${Y(b)}`).join(" ")}" fill="none" stroke="${glass}" stroke-width="2.4" stroke-linejoin="round"/>`;
+    const r = rn(n);
+    s += `<line x1="${X(r)}" x2="${X(r)}" y1="${Y(0.5)}" y2="${Y(0)}" stroke="${muted}" stroke-dasharray="2 3"/>`;
+    s += `<circle cx="${X(r)}" cy="${Y(0.5)}" r="5.5" fill="${css("--accent")}" stroke="${css("--panel")}" stroke-width="2"/>`;
+    s += `<text class="lbl" x="${X(r) - 8}" y="${Y(0.5) - 10}" text-anchor="end">r${sub(n)} = ${fmt(r, 4)}</text>`;
+    s += `<line class="hair" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${muted}" visibility="hidden"/>`;
+    svg.innerHTML = s;
+    svg.dataset.geom = JSON.stringify({ W, L, Rr });
+  }
+  function sub(v) {
+    const m = { 0: "₀", 1: "₁", 2: "₂", 3: "₃", 4: "₄", 5: "₅", 6: "₆", 7: "₇", 8: "₈", 9: "₉" };
+    return String(v).split("").map((ch) => m[ch] || ch).join("");
+  }
+  function drawRn() {
+    const svg = $("rn-chart");
+    const W = 420, H = 270, L = 48, Rr = 14, T = 14, B = 34;
+    const X = (n) => L + Math.log10(n) / 3 * (W - L - Rr);
+    const Y = (r) => T + (1.45 - r) / 0.5 * (H - T - B);
+    if (!rnTable) rnTable = N_SET.map((n) => [n, rn(n)]);
+    const rule = css("--rule"), ink = css("--ink"), glass = css("--glass");
+    let s = "";
+    for (const r of [1.0, 1.1, 1.2, 1.3, 1.4]) {
+      s += `<line x1="${L}" x2="${W - Rr}" y1="${Y(r)}" y2="${Y(r)}" stroke="${rule}"/>`;
+      s += `<text x="${L - 6}" y="${Y(r) + 3.5}" text-anchor="end">${fmt(r, 1)}</text>`;
+    }
+    for (const [n, t] of [[1, "1"], [10, "10"], [100, "100"], [1000, "1000"]]) s += `<text x="${X(n)}" y="${H - 16}" text-anchor="middle">${t}</text>`;
+    s += `<text class="lbl" x="${W - Rr}" y="${H - 2}" text-anchor="end">dimension n</text>`;
+    const approx = []; for (let i = 0; i <= 120; i++) { const n = Math.pow(10, 3 * i / 120); approx.push([n, Math.sqrt(2 * n / (n + 1))]); }
+    s += `<polyline points="${approx.map(([a, b]) => `${X(a)},${Y(b)}`).join(" ")}" fill="none" stroke="${css("--rule")}" stroke-width="5" stroke-linecap="round"/>`;
+    s += `<line x1="${L}" x2="${W - Rr}" y1="${Y(SQRT2)}" y2="${Y(SQRT2)}" stroke="${ink}" stroke-width="1.2" stroke-dasharray="5 4"/>`;
+    s += `<text class="lbl" x="${L + 6}" y="${Y(SQRT2) - 6}">√2 = 1,41421…</text>`;
+    s += `<polyline points="${rnTable.map(([a, b]) => `${X(a)},${Y(b)}`).join(" ")}" fill="none" stroke="${glass}" stroke-width="1.6"/>`;
+    for (const [a, b] of rnTable) s += `<circle cx="${X(a)}" cy="${Y(b)}" r="3" fill="${glass}" stroke="${css("--panel")}" stroke-width="1.2"/>`;
+    const r = rn(dim.n);
+    s += `<circle cx="${X(dim.n)}" cy="${Y(r)}" r="6" fill="${css("--accent")}" stroke="${css("--panel")}" stroke-width="2"/>`;
+    svg.innerHTML = s;
+  }
+  function natureOf(n) {
+    if (n === 1) return "n = 1 : r = R, nombre rationnel";
+    if (n === 2) return "n = 2 : nombre transcendant ; forme close par intégrales de contour (Ullisch)";
+    if (n === 3) return "n = 3 : racine de 3r⁴ − 8r³ + 8 = 0, s'écrit avec des radicaux";
+    if (n % 2 === 0) return `n = ${n} pair : nombre transcendant (théorème de Baker)`;
+    if (n <= 9) return `n = ${n} impair : algébrique de degré ${2 * (n - 1)}, groupe de Galois S${sub(2 * (n - 1))} : pas de radicaux`;
+    return `n = ${n} impair : algébrique (racine d'un polynôme en r), nature fine non étudiée ici`;
+  }
+  function renderDim() {
+    const n = dim.n, r = rn(n);
+    const facts = [
+      ["Corde de la moitié", `${fmt(r, 6)} R`],
+      ["Loi √(2n/(n+1))", `${fmt(Math.sqrt(2 * n / (n + 1)), 6)} R (écart ${fmt(r - Math.sqrt(2 * n / (n + 1)), 6)})`],
+      ["Plan des intersections", `à ${fmt(1 - r * r / 2, 4)} R du centre ; 1/(n+1) = ${fmt(1 / (n + 1), 4)}`],
+      ["La corde √2 broute", n === 1 ? pct(SQRT2 / 2, 1) : pct(frac(n, 1, SQRT2), 1)],
+      ["Volume dans la coquille 0,9 R–R", pct(1 - Math.pow(0.9, n), 1)],
+    ];
+    const dl = $("dim-facts");
+    dl.textContent = "";
+    for (const [a, b] of facts) {
+      const dt = document.createElement("dt"); dt.textContent = a;
+      const dd = document.createElement("dd"); dd.className = "num"; dd.textContent = b;
+      dl.append(dt, dd);
+    }
+    $("dim-nature").textContent = natureOf(n);
+    drawCdf();
+    drawRn();
+  }
+  (function cdfHover() {
+    const svg = $("cdf-chart"), tip = $("cdf-tip");
+    svg.addEventListener("pointermove", (ev) => {
+      const b = svg.getBoundingClientRect();
+      const g = JSON.parse(svg.dataset.geom || "{}");
+      const sx = (ev.clientX - b.left) * 420 / b.width;
+      const r = clamp((sx - g.L) / (g.W - g.L - g.Rr) * 2, 0, 2);
+      const F = dim.n === 1 ? clamp(r / 2, 0, 1) : frac(dim.n, 1, Math.max(r, 1e-6));
+      const hair = svg.querySelector(".hair");
+      if (hair) { hair.setAttribute("x1", sx); hair.setAttribute("x2", sx); hair.setAttribute("visibility", "visible"); }
+      tip.hidden = false;
+      tip.textContent = `r = ${fmt(r, 3)} · ${pct(F, 1)} brouté`;
+      tip.style.left = `${Math.min(ev.clientX - b.left + 14, b.width - 170)}px`;
+      tip.style.top = `${Math.max(ev.clientY - b.top - 30, 0)}px`;
+    });
+    svg.addEventListener("pointerleave", () => { tip.hidden = true; const h = svg.querySelector(".hair"); if (h) h.setAttribute("visibility", "hidden"); });
+  })();
+  (function rnHover() {
+    const svg = $("rn-chart"), tip = $("rn-tip");
+    svg.addEventListener("pointermove", (ev) => {
+      if (!rnTable) return;
+      const b = svg.getBoundingClientRect();
+      const sx = (ev.clientX - b.left) * 420 / b.width;
+      const lg = clamp((sx - 48) / (420 - 48 - 14) * 3, 0, 3);
+      let best = rnTable[0];
+      for (const p of rnTable) if (Math.abs(Math.log10(p[0]) - lg) < Math.abs(Math.log10(best[0]) - lg)) best = p;
+      tip.hidden = false;
+      tip.textContent = `n = ${best[0]} · r = ${fmt(best[1], 5)}`;
+      tip.style.left = `${Math.min(ev.clientX - b.left + 14, b.width - 150)}px`;
+      tip.style.top = `${Math.max(ev.clientY - b.top - 30, 0)}px`;
+    });
+    svg.addEventListener("pointerleave", () => { tip.hidden = true; });
+  })();
+  const nDim = $("n-dim"), nDimNum = $("n-dim-num");
+  const setDim = (v, from) => {
+    dim.n = clamp(Math.round(+v), 1, 300);
+    if (from !== "r") nDim.value = dim.n;
+    if (from !== "n") nDimNum.value = dim.n;
+    renderDim();
+  };
+  nDim.addEventListener("input", () => setDim(nDim.value, "r"));
+  nDimNum.addEventListener("input", () => { if (nDimNum.value !== "") setDim(nDimNum.value, "n"); });
+
+  // ================================================================ démarrage
+  function renderAll() { mapCache = null; planeCache = null; renderLabo(); renderUllisch(); renderDim(); }
+  buildDims();
+  buildPresets();
+  setDK(1, R2);
+  renderUllisch();
+  renderDim();
+  let raf = 0;
+  const onResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { drawScene(); drawMap(); drawPlane(); }); };
+  new ResizeObserver(onResize).observe(document.body);
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+  new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { drawScene(); drawMap(); drawPlane(); });
+})();
+</script>
+
+</body>
+</html>

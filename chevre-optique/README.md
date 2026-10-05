@@ -4,6 +4,8 @@
 
 Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scripts/) (voir [§ 8](#8-reproduire-les-calculs)). Les tableaux complets sont dans [`resultats/resultats.md`](resultats/resultats.md).
 
+Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
+
 **Sommaire**
 1. [En bref](#1-en-bref)
 2. [Le problème, et pourquoi il résiste en 2D](#2-le-problème-et-pourquoi-il-résiste-en-2d)
@@ -437,6 +439,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/chevre.py`](scripts/chevre.py) : la bibliothèque (quotient de contour, principe de l'argument, calottes en dimension $n$, aire de lentille, FTM).
 - [`scripts/calculs.py`](scripts/calculs.py) : tous les calculs et contrôles (résidus, nombre de zéros, groupes de Galois, constante de Baker…).
 - [`scripts/figures.py`](scripts/figures.py) : les figures.
+- [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
 
