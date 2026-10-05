@@ -159,6 +159,52 @@ retour = mp.findroot(lambda n: d_(n) - tab[2][3], mp.mpf(3))
 ligne(f"- la courbe δ(n) repasse au niveau de δ₂ en n = {fr(retour, 8)} : à {mp.nstr(retour - 3, 2)} de la dimension 3")
 
 # ---------------------------------------------------------------------------
+# 3 ter. Le test de la base 10, et le vrai passage ménisque → croisement
+# ---------------------------------------------------------------------------
+
+
+def en_base(x, b, chiffres=14):
+    texte, x = "0,", +x
+    for _ in range(chiffres):
+        x *= b
+        c = int(mp.floor(x))
+        x -= c
+        texte += "0123456789AB"[c] if b <= 12 else f"[{c}]"
+    return texte
+
+
+ecart3 = retour - 3
+ligne("\n## 3 ter. Le test de la base 10\n")
+ligne(f"- retour exact : n = {fr(retour, 22)} ; décalage = {fr(ecart3, 18)} ; ×10⁶ = {fr(ecart3 * 10 ** 6, 10)} (et non 90 :"
+      f" écart {fr(100 * (ecart3 * 10 ** 6 / 90 - 1), 3)} %)")
+for b in (2, 6, 8, 10, 12, 60):
+    ligne(f"- en base {b} : {en_base(ecart3, b, 24 if b == 2 else 14)}")
+ligne("\n| n | écart des cordes | déplacement δ | part manquante |")
+ligne("|---:|---|---|---|")
+for n in ("0.5", "0.75", "1.5", "6", "8"):
+    ligne(f"| {n.replace('.', ',')} | " + " | ".join(fr(f(mp.mpf(n)), 6) for f in ECARTS.values()) + " |")
+INFLEXIONS = {}
+for nom, f in ECARTS.items():
+    h = mp.mpf("1e-3")
+    courbure = lambda n: (f(n + h) - 2 * f(n) + f(n - h)) / h ** 2
+    grille = [mp.mpf(k) / 2 for k in range(4, 25)]
+    vals = [courbure(g) for g in grille]
+    INFLEXIONS[nom] = [mp.findroot(courbure, (grille[i] + grille[i + 1]) / 2) for i in range(len(grille) - 1) if vals[i] * vals[i + 1] < 0]
+    ligne(f"- inflexion de « {nom} » : n = " + " ; ".join(fr(x, 4) for x in INFLEXIONS[nom]))
+ligne("\n## 3 quater. Ménisque, tangence, croisement : le rapport tend vers √2\n")
+ligne("| n | tangence δ_t = r_n − arête | moitié δ_n | rapport δ_n / δ_t | √2 − rapport |")
+ligne("|---:|---|---|---|---|")
+RAPPORTS = {}
+for n in (2, 3, 5, 10, 20, 50, 100, 200, 400):
+    nn = mp.mpf(n)
+    t_, d_n = ECARTS["écart des cordes r − arête"](nn), ECARTS["déplacement δ"](nn)
+    RAPPORTS[n] = d_n / t_
+    ligne(f"| {n} | {fr(t_, 6)} | {fr(d_n, 6)} | {fr(d_n / t_, 8)} | {fr(mp.sqrt(2) - d_n / t_, 4)} |")
+th2 = mp.acos(1 / mp.sqrt(3))
+ligne(f"\n2D, premier ordre : θ/sin θ avec θ = arccos(1/√3) = {fr(mp.degrees(th2), 6)}° → {fr(th2 / mp.sin(th2), 8)}"
+      f" (valeur exacte {fr(RAPPORTS[2], 8)})")
+
+# ---------------------------------------------------------------------------
 # 4. π − 3 : les vraies routes et le test des coïncidences
 # ---------------------------------------------------------------------------
 ligne("\n## 4. π − 3\n")
@@ -327,10 +373,49 @@ ax.annotate(f"sommet en n = {float(SOMMETS['déplacement δ']):.2f}".replace("."
 ax.annotate("δ₂ et δ₃ sont de part et d'autre du sommet :\nproches, c'est la forme de la bosse",
             xy=(2.0, float(tab[2][3]) * 1e3), xytext=(1.83, 4.6), fontsize=9.5, color=F.INK2,
             arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
-ax.annotate(f"la courbe repasse au niveau de δ₂ en n = {float(retour):.5f},\nà 9·10⁻⁵ de la dimension 3 : ça, c'est le hasard".replace(".", ","),
+ax.annotate(f"la courbe repasse au niveau de δ₂ en n = {float(retour):.7f},\nà 8,53·10⁻⁵ de la dimension 3 : ça, c'est le hasard".replace(".", ","),
             xy=(3.0, float(tab[3][3]) * 1e3), xytext=(2.25, 4.42), fontsize=9.5, color=F.INK2,
             arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
 ax.set_xlabel("dimension n (réelle)")
 ax.set_ylabel("déplacement δ (10⁻³ R)")
 ax.set_title("b)  δ₂ ≈ δ₃ : la bosse explique la proximité, pas les décimales")
 F.sauver(fig, "f2_dimension_reelle.png")
+
+# Figure 3 : ménisque → tangence → croisement, et le rapport qui tend vers √2
+fig, axs = plt.subplots(1, 2, figsize=(15.5, 5.4), gridspec_kw={"width_ratios": [1.25, 1], "wspace": 0.18})
+ax = axs[0]
+ax.set_aspect("equal")
+ax.axis("off")
+g = 0.16  # écart grossi (schéma), dans le rapport réel 1 : 1,17 entre tangence et moitié
+etats = ((0.0, "1. ménisque\nles cercles sont emboîtés"), (g, "2. tangence\nδ = écart des cordes"),
+         (float(RAPPORTS[2]) * g, "3. croisement en demi-lunes\nδ = 1,17 × écart : la moitié"))
+tt = np.linspace(0, 2 * np.pi, 400)
+for i, (dd, titre) in enumerate(etats):
+    cx = 3.0 * i
+    ax.fill(cx + np.cos(tt), np.sin(tt), color=F.BLEU, alpha=0.12, lw=0)
+    ax.plot(cx + np.cos(tt), np.sin(tt), color=F.BLEU, lw=1.8)
+    ax.plot(cx - dd + (1 - g) * np.cos(tt), (1 - g) * np.sin(tt), color=F.ORANGE, lw=1.8, ls=(0, (4, 3)))
+    F.point(ax, cx, 0, F.BLEU, 6)
+    F.point(ax, cx - dd, 0, F.ORANGE, 6)
+    ax.text(cx, -1.25, titre, ha="center", va="top", fontsize=9.5, color=F.INK)
+ax.text(-1.1, 1.3, "écarts grossis (schéma) ; le pré est à gauche, du côté vers lequel on déplace", fontsize=9, color=F.INK2)
+ax.set_xlim(-1.2, 7.2)
+ax.set_ylim(-1.85, 1.45)
+ax.set_title("a)  Déplacer le petit cercle : ménisque, tangence, croisement")
+ax = axs[1]
+nn = sorted(RAPPORTS)
+ax.semilogx(nn, [float(RAPPORTS[n]) for n in nn], "-o", color=F.BLEU, lw=2, ms=6, mec=F.SURF, label="moitié / tangence (calcul exact)")
+ax.axhline(float(mp.sqrt(2)), color=F.INK, lw=1.2)
+ax.text(330, float(mp.sqrt(2)) + 0.006, "√2", fontsize=11, ha="right", va="bottom")
+ax.semilogx(nn, [float(mp.sqrt(2)) - 0.7 / n for n in nn], color=F.MUTED, lw=1, ls=(0, (4, 3)), label="√2 − 0,7/n")
+ax.annotate("2D : 1,170 ≈ θ / sin θ,\nθ = arccos(1/√3) = 54,74°\n(l'angle de la diagonale du cube)", xy=(2, float(RAPPORTS[2])), xytext=(6, 1.16),
+            fontsize=9.5, color=F.INK2, arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
+ax.set_xticks(nn)
+ax.set_xticklabels([str(n) for n in nn])
+ax.minorticks_off()
+ax.set_xlabel("dimension n")
+ax.set_ylabel("déplacement pour la moitié / déplacement de tangence")
+ax.set_ylim(1.12, 1.45)
+ax.set_title("b)  Le rapport tend vers √2")
+ax.legend(fontsize=9.5, loc="center right", bbox_to_anchor=(1.0, 0.42))
+F.sauver(fig, "f3_menisque_croisement.png")

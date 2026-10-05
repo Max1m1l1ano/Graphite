@@ -19,6 +19,8 @@ Tout est recalculé par [`scripts/zone_confusion.py`](scripts/zone_confusion.py)
   - C'est exactement le terme principal de la corde de la chèvre (partie I).
   - Les 0,35 % sont le premier écart d'une suite qui se referme : 0,31 % en 3D, 0,03 % en dimension 20. Le simplexe et la chèvre arrivent ensemble à √2.
 - **Ce n'est pas un hasard, et on peut le voir.** En prolongeant le calcul aux dimensions non entières, l'écart est nul en dimension 1, tend vers 0 à l'infini, et culmine vers n ≈ 2,24. Le triangle (n = 2) tombe presque au sommet de cette bosse : c'est le plus grand désaccord entre la chèvre et le simplexe, et il ne fait que 0,35 % (§ 3 bis).
+- **Le vrai « ménisque puis croisement en demi-lune » existe.** Quand on déplace le petit cercle, on passe par un ménisque, puis une tangence, puis un croisement. La moitié arrive après le croisement, pour un déplacement 1,17 fois celui de la tangence en 2D, et ce rapport tend vers √2 quand la dimension augmente (§ 3 quater).
+- **Le « 0,00009 » venait de mon arrondi.** La valeur exacte est 0,0000853 (soit 85,27 × 10⁻⁶, et non 90 × 10⁻⁶). Elle ne montre rien de particulier, ni en base 10 ni dans aucune autre base (§ 3 ter).
 - **Avec la corde du simplexe, les deux sphères se coupent exactement dans le plan qui passe par le centre de gravité du simplexe.** C'est le « plan à R/(n + 1) » de la partie I, qui reçoit enfin une image.
 - **Pour π − 3, je ne trouve pas de lien exact.** La part manquante vaut (π − 3)/50 à 0,07 % près. Mais 16 formules tout aussi simples font aussi bien ou mieux : √3/612, par exemple, est huit fois plus proche. Les vraies routes vers π − 3 par les dimensions sont les retenues de la partie IV.
 - **Les croissants qui relient √2 et π, c'est Hippocrate.** Sa lunule (vers −440) est un croissant entre deux cercles de rapport √2, dont l'aire vaut exactement celle d'un triangle : le π disparaît. Notre croissant, lui, ne le peut pas (§ 5).
@@ -95,7 +97,60 @@ La limite √2 dit ce qui se passe quand n → ∞. À elle seule, elle ne dit r
 
 **Et δ₂ ≈ δ₃ ?** La bosse en explique l'essentiel (figure b).
 - Le déplacement culmine en n = 2,42, entre 2 et 3. Les dimensions 2 et 3 sont donc de part et d'autre du sommet, là où la courbe est plate : il est normal que leurs valeurs soient proches, à quelques pour cent.
-- En revanche, qu'elles coïncident à 10⁻⁵ près, la bosse ne l'explique pas. Il faudrait que la courbe repasse au niveau de δ₂ pile en n = 3, or elle y repasse en n = 3,00009. Cette précision-là reste un hasard, tant qu'on ne trouve pas de raison.
+- En revanche, qu'elles coïncident à 10⁻⁵ près, la bosse ne l'explique pas. Il faudrait que la courbe repasse au niveau de δ₂ pile en n = 3, or elle y repasse en n = 3,0000853. Cette précision-là reste un hasard, tant qu'on ne trouve pas de raison.
+
+## 3 ter. Le test de la base 10
+
+L'hypothèse proposée : le décalage de 0,00009 viendrait de 90 = 10² − 10, la base 10 jouant le rôle que joue le binaire pour la base 2. Elle fait intervenir aussi les dimensions 1/2 et 3/2, la dimension 8 (2³) et un « puits » en dimension 6.
+
+**D'abord, une correction de ma part.** « 0,00009 » était un arrondi que j'avais écrit sur la figure. Le calcul donne n = 3,000085269089…, soit un décalage de 0,0000852690896…
+- Multiplié par 10⁶, cela donne 85,27, pas 90.
+- L'hypothèse se trompe donc dès le deuxième chiffre (5 % d'écart), alors que le calcul est précis à 10⁻²⁰.
+- La figure affiche désormais la valeur exacte.
+
+**Ensuite, le test de la base.** La géométrie ne sait pas qu'on écrit les nombres en base 10. Voici le même décalage écrit dans plusieurs bases :
+
+| base | décalage |
+|---:|---|
+| 2 | 0,000000000000010110010110… |
+| 8 | 0,00002626447716… |
+| 10 | 0,00008526908961… |
+| 12 | 0,00019274193412… |
+
+Une régularité qui n'apparaîtrait qu'en base 10 viendrait de notre façon d'écrire, pas du problème de la chèvre. Et ici, même en base 10, il n'y en a pas.
+
+**Les dimensions 1/2, 3/2, 6 et 8 : rien de particulier.**
+- En prolongeant les formules, les écarts sont négatifs sous la dimension 1 (−0,0126 en n = 1/2) et positifs au-dessus (0,0032 en n = 3/2).
+- Les courbes passent les dimensions 6 et 8 sans creux ni cassure : il n'y a pas de « puits ». Elles n'ont aucune transition aux dimensions entières.
+- Leurs seuls points remarquables sont la dimension 1, leurs sommets (2,24 ; 2,42 ; 3,20) et leurs points d'inflexion (3,51 ; 3,84 ; 5,46). Aucun n'est en 6 ni en 8, et ils diffèrent d'une courbe à l'autre.
+
+**Ce qui est juste dans ton intuition : il y a bien un croisement, mais en dimension 1.** Les deux courbes s'y coupent : sous la dimension 1, la corde de la chèvre est plus courte que l'arête du simplexe, au-dessus elle est plus longue. Et le passage « ménisque puis croisement » existe vraiment, dans le plan, quand on déplace le cercle (§ 3 quater).
+
+## 3 quater. Ménisque, tangence, croisement : le rapport tend vers √2
+
+![Ménisque, tangence, croisement](figures/f3_menisque_croisement.png)
+
+On prend la corde du simplexe et on rapproche son cercle du centre O (figure a).
+1. **Le ménisque.** Tant que le déplacement reste plus petit que l'écart des cordes (0,00403 R en 2D), le petit cercle reste dans le grand. La zone entre eux est un croissant fermé, plus épais d'un côté : un ménisque.
+2. **La tangence.** Quand le déplacement atteint l'écart des cordes, les deux cercles se touchent en un point, du côté de O.
+3. **Le croisement.** Au-delà, ils se coupent en deux points, et la zone se découpe en demi-lunes : le croissant gagné au milieu, les deux perdus aux bouts (§ 2). La moitié exacte arrive après le croisement, pour un déplacement 1,170 fois plus grand que celui de la tangence.
+
+**Ce rapport tend vers √2 avec la dimension** (figure b) :
+
+| n | 2 | 3 | 5 | 10 | 20 | 100 | 400 |
+|---|---|---|---|---|---|---|---|
+| moitié / tangence | 1,170 | 1,240 | 1,302 | 1,354 | 1,382 | 1,407 | 1,4125 |
+
+Les valeurs suivent à peu près √2 − 0,7/n.
+
+**Pourquoi √2.** Au premier ordre, le rapport compare deux façons de bouger le bord de la corde.
+- Allonger la corde pousse tout l'arc vers l'extérieur : ce qui compte, c'est la longueur (ou l'aire) de l'arc dans le pré.
+- Déplacer le cercle le long de PO ne compte que par l'ombre de cet arc sur une droite (ou un plan) perpendiculaire à PO.
+- Le rapport vaut donc « aire de l'arc ÷ aire de son ombre ».
+  - En 2D, l'arc est vu depuis P sous ±θ avec θ = arccos(1/√3) = 54,74°. C'est exactement l'angle entre la diagonale d'un cube et ses arêtes, celui des cônes du cube qui tourne (partie II). Le rapport vaut alors θ/sin θ = 1,1700, pour une valeur exacte de 1,1699.
+  - En grande dimension, l'aire de l'arc se concentre sur son bord, où la pente vaut 45°. Le rapport tend vers 1/cos 45° = √2.
+
+Ce √2 est établi au premier ordre par cet argument et vérifié numériquement jusqu'en dimension 400. Je n'ai pas écrit de preuve complète du passage à la limite.
 
 **Ce que j'appelle « coïncidence ».** C'est une proximité numérique pour laquelle on ne connaît pas de mécanisme. Le mot n'est pas définitif : quand on trouve le mécanisme, ce n'est plus une coïncidence. C'est exactement ce qui vient d'arriver au triangle, entre la partie V et cette partie VI.
 
@@ -144,11 +199,16 @@ L'aire de la zone est donc transcendante. Aucune construction à la règle et au
   - la part manquante algébrique en 3D ;
   - la transcendance de l'aire de la zone ;
   - la lunule d'Hippocrate.
-- **Établi numériquement** : la convergence lente de n²(r_n² − a_n²) vers 2/3, le tableau des déplacements, et la bosse des écarts en dimension réelle (nuls en dimension 1 et à l'infini, sommet de l'écart des cordes en n = 2,24).
+- **Établi numériquement** :
+  - la convergence lente de n²(r_n² − a_n²) vers 2/3, et le tableau des déplacements ;
+  - la bosse des écarts en dimension réelle (nuls en dimension 1 et à l'infini, sommet de l'écart des cordes en n = 2,24) ;
+  - le rapport moitié / tangence qui tend vers √2 (argument au premier ordre, vérifié jusqu'en dimension 400).
 - **Pas une coïncidence (correction de la partie V)** : la proximité entre 2/√3 et la corde de la chèvre. C'est le premier terme d'une famille qui suit la chèvre dans toutes les dimensions.
 - **À moitié expliqué** : δ₂ ≈ δ₃. La bosse explique la proximité, pas l'accord à 10⁻⁵.
 - **Coïncidence** : (π − 3)/50 ≈ part manquante.
-- **Inexact** : « l'écart mène √2 vers π − 3 ». L'écart mène bien à √2, par les dimensions, mais rien ne le relie exactement à π − 3.
+- **Inexact** :
+  - « le décalage vient de 90 = 10² − 10 » : il vaut 85,27 × 10⁻⁶, il ne dépend pas de la base d'écriture, et rien de particulier ne se passe en dimension 1/2, 3/2, 6 ou 8 ;
+  - « l'écart mène √2 vers π − 3 ». L'écart mène bien à √2, par les dimensions, mais rien ne le relie exactement à π − 3.
 
 ## Sources
 
