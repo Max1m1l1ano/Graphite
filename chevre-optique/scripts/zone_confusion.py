@@ -115,6 +115,50 @@ ligne("Avec la corde du simplexe, les deux sphères se coupent sur l'hyperplan x
       " qui passe par le centre de gravité du simplexe.")
 
 # ---------------------------------------------------------------------------
+# 3 bis. En dimension réelle : les écarts forment une bosse
+# ---------------------------------------------------------------------------
+
+
+def calotte(n, t):
+    """Part de la boule unité de dimension réelle n dans la calotte d'angle au centre t (bêta incomplète)."""
+    if t <= PI / 2:
+        return mp.betainc((n + 1) / 2, mp.mpf(1) / 2, 0, mp.sin(t) ** 2, regularized=True) / 2
+    return 1 - calotte(n, PI - t)
+
+
+def broutee(n, k, D=1):
+    """Part de la boule unité (dimension réelle n) à moins de k d'un piquet placé à la distance D du centre."""
+    x = (D * D + 1 - k * k) / (2 * D)  # abscisse de l'hyperplan où les deux sphères se coupent
+    return calotte(n, mp.acos(x)) + k ** n * calotte(n, mp.acos((D - x) / k))
+
+
+arete = lambda n: mp.sqrt(2 * n / (n + 1))
+ECARTS = {
+    "écart des cordes r − arête": lambda n: mp.findroot(lambda k: broutee(n, k) - mp.mpf(1) / 2, arete(n) + mp.mpf("0.003")) - arete(n),
+    "déplacement δ": lambda n: mp.findroot(lambda d: broutee(n, arete(n), 1 - d) - mp.mpf(1) / 2, mp.mpf("0.004")),
+    "part manquante": lambda n: mp.mpf(1) / 2 - broutee(n, arete(n)),
+}
+controle = max(abs(broutee(mp.mpf(n), mp.mpf("1.2")) - ch.fraction_broutee_mp(n, mp.mpf("1.2"), 1)) for n in (2, 3, 5, 8))
+ligne("\n## 3 bis. En dimension réelle n (fonction bêta incomplète)\n")
+ligne(f"Contrôle contre la formule des dimensions entières : écart max {mp.nstr(controle, 2)}")
+ligne("En dimension 1 : corde de la chèvre = arête = 1 (moitié d'un segment), donc tous les écarts sont nuls.\n")
+ligne("| n | écart des cordes | déplacement δ | part manquante |")
+ligne("|---:|---|---|---|")
+for n in ("1.25", "1.5", "2", "2.25", "2.5", "3", "4", "6", "10"):
+    ligne(f"| {n.replace('.', ',')} | " + " | ".join(fr(f(mp.mpf(n)), 6) for f in ECARTS.values()) + " |")
+SOMMETS = {}
+for nom, f in ECARTS.items():
+    g, lo, hi = (mp.sqrt(5) - 1) / 2, mp.mpf("1.2"), mp.mpf("4.5")
+    for _ in range(60):
+        u, v = hi - g * (hi - lo), lo + g * (hi - lo)
+        lo, hi = (lo, v) if f(u) > f(v) else (u, hi)
+    SOMMETS[nom] = (lo + hi) / 2
+    ligne(f"- sommet de « {nom} » en n = {fr(SOMMETS[nom], 6)}, valeur {fr(f(SOMMETS[nom]), 6)}")
+d_ = ECARTS["déplacement δ"]
+retour = mp.findroot(lambda n: d_(n) - tab[2][3], mp.mpf(3))
+ligne(f"- la courbe δ(n) repasse au niveau de δ₂ en n = {fr(retour, 8)} : à {mp.nstr(retour - 3, 2)} de la dimension 3")
+
+# ---------------------------------------------------------------------------
 # 4. π − 3 : les vraies routes et le test des coïncidences
 # ---------------------------------------------------------------------------
 ligne("\n## 4. π − 3\n")
@@ -249,3 +293,44 @@ ax.set_xticks([2, 3, 4, 5, 6, 8, 10, 15, 20])
 ax.set_xticklabels(["2", "3", "4", "5", "6", "8", "10", "15", "20"])
 ax.minorticks_off()
 F.sauver(fig, "f1_zone_confusion.png")
+
+# Figure 2 : les écarts en dimension réelle
+fig, axs = plt.subplots(1, 2, figsize=(15.5, 5.3), gridspec_kw={"wspace": 0.22})
+ax = axs[0]
+nr = [mp.mpf(1) + mp.mpf(i) / 20 for i in range(1, 221)]
+STY = {"écart des cordes r − arête": (F.INK, "écart des cordes (en R)"), "déplacement δ": (F.BLEU, "déplacement δ qui rattrape (en R)"),
+       "part manquante": (F.ORANGE, "part manquante du pré")}
+for nom, f in ECARTS.items():
+    coul, lab = STY[nom]
+    ax.plot([1.0] + [float(n) for n in nr], [0.0] + [float(f(n)) for n in nr], color=coul, lw=2, label=lab)
+    ax.plot(range(1, 13), [0.0] + [float(f(mp.mpf(n))) for n in range(2, 13)], "o", color=coul, ms=5, mec=F.SURF)
+    ax.axvline(float(SOMMETS[nom]), color=coul, lw=0.9, ls=":")
+ax.annotate("nuls en dimension 1 :\nla chèvre et le « simplexe »\nsont le même demi-segment", xy=(1, 0), xytext=(3.6, 0.0007), fontsize=9,
+            color=F.INK2, arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
+ax.text(8.2, 0.0038, "→ 0 quand n → ∞ :\nles deux vont à √2", fontsize=9, color=F.INK2)
+ax.text(3.45, 0.0053, "sommets (pointillés) en n = 2,24 ; 2,42 ; 3,20", fontsize=9, color=F.INK2, va="center")
+ax.set_xlabel("dimension n (réelle)")
+ax.set_ylabel("écart")
+ax.set_xticks(range(1, 13))
+ax.set_ylim(0, 0.0056)
+ax.set_title("a)  La bosse : le triangle (n = 2) est près du sommet")
+ax.legend(fontsize=9, loc="center right", bbox_to_anchor=(1.0, 0.55))
+ax = axs[1]
+nz = [mp.mpf("1.8") + mp.mpf(i) / 200 for i in range(0, 301)]
+ax.plot([float(n) for n in nz], [float(d_(n)) * 1e3 for n in nz], color=F.BLEU, lw=2.2)
+ax.axhline(float(tab[2][3]) * 1e3, color=F.MUTED, lw=1, ls=(0, (4, 3)))
+for n in (2, 3):
+    F.point(ax, n, float(tab[n][3]) * 1e3, F.BLEU, 8)
+F.point(ax, float(SOMMETS["déplacement δ"]), float(d_(SOMMETS["déplacement δ"])) * 1e3, F.INK, 7)
+ax.annotate(f"sommet en n = {float(SOMMETS['déplacement δ']):.2f}".replace(".", ","), xy=(float(SOMMETS["déplacement δ"]), float(d_(SOMMETS["déplacement δ"])) * 1e3),
+            xytext=(2.42, 4.83), fontsize=9.5, color=F.INK, ha="center")
+ax.annotate("δ₂ et δ₃ sont de part et d'autre du sommet :\nproches, c'est la forme de la bosse",
+            xy=(2.0, float(tab[2][3]) * 1e3), xytext=(1.83, 4.6), fontsize=9.5, color=F.INK2,
+            arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
+ax.annotate(f"la courbe repasse au niveau de δ₂ en n = {float(retour):.5f},\nà 9·10⁻⁵ de la dimension 3 : ça, c'est le hasard".replace(".", ","),
+            xy=(3.0, float(tab[3][3]) * 1e3), xytext=(2.25, 4.42), fontsize=9.5, color=F.INK2,
+            arrowprops=dict(arrowstyle="-", color=F.MUTED, lw=0.8))
+ax.set_xlabel("dimension n (réelle)")
+ax.set_ylabel("déplacement δ (10⁻³ R)")
+ax.set_title("b)  δ₂ ≈ δ₃ : la bosse explique la proximité, pas les décimales")
+F.sauver(fig, "f2_dimension_reelle.png")

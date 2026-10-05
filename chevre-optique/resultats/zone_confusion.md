@@ -42,6 +42,27 @@ n = 400 : n²(r_n² − 2n/(n+1)) = 0,650679 (limite 2/3)
 δ₂ = 0,00471211065508 ; δ₃ = 0,00471215705085 (écart relatif 9.8e-6)
 Avec la corde du simplexe, les deux sphères se coupent sur l'hyperplan x = 1 − n/(n+1) = 1/(n+1), qui passe par le centre de gravité du simplexe.
 
+## 3 bis. En dimension réelle n (fonction bêta incomplète)
+
+Contrôle contre la formule des dimensions entières : écart max 0.0
+En dimension 1 : corde de la chèvre = arête = 1 (moitié d'un segment), donc tous les écarts sont nuls.
+
+| n | écart des cordes | déplacement δ | part manquante |
+|---:|---|---|---|
+| 1,25 | 0,00213278 | 0,0022637 | 0,00118301 |
+| 1,5 | 0,00323904 | 0,00358552 | 0,00196418 |
+| 2 | 0,00402793 | 0,00471211 | 0,00282992 |
+| 2,25 | 0,00408674 | 0,00487303 | 0,00305517 |
+| 2,5 | 0,0040417 | 0,00489464 | 0,0031963 |
+| 3 | 0,00379999 | 0,00471216 | 0,00331635 |
+| 4 | 0,00316819 | 0,00404961 | 0,00323651 |
+| 6 | 0,00215448 | 0,00284139 | 0,00275124 |
+| 10 | 0,00113572 | 0,00153743 | 0,00191679 |
+- sommet de « écart des cordes r − arête » en n = 2,24381, valeur 0,00408677
+- sommet de « déplacement δ » en n = 2,42216, valeur 0,0048992
+- sommet de « part manquante » en n = 3,19953, valeur 0,00332457
+- la courbe δ(n) repasse au niveau de δ₂ en n = 3,0000853 : à 8.5e-5 de la dimension 3
+
 ## 4. π − 3
 
 - Nilakantha avec les cônes c_n = 1/n : 4(c₂c₃c₄ − c₄c₅c₆ + …) = 0,14159265358979323846

@@ -18,7 +18,7 @@ Tout est recalculé par [`scripts/aiguille.py`](scripts/aiguille.py) (≈ 10 s).
 - **Ton intuition contient bien une moitié exacte, mais pas là où tu la places.**
   - Le triangle équilatéral de hauteur 1 est bien le plus petit convexe où l'on peut retourner l'aiguille (Pál, 1920). Mais il couvre 73,5 % du disque, pas la moitié.
   - La moitié exacte, c'est le deltoïde de Kakeya : π/8, exactement la moitié du disque de diamètre 1.
-- **La chèvre frôle le triangle sans le rejoindre.** Le côté du triangle équilatéral de hauteur R vaut 2/√3 = 1,1547 R, à 0,35 % de la corde de la chèvre (1,1587 R). Avec cette corde, la chèvre broute 49,72 % du pré. C'est une quasi-coïncidence, pas une égalité.
+- **La chèvre frôle le triangle sans le rejoindre.** Le côté du triangle équilatéral de hauteur R vaut 2/√3 = 1,1547 R, à 0,35 % de la corde de la chèvre (1,1587 R). Avec cette corde, la chèvre broute 49,72 % du pré. Ce n'est pas une égalité, mais ce n'est pas un hasard non plus : le triangle est le premier d'une famille, les simplexes réguliers, qui suit la corde de la chèvre jusqu'à √2 dans toutes les dimensions ([partie VI](zone-confusion.md)).
 - **L'arbre de Perron cache, lui, une vraie moitié.**
   - Avec 4 branches, le meilleur arbre couvre exactement la moitié du triangle, pour un rapport de rétrécissement de 1/√2.
   - Avec 2^k branches et les rapports 2/3, 3/4, 4/5…, il en couvre exactement 2/(k + 2).
@@ -58,6 +58,8 @@ La question est simple : quelle est la plus petite surface dans laquelle on peut
 - La chèvre est fixée par sin β − β cos β = π/2 (partie I), qui donne β = 1,9057.
 - Le triangle donnerait β = 2·arccos(1/√3) = 1,9106.
 - Et le triangle de Pál ne prend pas la moitié du disque de l'aiguille : il en prend 73,5 %.
+
+**Correction (partie VI) : ce n'est pas non plus un hasard.** J'avais d'abord parlé de quasi-coïncidence. En dimension n, le triangle devient le simplexe régulier de hauteur R, dont l'arête √(2n/(n+1)) R est exactement le terme principal de la corde de la chèvre. L'écart est nul en dimension 1, tend vers 0 à l'infini, et la dimension 2 est presque à son maximum. Les 0,35 % sont donc le plus grand désaccord entre deux objets qui vont ensemble.
 
 **Le vrai lien entre la chèvre et l'aiguille : le triangle de Reuleaux.** Attache trois chèvres aux sommets d'un triangle équilatéral de côté 1, avec une corde égale au côté.
 - Chaque chèvre broute un disque centré sur le bord des deux autres. C'est exactement la configuration de la chèvre, avec une corde égale au rayon.
@@ -156,7 +158,7 @@ Ta lecture a pourtant un fond juste :
   - « le triangle équilatéral donne la moitié du disque » : il en donne 73,5 %, et c'est le deltoïde qui donne la moitié ;
   - « la solution de Hong Wang en dimension 3 est exactement notre chèvre » : ce sont deux problèmes différents, qui ne se rejoignent que par l'idée de recouvrement ;
   - « le schéma b est un arbre de Perron » : c'est une image, pas une identité.
-- **Coïncidence** : 2/√3 tombe à 0,35 % de la corde de la chèvre.
+- **Corrigé dans la partie VI** : 2/√3 tombe à 0,35 % de la corde de la chèvre. Ce n'est pas une égalité, mais ce n'est pas une coïncidence : c'est le premier terme d'une famille (les simplexes) qui suit la chèvre dans toutes les dimensions.
 
 ## Sources
 

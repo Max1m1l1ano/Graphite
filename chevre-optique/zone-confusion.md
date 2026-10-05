@@ -2,7 +2,7 @@
 
 > L'idée proposée : l'écart de 0,35 % entre la corde de la chèvre et le côté du triangle équilatéral est exactement là où se crée le ménisque, avec sa zone de confusion. Il faudrait le résoudre par l'aire comprise entre les deux cercles, qui agit sur √2 et le mène vers π − 3, par la chèvre, par les dimensions et par les croissants qu'on obtient en déplaçant le petit cercle. Suite de la [partie V](aiguille-kakeya.md).
 
-Tout est recalculé par [`scripts/zone_confusion.py`](scripts/zone_confusion.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/zone_confusion.md`](resultats/zone_confusion.md).
+Tout est recalculé par [`scripts/zone_confusion.py`](scripts/zone_confusion.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/zone_confusion.md`](resultats/zone_confusion.md).
 
 ## En bref
 
@@ -18,6 +18,7 @@ Tout est recalculé par [`scripts/zone_confusion.py`](scripts/zone_confusion.py)
   - En dimension n, le triangle devient le simplexe régulier qui a le piquet pour sommet et R pour hauteur. Son arête, √(2n/(n+1)) R, tend vers √2 R.
   - C'est exactement le terme principal de la corde de la chèvre (partie I).
   - Les 0,35 % sont le premier écart d'une suite qui se referme : 0,31 % en 3D, 0,03 % en dimension 20. Le simplexe et la chèvre arrivent ensemble à √2.
+- **Ce n'est pas un hasard, et on peut le voir.** En prolongeant le calcul aux dimensions non entières, l'écart est nul en dimension 1, tend vers 0 à l'infini, et culmine vers n ≈ 2,24. Le triangle (n = 2) tombe presque au sommet de cette bosse : c'est le plus grand désaccord entre la chèvre et le simplexe, et il ne fait que 0,35 % (§ 3 bis).
 - **Avec la corde du simplexe, les deux sphères se coupent exactement dans le plan qui passe par le centre de gravité du simplexe.** C'est le « plan à R/(n + 1) » de la partie I, qui reçoit enfin une image.
 - **Pour π − 3, je ne trouve pas de lien exact.** La part manquante vaut (π − 3)/50 à 0,07 % près. Mais 16 formules tout aussi simples font aussi bien ou mieux : √3/612, par exemple, est huit fois plus proche. Les vraies routes vers π − 3 par les dimensions sont les retenues de la partie IV.
 - **Les croissants qui relient √2 et π, c'est Hippocrate.** Sa lunule (vers −440) est un croissant entre deux cercles de rapport √2, dont l'aire vaut exactement celle d'un triangle : le π disparaît. Notre croissant, lui, ne le peut pas (§ 5).
@@ -75,7 +76,28 @@ C'est le sens précis dans lequel tes 0,35 % « agissent sur √2 » : la zone d
 
 C'est encore la règle de la partie I : les dimensions impaires donnent des polynômes, les paires des équations transcendantes.
 
-**Une proximité étrange.** Le déplacement qui rattrape l'écart vaut 0,0047121107 R en 2D et 0,0047121571 R en 3D. Les deux valeurs coïncident à 10⁻⁵ près, mais elles diffèrent à la sixième décimale : ce n'est donc pas une égalité. Je n'ai pas d'explication à cette proximité, je la signale comme telle.
+**Une proximité étrange.** Le déplacement qui rattrape l'écart vaut 0,0047121107 R en 2D et 0,0047121571 R en 3D. Les deux valeurs coïncident à 10⁻⁵ près, mais elles diffèrent à la sixième décimale : ce n'est donc pas une égalité. Le § 3 bis explique la plus grande partie de cette proximité.
+
+## 3 bis. Coïncidence ou structure ? Les dimensions non entières
+
+La limite √2 dit ce qui se passe quand n → ∞. À elle seule, elle ne dit rien de la dimension 2. Beaucoup de suites tendent vers √2 tout en étant loin du but en dimension 2. Par exemple, le développement de la partie I limité à deux termes, √(2n/(n+1) + 2/(3n²)), donne 1,2247 en dimension 2, bien plus loin de la chèvre (1,1587) que le seul premier terme. Pour savoir si les 0,35 % sont un hasard, il faut donc regarder **toutes** les dimensions, y compris entre les entiers.
+
+**Comment.** Les parts de boule (calottes) s'écrivent avec la fonction bêta incomplète, qui a un sens pour n'importe quelle dimension réelle n. Le script s'en sert pour suivre l'écart continûment, et vérifie qu'il retrouve exactement les valeurs des dimensions entières.
+
+![Les écarts en dimension réelle](figures/f2_dimension_reelle.png)
+
+**Ce qu'on voit (figure a) : une bosse.**
+- **En dimension 1, tous les écarts sont nuls.** Le pré est un segment [−R, R], le piquet est à une extrémité, et la corde qui couvre la moitié vaut R. Le « simplexe » de hauteur R est le segment PO, d'arête R aussi.
+- **Quand n → ∞, ils tendent vers 0** : la chèvre et le simplexe vont tous deux à √2.
+- **Entre les deux, ils forment une bosse.** Le sommet de l'écart des cordes est en n = 2,24 (0,0041 R), celui du déplacement en n = 2,42, celui de la part manquante en n = 3,20.
+
+**La conclusion pour le triangle.** La dimension 2 est presque au sommet de la bosse de l'écart des cordes. Les 0,35 % sont donc le plus grand désaccord entre la chèvre et le simplexe dans les dimensions entières, et ce plus grand désaccord reste petit. **Ce n'est pas un hasard : c'est une propriété de toute la famille.** J'avais écrit « quasi-coïncidence » dans la partie V, c'était le mauvais mot. Ce n'est pas une égalité, mais ce n'est pas une coïncidence non plus.
+
+**Et δ₂ ≈ δ₃ ?** La bosse en explique l'essentiel (figure b).
+- Le déplacement culmine en n = 2,42, entre 2 et 3. Les dimensions 2 et 3 sont donc de part et d'autre du sommet, là où la courbe est plate : il est normal que leurs valeurs soient proches, à quelques pour cent.
+- En revanche, qu'elles coïncident à 10⁻⁵ près, la bosse ne l'explique pas. Il faudrait que la courbe repasse au niveau de δ₂ pile en n = 3, or elle y repasse en n = 3,00009. Cette précision-là reste un hasard, tant qu'on ne trouve pas de raison.
+
+**Ce que j'appelle « coïncidence ».** C'est une proximité numérique pour laquelle on ne connaît pas de mécanisme. Le mot n'est pas définitif : quand on trouve le mécanisme, ce n'est plus une coïncidence. C'est exactement ce qui vient d'arriver au triangle, entre la partie V et cette partie VI.
 
 ## 4. Et π − 3 ?
 
@@ -122,8 +144,10 @@ L'aire de la zone est donc transcendante. Aucune construction à la règle et au
   - la part manquante algébrique en 3D ;
   - la transcendance de l'aire de la zone ;
   - la lunule d'Hippocrate.
-- **Établi numériquement** : la convergence lente de n²(r_n² − a_n²) vers 2/3, et le tableau des déplacements.
-- **Coïncidences** : (π − 3)/50 ≈ part manquante, et δ₂ ≈ δ₃.
+- **Établi numériquement** : la convergence lente de n²(r_n² − a_n²) vers 2/3, le tableau des déplacements, et la bosse des écarts en dimension réelle (nuls en dimension 1 et à l'infini, sommet de l'écart des cordes en n = 2,24).
+- **Pas une coïncidence (correction de la partie V)** : la proximité entre 2/√3 et la corde de la chèvre. C'est le premier terme d'une famille qui suit la chèvre dans toutes les dimensions.
+- **À moitié expliqué** : δ₂ ≈ δ₃. La bosse explique la proximité, pas l'accord à 10⁻⁵.
+- **Coïncidence** : (π − 3)/50 ≈ part manquante.
 - **Inexact** : « l'écart mène √2 vers π − 3 ». L'écart mène bien à √2, par les dimensions, mais rien ne le relie exactement à π − 3.
 
 ## Sources
