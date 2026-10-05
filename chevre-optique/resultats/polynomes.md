@@ -74,3 +74,20 @@ Dimension 13 (degré 24) : irréductible sur Q = True ; modulo 19, facteurs de d
 | 27 | 52 | 1101 | +2^49 | 2^49 = le même |
 | 29 | 56 | 1110 | −2^53 | 2^53 = le même |
 | 31 | 60 | 1111 | +2^56 | 2^56 = le même |
+
+## 5. La preuve : F/h n'a que des fractions binaires finies
+
+- formule fermée F/h = (rⁿ − 1) − Σ (−1)^k B(m,k) r^(2(m+1+k)) / 2^(2m+2k+1) identique au polynôme exact, n = 3 à 31 : True
+- étude de cas de Legendre (q impair ≤ 301, toutes les valeurs de α et β) : contribution ≥ 0 partout : True
+- B(m, k) entier pour m ≤ 400 : True
+- exposant du terme constant = 4m − (nombre de 1 de m), m ≤ 400 (n ≤ 801) : True ; B(m, m−1) = (2m+1)·Catalan(m−1) : True
+
+| n | h_n | période binaire de h_n | périodes des coefficients de F | toutes divisent celle de h_n |
+|---:|---|---:|---|---|
+| 3 | 2/3 | 2 | [2, 0] | True |
+| 5 | 8/15 | 4 | [4, 2, 2] | True |
+| 7 | 16/35 | 12 | [12, 0, 4, 4] | True |
+| 9 | 128/315 | 12 | [12, 4, 2, 12, 3] | True |
+| 13 | 1024/3003 | 60 | [60, 3, 0, 2, 3, 10, 10] | True |
+
+« Cercle de confusion » de 0,1 % : l'écart relatif chèvre / simplexe passe sous 0,1 % dès la dimension 9

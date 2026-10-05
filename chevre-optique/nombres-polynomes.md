@@ -16,7 +16,7 @@ Tout est recalculé par [`scripts/polynomes.py`](scripts/polynomes.py) (≈ 5 s)
 - **Le terme constant de chaque polynôme impair est exactement le dénominateur de la dimension paire égale à son degré.**
   - 7D, de degré 12 : 1024, le dénominateur de κ₁₂ = 231/1024.
   - 13D, de degré 24 : 2²², le dénominateur de κ₂₄.
-  - Vérifié de la dimension 3 à la dimension 31.
+  - **C'est maintenant démontré** : après division par le rapport d'Archimède h_n, tous les coefficients ont une écriture binaire finie. La puissance de 2 mesure de combien il faut déplacer la virgule binaire pour les rendre entiers (§ 7).
   - Le 6 est le degré du polynôme qui manque, celui de la dimension 4, qui est paire.
 - **Le polynôme de degré 24 a pour groupe de Galois S₂₄**, le groupe le plus général possible. Ce n'est pas la symétrie exceptionnelle du 24 du réseau de Leech.
 
@@ -126,7 +126,7 @@ La puissance de 2 qui est au dénominateur du côté pair (16, 1024, 4194304) pa
 | 9 | 16 | 32768 | κ₁₆ = 6435/32768 |
 | **13** | **24** | **2²²** | **κ₂₄ = 676039/2²²** |
 
-Le script le vérifie pour toutes les dimensions impaires de 3 à 31. L'exposant s'explique par Kummer, à travers $h_n$. En revanche, je n'ai pas de preuve écrite que le terme constant ne garde aucun facteur impair : c'est vérifié sur ces 15 cas, pas démontré.
+Le script le vérifie pour toutes les dimensions impaires de 3 à 31. Que le terme constant soit une puissance de 2 pure est démontré au § 7. L'exposant exact est vérifié jusqu'à la dimension 801.
 
 **Et 6 ?** Ce serait le degré du polynôme de la dimension 4, qui n'existe pas, puisque la dimension 4 est paire et donc transcendante. Dans ta suite, 12 et 24 sont les degrés des polynômes des dimensions 7 et 13, et 6 est la place vide entre les deux familles.
 
@@ -147,19 +147,81 @@ Les bases qui parlent à la chèvre sont les bases premières jusqu'à la dimens
 
 **Sur le 24.** Le 24 de la chèvre est le degré d'un polynôme sans symétrie particulière (groupe S₂₄). Le 24 exceptionnel des empilements de sphères, celui du réseau de Leech (partie III), a une symétrie très spéciale, liée au groupe de Mathieu M₂₄. Les deux 24 ne se rejoignent pas ici.
 
-## 7. Le tri
+## 7. La preuve : la virgule binaire, et tes mécanismes
+
+![La virgule binaire](figures/g2_virgule_binaire.png)
+
+### 7.1 Le théorème
+
+**En dimension impaire, le terme constant du polynôme de la chèvre est toujours ± une puissance de 2.**
+
+**Étape 1 : diviser par le rapport d'Archimède.** En dimension n = 2m + 1, on divise l'équation par h_n, le rapport hémisphère/cylindre. On obtient une formule exacte pour tous les coefficients :
+
+```math
+\frac{F}{h_n} = (r^n - 1) - \sum_{k=0}^{m-1} (-1)^k\, \frac{B(m,k)}{2^{2m+2k+1}}\, r^{2(m+1+k)},
+\qquad
+B(m,k) = \frac{(2m+1)!}{m!\;k!\;(m-1-k)!\;(2k+1)\,(m+k+1)} .
+```
+
+D'où vient cette formule : la tranche Q_n(1 − x) a pour dérivée −x^m(2 − x)^m. En recombinant les morceaux, toutes les puissances r¹ à rⁿ⁻¹ s'annulent, ainsi que r²ⁿ. Le script vérifie que la formule redonne exactement les polynômes des dimensions 3 à 31.
+
+**Étape 2 : B(m, k) n'a aucun facteur premier impair au dénominateur.** On le montre avec la formule de Legendre, qui compte les facteurs p dans une factorielle.
+- Pour un nombre premier impair p et chacune de ses puissances q, on écrit k = aq + α et m − 1 − k = bq + β.
+- La contribution de q au nombre de facteurs p de B(m, k) vaut alors ⌊(2α + 2β + 3)/q⌋ − ⌊(α + β + 1)/q⌋ − [2α + 1 = q] − [q divise 2α + β + 2].
+- Quatre cas suffisent à montrer qu'elle n'est jamais négative. Le script vérifie aussi ce point exhaustivement pour tous les q impairs jusqu'à 301.
+- Mieux : B(m, k) est même un entier (vérifié jusqu'à m = 400).
+
+**Étape 3 : conclure.** Les coefficients de F/h_n sont donc des fractions dont le dénominateur n'est qu'une puissance de 2. Leur écriture en base 2 est **finie**.
+- Multiplier par 2^e revient à déplacer la virgule binaire de e rangs, ce qui rend tous les coefficients entiers.
+- Le « −1 » du terme constant devient alors −2^e : c'est le terme constant du polynôme.
+
+**L'exposant.** Le coefficient le plus « profond » est le dernier : B(m, m − 1) = (2m + 1)·Catalan(m − 1). Ce nombre de Catalan contient exactement (nombre de 1 de m) − 1 facteurs 2, d'après Kummer. D'où e ≥ 4m − (nombre de 1 de m) = 2(n − 1) − (nombre de 1 de (n − 1)/2). L'égalité, c'est-à-dire qu'aucun autre coefficient n'est plus profond, est vérifiée jusqu'à la dimension 801.
+
+### 7.2 Tes mécanismes, un par un
+
+**La saturation à √2.** Toutes les puissances de 2 de l'équation viennent de la corde, r = 2 cos α, à travers r/2 = cos α et r²/2 = 2cos²α. À dimension infinie, α tend vers 45° et r²/2 vers 1 : r² = 2. Le 2 de la base et le 2 de √2 sont le même 2 : celui de la diagonale du carré.
+
+**Le passage d'une base à l'autre, les fractions plus petites que 1 et les longueurs de période.** Toutes les périodes binaires des coefficients de l'équation viennent d'un seul nombre : h_n, le rapport hémisphère/cylindre.
+
+| dimension | h_n | période binaire de h_n | périodes des autres coefficients |
+|---:|---|---:|---|
+| 3 | 2/3 | 2 | aucune |
+| 5 | 8/15 | 4 | 2, 2 |
+| 7 | 16/35 | 12 | aucune, 4, 4 |
+| 9 | 128/315 | 12 | 4, 2, 12, 3 |
+| 13 | 1024/3003 | 60 | 3, aucune, 2, 3, 10, 10 |
+
+- Chaque période divise celle de h_n, et diviser par h_n les fait toutes disparaître (figure).
+- C'est vrai dans toute base paire. En base 10, les coefficients de F/h_n s'écrivent aussi avec un nombre fini de décimales, puisque 1/2 = 0,5 et que leurs dénominateurs ne sont que des puissances de 2.
+- C'est faux en base 3, où 1/2 = 0,111… est périodique.
+- Les longueurs de période se rejoignent donc bien dans les solides d'Archimède, comme tu le pressentais. Elles viennent toutes du rapport hémisphère/cylindre. Et par la réciprocité du § 4, ce rapport s'écrit avec le cône (1/n) et le κ de la dimension paire voisine.
+
+**La focale « , ».** La virgule joue bien le rôle d'un foyer. Normaliser le polynôme, c'est déplacer la virgule binaire de e rangs. Le terme constant 2^e est la trace exacte de ce déplacement : 2¹⁰ en dimension 7, 2²² en dimension 13. Il passe ensuite de l'autre côté de la barre de fraction, puisque la même puissance de 2 est le dénominateur du κ de la dimension paire de même degré (§ 5).
+
+**L'inversion.** La réciprocité κ₂ₘ·h₂ₘ₊₁ = 1/(2m + 1) a la même forme algébrique que l'équation des lentilles de Newton, x·x' = f², où un produit constant échange l'objet et l'image. C'est une analogie de forme, pas une identité physique.
+
+**Le rayon de confusion.** L'écart relatif entre la chèvre et le simplexe (partie VI) passe sous 0,1 % dès la dimension 9. Si l'on accepte un cercle de confusion de 0,1 %, comme on accepte un flou en photographie, les deux sont confondus à partir de là. À dimension infinie, comme à la distance hyperfocale, tout est net. Là encore, c'est une image, pas une équation commune.
+
+**L'inversion de l'aiguille de Kakeya** ne joue aucun rôle dans cette preuve.
+
+## 8. Le tri
 
 - **Démontré** :
   - l'équation unique et le rôle de la racine du cercle ;
   - la réciprocité κ₂ₘ·h₂ₘ₊₁ = 1/(2m + 1) ;
   - les dénominateurs des κ par le théorème de Kummer ;
   - le groupe S₂₄ de la dimension 13 (factorisations calculées et théorème de Jordan).
-- **Vérifié par le calcul, pas démontré en général** : le terme constant du polynôme impair égal au dénominateur de κ au degré (dimensions 3 à 31).
+- **Démontré (§ 7)** : le terme constant de tout polynôme impair est ± une puissance de 2, et toutes les périodes binaires de l'équation viennent de h_n.
+- **Vérifié par le calcul, pas démontré en général** :
+  - l'exposant exact 2(n − 1) − (nombre de 1 de (n − 1)/2), vérifié jusqu'à la dimension 801 (la borne inférieure, elle, est démontrée) ;
+  - l'égalité avec le dénominateur de κ au degré (dimensions 3 à 31) ;
+  - le fait que B(m, k) soit entier (et pas seulement sans facteur impair au dénominateur), jusqu'à m = 400.
 - **À nuancer** : le 24 de la chèvre n'est pas celui de Leech. Et la base 2 révèle une structure arithmétique des coefficients, pas la valeur de la corde.
 
 ## Sources
 
 - E. E. Kummer, « Über die Ergänzungssätze zu den allgemeinen Reciprocitätsgesetzen », *Journal für die reine und angewandte Mathematik* 44, 93–146 (1852) : le théorème des retenues.
+- A.-M. Legendre, *Essai sur la théorie des nombres*, 2ᵉ éd. (1808) : le nombre de facteurs p dans N! vaut ⌊N/p⌋ + ⌊N/p²⌋ + …
 - C. Jordan, « Sur la limite de transitivité des groupes non alternés », *Bulletin de la SMF* 1, 40–71 (1873) : un groupe primitif contenant un cycle de longueur première (assez petite) contient le groupe alterné.
 - J. H. Conway et N. J. A. Sloane, *Sphere Packings, Lattices and Groups*, Springer (1988) : le réseau de Leech et le groupe de Mathieu M₂₄.
 - Parties I (polynômes et groupes de Galois des dimensions 3 à 9) et IV (rapports h_n et c_n).

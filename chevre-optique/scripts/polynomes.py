@@ -172,6 +172,63 @@ for n in range(3, 32, 2):
     ligne(f"| {n} | {P.degree()} | {bin((n - 1) // 2)[2:]} | {'−' if c0 < 0 else '+'}2^{v2(c0)}"
           f"{'' if impair_part == 1 else f' × {impair_part}'} | 2^{v2(kd)} {'= le même' if abs(c0) == kd else '≠'} |")
 
+# ---------------------------------------------------------------------------
+# 5. La preuve : la virgule binaire
+# ---------------------------------------------------------------------------
+from fractions import Fraction  # noqa: E402
+from math import comb, factorial  # noqa: E402
+
+
+def B(m, k):
+    """Coefficient de r^(2(m+1+k)) dans F/h, au signe et à la puissance de 2 près."""
+    return Fraction(factorial(2 * m + 1), factorial(m) * factorial(k) * factorial(m - 1 - k) * (2 * k + 1) * (m + k + 1))
+
+
+def F_sur_h(n):
+    m = (n - 1) // 2
+    return (r ** n - 1) - sum(sp.Integer(-1) ** k * sp.Rational(B(m, k).numerator, B(m, k).denominator) * r ** (2 * (m + 1 + k))
+                              / sp.Integer(2) ** (2 * m + 2 * k + 1) for k in range(m))
+
+
+def h_frac(n):
+    m = (n - 1) // 2
+    return Fraction(4 ** m * factorial(m) ** 2, factorial(2 * m + 1))
+
+
+def periode2(q):
+    d = q.denominator
+    while d % 2 == 0:
+        d //= 2
+    if d == 1:
+        return 0
+    k, x = 1, 2 % d
+    while x != 1:
+        x, k = x * 2 % d, k + 1
+    return k
+
+
+ligne("\n## 5. La preuve : F/h n'a que des fractions binaires finies\n")
+formule_ok = all(sp.expand(sp.expand(F_sur_h(n)) - sp.expand(polynome_impair(n).as_expr() / polynome_impair(n).coeff_monomial(r ** n))) == 0
+                 for n in range(3, 32, 2))
+ligne(f"- formule fermée F/h = (rⁿ − 1) − Σ (−1)^k B(m,k) r^(2(m+1+k)) / 2^(2m+2k+1) identique au polynôme exact, n = 3 à 31 : {formule_ok}")
+cas_ok = all((2 * a + 2 * b + 3) // q - (a + b + 1) // q >= (2 * a + 1 == q) + ((2 * a + b + 2) % q == 0)
+             for q in range(3, 302, 2) for a in range(q) for b in range(q))
+ligne(f"- étude de cas de Legendre (q impair ≤ 301, toutes les valeurs de α et β) : contribution ≥ 0 partout : {cas_ok}")
+entiers = all(B(m, k).denominator == 1 for m in range(1, 401) for k in range(m))
+ligne(f"- B(m, k) entier pour m ≤ 400 : {entiers}")
+expo_ok = all(-min(0, min(v2(B(m, k).numerator) - (2 * m + 2 * k + 1) for k in range(m))) == 4 * m - uns(m) for m in range(1, 401))
+cat_ok = all(B(m, m - 1) == (2 * m + 1) * comb(2 * m - 2, m - 1) // m for m in range(1, 200))
+ligne(f"- exposant du terme constant = 4m − (nombre de 1 de m), m ≤ 400 (n ≤ 801) : {expo_ok} ; B(m, m−1) = (2m+1)·Catalan(m−1) : {cat_ok}")
+ligne("\n| n | h_n | période binaire de h_n | périodes des coefficients de F | toutes divisent celle de h_n |")
+ligne("|---:|---|---:|---|---|")
+for n in (3, 5, 7, 9, 13):
+    m = (n - 1) // 2
+    hn = h_frac(n)
+    pers = [periode2(hn)] + [periode2(hn * B(m, k) / 2 ** (2 * m + 2 * k + 1)) for k in range(m)]
+    ligne(f"| {n} | {hn} | {periode2(hn)} | {pers} | {all(periode2(hn) % q == 0 for q in pers if q)} |")
+SEUIL = next(n for n in range(2, 40) if (ch.corde_moitie_mp(n) - mp.sqrt(mp.mpf(2 * n) / (n + 1))) / ch.corde_moitie_mp(n) < mp.mpf("0.001"))
+ligne(f"\n« Cercle de confusion » de 0,1 % : l'écart relatif chèvre / simplexe passe sous 0,1 % dès la dimension {SEUIL}")
+
 with open(os.path.join(ICI, "..", "resultats", "polynomes.md"), "w") as fh:
     fh.write("# Résultats de la partie VII (générés par scripts/polynomes.py)\n\n" + "\n".join(md) + "\n")
 
@@ -216,3 +273,49 @@ ax.set_ylabel("exposant de 2")
 ax.set_title("b)  Dimensions impaires : la même signature binaire")
 ax.legend(fontsize=9, loc="upper left")
 F.sauver(fig, "g1_polynomes_retenues.png")
+
+
+# Figure 2 : la virgule binaire comme foyer (dimension 7)
+def chiffres(q, n):
+    q, out = abs(q) - int(abs(q)), []
+    for _ in range(n):
+        q *= 2
+        out.append(int(q))
+        q -= int(q)
+    return out
+
+
+m7, NCH = 3, 26
+sup = lambda e: str(e).translate(EXP)
+avant = [("h₇ = 16/35 (r⁷ et constante)", h_frac(7))] + [
+    (f"coefficient de r{sup(2 * (m7 + 1 + k))}", h_frac(7) * B(m7, k) / 2 ** (2 * m7 + 2 * k + 1)) for k in range(m7)]
+apres = [("r⁷ et constante : 1", Fraction(1))] + [
+    (f"r{sup(2 * (m7 + 1 + k))} : {B(m7, k)}/2{sup(2 * m7 + 2 * k + 1)}", B(m7, k) / 2 ** (2 * m7 + 2 * k + 1)) for k in range(m7)]
+fig, axs = plt.subplots(1, 2, figsize=(15.5, 4.8), gridspec_kw={"wspace": 0.12})
+for ax, lignes, titre, couleur in ((axs[0], avant, "a)  L'équation telle quelle : des périodes binaires", F.ORANGE),
+                                    (axs[1], apres, "b)  Divisée par h₇ : tout s'arrête avant 10 chiffres", F.BLEU)):
+    for i, (nom, q) in enumerate(lignes):
+        y = len(lignes) - 1 - i
+        if q == 1:
+            ds = [0] * NCH
+            ax.add_patch(plt.Rectangle((-1, y - 0.38), 0.92, 0.76, fc=couleur, ec=F.SURF))
+        else:
+            ds = chiffres(q, NCH)
+        fin = max([j for j, d_ in enumerate(ds) if d_] or [-1])
+        for j, d_ in enumerate(ds):
+            fini = periode2(q) == 0 and j > fin
+            ax.add_patch(plt.Rectangle((j, y - 0.38), 0.92, 0.76, fc=couleur if d_ else (F.SURF if fini else F.GRID),
+                                       ec=F.SURF, lw=0.5, alpha=1 if d_ else 0.9))
+        per = periode2(q)
+        ax.text(-1.4, y, nom, ha="right", va="center", fontsize=9, color=F.INK)
+        ax.text(NCH + 0.4, y, f"période {per}" if per else "finie", va="center", fontsize=9, color=F.INK2)
+    ax.axvline(-0.04, color=F.INK, lw=2.2)
+    ax.text(-0.04, len(lignes) - 0.05, "virgule", ha="center", va="bottom", fontsize=9.5, color=F.INK, fontweight="bold")
+    ax.set_xlim(-9.5, NCH + 4.5)
+    ax.set_ylim(-1.3, len(lignes) + 0.35)
+    ax.axis("off")
+    ax.set_title(titre)
+axs[1].axvspan(-0.04, 9.96, color=F.BLEU, alpha=0.07, lw=0)
+axs[1].text(11, -0.95, "virgule déplacée de 10 rangs (× 2¹⁰ = 1024) : tout devient entier,\net le terme constant devient 2¹⁰",
+            ha="left", va="center", fontsize=9.5, color=F.INK2)
+F.sauver(fig, "g2_virgule_binaire.png")
