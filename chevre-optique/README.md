@@ -6,6 +6,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Suite : [Partie II — Archimède, le cube qui tourne et le ménisque](archimede.md)** (cylindre, cône, hémisphère et paraboloïde dans un cube, le ménisque du bicône, la capillarité, Riemann contre Lebesgue, l'erreur des polygones et des polyèdres).
 
+**Et : [Partie III — π, √2 et les dimensions](pi-dimensions.md)** (la suite 3 + √2/10 + √3/100…, les vraies formules de π qui partent de 3 ou de √2, le produit de Wallis tiré des intégrales de la chèvre, le nombre plastique et la dimension 7).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -442,6 +444,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/calculs.py`](scripts/calculs.py) : tous les calculs et contrôles (résidus, nombre de zéros, groupes de Galois, constante de Baker…).
 - [`scripts/figures.py`](scripts/figures.py) : les figures.
 - [`scripts/archimede.py`](scripts/archimede.py), [`scripts/calculs_archimede.py`](scripts/calculs_archimede.py), [`scripts/figures_archimede.py`](scripts/figures_archimede.py) : la partie II.
+- [`scripts/pi_dimensions.py`](scripts/pi_dimensions.py) : la partie III.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
