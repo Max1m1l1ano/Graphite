@@ -19,6 +19,7 @@ from math import gcd
 import matplotlib.pyplot as plt
 import mpmath as mp
 import numpy as np
+import sympy as sp
 from matplotlib.patches import Polygon
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -191,6 +192,23 @@ for nom, f in ECARTS.items():
     vals = [courbure(g) for g in grille]
     INFLEXIONS[nom] = [mp.findroot(courbure, (grille[i] + grille[i + 1]) / 2) for i in range(len(grille) - 1) if vals[i] * vals[i + 1] < 0]
     ligne(f"- inflexion de « {nom} » : n = " + " ; ".join(fr(x, 4) for x in INFLEXIONS[nom]))
+ligne("\n### Les polynômes de la chèvre en dimension impaire, et la base d'écriture\n")
+ligne("| n | équation de la corde r (R = 1) | facteurs premiers des coefficients | racine |")
+ligne("|---:|---|---|---|")
+r_, u_ = sp.symbols("r u")
+for n in (3, 5, 7, 9):
+    m = (n - 1) // 2
+    P = lambda c: sp.integrate((1 - u_ ** 2) ** m, (u_, c, 1))  # tranches de la calotte : W_n(t) = P(cos t)
+    eq = sp.together(sp.expand(P(r_ ** 2 / 2 - 1) - r_ ** n * P(r_ / 2) - sp.integrate((1 - u_ ** 2) ** m, (u_, -1, 1)) / 2))
+    poly = sp.Poly(sp.fraction(eq)[0], r_)
+    poly = sp.Poly(poly.as_expr() / sp.gcd_list(poly.coeffs()), r_)
+    poly = -poly if poly.LC() < 0 else poly
+    termes = [(poly.degree() - i, c) for i, c in enumerate(poly.all_coeffs()) if c != 0]
+    texte = " ".join(f"{'+' if c > 0 else '−'} {abs(c)} r^{k}" if k else f"{'+' if c > 0 else '−'} {abs(c)}" for k, c in termes)
+    premiers = sorted({q for _, c in termes for q in sp.factorint(abs(c))})
+    racine = next(x for x in poly.nroots(n=20) if x.is_real and 1 < x < 1.5)
+    ligne(f"| {n} | {texte.lstrip('+ ')} = 0 | {', '.join(map(str, premiers))} | {fr(mp.mpf(str(racine)), 12)} |")
+ligne("\nEn base 2, l'équation de la dimension 3 s'écrit 11·r^100 − 1000·r^11 + 1000 = 0 : mêmes nombres, même racine.")
 ligne("\n## 3 quater. Ménisque, tangence, croisement : le rapport tend vers √2\n")
 ligne("| n | tangence δ_t = r_n − arête | moitié δ_n | rapport δ_n / δ_t | √2 − rapport |")
 ligne("|---:|---|---|---|---|")

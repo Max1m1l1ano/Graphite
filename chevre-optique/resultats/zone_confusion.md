@@ -84,6 +84,17 @@ En dimension 1 : corde de la chèvre = arête = 1 (moitié d'un segment), donc t
 - inflexion de « déplacement δ » : n = 3,84
 - inflexion de « part manquante » : n = 5,463
 
+### Les polynômes de la chèvre en dimension impaire, et la base d'écriture
+
+| n | équation de la corde r (R = 1) | facteurs premiers des coefficients | racine |
+|---:|---|---|---|
+| 3 | 3 r^4 − 8 r^3 + 8 = 0 | 2, 3 | 1,22854486374 |
+| 5 | 5 r^8 − 80 r^6 + 128 r^5 − 128 = 0 | 2, 5 | 1,29359799636 |
+| 7 | 7 r^12 − 112 r^10 + 840 r^8 − 1024 r^7 + 1024 = 0 | 2, 3, 5, 7 | 1,32467963587 |
+| 9 | 45 r^16 − 864 r^14 + 6720 r^12 − 32256 r^10 + 32768 r^9 − 32768 = 0 | 2, 3, 5, 7 | 1,34295179854 |
+
+En base 2, l'équation de la dimension 3 s'écrit 11·r^100 − 1000·r^11 + 1000 = 0 : mêmes nombres, même racine.
+
 ## 3 quater. Ménisque, tangence, croisement : le rapport tend vers √2
 
 | n | tangence δ_t = r_n − arête | moitié δ_n | rapport δ_n / δ_t | √2 − rapport |

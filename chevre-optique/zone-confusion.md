@@ -126,6 +126,38 @@ Une régularité qui n'apparaîtrait qu'en base 10 viendrait de notre façon d'�
 
 **Ce qui est juste dans ton intuition : il y a bien un croisement, mais en dimension 1.** Les deux courbes s'y coupent : sous la dimension 1, la corde de la chèvre est plus courte que l'arête du simplexe, au-dessus elle est plus longue. Et le passage « ménisque puis croisement » existe vraiment, dans le plan, quand on déplace le cercle (§ 3 quater).
 
+### Et la numération elle-même ?
+
+**Ce qui est vrai.**
+- Écrire un nombre en base B, c'est évaluer un polynôme en B : 1 024 = 1·10³ + 0·10² + 2·10 + 4.
+- Certaines régularités dépendent vraiment de la base, et elles ont des raisons exactes. En base 10 :
+  - 10 − 1 = 3² explique les règles de divisibilité par 3 et par 9, par la somme des chiffres ;
+  - 10 + 1 = 11 explique la règle de 11, par la somme alternée des chiffres ;
+  - 10 = 2 × 5 explique les règles de 2 et de 5, par le dernier chiffre.
+- « La dimension, c'est le nombre de fois qu'une base entre dans une autre » est exactement la **dimension d'autosimilarité**, d = log N / log s, pour une figure faite de N copies d'elle-même réduites d'un facteur s.
+  - Un cube coupé en 2³ = 8 petits cubes : d = log 8 / log 2 = 3.
+  - Un carré coupé en 3² = 9 petits carrés : d = 2.
+  - L'ensemble de Cantor (2 copies réduites d'un facteur 3) : d = log 2 / log 3 = 0,63.
+  - Dix copies réduites de moitié donneraient d = log₂ 10 = 3,32.
+
+**Ce qui ne passe pas dans la chèvre.** En dimension impaire, l'équation de la chèvre est bien un polynôme, mais c'est un polynôme en la corde r, pas en la base B :
+
+| n | équation (R = 1) | nombres premiers des coefficients |
+|---:|---|---|
+| 3 | 3r⁴ − 8r³ + 8 = 0 | 2, 3 |
+| 5 | 5r⁸ − 80r⁶ + 128r⁵ − 128 = 0 | 2, 5 |
+| 7 | 7r¹² − 112r¹⁰ + 840r⁸ − 1024r⁷ + 1024 = 0 | 2, 3, 5, 7 |
+| 9 | 45r¹⁶ − 864r¹⁴ + 6720r¹² − 32256r¹⁰ + 32768r⁹ − 32768 = 0 | 2, 3, 5, 7 |
+
+- **Les coefficients ne sont faits que de 2 et des nombres impairs jusqu'à n.**
+  - Le 2 vient de ce que la corde est une corde de cercle : r = 2R cos α.
+  - Les nombres impairs viennent des tranches de la calotte, les mêmes 1/3, 1/5, 1/7 que les cônes de la partie IV.
+  - Le nombre 10 n'y apparaît jamais.
+- **Changer de base ne change rien.** En base 2, la première équation s'écrit 11·r¹⁰⁰ − 1000·r¹¹ + 1000 = 0 : ce sont les mêmes nombres, avec la même racine 1,2285…
+- **Le « Bⁿ » de la chèvre existe, mais c'est rⁿ.** Agrandir une boule d'un facteur r multiplie son volume par rⁿ : c'est le terme rⁿ de la formule de la partie I. Ici, la « base » qu'on élève à la puissance n est la corde elle-même. Comme r tend vers √2, rⁿ tend vers 2^(n/2) : encore des puissances de 2, venues de la diagonale du carré.
+
+Je reformule donc ma phrase de tout à l'heure. Un motif propre à la base 10 dit quelque chose de vrai sur le nombre 10. Il ne dirait quelque chose de la chèvre que si 10 apparaissait dans ses équations, ce qui n'est pas le cas.
+
 ## 3 quater. Ménisque, tangence, croisement : le rapport tend vers √2
 
 ![Ménisque, tangence, croisement](figures/f3_menisque_croisement.png)
