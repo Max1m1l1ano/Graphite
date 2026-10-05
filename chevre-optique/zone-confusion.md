@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/zone_confusion.py`](scripts/zone_confusion.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/zone_confusion.md`](resultats/zone_confusion.md).
 
+**Suite : [Partie VII — les nombres des polynômes de la chèvre](nombres-polynomes.md).**
+
 ## En bref
 
 - **La zone de confusion a une aire exacte** :
