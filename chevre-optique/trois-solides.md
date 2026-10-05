@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/trois_solides.py`](scripts/trois_solides.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/trois_solides.md`](resultats/trois_solides.md).
 
+**Suite : [Partie V — l'aiguille de Kakeya, l'arbre de Perron et la chèvre](aiguille-kakeya.md).**
+
 ## En bref
 
 - **La suite existe, elle est exacte, et elle part du carré de côté √2 :**

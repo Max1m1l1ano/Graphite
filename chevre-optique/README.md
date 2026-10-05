@@ -10,6 +10,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie IV — la suite des trois solides](trois-solides.md)** (hémisphère, cylindre et cône en dimension n, la suite π = 2 + ⅓(2 + ⅖(2 + …)) faite de demi-anneaux d'Archimède, les cordes de partage, et ce qui converge comme la division des intégrales).
 
+**Et : [Partie V — l'aiguille de Kakeya, l'arbre de Perron et la chèvre](aiguille-kakeya.md)** (le deltoïde à exactement la moitié du disque, la quasi-coïncidence entre la chèvre et le triangle équilatéral, l'arbre de Perron à 4 branches qui couvre exactement la moitié du triangle, et ce que Hong Wang et Joshua Zahl ont vraiment démontré en dimension 3).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -448,6 +450,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/archimede.py`](scripts/archimede.py), [`scripts/calculs_archimede.py`](scripts/calculs_archimede.py), [`scripts/figures_archimede.py`](scripts/figures_archimede.py) : la partie II.
 - [`scripts/pi_dimensions.py`](scripts/pi_dimensions.py) : la partie III.
 - [`scripts/trois_solides.py`](scripts/trois_solides.py) : la partie IV.
+- [`scripts/aiguille.py`](scripts/aiguille.py) : la partie V.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
