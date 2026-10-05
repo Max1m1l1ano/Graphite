@@ -11,6 +11,8 @@
 
 Tout est recalculé par [`scripts/aiguille.py`](scripts/aiguille.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/aiguille.md`](resultats/aiguille.md).
 
+**Suite : [Partie VI — le ménisque de 0,35 % entre la chèvre et le triangle](zone-confusion.md).**
+
 ## En bref
 
 - **Ton intuition contient bien une moitié exacte, mais pas là où tu la places.**

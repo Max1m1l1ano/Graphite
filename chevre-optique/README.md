@@ -12,6 +12,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie V — l'aiguille de Kakeya, l'arbre de Perron et la chèvre](aiguille-kakeya.md)** (le deltoïde à exactement la moitié du disque, la quasi-coïncidence entre la chèvre et le triangle équilatéral, l'arbre de Perron à 4 branches qui couvre exactement la moitié du triangle, et ce que Hong Wang et Joshua Zahl ont vraiment démontré en dimension 3).
 
+**Et : [Partie VI — le ménisque de 0,35 % entre la chèvre et le triangle](zone-confusion.md)** (l'aire exacte de la zone de confusion, les croissants qui s'équilibrent quand on déplace le petit cercle, le simplexe régulier qui suit la chèvre jusqu'à √2 dans toutes les dimensions, et ce qu'il en est de π − 3).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -451,6 +453,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/pi_dimensions.py`](scripts/pi_dimensions.py) : la partie III.
 - [`scripts/trois_solides.py`](scripts/trois_solides.py) : la partie IV.
 - [`scripts/aiguille.py`](scripts/aiguille.py) : la partie V.
+- [`scripts/zone_confusion.py`](scripts/zone_confusion.py) : la partie VI.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
