@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/polynomes.py`](scripts/polynomes.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/polynomes.md`](resultats/polynomes.md).
 
+**Suite : [Partie VIII — le foyer, le diaphragme, les ménisques et Fibonacci](foyer-fibonacci.md).**
+
 ## En bref
 
 - **Une seule équation pour toutes les dimensions.** La parité ne change qu'une chose. En dimension impaire, tout est polynôme. En dimension paire, une racine carrée, celle du cercle, fait apparaître un arc : l'angle et π (§ 1).
@@ -198,11 +200,23 @@ D'où vient cette formule : la tranche Q_n(1 − x) a pour dérivée −x^m(2 �
 
 **La focale « , ».** La virgule joue bien le rôle d'un foyer. Normaliser le polynôme, c'est déplacer la virgule binaire de e rangs. Le terme constant 2^e est la trace exacte de ce déplacement : 2¹⁰ en dimension 7, 2²² en dimension 13. Il passe ensuite de l'autre côté de la barre de fraction, puisque la même puissance de 2 est le dénominateur du κ de la dimension paire de même degré (§ 5).
 
-**L'inversion.** La réciprocité κ₂ₘ·h₂ₘ₊₁ = 1/(2m + 1) a la même forme algébrique que l'équation des lentilles de Newton, x·x' = f², où un produit constant échange l'objet et l'image. C'est une analogie de forme, pas une identité physique.
+> **Corrigé.** Une première version de cette section rangeait les trois mécanismes suivants parmi les « analogies ». Elle contredisait ce que les parties I et VII avaient établi ; les explications sont dans la [partie VIII](foyer-fibonacci.md#dabord-une-correction).
 
-**Le rayon de confusion.** L'écart relatif entre la chèvre et le simplexe (partie VI) passe sous 0,1 % dès la dimension 9. Si l'on accepte un cercle de confusion de 0,1 %, comme on accepte un flou en photographie, les deux sont confondus à partir de là. À dimension infinie, comme à la distance hyperfocale, tout est net. Là encore, c'est une image, pas une équation commune.
+**L'inversion.** La réciprocité κ₂ₘ·h₂ₘ₊₁ = 1/(2m + 1) est une inversion au sens strict : κ₂ₘ = 1/((2m + 1)·h₂ₘ₊₁), c'est l'application x ↦ c/x.
+- C'est la même opération que l'équation des lentilles écrite à la manière de Newton, x' = f²/x, où un produit constant échange l'objet et l'image.
+- C'est elle qui fait passer la puissance 4^m du numérateur de h₂ₘ₊₁ au dénominateur de κ₂ₘ (§ 4 et § 5), et c'est démontré.
+- La partie VIII ajoute deux résultats exacts :
+  - cette réciprocité est le théorème de la boîte à chapeau d'Archimède, monté en dimension 2m ;
+  - une vraie lentille, l'œil de poisson de Maxwell, réunit l'inversion |OP|·|OP'| = R², le retournement de l'image et les géodésiques de la sphère.
 
-**L'inversion de l'aiguille de Kakeya** ne joue aucun rôle dans cette preuve.
+**Le rayon de confusion.** Il fait partie de l'équation de la chèvre.
+- La partie I l'a montré : la tache floue (le cercle de confusion) rognée par la monture est une lentille, et la lumière qui passe vaut l'aire de lentille F(δ, k), la fonction même de la chèvre. Le point de la chèvre est un vignettage d'exactement 1 IL, et la FTM d'un objectif parfait est la même aire.
+- Avec une défocalisation, la fonction de transfert (la FTO, c'est-à-dire la FTM avec son signe) devient la transformée de Fourier de cette lentille, et sa limite géométrique est celle du cercle de confusion. Au-delà de 0,64 λ, elle passe sous zéro et l'image d'une mire s'inverse (partie VIII, § 3).
+- Seule la tolérance reste une comparaison : l'écart entre la chèvre et le simplexe (partie VI) passe sous 0,1 % dès la dimension 9, comme un flou qu'on accepte en photographie.
+
+**L'inversion de l'aiguille de Kakeya.** La preuve du § 7.1 n'en a pas eu besoin, mais l'aiguille n'est pas hors sujet.
+- Retourner l'aiguille dans le plan, c'est appliquer x ↦ −x : exactement ce que le foyer fait à l'image.
+- Le foyer y arrive en faisant passer l'aiguille par la longueur zéro. Kakeya l'interdit, et c'est l'aire qui paye (partie V ; partie VIII, § 1).
 
 ## 8. Le tri
 
@@ -217,6 +231,7 @@ D'où vient cette formule : la tranche Q_n(1 − x) a pour dérivée −x^m(2 �
   - l'égalité avec le dénominateur de κ au degré (dimensions 3 à 31) ;
   - le fait que B(m, k) soit entier (et pas seulement sans facteur impair au dénominateur), jusqu'à m = 400.
 - **À nuancer** : le 24 de la chèvre n'est pas celui de Leech. Et la base 2 révèle une structure arithmétique des coefficients, pas la valeur de la corde.
+- **Corrigé (partie VIII)** : l'inversion, le rayon de confusion et l'aiguille de Kakeya ne sont pas de simples images. La réciprocité est une inversion démontrée (et la boîte à chapeau d'Archimède), le cercle de confusion entre dans l'équation de la lentille, et retourner l'aiguille est ce que fait le foyer (§ 7.2).
 
 ## Sources
 

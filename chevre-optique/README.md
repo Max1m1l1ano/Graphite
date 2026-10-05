@@ -10,11 +10,13 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie IV — la suite des trois solides](trois-solides.md)** (hémisphère, cylindre et cône en dimension n, la suite π = 2 + ⅓(2 + ⅖(2 + …)) faite de demi-anneaux d'Archimède, les cordes de partage, et ce qui converge comme la division des intégrales).
 
-**Et : [Partie V — l'aiguille de Kakeya, l'arbre de Perron et la chèvre](aiguille-kakeya.md)** (le deltoïde à exactement la moitié du disque, la quasi-coïncidence entre la chèvre et le triangle équilatéral, l'arbre de Perron à 4 branches qui couvre exactement la moitié du triangle, et ce que Hong Wang et Joshua Zahl ont vraiment démontré en dimension 3).
+**Et : [Partie V — l'aiguille de Kakeya, l'arbre de Perron et la chèvre](aiguille-kakeya.md)** (le deltoïde à exactement la moitié du disque, l'écart de 0,35 % entre la chèvre et le triangle équilatéral, premier terme de la famille des simplexes, l'arbre de Perron à 4 branches qui couvre exactement la moitié du triangle, et ce que Hong Wang et Joshua Zahl ont vraiment démontré en dimension 3).
 
 **Et : [Partie VI — le ménisque de 0,35 % entre la chèvre et le triangle](zone-confusion.md)** (l'aire exacte de la zone de confusion, les croissants qui s'équilibrent quand on déplace le petit cercle, le simplexe régulier qui suit la chèvre jusqu'à √2 dans toutes les dimensions, et ce qu'il en est de π − 3).
 
 **Et : [Partie VII — les nombres des polynômes de la chèvre](nombres-polynomes.md)** (une seule équation pour toutes les dimensions, les dimensions paires 6, 12 et 24 face aux polynômes impairs, leur réciprocité, et les puissances de 2 qui comptent les retenues de la base 2).
+
+**Et : [Partie VIII — le foyer, le diaphragme, les ménisques et Fibonacci](foyer-fibonacci.md)** (retourner l'aiguille comme le foyer retourne l'image, le ménisque où le diaphragme déphase la lumière, les deux ménisques conjugués de la FTM et la FTM défocalisée qui inverse le contraste, l'œil de poisson de Maxwell dont les rayons sont des géodésiques, la réciprocité de la partie VII comme boîte à chapeau d'Archimède, la lentille de Fibonacci à deux foyers et la découpe géodésique au rythme de φ²).
 
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
@@ -457,6 +459,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/aiguille.py`](scripts/aiguille.py) : la partie V.
 - [`scripts/zone_confusion.py`](scripts/zone_confusion.py) : la partie VI.
 - [`scripts/polynomes.py`](scripts/polynomes.py) : la partie VII.
+- [`scripts/foyer_fibonacci.py`](scripts/foyer_fibonacci.py) : la partie VIII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
