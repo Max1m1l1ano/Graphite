@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/aiguille_grille.py`](scripts/aiguille_grille.py) (≈ 20 s). Les tableaux complets sont dans [`resultats/aiguille_grille.md`](resultats/aiguille_grille.md).
 
+**Suite : [Partie XV — la grille décalée, où la chèvre retrouve son simplexe](grille-decalee.md).**
+
 ## Ce que je fais de ta consigne
 
 - **La grille :** les points à coordonnées entières, espacés de 1. Une fenêtre de n points de côté en contient n² dans le plan, n^d en dimension d, en commençant par n = 1.

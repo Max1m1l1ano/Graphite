@@ -30,6 +30,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XIV — l'aiguille sur une grille](aiguille-grille.md)** (les directions permises d'une aiguille dont les bouts sont sur une grille, les triangles pythagoriciens et l'angle du 3-4-5 qui joue le rôle de l'angle d'or, le demi-cercle et le disque pour s'inverser comptés en points comme n² par dimension, la demi-case de Pick entre deux aiguilles de Fibonacci, le pavage de Farey du plan hyperbolique et Ptolémée sur les aires, l'ensemble de Kakeya d'une grille finie qui occupe la moitié du plan, et l'arbre de Perron qui ne descend plus qu'en 1/log n sur une grille).
 
+**Et : [Partie XV — la grille décalée, où la chèvre retrouve son simplexe](grille-decalee.md)** (la grille décalée d'une demi-maille comme grille cubique coupée en diagonale, sa maille qui est l'arête du simplexe de la chèvre à 0,35 % près, le ménisque maximal entre 2D et 3D, la chèvre comptée qui voit le ménisque à partir de quelques milliers de points, les dimensions d'or exactes √5, 2φ et φ³, l'aiguille sur la grille d'Eisenstein, et la carte de tous les paramètres et de leurs liens).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -478,6 +480,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/lentille_144.py`](scripts/lentille_144.py) : la partie XII.
 - [`scripts/perron_dephasage.py`](scripts/perron_dephasage.py) : la partie XIII.
 - [`scripts/aiguille_grille.py`](scripts/aiguille_grille.py) : la partie XIV.
+- [`scripts/grille_decalee.py`](scripts/grille_decalee.py) : la partie XV.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
