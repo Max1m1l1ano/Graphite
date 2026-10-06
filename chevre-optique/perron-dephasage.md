@@ -9,6 +9,8 @@
 
 Tout est recalculé par [`scripts/perron_dephasage.py`](scripts/perron_dephasage.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/perron_dephasage.md`](resultats/perron_dephasage.md).
 
+**Suite : [Partie XIV — l'aiguille sur une grille](aiguille-grille.md).**
+
 ## En bref
 
 - **Tes branchages rouges sont des nœuds d'aiguilles.**
