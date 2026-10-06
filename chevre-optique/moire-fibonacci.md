@@ -4,6 +4,8 @@
 
 Tout est recalculé par [`scripts/moire_fibonacci.py`](scripts/moire_fibonacci.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/moire_fibonacci.md`](resultats/moire_fibonacci.md).
 
+**Suite : [Partie X — le trou du rayon droit, le point et le carré, Ptolémée et le plan hyperbolique](carre-ptolemee.md).**
+
 ## En bref
 
 - **Ce que tu as vu est un moiré, et il se calcule exactement.**

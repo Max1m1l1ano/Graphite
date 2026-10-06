@@ -20,6 +20,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie IX — le moiré du diaphragme de Fibonacci, l'équation d'optique et les racines de l'unité](moire-fibonacci.md)** (les nouveaux centres qui apparaissent aux points cardinaux quand l'image rétrécit, leurs deux familles dans le rapport φ, les foyers de Fibonacci comme objet et image de l'équation des lentilles, l'équation d'optique et Fermat, les racines de l'unité, la chèvre entre le triangle et le pentagone, et Hurwitz).
 
+**Et : [Partie X — le trou du rayon droit, le point et le carré, Ptolémée et le plan hyperbolique](carre-ptolemee.md)** (le « trou » des rayons de l'œil de poisson autour du seul rayon droit, la loi exacte qui rend un point, un disque et un carré indiscernables sous le flou, le carré des centres fantômes comme réseau réciproque des pixels, le repliement et l'arbre de Perron, le théorème de Fefferman, Ptolémée et sa table des cordes, le disque de Poincaré et la récurrence du pentagone).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -463,6 +465,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/polynomes.py`](scripts/polynomes.py) : la partie VII.
 - [`scripts/foyer_fibonacci.py`](scripts/foyer_fibonacci.py) : la partie VIII.
 - [`scripts/moire_fibonacci.py`](scripts/moire_fibonacci.py) : la partie IX.
+- [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py) : la partie X.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
