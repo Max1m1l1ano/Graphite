@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX et XXI ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXII ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -106,6 +106,10 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - **Le doublement de l'aire est un pas de √2, pas de 10** : une décade vaut 6,644 diaphragmes. Au point de Rayleigh d'un faisceau gaussien, l'aire double, l'intensité et le produit de Newton sont divisés par deux (Self, 1983).
 - **√7 vu de e₃.** Dans la boîte 1 × 1 × 2 (Σ_x rectifié, étiré de −e₁ à e₁), les coins sont à √3 et √7 en unités de 1/√2. √7 n'est jamais une distance entre points rationnels (Legendre) : il faut l'unité 1/√2, une arête √2 (la boîte 1 × √2 × 2) ou une quatrième dimension.
 - **Le croisement.** En tournant de e₃ vers e₂, le sommet passe le bord des chèvres de toutes les dimensions (α_n → 90°, seule la chèvre infinie a son bord au croisement). Au croisement : √3 ↔ √7, le disque inscrit a la moitié de l'aire, et les tritons se ratent d'un comma autour de √2.
+- **Partie XXII : le pas de 10 et le pas de √2 ne s'opposent pas.** Les décades de dimension sont les décimales de l'approche : 2 − ρ_n² ≈ 2/n (ρ² = 1,82 ; 1,980 ; 1,998 0…). Le doublement de l'aire (ρ² = 2) n'arrive qu'à l'infini, et la précision 10⁻ᵏ correspond à la dimension 2·10ᵏ (10⁻⁵⁰ ↔ 2·10⁵⁰). Sur une longueur physique, un cran de 10 reste × 100 en aire.
+- **Le carré de neuf points** (sommets, milieux, centre) : vu d'un milieu, 1 et √2 ; les cordes ρ_n remplissent [1, √2] (ρ₁ = 1, ρ₂ = Ullisch, ρ_∞ = √2). En dimension n : 3ⁿ centres de faces du cube, 3ⁿ ≡ 3, 9, 7, 1 (mod 10).
+- **Les faisceaux du polytope croisé.** 2n chèvres aux ±e_i : nerf = bord du polytope croisé = S^(n−1) en toute dimension finie (arccos(1/√n) < α_n < 90°) ; n chèvres à la fois vers les sommets du cube ; à l'infini, le recouvrement n'est plus bon et le nerf se trompe.
+- **Leech garde le √2 du carré** : sphères de rayon 1, trou le plus profond à √2 (Conway, Parker, Sloane 1982). Même rapport pour D₃ (cfc), D₄ et E₈ : en 3, 8 et 24 (les dimensions nommées par l'auteur), les records ont leur trou à √2 fois le rayon.
 
 ## 7. Travailler sur un modèle de l'auteur « comme exact »
 
@@ -124,7 +128,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

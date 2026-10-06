@@ -44,6 +44,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXI — les trois 24 se rejoignent en 5² et 7² : le miroir 49-50-51, √7 vu du sommet e₃ et le croisement du plan](vingt-quatre-miroir.md)** (la partie VII, les diviseurs de 24 et le réseau de Leech reliés par 24 + 1 = 5², 2·24 + 1 = 7², 24/6 = 2² : les boulets 1² + … + 24² = 70², les deux premiers termes −q²⁵ − q⁴⁹ de η(24τ), Δ = η²⁴ et les 196 560 voisins, κ₂₄·h₂₅ = 1/5² et h₂₄·h₂₅ = π/50 ; le miroir 10⁻⁴⁹ × 10⁻⁵¹ = (10⁻⁵⁰)², avec 7² ≡ −1 modulo 50 et Pell, et l'aiguille de 50 dont le carré est le triangle 7-24-25 ; le doublement de l'aire, exact sur un pas de √2 (Ménon, diaphragme, faisceau gaussien) ; √3 et √7 vus de e₃ dans la boîte 1 × 1 × 2, Legendre qui impose l'unité 1/√2 ; les chèvres de toutes les dimensions passées avant le croisement, et le comma des tritons au même point).
 
+**Et : [Partie XXII — le carré de neuf points : √2 là où les pas de 10 se précipitent, les chèvres de 1 à √2, et 24 pour la sphère 24D](carre-neuf-points.md)** (les décades de dimension comme décimales de la corde : ρ² = 1,82, 1,980, 1,998 0… et 2 − ρ² ≈ 2/n, le doublement de l'aire atteint seulement à l'infini, 10⁻⁵⁰ en dimension 2·10⁵⁰ ; le carré de neuf points dont les distances 1 et √2 sont comblées par les cordes de toutes les dimensions, de 1 à √2, et les 3ⁿ points du cube qui tournent d'un quart de tour modulo 10 ; les 2n chèvres aux ±e_i dont le nerf est le bord du polytope croisé, et qui cessent d'être un bon recouvrement à l'infini ; la chèvre 24D et ses 48 piquets, et le réseau de Leech, sphères de rayon 1 et trou à √2, comme les records en 3D et en 8D).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -499,6 +501,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/bases_objets.py`](scripts/bases_objets.py) : la partie XIX.
 - [`scripts/sphere_faisceaux.py`](scripts/sphere_faisceaux.py) : la partie XX.
 - [`scripts/vingt_quatre_miroir.py`](scripts/vingt_quatre_miroir.py) : la partie XXI.
+- [`scripts/carre_neuf_points.py`](scripts/carre_neuf_points.py) : la partie XXII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

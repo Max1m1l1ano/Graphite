@@ -11,6 +11,8 @@
 
 Tout est recalculé par [`scripts/vingt_quatre_miroir.py`](scripts/vingt_quatre_miroir.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/vingt_quatre_miroir.md`](resultats/vingt_quatre_miroir.md).
 
+**Suite : [Partie XXII — le carré de neuf points : √2 là où les pas de 10 se précipitent, les chèvres de 1 à √2, et 24 pour la sphère 24D](carre-neuf-points.md).**
+
 ## En bref
 
 - **Les trois 24 se rejoignent, par trois carrés : 24 + 1 = 5², 2·24 + 1 = 7², 24/6 = 2².**
