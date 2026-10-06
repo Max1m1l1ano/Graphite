@@ -12,6 +12,8 @@
 
 Tout est recalculé par [`scripts/recursion_argent.py`](scripts/recursion_argent.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/recursion_argent.md`](resultats/recursion_argent.md).
 
+**Suite : [Partie XVIII — faire des ronds avec des carrés : le mod, les pixels et les longitudes](pixels-longitudes.md).**
+
 ## En bref
 
 - **Le point orange, c'est là que la chèvre commence.**

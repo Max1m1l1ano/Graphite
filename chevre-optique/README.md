@@ -36,6 +36,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XVII — les deux foyers du contact, la récursion d'argent et les anneaux de Newton](recursion-argent.md)** (le petit disque de rayon 1/√2 qui glisse jusqu'au point orange, ses deux contacts en (√2 ∓ 1)/√2 au même point du pré, les jumeaux d·d' = 1/2 qui coupent le pré aux mêmes points comme dans la forme de Newton x·x' = f², la lunule d'Hippocrate à 45°, la récursion T(d) = 2 − 1/(2d) dont les deux points fixes sont les foyers et dont les orbites exactes sont faites de nombres de Pell, les anneaux de Newton de courbures √2 − 1 et √2 + 1, la corde de la chèvre encadrée de façon certaine par arithmétique d'intervalles, et les polyèdres nobles : l'octaèdre des diagonales 1x, 1y, le cube des ménisques et le disphénoïde de deux aiguilles).
 
+**Et : [Partie XVIII — faire des ronds avec des carrés : le mod, les pixels et les longitudes](pixels-longitudes.md)** (les huit octants du cercle de pixels et la diagonale 225°, le contact apparent créé par l'épaisseur du trait et par les pixels avec le rapport √2 + 1 et la colonne de la tangente verticale, le cercle de Gauss en décimal et en binaire avec sa part lisse 4√2 ζ(−1/2)√R et ses dents de scie mod 1, l'écart exact de 8R entre pixels dedans et dehors par un argument modulo 4, l'escalier « π = 4 », la chèvre comptée en pixels vite ou de façon certaine, les longitudes de l'étoile de Siemens qui se replient au réseau inversé face aux latitudes de la lame de zones, et la lumière qui arrondit les pixels).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -487,6 +489,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/grille_decalee.py`](scripts/grille_decalee.py) : la partie XV.
 - [`scripts/menisque_projection.py`](scripts/menisque_projection.py) : la partie XVI.
 - [`scripts/recursion_argent.py`](scripts/recursion_argent.py) : la partie XVII.
+- [`scripts/pixels_longitudes.py`](scripts/pixels_longitudes.py) : la partie XVIII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
