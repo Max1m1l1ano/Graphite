@@ -14,6 +14,7 @@ Partie XIX : les bases 2 et 10 sont deux objets. i modulo 10, l'aiguille qui tou
    cylindre + cône = hyperboloïde (faisceau gaussien), Archimède (la demi-sphère et son cône conjugué se croisent à
    angle droit à la latitude 45°, au-dessus du demi-disque de rayon 1/√2).
 5. Le cône des échelles de Thalès.
+6. Les deux couches : 2 et 3 (bases 12, 24, 60, 360) puis 10 ; les retenues de bⁿ ; l'escalier des chiffres.
 """
 
 import logging
@@ -258,6 +259,15 @@ for R, h in ((10, 1), (12, 3), (50, 1), (50, 3)):
                                           else "{:+.5f}") for v in cases) + " |")
 ligne("\nLa droite et la gauche penchent d'environ ∓h/(2R) radian, en sens contraires ; le centre est exact par"
       " symétrie.")
+RF, HF = 12, 3
+COL = [y for y in range(-RF, RF + 1) if round(math.sqrt(RF * RF - y * y)) == RF]
+x3 = math.sqrt(RF * RF - HF * HF)
+ligne(f"\n**La figure t2 a en nombres exacts** (R = {RF}, h = {HF}). La colonne de la tangente compte {len(COL)} pixels"
+      f" (|y| ≤ √(R − 1/4) = {fr(math.sqrt(RF - 0.25), '{:.3f}')}) : 4 en haut et 4 en bas, le pixel du centre compté"
+      f" dans les deux. Le point du centre est au centre de sa case ; les points en ±h sont en x = √{RF * RF - HF * HF} ="
+      f" {fr(x3, '{:.4f}')}, à {fr(x3 - RF, '{:.4f}')} du centre de leur case et à {fr(x3 - RF + 0.5, '{:.4f}')} de sa"
+      f" face gauche (la face est à −1/2), soit {fr((RF - x3) * math.sqrt(12), '{:.2f}')} σ. Le seuil du bruit 0,84·√R"
+      f" vaut {fr(2 ** -0.25 * math.sqrt(RF), '{:.2f}')}, juste sous h = {HF} ; et √R·σ = √12/√12 = 1 exactement.")
 SIG = 1 / math.sqrt(12)
 ligne(f"\n**L'erreur du point.** Un pixel arrondit la position : erreur uniforme d'écart-type σ = 1/√12 ="
       f" {fr(SIG, '{:.4f}')} pixel. Avec trois points espacés de h, la courbure (y(−h) − 2y(0) + y(h))/h² a un bruit"
@@ -290,9 +300,22 @@ for lam, w0 in ((550e-9, 1e-3), (550e-9, 85e-6), (550e-9, 5e-6)):
     zr_txt = f"{fr(zr, '{:.2f}')} m" if zr > 1 else f"{fr(zr * 1e3, '{:.3g}')} mm"
     ligne(f"- λ = 550 nm, demi-épaisseur w₀ = {fr(w0 * 1e6, '{:g}')} µm : cône θ = {fr(th * 1e3, '{:.3g}')} mrad,"
           f" longueur où le trait reste fin z_R = πw₀²/λ = {zr_txt}.")
-ligne("- Même forme : l'hyperboloïde du cube qui tourne (partie II), r² = 1/2 + 2 z², col √2/2 et cône de pente √2 ; et"
-      " la chèvre de dimension infinie (partie XVI), ρ² = 1 + d², col 1 et cône à 45°. Les deux ont le même produit"
-      " col × pente : (√2/2)·√2 = 1·1 = 1, comme deux faisceaux de même longueur d'onde.")
+ligne("\n**Le même procédé : un cône dont le sommet est déplacé dans l'imaginaire.** r² = w₀² + θ²z² = θ²·|z + i·z_R|²,"
+      " avec z_R = w₀/θ. Pour le faisceau laser, c'est la source ponctuelle à distance imaginaire de Deschamps (1971).\n")
+ligne("| hyperboloïde | col w₀ | pente θ | w₀·θ | z_R = w₀/θ | forme |")
+ligne("|---|---|---|---|---|---|")
+for nom, w0, th, forme in (("chèvre de dimension infinie (partie XVI)", 1.0, 1.0, "ρ = \\|d + i\\|"),
+                           ("cube qui tourne (partie II)", 1 / R2, R2, "r = √2·\\|z + i/2\\|")):
+    zs = np.linspace(0, 5, 11)
+    assert np.allclose(np.sqrt(w0 ** 2 + (th * zs) ** 2), th * np.abs(zs + 1j * w0 / th))
+    ligne(f"| {nom} | {fr(w0, '{:.4f}')} | {fr(th, '{:.4f}')} | {fr(w0 * th, '{:.0f}')} | {fr(w0 / th, '{:g}')} |"
+          f" {forme} |")
+ligne("| faisceau laser | w₀ | λ/(π·w₀) | λ/π | π·w₀²/λ | source en z = −i·z_R |")
+ligne("\n- Le cube et la chèvre ont w₀·θ = 1 : deux faisceaux de même « longueur d'onde » λ = π (en unités du rayon),"
+      " l'un plus serré (z_R = 1/2) que l'autre (z_R = 1).")
+ligne(f"- En z = z_R, la largeur vaut √2·w₀ et la phase de Gouy arctan(z/z_R) vaut 45°. Pour la chèvre, d = 1 (le piquet"
+      f" sur la clôture) est exactement sa distance de Rayleigh : ρ = |1 + i| = {fr(abs(1 + 1j), '{:.6f}')}, la diagonale"
+      " 1x, 1y.")
 ligne("\n**Archimède : la demi-sphère et son cône conjugué.** Dans le cylindre de rayon 1 et de hauteur 1, à la hauteur z,"
       " la demi-sphère a pour rayon √(1 − z²) et le cône (sommet au centre) a pour rayon z : (1 − z²) + z² = 1, les deux"
       " tranches remplissent la tranche du cylindre (1/3 + 2/3 du volume).")
@@ -322,6 +345,93 @@ ligne(f"- Un sou (pièce d'un cent, {fr(SOU * 1e3, '{:.2f}')} mm) cache la Lune 
 ligne(f"- Une minute d'arc (l'acuité de l'œil) : {fr(0.3 * math.radians(1 / 60) * 1e6, '{:.0f}')} µm à 30 cm (un pixel"
       f" « Retina »), {fr(LUNE_L * math.radians(1 / 60) / 1e3, '{:.0f}')} km sur la Lune.")
 ligne(f"- Une décade = log₂ 10 = {fr(math.log2(10), '{:.4f}')} octaves.")
+
+# ---------------------------------------------------------------------------
+# 6. Les deux couches : 2 et 3, puis 10
+# ---------------------------------------------------------------------------
+ligne("\n## 6. Les deux couches : 2 et 3 (12, 24, 60, 360), puis 10\n")
+
+
+def ordre_mod(x, b):
+    k, y = 1, x % b
+    while y != 1:
+        y, k = y * x % b, k + 1
+    return k
+
+
+def facteurs(b):
+    f, p, out = b, 2, []
+    while p * p <= f:
+        e = 0
+        while f % p == 0:
+            f, e = f // p, e + 1
+        if e:
+            out.append(f"{p}{'⁰¹²³⁴⁵⁶⁷⁸⁹'[e] if e > 1 else ''}")
+        p += 1
+    if f > 1:
+        out.append(str(f))
+    return " × ".join(out)
+
+
+ligne("| base | facteurs | racines de −1 | ordres des unités | toute unité est un reflet (x² ≡ 1) |")
+ligne("|---:|---|---|---|---|")
+COUCHES = {}
+for b in (2, 10, 12, 24, 60, 360):
+    U = [x for x in range(1, b) if math.gcd(x, b) == 1]
+    rac = [x for x in range(b) if (x * x + 1) % b == 0]
+    ords = sorted({ordre_mod(x, b) for x in U})
+    refl = all(x * x % b == 1 for x in U)
+    COUCHES[b] = (rac, ords, refl)
+    ligne(f"| {b} | {facteurs(b)} | {', '.join(map(str, rac)) or 'aucune'} | {', '.join(map(str, ords))} |"
+          f" {'oui' if refl else 'non'} |")
+ASSERT_24 = [b for b in range(2, 200) if all(x * x % b == 1 for x in range(1, b) if math.gcd(x, b) == 1)]
+assert ASSERT_24 == [2, 3, 4, 6, 8, 12, 24]
+ligne("\n- Les bases où toute unité est son propre inverse (que des reflets, aucun quart de tour) sont exactement les"
+      f" diviseurs de 24 : {', '.join(map(str, ASSERT_24))} (vérifié jusqu'à 200).")
+ligne("- −1 n'a de racine carrée ni modulo 12, ni 24, ni 60, ni 360 (tous divisibles par 4) ; il en a une modulo 10"
+      " (3 ≡ i). Les bases du cercle et de l'heure se coupent bien en 2, 3, 4, 6 ; la base 10 porte le quart de tour.")
+ligne("\nDernier chiffre de bⁿ (n = 1, 2, 3, …) :\n")
+ligne("| b | base 10 | base 12 |")
+ligne("|---:|---|---|")
+
+
+def cycle_txt(b, B):
+    seq = [pow(b, n, B) for n in range(1, 2 * B + 3)]
+    for debut in range(len(seq)):
+        for per in range(1, B + 1):
+            if all(seq[k] == seq[k + per] for k in range(debut, len(seq) - per)):
+                avant, boucle = seq[:debut], seq[debut:debut + per]
+                nom = {1: "fixe", 2: "demi-tour", 4: "quart de tour"}.get(per, f"période {per}")
+                txt = ", ".join(map(str, boucle))
+                return (", ".join(map(str, avant)) + " → " if avant else "") + f"{txt} ({nom})"
+    return "?"
+
+
+for b in range(12):
+    ligne(f"| {b} | {cycle_txt(b, 10) if b < 10 else '—'} | {cycle_txt(b, 12)} |")
+ligne(f"\n- Chiffres fixes (idempotents, e² ≡ e) : base 10 : {', '.join(str(e) for e in range(10) if e * e % 10 == e)} ;"
+      f" base 12 : {', '.join(str(e) for e in range(12) if e * e % 12 == e)}. 0 et 1 restent statiques dans toute base ;"
+      " 5 et 6 sont les deux interrupteurs de 10 = 2 × 5 (5 ≡ (1 mod 2, 0 mod 5), 6 ≡ (0 mod 2, 1 mod 5)), 4 et 9 ceux"
+      " de 12 = 4 × 3.")
+ligne("- En base 10, 2, 3, 7 et 8 tournent par quarts de tour ; en base 12, rien ne tourne plus vite qu'un demi-tour.")
+ligne("\n**L'escalier des chiffres.** En base 10, bⁿ s'écrit avec ⌊n·log₁₀ b⌋ + 1 chiffres : le bord droit d'une table"
+      " des puissances est une droite tracée en pixels, de pente log₁₀ b.\n")
+ligne("| b | pente log₁₀ b | rangs n où la marche est haute (un chiffre de plus ; deux pour 12) |")
+ligne("|---:|---|---|")
+for b in (2, 3, 12):
+    lon = [len(str(b ** n)) for n in range(0, 80)]
+    assert all(lon[n] == math.floor(n * math.log10(b)) + 1 for n in range(80))
+    haut = 2 if b > 10 else 1
+    rangs = [n for n in range(1, 80) if lon[n] - lon[n - 1] == haut]
+    ligne(f"| {b} | {fr(math.log10(b), '{:.5f}')} | {', '.join(map(str, rangs[:12]))}… |")
+lon2 = [len(str(2 ** n)) for n in range(0, 200)]
+rangs2 = [n for n in range(1, 200) if lon2[n] > lon2[n - 1]]
+ecarts2 = [b_ - a_ for a_, b_ in zip(rangs2, rangs2[1:])]
+ligne(f"\n- Pour 2ⁿ, les marches font {', '.join(map(str, ecarts2[:12]))}… : 3 chiffres tous les 10 rangs (2¹⁰ ≈ 10³),"
+      " jusqu'à ce que le petit écart de 2,4 % s'accumule et décale le motif (la réduite suivante, 28/93). C'est la"
+      " même mécanique que la droite en pixels de la partie XVIII.")
+ligne("- 12 = 2² × 3 : log₁₀ 12 = 2·log₁₀ 2 + log₁₀ 3 ; la base 10 transforme les produits de la première couche"
+      " (2 et 3) en sommes de pentes.")
 
 with open(os.path.join(ICI, "..", "resultats", "bases_objets.md"), "w") as fh:
     fh.write("# Résultats de la partie XIX (générés par scripts/bases_objets.py)\n\n" + "\n".join(md) + "\n")

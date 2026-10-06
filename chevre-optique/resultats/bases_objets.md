@@ -119,6 +119,8 @@ Sur le cercle de R pixels, près de sa tangente verticale (x(y) = √(R² − y�
 
 La droite et la gauche penchent d'environ ∓h/(2R) radian, en sens contraires ; le centre est exact par symétrie.
 
+**La figure t2 a en nombres exacts** (R = 12, h = 3). La colonne de la tangente compte 7 pixels (|y| ≤ √(R − 1/4) = 3,428) : 4 en haut et 4 en bas, le pixel du centre compté dans les deux. Le point du centre est au centre de sa case ; les points en ±h sont en x = √135 = 11,6190, à −0,3810 du centre de leur case et à 0,1190 de sa face gauche (la face est à −1/2), soit 1,32 σ. Le seuil du bruit 0,84·√R vaut 2,91, juste sous h = 3 ; et √R·σ = √12/√12 = 1 exactement.
+
 **L'erreur du point.** Un pixel arrondit la position : erreur uniforme d'écart-type σ = 1/√12 = 0,2887 pixel. Avec trois points espacés de h, la courbure (y(−h) − 2y(0) + y(h))/h² a un bruit √6·σ/h². Elle n'émerge du bruit (1/R > √6·σ/h²) que pour h > (√6·σ·R)^(1/2) ≈ 0,84 √R : il faut environ √R pixels de chaque côté pour voir qu'un arc est courbé, la longueur de la colonne verticale de la partie XVIII.
 
 | R | √6·σ·R : h minimal | √R |
@@ -143,7 +145,17 @@ En dimension 3, l'erreur moyenne quadratique vaut exactement 1/2 voxel (√(3/12
 - λ = 550 nm, demi-épaisseur w₀ = 1000 µm : cône θ = 0,175 mrad, longueur où le trait reste fin z_R = πw₀²/λ = 5,71 m.
 - λ = 550 nm, demi-épaisseur w₀ = 85 µm : cône θ = 2,06 mrad, longueur où le trait reste fin z_R = πw₀²/λ = 41,3 mm.
 - λ = 550 nm, demi-épaisseur w₀ = 5 µm : cône θ = 35 mrad, longueur où le trait reste fin z_R = πw₀²/λ = 0,143 mm.
-- Même forme : l'hyperboloïde du cube qui tourne (partie II), r² = 1/2 + 2 z², col √2/2 et cône de pente √2 ; et la chèvre de dimension infinie (partie XVI), ρ² = 1 + d², col 1 et cône à 45°. Les deux ont le même produit col × pente : (√2/2)·√2 = 1·1 = 1, comme deux faisceaux de même longueur d'onde.
+
+**Le même procédé : un cône dont le sommet est déplacé dans l'imaginaire.** r² = w₀² + θ²z² = θ²·|z + i·z_R|², avec z_R = w₀/θ. Pour le faisceau laser, c'est la source ponctuelle à distance imaginaire de Deschamps (1971).
+
+| hyperboloïde | col w₀ | pente θ | w₀·θ | z_R = w₀/θ | forme |
+|---|---|---|---|---|---|
+| chèvre de dimension infinie (partie XVI) | 1,0000 | 1,0000 | 1 | 1 | ρ = \|d + i\| |
+| cube qui tourne (partie II) | 0,7071 | 1,4142 | 1 | 0,5 | r = √2·\|z + i/2\| |
+| faisceau laser | w₀ | λ/(π·w₀) | λ/π | π·w₀²/λ | source en z = −i·z_R |
+
+- Le cube et la chèvre ont w₀·θ = 1 : deux faisceaux de même « longueur d'onde » λ = π (en unités du rayon), l'un plus serré (z_R = 1/2) que l'autre (z_R = 1).
+- En z = z_R, la largeur vaut √2·w₀ et la phase de Gouy arctan(z/z_R) vaut 45°. Pour la chèvre, d = 1 (le piquet sur la clôture) est exactement sa distance de Rayleigh : ρ = |1 + i| = 1,414214, la diagonale 1x, 1y.
 
 **Archimède : la demi-sphère et son cône conjugué.** Dans le cylindre de rayon 1 et de hauteur 1, à la hauteur z, la demi-sphère a pour rayon √(1 − z²) et le cône (sommet au centre) a pour rayon z : (1 − z²) + z² = 1, les deux tranches remplissent la tranche du cylindre (1/3 + 2/3 du volume).
 - Les deux surfaces se croisent sur le cercle z = r = 1/√2 (la latitude 45°), et à angle droit : chaque génératrice du cône est un rayon de la sphère.
@@ -157,3 +169,48 @@ Thalès : un objet de taille L à la distance D sous-tend L/D radian. La Lune : 
 - Un sou (pièce d'un cent, 19,05 mm) cache la Lune à 2,11 m de l'œil.
 - Une minute d'arc (l'acuité de l'œil) : 87 µm à 30 cm (un pixel « Retina »), 112 km sur la Lune.
 - Une décade = log₂ 10 = 3,3219 octaves.
+
+## 6. Les deux couches : 2 et 3 (12, 24, 60, 360), puis 10
+
+| base | facteurs | racines de −1 | ordres des unités | toute unité est un reflet (x² ≡ 1) |
+|---:|---|---|---|---|
+| 2 | 2 | 1 | 1 | oui |
+| 10 | 2 × 5 | 3, 7 | 1, 2, 4 | non |
+| 12 | 2² × 3 | aucune | 1, 2 | oui |
+| 24 | 2³ × 3 | aucune | 1, 2 | oui |
+| 60 | 2² × 3 × 5 | aucune | 1, 2, 4 | non |
+| 360 | 2³ × 3² × 5 | aucune | 1, 2, 3, 4, 6, 12 | non |
+
+- Les bases où toute unité est son propre inverse (que des reflets, aucun quart de tour) sont exactement les diviseurs de 24 : 2, 3, 4, 6, 8, 12, 24 (vérifié jusqu'à 200).
+- −1 n'a de racine carrée ni modulo 12, ni 24, ni 60, ni 360 (tous divisibles par 4) ; il en a une modulo 10 (3 ≡ i). Les bases du cercle et de l'heure se coupent bien en 2, 3, 4, 6 ; la base 10 porte le quart de tour.
+
+Dernier chiffre de bⁿ (n = 1, 2, 3, …) :
+
+| b | base 10 | base 12 |
+|---:|---|---|
+| 0 | 0 (fixe) | 0 (fixe) |
+| 1 | 1 (fixe) | 1 (fixe) |
+| 2 | 2, 4, 8, 6 (quart de tour) | 2 → 4, 8 (demi-tour) |
+| 3 | 3, 9, 7, 1 (quart de tour) | 3, 9 (demi-tour) |
+| 4 | 4, 6 (demi-tour) | 4 (fixe) |
+| 5 | 5 (fixe) | 5, 1 (demi-tour) |
+| 6 | 6 (fixe) | 6 → 0 (fixe) |
+| 7 | 7, 9, 3, 1 (quart de tour) | 7, 1 (demi-tour) |
+| 8 | 8, 4, 2, 6 (quart de tour) | 8, 4 (demi-tour) |
+| 9 | 9, 1 (demi-tour) | 9 (fixe) |
+| 10 | — | 10 → 4 (fixe) |
+| 11 | — | 11, 1 (demi-tour) |
+
+- Chiffres fixes (idempotents, e² ≡ e) : base 10 : 0, 1, 5, 6 ; base 12 : 0, 1, 4, 9. 0 et 1 restent statiques dans toute base ; 5 et 6 sont les deux interrupteurs de 10 = 2 × 5 (5 ≡ (1 mod 2, 0 mod 5), 6 ≡ (0 mod 2, 1 mod 5)), 4 et 9 ceux de 12 = 4 × 3.
+- En base 10, 2, 3, 7 et 8 tournent par quarts de tour ; en base 12, rien ne tourne plus vite qu'un demi-tour.
+
+**L'escalier des chiffres.** En base 10, bⁿ s'écrit avec ⌊n·log₁₀ b⌋ + 1 chiffres : le bord droit d'une table des puissances est une droite tracée en pixels, de pente log₁₀ b.
+
+| b | pente log₁₀ b | rangs n où la marche est haute (un chiffre de plus ; deux pour 12) |
+|---:|---|---|
+| 2 | 0,30103 | 4, 7, 10, 14, 17, 20, 24, 27, 30, 34, 37, 40… |
+| 3 | 0,47712 | 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 24, 26… |
+| 12 | 1,07918 | 13, 26, 38, 51, 64, 76… |
+
+- Pour 2ⁿ, les marches font 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4… : 3 chiffres tous les 10 rangs (2¹⁰ ≈ 10³), jusqu'à ce que le petit écart de 2,4 % s'accumule et décale le motif (la réduite suivante, 28/93). C'est la même mécanique que la droite en pixels de la partie XVIII.
+- 12 = 2² × 3 : log₁₀ 12 = 2·log₁₀ 2 + log₁₀ 3 ; la base 10 transforme les produits de la première couche (2 et 3) en sommes de pentes.

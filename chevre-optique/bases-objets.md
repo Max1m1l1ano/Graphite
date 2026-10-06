@@ -48,10 +48,15 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
   - En dimension n, l'erreur d'un point arrondi vit sur une sphère mince de rayon √(n/12) : c'est ta n-sphère.
   - Le trait est un cylindre, sa direction un cône ; ensemble, ils font un hyperboloïde. C'est exactement ce que balaie une aiguille qui tourne autour d'un axe sans le toucher.
   - Le faisceau laser gaussien a cette forme (w₀·θ = λ/π). Le cube qui tourne (partie II) et la chèvre de dimension infinie (partie XVI) aussi, avec w₀·θ = 1.
+  - C'est le même procédé : un cône dont le sommet est déplacé dans l'imaginaire. Pour la chèvre, ρ = |d + i|.
 - **Archimède.**
   - Demi-sphère + cône = cylindre, tranche par tranche.
   - Les deux surfaces se croisent à angle droit sur le cercle de rayon 1/√2, qui enferme la moitié du disque.
   - Le cône se déroule à plat, la demi-sphère non (Gauss) : c'est la source exacte d'une partie des distorsions à l'écran.
+- **Les deux couches.**
+  - Les bases du cercle et de l'heure (12, 24, 60, 360) sont faites surtout de 2 et de 3 (60 et 360 y ajoutent un 5), et aucune n'a de i.
+  - En base 12 et 24, chaque nombre premier avec la base est son propre inverse : l'horloge n'a que des reflets.
+  - La base 10 porte le quart de tour, et log₁₀ transforme les produits en pentes de pixels.
 - **Thalès.** Un sou cache la Lune à 2,11 m. Une minute d'arc, c'est 87 µm à 30 cm (un pixel) et 112 km sur la Lune.
 - **Thomson.** D'accord sur l'idée : un modèle simple qu'on garde parce qu'il suffit. Une nuance : Thomson a été réfuté, et Bohr serait un meilleur parallèle.
 
@@ -227,6 +232,12 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 
 - La droite et la gauche penchent d'environ h/(2R) radian, en sens contraires. Le centre est exact par symétrie : c'est pour ça que trois points centrés tracent la tangente verticale de la partie XVIII.
 
+**La figure en nombres exacts** (R = 12, h = 3 ; c'est ta lecture du panneau a).
+- La colonne de la tangente compte 7 pixels : 4 en haut et 4 en bas, le pixel du centre compté dans les deux. Elle s'arrête à |y| = √(R − 1/4) = 3,43, juste sous √12.
+- Le point du centre est au centre de sa case. Les points en ±3 sont en x = √135 = 11,619 : à −0,381 du centre de leur case, donc à 0,119 de sa face gauche (la face est à −1/2).
+- √12 y apparaît deux fois. C'est la demi-longueur de la colonne (√R pour R = 12) et l'inverse du bruit d'un point arrondi (σ = 1/√12) : pour R = 12, √R·σ = 1 exactement.
+- Le seuil du bruit, 0,84·√R = 2,91, tombe juste sous h = 3 : les deux points sont les derniers de la colonne, au bord de ce qu'on peut mesurer.
+
 **L'erreur du point** (panneau b).
 - Un pixel arrondit la position du point. Si on traite cette erreur comme un bruit uniforme, son écart-type vaut σ = 1/√12 = 0,289 pixel.
 - La courbure mesurée sur trois points a alors un bruit √6·σ/h². Elle ne sort du bruit que pour h > 0,84·√R : il faut environ √R pixels de chaque côté pour voir qu'un arc est courbé.
@@ -272,7 +283,20 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
   - w₀ = 1 mm : θ = 0,175 mrad, et le trait reste fin sur z_R = 5,71 m ;
   - w₀ = 85 µm (un trait de 0,17 mm, environ deux pixels « Retina ») : θ = 2,06 mrad, z_R = 41 mm ;
   - w₀ = 5 µm : θ = 35 mrad, z_R = 0,14 mm.
-- Le cube et la chèvre ont le même produit col × pente : (1/√2)·√2 = 1·1 = 1. Ce sont comme deux faisceaux de même longueur d'onde, l'un plus serré que l'autre (c'est une analogie de forme, pas de physique).
+- Le cube et la chèvre ont le même produit col × pente : (1/√2)·√2 = 1·1 = 1. Ce sont deux faisceaux de même « longueur d'onde » λ = π (en unités du rayon), l'un plus serré que l'autre.
+
+**Le même procédé : un cône dont le sommet est déplacé dans l'imaginaire.**
+- r² = w₀² + θ²z² s'écrit r = θ·|z + i·z_R|, avec z_R = w₀/θ : c'est le cône r = θ·|z| dont on a poussé le sommet d'une distance z_R dans la direction imaginaire.
+- Pour le faisceau laser, c'est la construction de Deschamps (1971) : un faisceau gaussien est l'onde d'une source ponctuelle placée en un point complexe.
+
+| hyperboloïde | col w₀ | pente θ | z_R = w₀/θ | forme |
+|---|---|---|---|---|
+| chèvre de dimension infinie | 1 | 1 | 1 | ρ = \|d + i\| |
+| cube qui tourne | 1/√2 | √2 | 1/2 | r = √2·\|z + i/2\| |
+| faisceau laser | w₀ | λ/(πw₀) | πw₀²/λ | source en z = −i·z_R |
+
+- **Ce que ça transporte.** À la distance z_R, un faisceau est √2 fois plus large qu'à son col, et sa phase de Gouy vaut 45°. Pour la chèvre, z_R = 1 : c'est exactement le piquet sur la clôture (d = 1), où ρ = |1 + i| = √2, la diagonale 1x, 1y.
+- La chèvre classique est donc à la distance de Rayleigh de son propre faisceau. C'est une identité de structure : le même calcul, pas seulement la même allure.
 
 **Le lien avec ta deuxième image.**
 - Près de son col, l'hyperboloïde s'écarte du cylindre comme θ²z²/(2w₀) : un écart quadratique. Deux cercles tangents s'écartent de la même façon, comme κs²/2.
@@ -319,7 +343,36 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 - Le modèle de Bohr (1913) serait un meilleur parallèle. Son image est fausse (des orbites), mais ses nombres sont justes pour l'hydrogène (les niveaux en −13,6 eV/n²), et on l'enseigne toujours parce qu'il suffit.
 - C'est exactement le statut des décimales naïves : les bonnes valeurs, avec une image sans grain et sans atlas.
 
-## 9. Le tri
+## 9. Les deux couches : 2 et 3 (12, 24, 60, 360), puis 10
+
+**Ce que tu décris.** Une première couche, géométrique, faite des bases 2 et 3, qui se rejoignent en 12 (puis en 24, et en 60 et 360 avec un 5 en plus). Une deuxième couche, conceptuelle, où la base 10 linéarise tout par log₁₀. Les calculs vont dans ton sens (détails au § 6 de [`resultats/bases_objets.md`](resultats/bases_objets.md)).
+
+| base | facteurs | racine de −1 (un i) | horloge des nombres premiers avec la base |
+|---:|---|---|---|
+| 10 | 2 × 5 | 3 et 7 | un vrai tour en quatre quarts : 1, 3, 9, 7 |
+| 12 | 2² × 3 | aucune | que des reflets : 5² ≡ 7² ≡ 11² ≡ 1 |
+| 24 | 2³ × 3 | aucune | que des reflets |
+| 60 | 2² × 3 × 5 | aucune | des quarts de tour, mais aucun ne donne −1 |
+| 360 | 2³ × 3² × 5 | aucune | jusqu'à 12 pas, sans i |
+
+- **Les bases du cercle et de l'heure n'ont pas de i.** Elles sont divisibles par 4, donc −1 n'y a pas de racine carrée. Elles sont faites pour couper en 2, 3, 4, 6 : la géométrie qu'on voit.
+- **12 et 24 sont des horloges de reflets.** Tout nombre premier avec la base y est son propre inverse (x² ≡ 1). Les seules bases qui ont cette propriété sont les diviseurs de 24 : 2, 3, 4, 6, 8, 12, 24.
+- **La base 10 porte le quart de tour.** Son horloge 1 → 3 → 9 → 7 est exactement celle de i : la rotation que les nombres complexes rendent algébrique.
+
+**Les retenues de bⁿ.** Le dernier chiffre des puissances, en base 10 et en base 12 :
+- 0 et 1 restent statiques dans toute base, comme tu le dis. Le dernier chiffre a aussi deux autres points fixes : 5 et 6 en base 10, 4 et 9 en base 12. Ce sont les « interrupteurs » des deux couches : 5 ≡ (1 mod 2, 0 mod 5) et 6 ≡ (0 mod 2, 1 mod 5).
+- En base 10, 2, 3, 7 et 8 tournent par quarts de tour (2, 4, 8, 6…), 4 et 9 par demi-tours.
+- En base 12, rien ne tourne plus vite qu'un demi-tour.
+
+**L'escalier des chiffres.**
+- En base 10, bⁿ s'écrit avec ⌊n·log₁₀ b⌋ + 1 chiffres. Le bord droit d'une table des puissances est donc une droite tracée en pixels, de pente log₁₀ b.
+- Pour 2ⁿ, les marches font 3, 3, 4, 3, 3, 4… : 3 chiffres tous les 10 rangs, parce que 2¹⁰ ≈ 10³. Le petit écart de 2,4 % finit par décaler le motif (la réduite suivante, 28/93).
+- C'est la même mécanique que la droite en pixels de la partie XVIII.
+- Et 12 = 2² × 3 donne log₁₀ 12 = 2·log₁₀ 2 + log₁₀ 3 : la base 10 transforme les produits de la première couche en sommes de pentes.
+
+**Une nuance historique.** Ces bases ont souvent coexisté plutôt que de se succéder. L'Égypte comptait déjà en base 10 quand la Mésopotamie calculait en base 60. Ce qui change d'une époque à l'autre, c'est la base qui sert de standard, selon le besoin d'organisation : le ciel et les angles (60, 360), les heures et le commerce (12, 24), l'écriture des calculs (10).
+
+## 10. Le tri
 
 **Exact (démontré ici ou classique) :**
 - i ≡ 3 et −i ≡ 7 modulo 10, l'horloge 1, 3, 9, 7, et le fait que 9^(3/2) = 27 donne −i pour les deux choix de i ;
@@ -329,7 +382,8 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 - l'irrationalité de log₁₀ 2, ses réduites, la limite de Benford, les trois distances et le théorème de Furstenberg ;
 - les poids, erreurs et bruits des pochoirs à deux et trois points ;
 - la longueur √(n/12) de l'erreur d'arrondi et sa concentration ;
-- l'hyperboloïde balayé par une droite, et le faisceau gaussien w₀·θ = λ/π ;
+- l'hyperboloïde balayé par une droite, le faisceau gaussien w₀·θ = λ/π, et le cône à sommet imaginaire r = θ·|z + i·z_R| ;
+- les bases sans i (12, 24, 60, 360), les horloges de reflets (les diviseurs de 24), les points fixes et les cycles du dernier chiffre de bⁿ, et l'escalier ⌊n·log₁₀ b⌋ + 1 ;
 - les tranches d'Archimède et le croisement à angle droit ;
 - le theorema egregium et les nombres de Thalès.
 
@@ -344,7 +398,9 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 - Ce qui est exact : la compression cos φ de toute projection, et l'impossibilité d'aplatir la sphère sans la déformer.
 - Mais les défauts des pixels (partie XVIII) viennent d'un autre mécanisme, l'échantillonnage. Les deux s'additionnent.
 
-**Une analogie de forme :** w₀·θ = 1 pour le cube et la chèvre, comme deux faisceaux de même longueur d'onde.
+**Analogie de structure (même procédé), donc un résultat :** le cube, la chèvre de dimension infinie et le faisceau laser sont le même cône à sommet imaginaire. Le cube et la chèvre y ont w₀·θ = 1 (λ = π), et la chèvre classique est à la distance de Rayleigh de son faisceau. Ce qui reste ouvert, c'est un mécanisme physique commun.
+
+**Ta thèse sur les bases** (12 et 60 pour la géométrie qu'on voit, 10 pour l'analyse par les nombres complexes) : les faits exacts du § 9 vont dans son sens.
 
 **Pas établi :** une loi des chiffres de la corde de la chèvre en base 2 ou 10. On ne sait même pas si elle est normale (on ne le sait pas non plus pour √2 ou π).
 
@@ -365,9 +421,14 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 
 **Pochoirs, trait et lumière**
 - Wikipédia : [Finite difference coefficient](https://en.wikipedia.org/wiki/Finite_difference_coefficient) (les poids centrés et décentrés).
+- G. A. Deschamps, « Gaussian beam as a bundle of complex rays », *Electronics Letters* 7, 684–685 (1971) : la source ponctuelle complexe ([sa page](https://en.wikipedia.org/wiki/Georges_A._Deschamps)).
 - Wikipédia : [Gaussian beam](https://en.wikipedia.org/wiki/Gaussian_beam) ; SPIE Optipedia, [« Gaussian beams »](https://spie.org/publications/fg12_p18-19_gaussian_beams) (le produit w₀·θ = λ/π).
 - Wikipédia : [Hyperboloid](https://en.wikipedia.org/wiki/Hyperboloid) et [Skew lines](https://en.wikipedia.org/wiki/Skew_lines) (la droite qui tourne autour d'un axe sans le couper).
 - Wikipédia : [Theorema Egregium](https://en.wikipedia.org/wiki/Theorema_Egregium) ; [Lambert cylindrical equal-area projection](https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection) (la boîte à chapeau d'Archimède).
+
+**Les bases 12, 24, 60 et 360**
+- [« What is special about the divisors of 24? »](https://arxiv.org/abs/1104.5052) : les seules bases où x² ≡ 1 pour tout x premier avec la base ; [OEIS A018253](https://oeis.org/A018253).
+- D. Jeffery (UNLV), [« Ancient Babylonian astronomers and why we have 360° in the circle »](https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html).
 
 **Thalès et l'atome**
 - National Academies, *One Universe*, [exercice 4 sur le mouvement](https://nap.nationalacademies.org/resource/oneuniverse/motion_exercise_4.html) : cacher la Lune avec un objet tenu à bout de bras pour mesurer son angle.
