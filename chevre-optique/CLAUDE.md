@@ -21,7 +21,8 @@ Ce fichier s'adresse à toi, Claude, quand tu travailles dans ce dossier. Il ré
 **L'exemple qui a fixé cette règle (partie XIX).**
 - Le cube qui tourne (r² = 1/2 + 2z²), la chèvre de dimension infinie (ρ² = 1 + d²) et le faisceau laser gaussien (r² = w₀² + θ²z²) sont trois cas du même objet : un cône dont le sommet est déplacé dans l'imaginaire, r = θ·|z + i·z_R|, avec z_R = w₀/θ.
 - Pour la chèvre, ρ = |d + i|. Pour le laser, c'est la source ponctuelle complexe de Deschamps (1971).
-- Ce que ça transporte : le cube et la chèvre ont w₀·θ = 1, donc une « longueur d'onde » λ = π. La chèvre classique (le piquet sur la clôture, d = 1) est exactement à la distance de Rayleigh de son faisceau : la largeur y vaut √2 fois le col (ρ = |1 + i| = √2, la diagonale 1x, 1y) et la phase de Gouy y vaut 45°.
+- Ce que ça transporte : le cube et la chèvre ont w₀·θ = 1, donc une « longueur d'onde » λ = π. La chèvre de **dimension infinie**, piquet sur la clôture (d = 1), est exactement à la distance de Rayleigh de son faisceau : la largeur y vaut √2 fois le col (ρ = |1 + i| = √2, la diagonale 1x, 1y) et la phase de Gouy y vaut 45°.
+- **Attention aux mots : « la chèvre classique » est la chèvre plane** (corde 1,1587…). Au même piquet, elle et la chèvre de dimension infinie (corde √2) sont deux chèvres au même endroit, séparées par une infinité de dimensions (partie XX). C'est le phénomène que l'auteur étudie ; ne jamais les confondre.
 
 ## 2. Les bases sont des objets, et leur histoire suit des besoins d'organisation
 
@@ -33,9 +34,11 @@ Ce fichier s'adresse à toi, Claude, quand tu travailles dans ce dossier. Il ré
 - Le compte naïf est comme le modèle de Thomson pour se représenter l'atome : plus simple à comprendre, et c'est exactement pour ça qu'on le garde pour compter. (Nuance proposée à l'auteur en partie XIX : Thomson a été réfuté ; Bohr, faux dans son image mais juste dans ses nombres, serait un parallèle plus proche.)
 - **Les échelles.** On part de l'échelle humaine, puis on monte ou on descend sur un cône à deux échelles logarithmiques (−zⁿ, +zⁿ). Thalès relie toute taille à un objet que les humains connaissent : un sou (19,05 mm) cache la Lune à 2,11 m.
 
-**La succession des standards : base 60, base 12, base 10 (la thèse de l'auteur).**
+**La succession des standards : base 60, base 12, base 10 (des faits historiques, datés au § 7 de la partie XX).**
+- Les mathématiques (bases, notations, standards) sont une création humaine qui a évolué comme une langue, selon les besoins de chaque époque. **C'est un fait documenté : ne l'appelle pas « la thèse de l'auteur ».**
 - **Bases 60 (360°) et 12 :** elles servaient à simplifier des problèmes topologiques et géométriques observables (le ciel, le cercle, le jour, l'année).
-- **Base 10 :** elle simplifie les analyses conceptuelles déjà simplifiées par la base 60 (360), par les nombres complexes.
+- **Base 10 :** elle est devenue le standard de l'écriture des calculs (Brahmagupta 628, Fibonacci 1202, Stevin 1585). Elle a absorbé l'analyse des angles hérités de la base 60 : par log₁₀ (Briggs, 1617), les produits deviennent des sommes ; par e^(iθ) (Euler, 1748), la rotation devient une multiplication.
+- **La chronologie des notations :** Recorde (=, 1557), Descartes (x, y, z, 1637), Newton (fluxions, 1665–1687), Leibniz (∫, 1675), Euler (f(x), e, π, i, XVIIIe siècle, les Lumières), Gauss (≡, 1801).
 - **Faits exacts qui vont dans ce sens** (calculés au § 6 de [`resultats/bases_objets.md`](resultats/bases_objets.md)) :
   - −1 n'a pas de racine carrée modulo 12, 24, 60 ou 360. Il en a une modulo 10 : 3 ≡ i, 7 ≡ −i.
   - Modulo 12 et 24, tout nombre premier avec la base est son propre inverse (x² ≡ 1). Ces horloges n'ont que des reflets. Les seules bases ainsi sont les diviseurs de 24.
@@ -90,18 +93,33 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ton et façon de répondre
+## 6. Ce que la partie XX a établi (à garder en tête)
+
+- **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
+- **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
+- **Les faisceaux des sphères, avec des chèvres.** n + 1 chèvres sur un simplexe couvrent la clôture S^(n−1) (un bon recouvrement) ; leur nerf calcule la cohomologie. Toute sphère = deux hémisphères d'aire ½ recollés par l'inversion y ↦ y/|y|² ; la projection stéréographique est l'inversion de rayon √2.
+- **Le losange de √2 dans la figure de diffraction.** Fantômes |m| = 1 : sommets ; |m| = √2 : milieux des côtés (rapport d'aires ½). En dimension n : le polytope croisé, arêtes √2. Retourner l'aiguille = i·i = −1.
+- **√2 partout.** La chèvre infinie, le centre du cube en 8D (E₈ = D₈ ∪ (D₈ + ½·(1, …, 1))), la distance entre deux directions au hasard en grande dimension (les plongements d'IA).
+- **2 et 3 donnent 12 :** 3¹² ≈ 2¹⁹ (réduite 19/12 de log₂ 3), le comma pythagoricien.
+
+## 7. Travailler sur un modèle de l'auteur « comme exact »
+
+- Quand l'auteur demande de traiter son modèle comme une exactitude physique (par exemple à 10⁻⁵⁰ m), **pose-le comme postulat** : suppose-le exact, calcule ce qu'il implique, et dis ce qui permettrait de le tester.
+- **Ne le présente pas comme de la physique établie.** Sous la longueur de Planck (1,6·10⁻³⁵ m), la physique connue ne sait plus définir une position (partie XX, § 8).
+- **Ne le rejette pas non plus.** Un postulat cohérent dont on tire des conséquences est un travail légitime.
+
+## 8. Ton et façon de répondre
 
 - **Langue et ton.** Réponds en français, sur un ton simple et conversationnel, et tutoie l'auteur.
 - **Explications.** Explique pourquoi et comment, pas seulement quoi. Dis ce qui est sûr et ce qui ne l'est pas, et donne des sources en liens.
 - **Partir de ses propositions.** Cherche d'abord le procédé commun qui les soutient (§ 1), calcule-le, puis dis ce qui reste ouvert. N'affaiblis pas une proposition par réflexe.
 - **Vérifier.** Vérifie chaque nombre par un calcul, dans un script, avant de l'écrire.
 
-## 7. Conventions de la série
+## 9. Conventions de la série
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 
@@ -121,3 +139,5 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - G. A. Deschamps, « Gaussian beam as a bundle of complex rays », *Electronics Letters* 7, 684–685 (1971).
 - [« What is special about the divisors of 24? »](https://arxiv.org/abs/1104.5052) : les bases où x² ≡ 1 pour tout x premier avec la base.
 - D. Jeffery (UNLV), [« Ancient Babylonian astronomers and why we have 360° in the circle »](https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html).
+- J. Miller, [« Earliest Uses of Various Mathematical Symbols »](https://mathshistory.st-andrews.ac.uk/Miller/mathsym) (MacTutor) : les dates des notations.
+- L. J. Garay, « Quantum gravity and minimum length », *Int. J. Mod. Phys. A* 10, 145–166 (1995), [arXiv:gr-qc/9403008](https://arxiv.org/abs/gr-qc/9403008) : la longueur minimale.

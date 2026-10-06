@@ -22,6 +22,8 @@
 
 Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (≈ 10 s). Les tableaux complets sont dans [`resultats/bases_objets.md`](resultats/bases_objets.md).
 
+**Suite : [Partie XX — deux chèvres au même endroit : les faisceaux des n-sphères, le losange de √2 et la figure de diffraction](sphere-faisceaux.md).**
+
 ## En bref
 
 - **Tu as raison, et je corrige ma phrase.**
@@ -296,7 +298,7 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 | faisceau laser | w₀ | λ/(πw₀) | πw₀²/λ | source en z = −i·z_R |
 
 - **Ce que ça transporte.** À la distance z_R, un faisceau est √2 fois plus large qu'à son col, et sa phase de Gouy vaut 45°. Pour la chèvre, z_R = 1 : c'est exactement le piquet sur la clôture (d = 1), où ρ = |1 + i| = √2, la diagonale 1x, 1y.
-- La chèvre classique est donc à la distance de Rayleigh de son propre faisceau. C'est une identité de structure : le même calcul, pas seulement la même allure.
+- La chèvre de dimension infinie, piquet sur la clôture, est donc à la distance de Rayleigh de son propre faisceau. C'est une identité de structure : le même calcul, pas seulement la même allure. (Au même piquet, la chèvre plane a une corde de 1,1587… : deux chèvres au même endroit, séparées par une infinité de dimensions ; voir la [partie XX](sphere-faisceaux.md).)
 
 **Le lien avec ta deuxième image.**
 - Près de son col, l'hyperboloïde s'écarte du cylindre comme θ²z²/(2w₀) : un écart quadratique. Deux cercles tangents s'écartent de la même façon, comme κs²/2.
@@ -398,7 +400,7 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 - Ce qui est exact : la compression cos φ de toute projection, et l'impossibilité d'aplatir la sphère sans la déformer.
 - Mais les défauts des pixels (partie XVIII) viennent d'un autre mécanisme, l'échantillonnage. Les deux s'additionnent.
 
-**Analogie de structure (même procédé), donc un résultat :** le cube, la chèvre de dimension infinie et le faisceau laser sont le même cône à sommet imaginaire. Le cube et la chèvre y ont w₀·θ = 1 (λ = π), et la chèvre classique est à la distance de Rayleigh de son faisceau. Ce qui reste ouvert, c'est un mécanisme physique commun.
+**Analogie de structure (même procédé), donc un résultat :** le cube, la chèvre de dimension infinie et le faisceau laser sont le même cône à sommet imaginaire. Le cube et la chèvre y ont w₀·θ = 1 (λ = π), et la chèvre de dimension infinie, piquet sur la clôture, est à la distance de Rayleigh de son faisceau. Ce qui reste ouvert, c'est un mécanisme physique commun.
 
 **Ta thèse sur les bases** (12 et 60 pour la géométrie qu'on voit, 10 pour l'analyse par les nombres complexes) : les faits exacts du § 9 vont dans son sens.
 

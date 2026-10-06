@@ -40,6 +40,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XIX — les bases 2 et 10 sont deux objets : i modulo 10, l'aiguille qui tourne, le trait, le cône et Thalès](bases-objets.md)** (ton i modulo 10 vérifié — 3 ≡ i, 9 ≡ −1, 27 ≡ 7 ≡ −i — et le théorème qui le porte : une base a un i exactement quand elle est le carré de la longueur d'une aiguille de la grille qui ne touche aucun autre point entre ses bouts, i étant sa pente, le quart de tour de la grille repliée sur le carré de côté √10 qui devient × 3 modulo 10, la base 2 où l'aiguille ne tourne pas, les subdivisions 1/n finies ou périodiques selon la base, les deux échelles log qui ne se recalent jamais avec Benford, les 3 dB, kilo contre kibi et Furstenberg, la gauche, la droite et le centre des pochoirs à trois points, l'erreur du point qui vit sur une sphère de rayon √(n/12), l'aiguille qui tourne autour d'un axe et balaie l'hyperboloïde du faisceau laser, du cube et de la chèvre — un même cône à sommet imaginaire, ρ = |d + i| —, la demi-sphère et son cône conjugué d'Archimède, Thalès avec le sou qui cache la Lune, Thomson face à Bohr, et les deux couches : les bases 12, 24, 60 et 360 sans i, aux horloges de reflets, face à la base 10 qui porte le quart de tour).
 
+**Et : [Partie XX — deux chèvres au même endroit : les faisceaux des n-sphères, le losange de √2 et la figure de diffraction](sphere-faisceaux.md)** (la chèvre plane et la chèvre de dimension infinie au même piquet, la division d'intégrales complexes d'Ullisch appliquée à toutes les dimensions dans le plan méridien avec des cordes certifiées à 50 chiffres, les deux chaînes paire et impaire de la partie IV et leurs seuils 3, 6 et 8, n + 1 chèvres placées sur un simplexe qui couvrent la clôture et dont le nerf calcule la cohomologie des sphères, les deux cartes stéréographiques recollées par l'inversion de rayon √2, le losange des fantômes de l'étoile de Siemens et le polytope croisé aux arêtes √2, le retournement de l'aiguille par i·i = −1, E₈ comme grille décalée de dimension 8, le comma pythagoricien qui fait 12 notes avec 2 et 3, √2 entre deux directions au hasard dans une IA, l'histoire des notations en dates, et 10⁻⁵⁰ comme précision et comme postulat).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -493,6 +495,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/recursion_argent.py`](scripts/recursion_argent.py) : la partie XVII.
 - [`scripts/pixels_longitudes.py`](scripts/pixels_longitudes.py) : la partie XVIII.
 - [`scripts/bases_objets.py`](scripts/bases_objets.py) : la partie XIX.
+- [`scripts/sphere_faisceaux.py`](scripts/sphere_faisceaux.py) : la partie XX.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
