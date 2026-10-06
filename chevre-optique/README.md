@@ -46,6 +46,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXII — le carré de neuf points : √2 là où les pas de 10 se précipitent, les chèvres de 1 à √2, et 24 pour la sphère 24D](carre-neuf-points.md)** (les décades de dimension comme décimales de la corde : ρ² = 1,82, 1,980, 1,998 0… et 2 − ρ² ≈ 2/n, le doublement de l'aire atteint seulement à l'infini, 10⁻⁵⁰ en dimension 2·10⁵⁰ ; le carré de neuf points dont les distances 1 et √2 sont comblées par les cordes de toutes les dimensions, de 1 à √2, et les 3ⁿ points du cube qui tournent d'un quart de tour modulo 10 ; les 2n chèvres aux ±e_i dont le nerf est le bord du polytope croisé, et qui cessent d'être un bon recouvrement à l'infini ; la chèvre 24D et ses 48 piquets, et le réseau de Leech, sphères de rayon 1 et trou à √2, comme les records en 3D et en 8D).
 
+**Et : [Partie XXIII — la relecture : les lentilles, les boules et le grain grossier recousent les pas de 10 et √2](lentilles-boules-grain.md)** (trois corrections de la partie XXII à la lumière des chapitres précédents : le plan de la lentille à R/(n + 1), centre de gravité du simplexe, qui fait d'une décade de dimension une décade de longueur et du miroir 49-50-51 un miroir de plans ; 2/√3 comme arête du simplexe et non comme coïncidence ; le terme 2/(3n²) déjà dérivé dans la partie I ; puis les décimales en deux couches, la projection qui répète 9², 99², 999² et le ménisque qui entre par une retenue ; les quatre taux de change entre grain et dimension, ε⁻², ε⁻¹ et ε^(−1/2), soit 10¹⁰⁰, 10⁵⁰ et 10²⁵ au grain 10⁻⁵⁰ ; et toutes les dimensions dans un seul cran de diaphragme).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -502,6 +504,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/sphere_faisceaux.py`](scripts/sphere_faisceaux.py) : la partie XX.
 - [`scripts/vingt_quatre_miroir.py`](scripts/vingt_quatre_miroir.py) : la partie XXI.
 - [`scripts/carre_neuf_points.py`](scripts/carre_neuf_points.py) : la partie XXII.
+- [`scripts/lentilles_boules_grain.py`](scripts/lentilles_boules_grain.py) : la partie XXIII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

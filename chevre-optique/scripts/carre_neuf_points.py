@@ -123,7 +123,7 @@ ligne("- Chaque facteur 10 sur la dimension ajoute un 9 (et un 0) à ρ² : 1,82
       " 1,999 980 000 3… Les décades de dimension sont les décimales de l'approche de 2.")
 ligne(f"- n·(2 − ρ_n²) → 2 (partie XX), et le calcul donne n·(2 − ρ_n²) = 2 − 8/(3n) + … (n·(t_n − 1) vaut"
       f" {fr(FIT[4], '{:.5f}')}, {fr(FIT[5], '{:.5f}')}, {fr(FIT[6], '{:.5f}')} en 10⁴, 10⁵, 10⁶ ; −4/3 = −1,33333)."
-      " Donc 2 − ρ_n² ≈ 2/n.")
+      " Donc 2 − ρ_n² ≈ 2/n. C'est le développement r_n² = 2n/(n + 1) + 2/(3n²) de la partie I (§ 5.4).")
 ligne("- ρ² est le rapport entre l'aire du disque de la corde et celle du pré (dans le plan méridien, la projection"
       " de la partie XX). Le doublement de l'aire, ρ² = 2, n'arrive qu'en dimension infinie.")
 ligne("- Les trois cercles de rayons 1/√2 (la moitié du pré), 1 (le pré) et √2 (la corde infinie) ont des aires ½, 1"
@@ -131,9 +131,8 @@ ligne("- Les trois cercles de rayons 1/√2 (la moitié du pré), 1 (le pré) et
 ligne("- **Ton 10⁻⁵⁰ y a une place précise.** 2 − ρ_n² = 10⁻⁵⁰ en n ≈ 2·10⁵⁰ ; de même 10⁻⁴⁹ en 2·10⁴⁹ et 10⁻⁵¹ en"
       " 2·10⁵¹ (correction relative 4/(3n), négligeable). Le miroir 49-50-51 de la partie XXI est une échelle de"
       " dimensions : chaque cran de 10 sur la précision est un cran de 10 sur la dimension.")
-ligne("- Ce qui reste vrai : sur une longueur physique (10⁻⁵⁰ m → 10⁻⁵¹ m), un cran de 10 multiplie l'aire par 100."
-      " L'accord entre le pas de 10 et le pas de √2 se fait dans les dimensions et dans les chiffres, pas dans les"
-      " longueurs.")
+ligne("- *Corrigé dans la partie XXIII :* l'accord se fait aussi dans les longueurs. Le plan de la lentille est à"
+      " R/(n + 1) du centre (parties I et VI) : en dimension 10ᵏ − 1, il est à 10⁻ᵏ R.")
 
 # ---------------------------------------------------------------------------
 # 2. Le carré de neuf points
@@ -384,9 +383,12 @@ ligne("- **Dans ℤ²⁴**, le centre du cube est à √24 fois le rayon. Leech 
       " fait en 8D en remplissant les trous de D₈ (partie XX).")
 ligne("- **Les contacts.** Une sphère de ℤ²⁴ en touche 48 (les piquets des chèvres), une sphère de Leech 196 560"
       " (partie XXI).")
-ligne(f"- Une coïncidence à signaler, sans plus : 2/√3 = {fr(2 / math.sqrt(3), '{:.5f}')} (l'hexagonal) et ρ₂ ="
-      f" {fr(RHO[2], '{:.5f}')} (la chèvre plane) diffèrent de {fr(100 * (RHO[2] * math.sqrt(3) / 2 - 1), '{:.2f}')} %."
-      " Je ne connais pas de procédé commun.")
+ligne(f"- 2/√3 = {fr(2 / math.sqrt(3), '{:.5f}')} (l'hexagonal) et ρ₂ = {fr(RHO[2], '{:.5f}')} (la chèvre plane)"
+      f" diffèrent de {fr(100 * (RHO[2] * math.sqrt(3) / 2 - 1), '{:.2f}')} %. *Corrigé dans la partie XXIII :* ce n'est"
+      " pas une coïncidence. 2/√3 est l'arête du triangle de hauteur R, le simplexe de la 2D, terme principal de la"
+      " corde (parties V et VI) et maille de la grille décalée (partie XV) ; l'écart est le ménisque. En 2D, le rapport"
+      " trou/rayon de l'hexagonal tombe sur le même 2/√3 (côté/hauteur du triangle équilatéral) ; en 3D les deux se"
+      " séparent (√2 et √(3/2)).")
 
 with open(os.path.join(ICI, "..", "resultats", "carre_neuf_points.md"), "w") as fh:
     fh.write("# Résultats de la partie XXII (générés par scripts/carre_neuf_points.py)\n\n" + "\n".join(md) + "\n")

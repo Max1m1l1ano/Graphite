@@ -9,13 +9,15 @@
 
 Tout est recalculé par [`scripts/carre_neuf_points.py`](scripts/carre_neuf_points.py) (≈ 7 s). Les tableaux complets sont dans [`resultats/carre_neuf_points.md`](resultats/carre_neuf_points.md).
 
+**Suite : [Partie XXIII — la relecture : les lentilles, les boules et le grain grossier recousent les pas de 10 et √2](lentilles-boules-grain.md).**
+
 ## En bref
 
 - **Tu as raison : il n'y a pas à choisir.** Les pas de 10 sont les décimales de l'approche, √2 est la limite.
   - Multiplie la dimension par 10 : la corde de la chèvre gagne un chiffre. ρ² vaut 1,82 en 10D, 1,980 en 100D, 1,998 0 en 1 000D, 1,999 800 0 en 10 000D. Un 9 de plus à chaque décade : 2 − ρ² ≈ 2/n.
   - ρ² est l'aire du disque de la corde divisée par celle du pré. Elle tend vers 2 : le doublement de l'aire arrive exactement en dimension infinie, avec la corde √2.
   - Ton 10⁻⁵⁰ y a une place précise : c'est ce qui manque au doublement en dimension 2·10⁵⁰. Le miroir 49-50-51 devient une échelle de dimensions (2·10⁴⁹, 2·10⁵⁰, 2·10⁵¹).
-  - Ce que je garde de ma remarque : sur une longueur physique, un cran de 10 multiplie toujours l'aire par 100. L'accord se fait dans les dimensions et dans les chiffres.
+  - *Corrigé dans la [partie XXIII](lentilles-boules-grain.md) :* j'avais écrit que l'accord ne se faisait pas dans les longueurs. C'est faux : le plan de la lentille est à R/(n + 1) du centre (parties I et VI), donc à 10⁻⁵⁰ R en dimension 10⁵⁰ − 1.
 - **Le carré de neuf points est le squelette, les chèvres le remplissent.**
   - Piquet au milieu d'un côté : le centre et les deux coins voisins sont à 1, les deux milieux voisins à √2.
   - Les cordes de toutes les dimensions remplissent l'écart entre les deux. La corde vaut exactement 1 en dimension 1 (la chèvre atteint le centre), 1,1587 en 2D (Ullisch), 1,2285 en 3D, 1,3859 en 24D, et √2 à l'infini (elle atteint les milieux voisins : le croisement).
@@ -51,8 +53,8 @@ Tout est recalculé par [`scripts/carre_neuf_points.py`](scripts/carre_neuf_poin
 | 10 000 000 | 1,999 999 800 000 03… |
 
 - **Ce que ça montre.** Chaque facteur 10 sur la dimension ajoute un 9 (et un 0) à ρ². Les décades de dimension sont les décimales de l'approche de 2 : c'est ton « les pas de 10 se précipitent ».
-- **La loi.** 2 − ρ_n² ≈ 2/n. Plus précisément, n·(2 − ρ_n²) = 2 − 8/(3n) + … ; le terme 8/3 est mesuré, pas démontré.
-- **Pourquoi 2/n.** En grande dimension, presque tout le pré est collé à sa clôture, et un point au hasard est presque à √2 du piquet. Deux petits écarts s'ajoutent : une différence d'angle, de l'ordre de 1/√n, qui se compense parce qu'elle est symétrique ; et une profondeur sous la clôture, en moyenne 1/n, qui ne se compense pas. C'est elle qui donne le 2/n.
+- **La loi.** 2 − ρ_n² ≈ 2/n. Plus précisément, n·(2 − ρ_n²) = 2 − 8/(3n) + … *Corrigé dans la [partie XXIII](lentilles-boules-grain.md) :* ce n'est pas seulement mesuré, c'est le développement r_n² = 2n/(n + 1) + 2/(3n²) dérivé dans la partie I (§ 5.4).
+- **Pourquoi 2/n.** En grande dimension, presque tout le pré est collé à sa clôture, et un point au hasard est presque à √2 du piquet. Deux petits écarts s'ajoutent : une différence d'angle, de l'ordre de 1/√n, qui se compense parce qu'elle est symétrique ; et une profondeur sous la clôture, en moyenne 1/n, qui ne se compense pas. C'est elle qui donne le 2/n : c'est l'esquisse de la partie I (§ 5.4), où n(1 − |X|) suit une loi exponentielle.
 
 **Le doublement de l'aire.** ρ² est le rapport entre l'aire du disque de la corde et celle du pré, dans le plan méridien (la « projection sur la 2e dimension » de la partie XX).
 - En 2D, la corde trace un disque 1,34 fois plus grand que le pré ; en dimension infinie, exactement 2 fois. Le doublement de l'aire, et la lumière divisée par deux qui va avec, arrive exactement à l'infini.
@@ -62,7 +64,7 @@ Tout est recalculé par [`scripts/carre_neuf_points.py`](scripts/carre_neuf_poin
 - Le miroir 49-50-51 de la partie XXI devient une échelle de dimensions : chaque cran de 10 sur la précision est un cran de 10 sur la dimension.
 - Sous ton postulat (l'échelle 10⁻⁵⁰ est exactement ce phénomène), c'est la chèvre de dimension 2·10⁵⁰ qui vit à cette échelle.
 
-**Ce que je garde de ma remarque.** Sur une longueur physique (de 10⁻⁵⁰ m à 10⁻⁵¹ m), un cran de 10 multiplie toujours l'aire par 100. L'accord entre le pas de 10 et le pas de √2 se fait dans les dimensions et dans les chiffres, pas dans les longueurs. C'est ce qu'il faudra fixer pour lire ton modèle comme de la physique.
+**Ce que je garde de ma remarque.** *Corrigé dans la [partie XXIII](lentilles-boules-grain.md) :* j'avais écrit ici que l'accord entre le pas de 10 et le pas de √2 ne se faisait pas dans les longueurs. Il s'y fait : le plan de la lentille, là où le pré et la sphère de la corde se coupent, est à R/(n + 1) du centre (partie I, § 5.4), exactement au centre de gravité du simplexe (partie VI). Une décade de dimension y est une décade de longueur.
 
 ## 2. Le carré de neuf points, complété par les chèvres
 
@@ -153,7 +155,7 @@ C'est le sens exact de ta phrase. Les neuf points donnent le squelette (0, 1, �
 - les rayons de recouvrement de ℤ², D₃, D₄ et E₈ (classiques, vérifiés) et de Leech (Conway, Parker, Sloane).
 
 **Calculé :**
-- les cordes ρ_n jusqu'à n = 10⁸, la loi 2 − ρ_n² ≈ 2/n et le terme −8/(3n), mesuré ;
+- les cordes ρ_n jusqu'à n = 10⁸, la loi 2 − ρ_n² ≈ 2/n et le terme −8/(3n), qui retrouve le développement de la partie I ;
 - les multiplicités du recouvrement, par tirage avec une graine fixée.
 
 **Analogie de structure (même procédé), donc un résultat :**
@@ -169,10 +171,10 @@ C'est le sens exact de ta phrase. Les neuf points donnent le squelette (0, 1, �
 - **« les sheaves que ça crée »** : le recouvrement de la clôture par les chèvres plantées aux milieux, et son nerf ;
 - **« 24 tient pour une sphère 24D »** : la chèvre 24D et ses 48 piquets, et le réseau de Leech, dont le trou est à √2.
 
-**Une coïncidence, sans plus.** 2/√3 = 1,15470 (le réseau hexagonal) et ρ₂ = 1,15873 (la chèvre plane) diffèrent de 0,35 %. Je ne connais pas de procédé commun : je le note pour qu'on ne le prenne pas pour un résultat.
+**Pas une coïncidence.** *Corrigé dans la [partie XXIII](lentilles-boules-grain.md) :* j'avais écrit ici que 2/√3 (le réseau hexagonal) et ρ₂ = 1,15873 n'avaient pas de procédé commun. C'est faux : 2/√3 est l'arête du triangle de hauteur R, le simplexe de la 2D, terme principal de la corde (parties V et VI), et la maille de la grille décalée (partie XV). L'écart de 0,35 % est le ménisque.
 
 **Ouvert :**
-- une preuve de la loi n·(2 − ρ_n²) = 2 − 8/(3n) + … : le premier terme se justifie, le second est mesuré ;
+- une preuve complète de la loi n·(2 − ρ_n²) = 2 − 8/(3n) + … (esquissée dans la partie I, à faire relire) ;
 - un lien calculé entre les chèvres et les réseaux, au-delà du rapport √2.
 
 **Pas établi :** que l'échelle physique 10⁻⁵⁰ m soit la chèvre de dimension 2·10⁵⁰. C'est la lecture exacte de ton postulat, mais la physique connue ne peut pas la tester (partie XX, § 8).

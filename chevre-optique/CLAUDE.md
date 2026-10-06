@@ -111,6 +111,37 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - **Les faisceaux du polytope croisé.** 2n chèvres aux ±e_i : nerf = bord du polytope croisé = S^(n−1) en toute dimension finie (arccos(1/√n) < α_n < 90°) ; n chèvres à la fois vers les sommets du cube ; à l'infini, le recouvrement n'est plus bon et le nerf se trompe.
 - **Leech garde le √2 du carré** : sphères de rayon 1, trou le plus profond à √2 (Conway, Parker, Sloane 1982). Même rapport pour D₃ (cfc), D₄ et E₈ : en 3, 8 et 24 (les dimensions nommées par l'auteur), les records ont leur trou à √2 fois le rayon.
 
+## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
+
+La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient des acquis. **Avant d'écrire « coïncidence », « mesuré, pas démontré », « pas établi » ou « pas dans les longueurs », cherche dans les parties précédentes** (`grep` sur les `.md` de ce dossier) : le lien y est peut-être déjà.
+
+- **Partie I (README).**
+  - L'aire de la lentille F(δ, k) sert pour la chèvre, l'éclipse, le vignettage et la FTM.
+  - Le piquet au centre donne k = 1/√2 : un cran.
+  - « Un cran sépare le cercle tangent aux côtés et le cercle qui passe par les coins » (§ 6.4).
+  - r_n² = 2n/(n + 1) + 2/(3n²), dérivé au § 5.4.
+  - Le plan de la lentille est à x₀ ≈ R/(n + 1).
+  - La corde est la distance médiane ; la coquille et l'équateur (§ 5.2–5.3).
+  - Les cercles k² = δ² + c, avec c = (n − 1)/(n + 1).
+- **Partie IV.** La suite des trois solides, π = 2 + ⅓(2 + ⅖(…)), part du carré inscrit (aire 2). Seuils 6 et 8.
+- **Parties V et VI.**
+  - Le triangle de hauteur R, puis le simplexe d'arête √(2n/(n + 1)), terme principal de la corde.
+  - L'écart (0,35 % en 2D) est le ménisque, **pas une coïncidence**.
+  - Le plan de la lentille passe par le centre de gravité du simplexe.
+- **Partie X.**
+  - Le point, le disque et le carré se confondent sous le flou (un carré de côté √3·ρ ressemble à un disque de rayon ρ).
+  - Des pixels carrés font 8 centres fantômes (4 cardinaux, 4 diagonaux) : avec le centre, le carré de neuf points.
+- **Partie XV.**
+  - La grille décalée est A_n (la grille carrée d'une dimension de plus, coupée en diagonale) ; sa maille est l'arête du simplexe.
+  - La grille carrée n'offre que 1 et √2.
+  - Une grille grossière confond la chèvre et son simplexe.
+- **Partie XVI.**
+  - r² = 1 + (n − 1)/(n + 1) + μ (piquet, projection, ménisque).
+  - Le plateau 2^(−1/n) ; les contacts à 45° (Laguerre).
+- **Partie XVII.** Le disque de demi-aire 1/√2 ; les jumeaux d·d′ = ½ (la forme de Newton x·x′ = f²) ; la récursion d'argent (Pell).
+- **Partie XVIII.** Le grain grossier honnête : un chiffre certain par niveau décimal. L'aire converge sous le grain, la longueur jamais (« π = 4 »).
+- **Partie XIX.** Les bases comme objets, i modulo b, les deux couches et les retenues.
+
 ## 7. Travailler sur un modèle de l'auteur « comme exact »
 
 - Quand l'auteur demande de traiter son modèle comme une exactitude physique (par exemple à 10⁻⁵⁰ m), **pose-le comme postulat** : suppose-le exact, calcule ce qu'il implique, et dis ce qui permettrait de le tester.
@@ -123,12 +154,13 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - **Explications.** Explique pourquoi et comment, pas seulement quoi. Dis ce qui est sûr et ce qui ne l'est pas, et donne des sources en liens.
 - **Partir de ses propositions.** Cherche d'abord le procédé commun qui les soutient (§ 1), calcule-le, puis dis ce qui reste ouvert. N'affaiblis pas une proposition par réflexe.
 - **Vérifier.** Vérifie chaque nombre par un calcul, dans un script, avant de l'écrire.
+- **Relire.** Avant de conclure, relis les acquis du § 6 bis et cite la partie où un lien a déjà été posé.
 
 ## 9. Conventions de la série
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 
