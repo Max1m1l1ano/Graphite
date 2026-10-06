@@ -8,6 +8,8 @@
 
 Tout est recalculé par [`scripts/angle_or_aiguilles.py`](scripts/angle_or_aiguilles.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/angle_or_aiguilles.md`](resultats/angle_or_aiguilles.md).
 
+**Suite : [Partie XII — 144, la douzième lentille](lentille-144.md).**
+
 ## En bref
 
 - **Tu avais raison sur les petites aiguilles.**
@@ -26,7 +28,7 @@ Tout est recalculé par [`scripts/angle_or_aiguilles.py`](scripts/angle_or_aigui
 - **Tes nombres 220, 121 et 11.** Dans le spectre du diaphragme à 55 anneaux :
   - 220 = 4×55 est un zéro exact ;
   - 121 = 11 + 2×55 est une réplique de 11, d'amplitude exactement 1/11 de la sienne.
-  - Mais ces deux faits dépendent des 55 anneaux, que j'avais choisis. L'écriture 220 + 5²×10⁻¹ décrit l'arrondi 222,5, pas l'angle exact 222,4922…°, qui est irrationnel, et elle dépend des degrés. Je ne peux pas en faire un mécanisme (§ 5).
+  - *Corrigé dans la [partie XII](lentille-144.md) :* le nombre d'anneaux n'est pas libre, c'est forcément un nombre de Fibonacci, et seul son rang est un choix. Et 222,5° n'est pas un simple arrondi : c'est exactement 89/144 de tour, l'approximation de Fibonacci de rang 12, avec un pas de 360°/144 = 2,5° = 5²×10⁻¹.
 
 ![L'angle d'or, les trous et les petites aiguilles](figures/k1_angle_or_aiguilles.png)
 
@@ -118,16 +120,17 @@ Chaque composante u dessine, dans le spectre local de la partie IX, sa propre dr
 - 121 = 11 + 2×55 est la réplique « haute » de la composante « basse » 11, et son amplitude vaut exactement 1/11 de celle de 11 (0,00155 contre 0,0170). C'est la loi générale des répliques : l'amplitude décroît en 1/u, d'où 11/121.
 - 11 est un nombre de Lucas (L₅), et 55 = 5 × 11 = F₅ × L₅.
 
-**Pourquoi je ne peux pas en faire un mécanisme.** Un mécanisme doit survivre quand on change ce qui est arbitraire. Or :
-- **55 est mon choix.** Avec 144 anneaux, les zéros seraient en 144, 288, 432…, et 220 ne jouerait aucun rôle.
-- **222,5 est un arrondi.** L'angle exact vaut 222,4922…°, un nombre irrationnel sans écriture décimale finie : 220 + 5²×10⁻¹ décrit l'arrondi, pas l'angle.
-- **Les degrés sont une convention.** On compte 360 degrés par tour depuis les Babyloniens. En tours, l'angle vaut 1/φ, et cette écriture-là résiste à tous les changements d'unité.
-- **Les unités ne se mélangent pas.** 220 est ici un nombre d'anneaux par unité de ζ, et 222,5 un angle en degrés. Leur proximité ne relie pas les deux grandeurs.
+**Ce que j'avais écrit, et ce qui tient après ta réponse (corrigé dans la [partie XII](lentille-144.md)).**
+- ~~55 est mon choix~~. Le nombre d'anneaux d'une lentille de Fibonacci est forcément un nombre de Fibonacci : seul son rang est un choix. Les zéros tombent toujours sur ses multiples (55k pour 55 anneaux, 144k pour 144) ; 220 n'est un zéro que pour 5 et 55 anneaux.
+- ~~222,5 est un arrondi~~. 222,5° est **exactement** 89/144 de tour, l'approximation de Fibonacci de rang 12 de l'angle d'or, et le pas 360°/144 vaut 2,5° = 5²×10⁻¹. Ton écriture 220 + 5²×10⁻¹ se lit donc 88 pas + 1 pas = 89 pas de 2,5°. C'est la dernière approximation de Fibonacci qui tombe juste en degrés.
+- **Les degrés restent une convention**, mais une convention construite sur 12 (360 = 2³·3²·5). C'est elle qui rencontre la suite de Fibonacci en 144 = 12², et nulle part après.
+- **Les unités ne se mélangent pas** : 220 dans le spectre (des anneaux par unité de ζ) et 220 en degrés restent deux grandeurs différentes.
 - Je n'ai pas compris à quoi renvoie « la diffraction 121 haute pour 11 basse » au-delà des répliques. Si tu pensais à autre chose, dis-le-moi et je le teste.
 
 ## 6. Le tri
 
 **Corrigé :**
+- « 55 est mon choix » et « 222,5 est un arrondi » : le nombre d'anneaux est forcément de Fibonacci, et 222,5° = 89/144 de tour exactement ([partie XII](lentille-144.md)) ;
 - « pas même objet » pour Perron : le spectre est bien une hiérarchie d'aiguilles repliées qui se recouvrent, avec une autre règle et un autre but que Perron ;
 - « l'angle d'or n'y joue aucun rôle » : 137,5° et 222,5° sont le partage 1/φ² + 1/φ du tour, la même équation que les foyers. Seule la place du trou dans mes rayons était due au hasard.
 
@@ -138,7 +141,7 @@ Chaque composante u dessine, dans le spectre local de la partie IX, sa propre dr
 - la ressemblance des spectres, de 0,71 avec 2 composantes à 0,997 avec 200.
 
 **Pas établi :**
-- 220 + 5²×10⁻¹ comme transition, et 5²×10⁻² = 1/4 comme seuil : ces écritures dépendent de l'arrondi, des degrés et du choix des 55 anneaux.
+- 5²×10⁻² = 1/4 comme seuil de transition. En revanche, 5²×10⁻¹ = 2,5° = 360°/144 est exact (partie XII).
 
 ## Sources
 

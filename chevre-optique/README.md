@@ -24,6 +24,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XI — l'angle d'or, les trous du cercle et les petites aiguilles du spectre](angle-or-aiguilles.md)** (l'angle d'or partage le tour comme les deux foyers de Fibonacci, le théorème des trois distances, le spectre du diaphragme fait de nombres de Fibonacci et de Lucas avec ses répliques, et les petites aiguilles du spectre local expliquées composante par composante).
 
+**Et : [Partie XII — 144, la douzième lentille](lentille-144.md)** (137,5° et 222,5° sont exactement 55/144 et 89/144 de tour, avec un pas de 2,5°, la dernière approximation de Fibonacci de l'angle d'or qui tombe juste en degrés, le théorème de Carmichael, 144 = 12², la lentille à 144 anneaux, et la corde de la chèvre entre 2D et 3D).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -469,6 +471,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/moire_fibonacci.py`](scripts/moire_fibonacci.py) : la partie IX.
 - [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py) : la partie X.
 - [`scripts/angle_or_aiguilles.py`](scripts/angle_or_aiguilles.py) : la partie XI.
+- [`scripts/lentille_144.py`](scripts/lentille_144.py) : la partie XII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
