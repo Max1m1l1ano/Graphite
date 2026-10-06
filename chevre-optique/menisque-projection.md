@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/menisque_projection.py`](scripts/menisque_projection.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/menisque_projection.md`](resultats/menisque_projection.md).
 
+**Suite : [Partie XVII — les deux foyers du contact, la récursion d'argent et les anneaux de Newton](recursion-argent.md).**
+
 ## En bref
 
 - **Ta diagonale 1x, 1y est exactement la chèvre de dimension infinie, et pas seulement pour le piquet sur le bord.**

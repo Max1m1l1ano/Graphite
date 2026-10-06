@@ -34,6 +34,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XVI — ménisque et projection, les disques qui se touchent](menisque-projection.md)** (la diagonale 1x, 1y comme corde de la chèvre en dimension infinie et comme arête de la grille décalée dans toutes les dimensions, la décomposition r² = 1 + projection + ménisque et ses maxima entre 2 et 3, le plateau où la chèvre s'annule tant que le disque ne touche pas le bord, les contacts intérieurs et extérieurs vus comme des diagonales à 45° (Laguerre), les trois déplacements — translation, faisceau hyperbolique par la base du simplexe, triangle — et le nombre d'argent √2 + 1 à l'infini).
 
+**Et : [Partie XVII — les deux foyers du contact, la récursion d'argent et les anneaux de Newton](recursion-argent.md)** (le petit disque de rayon 1/√2 qui glisse jusqu'au point orange, ses deux contacts en (√2 ∓ 1)/√2 au même point du pré, les jumeaux d·d' = 1/2 qui coupent le pré aux mêmes points comme dans la forme de Newton x·x' = f², la lunule d'Hippocrate à 45°, la récursion T(d) = 2 − 1/(2d) dont les deux points fixes sont les foyers et dont les orbites exactes sont faites de nombres de Pell, les anneaux de Newton de courbures √2 − 1 et √2 + 1, la corde de la chèvre encadrée de façon certaine par arithmétique d'intervalles, et les polyèdres nobles : l'octaèdre des diagonales 1x, 1y, le cube des ménisques et le disphénoïde de deux aiguilles).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -484,6 +486,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/aiguille_grille.py`](scripts/aiguille_grille.py) : la partie XIV.
 - [`scripts/grille_decalee.py`](scripts/grille_decalee.py) : la partie XV.
 - [`scripts/menisque_projection.py`](scripts/menisque_projection.py) : la partie XVI.
+- [`scripts/recursion_argent.py`](scripts/recursion_argent.py) : la partie XVII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
