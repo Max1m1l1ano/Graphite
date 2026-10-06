@@ -18,7 +18,8 @@ Tout est recalculé par [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py)
   - Ce sont les rayons que j'avais sautés en traçant l'œil de poisson (partie VIII). Ils entourent le **seul rayon qui reste droit**, le diamètre qui passe par P, le centre et P′.
   - Sa largeur (±24,2°) vient de mon seuil arbitraire : j'avais sauté les cercles de rayon supérieur à 3.
   - Son centre (29,05° et 209,05°) vient de la direction du point P, choisie au hasard. Le trou suit le point.
-  - 222,5° y tombe par hasard, puisque le trou couvre 184,9° à 233,2°. L'angle d'or n'y joue aucun rôle.
+  - 222,5° y tombe par hasard, puisque le trou couvre 184,9° à 233,2°.
+  - *Précisé dans la [partie XI](angle-or-aiguilles.md) :* seule la place de 222,5° dans ce trou est un hasard. Les nombres eux-mêmes ne le sont pas : 137,5° et 222,5° valent 1/φ² et 1/φ de tour, le même partage que les deux foyers de Fibonacci.
 - **Un point, un disque et un carré rapetissés se confondent, et la loi est exacte.** Sous le flou, l'écart entre leurs images décroît comme le carré de la taille.
   - Un carré de côté √3·ρ s'étale exactement comme un disque de rayon ρ, avec une aire de 3/π celle du disque. Les deux se confondent alors deux fois plus vite, en taille⁴ : seuls leurs coins diffèrent.
   - À aire égale, le carré est π/3 = 1,047 fois plus étalé que le disque.
@@ -26,6 +27,7 @@ Tout est recalculé par [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py)
 - **Les « V » et Perron : même geste, pas même objet.**
   - Le repliement coupe la droite des fréquences en morceaux et les translate d'un entier. Perron coupe un triangle en triangles fins et les translate.
   - Mais les V sont des droites repliées, pas des arbres de Perron.
+  - *Corrigé dans la [partie XI](angle-or-aiguilles.md) :* mes deux droites n'expliquaient que 71 % du spectre. Les petites aiguilles qu'on voit à travers les triangles sont les composantes suivantes du diaphragme, et l'ensemble forme bien une hiérarchie d'aiguilles repliées qui se recouvrent.
   - Le lien profond existe ailleurs, et il est démontré : **le diaphragme circulaire, vu comme filtre de Fourier, et l'aiguille de Kakeya sont liés par un théorème** (Fefferman, 1971).
 - **Ptolémée.**
   - Son théorème sur les quadrilatères inscrits donne √2 pour le carré, c'est-à-dire la limite de la chèvre en dimension infinie, et φ pour le pentagone.
@@ -153,8 +155,8 @@ Les nouveaux centres de la partie IX ne sont pas n'importe où. Pour une grille 
 - Penner (1987) : Ptolémée en géométrie hyperbolique.
 
 **Pas établi, ou à corriger :**
-- l'angle d'or dans le trou : non, le trou suit le point P ;
-- des arbres de Perron dans le spectre : même geste, pas même objet ;
+- l'angle d'or dans le trou : le trou suit le point P, mais 137,5° et 222,5° sont bien le partage 1/φ² + 1/φ du tour ([partie XI](angle-or-aiguilles.md)) ;
+- des arbres de Perron dans le spectre : c'est bien une hiérarchie d'aiguilles repliées qui se recouvrent, avec une autre règle et un autre but que Perron ([partie XI](angle-or-aiguilles.md)) ;
 - l'espace hyperbolique dans le moiré lui-même : non. Le réseau des centres fantômes est plat (euclidien). Le plan hyperbolique apparaît comme le jumeau de l'œil de poisson, et à travers Ptolémée.
 
 ## Sources
