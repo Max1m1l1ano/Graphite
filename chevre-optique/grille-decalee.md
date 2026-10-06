@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/grille_decalee.py`](scripts/grille_decalee.py) (≈ 20 s). Les tableaux complets sont dans [`resultats/grille_decalee.md`](resultats/grille_decalee.md).
 
+**Suite : [Partie XVI — ménisque et projection, les disques qui se touchent](menisque-projection.md).**
+
 ## En bref
 
 - **Tu as raison, et je corrige ma phrase de la partie XIV.** J'avais écrit ne pas trouver de lien direct entre la grille et la corde de la chèvre. Le lien existe : c'est ta grille décalée.

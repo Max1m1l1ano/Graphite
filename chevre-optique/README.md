@@ -32,6 +32,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XV — la grille décalée, où la chèvre retrouve son simplexe](grille-decalee.md)** (la grille décalée d'une demi-maille comme grille cubique coupée en diagonale, sa maille qui est l'arête du simplexe de la chèvre à 0,35 % près, le ménisque maximal entre 2D et 3D, la chèvre comptée qui voit le ménisque à partir de quelques milliers de points, les dimensions d'or exactes √5, 2φ et φ³, l'aiguille sur la grille d'Eisenstein, et la carte de tous les paramètres et de leurs liens).
 
+**Et : [Partie XVI — ménisque et projection, les disques qui se touchent](menisque-projection.md)** (la diagonale 1x, 1y comme corde de la chèvre en dimension infinie et comme arête de la grille décalée dans toutes les dimensions, la décomposition r² = 1 + projection + ménisque et ses maxima entre 2 et 3, le plateau où la chèvre s'annule tant que le disque ne touche pas le bord, les contacts intérieurs et extérieurs vus comme des diagonales à 45° (Laguerre), les trois déplacements — translation, faisceau hyperbolique par la base du simplexe, triangle — et le nombre d'argent √2 + 1 à l'infini).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -481,6 +483,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/perron_dephasage.py`](scripts/perron_dephasage.py) : la partie XIII.
 - [`scripts/aiguille_grille.py`](scripts/aiguille_grille.py) : la partie XIV.
 - [`scripts/grille_decalee.py`](scripts/grille_decalee.py) : la partie XV.
+- [`scripts/menisque_projection.py`](scripts/menisque_projection.py) : la partie XVI.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
