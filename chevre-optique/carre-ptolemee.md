@@ -10,6 +10,8 @@
 
 Tout est recalculé par [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/carre_ptolemee.md`](resultats/carre_ptolemee.md).
 
+**Suite : [Partie XI — l'angle d'or, les trous du cercle et les petites aiguilles du spectre](angle-or-aiguilles.md).**
+
 ## En bref
 
 - **Le trou est réel, et c'est bien celui de la « première dimension ».**
