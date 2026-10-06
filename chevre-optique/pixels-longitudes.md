@@ -14,6 +14,8 @@
 
 Tout est recalculé par [`scripts/pixels_longitudes.py`](scripts/pixels_longitudes.py) (≈ 15 s). Les tableaux complets sont dans [`resultats/pixels_longitudes.md`](resultats/pixels_longitudes.md).
 
+**Suite : [Partie XIX — les bases 2 et 10 sont deux objets : i modulo 10, l'aiguille qui tourne, le trait, le cône et Thalès](bases-objets.md).**
+
 ## En bref
 
 - **225°, c'est exactement là où le cercle de pixels change de pas.**

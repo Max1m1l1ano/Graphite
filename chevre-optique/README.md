@@ -38,6 +38,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XVIII — faire des ronds avec des carrés : le mod, les pixels et les longitudes](pixels-longitudes.md)** (les huit octants du cercle de pixels et la diagonale 225°, le contact apparent créé par l'épaisseur du trait et par les pixels avec le rapport √2 + 1 et la colonne de la tangente verticale, le cercle de Gauss en décimal et en binaire avec sa part lisse 4√2 ζ(−1/2)√R et ses dents de scie mod 1, l'écart exact de 8R entre pixels dedans et dehors par un argument modulo 4, l'escalier « π = 4 », la chèvre comptée en pixels vite ou de façon certaine, les longitudes de l'étoile de Siemens qui se replient au réseau inversé face aux latitudes de la lame de zones, et la lumière qui arrondit les pixels).
 
+**Et : [Partie XIX — les bases 2 et 10 sont deux objets : i modulo 10, l'aiguille qui tourne, le trait, le cône et Thalès](bases-objets.md)** (ton i modulo 10 vérifié — 3 ≡ i, 9 ≡ −1, 27 ≡ 7 ≡ −i — et le théorème qui le porte : une base a un i exactement quand elle est le carré de la longueur d'une aiguille de la grille qui ne touche aucun autre point entre ses bouts, i étant sa pente, le quart de tour de la grille repliée sur le carré de côté √10 qui devient × 3 modulo 10, la base 2 où l'aiguille ne tourne pas, les subdivisions 1/n finies ou périodiques selon la base, les deux échelles log qui ne se recalent jamais avec Benford, les 3 dB, kilo contre kibi et Furstenberg, la gauche, la droite et le centre des pochoirs à trois points, l'erreur du point qui vit sur une sphère de rayon √(n/12), l'aiguille qui tourne autour d'un axe et balaie l'hyperboloïde du faisceau laser, du cube et de la chèvre, la demi-sphère et son cône conjugué d'Archimède, Thalès avec le sou qui cache la Lune, et Thomson face à Bohr).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -490,6 +492,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/menisque_projection.py`](scripts/menisque_projection.py) : la partie XVI.
 - [`scripts/recursion_argent.py`](scripts/recursion_argent.py) : la partie XVII.
 - [`scripts/pixels_longitudes.py`](scripts/pixels_longitudes.py) : la partie XVIII.
+- [`scripts/bases_objets.py`](scripts/bases_objets.py) : la partie XIX.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
