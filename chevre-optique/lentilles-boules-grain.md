@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/lentilles_boules_grain.py`](scripts/lentilles_boules_grain.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/lentilles_boules_grain.md`](resultats/lentilles_boules_grain.md).
 
+**Suite : [Partie XXIV — un tiers de dimension : le terme 2/(3n²) démontré, et le facteur 2 de Thalès](tiers-dimension.md).**
+
 ## En bref
 
 - **Tu avais raison de me renvoyer aux chapitres : la partie XXII contenait trois erreurs.**
@@ -150,8 +152,8 @@ x₀ = 1/(n + 1) − μ/2.
 - **« le coarse graining »** : la grille grossière (partie XV), le grain honnête (partie XVIII) et le flou (partie X).
 
 **Ouvert :**
-- une preuve complète du terme 2/(3n²) ;
-- savoir quel grain ton modèle physique utilise : une longueur (le plan, 10⁵⁰ dimensions) ou une aire (2 − r², 2·10⁵⁰ dimensions). Les deux lectures sont exactes et diffèrent d'un facteur 2.
+- une preuve complète du terme 2/(3n²) (*faite dans la [partie XXIV](tiers-dimension.md), avec une borne explicite*) ;
+- savoir quel grain ton modèle physique utilise : une longueur (le plan, 10⁵⁰ dimensions) ou une aire (2 − r², 2·10⁵⁰ dimensions). Les deux lectures sont exactes et diffèrent d'un facteur 2. (*La [partie XXIV](tiers-dimension.md) montre que ce 2 est le diamètre d'Euclide, r² = 2R·(R − x₀), et un cran de diaphragme : les deux lectures sont vraies en même temps.*)
 
 **Pas établi :** que l'espace physique suive ce modèle à 10⁻⁵⁰ m. C'est un postulat, que la physique connue ne peut pas tester (partie XX, § 8).
 

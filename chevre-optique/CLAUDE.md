@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXII ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXIV ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -110,6 +110,18 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - **Le carré de neuf points** (sommets, milieux, centre) : vu d'un milieu, 1 et √2 ; les cordes ρ_n remplissent [1, √2] (ρ₁ = 1, ρ₂ = Ullisch, ρ_∞ = √2). En dimension n : 3ⁿ centres de faces du cube, 3ⁿ ≡ 3, 9, 7, 1 (mod 10).
 - **Les faisceaux du polytope croisé.** 2n chèvres aux ±e_i : nerf = bord du polytope croisé = S^(n−1) en toute dimension finie (arccos(1/√n) < α_n < 90°) ; n chèvres à la fois vers les sommets du cube ; à l'infini, le recouvrement n'est plus bon et le nerf se trompe.
 - **Leech garde le √2 du carré** : sphères de rayon 1, trou le plus profond à √2 (Conway, Parker, Sloane 1982). Même rapport pour D₃ (cfc), D₄ et E₈ : en 3, 8 et 24 (les dimensions nommées par l'auteur), les records ont leur trou à √2 fois le rayon.
+- **Partie XXIII : le plan de la lentille.** Il est à x₀ = 1/(n + 1) − μ/2 du centre, donc une décade de dimension est une décade de longueur. Quatre taux de change grain → dimension : ε⁻² (équateur), ε⁻¹ (coquille et plan), ε^(−1/2) (ménisque).
+- **Partie XXIV : le terme 2/(3n²) est démontré.**
+  - La borne : |r_n² − 2n/(n + 1) − 2/(3n²)| < 1 800/n³ pour n ≥ 100. Les coefficients suivants sont rationnels : −98/15, 5966/105…
+  - 2/3 = 2 × 1/6 × 2 : le double produit, la courbure de l'équateur, l'asymétrie de la coquille.
+  - **Le ménisque vaut un tiers de dimension** : la chèvre de dimension n a la corde du simplexe de dimension n + 1/3, et 1/x₀ = n + 4/3 − 112/(45n) + …
+  - La série diverge au rythme 1/ln √2. Sa meilleure précision est 2^(−n/2)/n.
+  - La loi du piquet à distance d (partie I) et le c_n/ρ² de la partie XVI sont le même terme.
+- **Le facteur 2 entre le plan et l'aire est le diamètre.**
+  - Euclide VI.8 et Thalès donnent r² = 2R·(R − x₀) : le défaut d'aire est la bande x₀ × 2R.
+  - C'est un cran (le cercle des côtés contre celui des coins), et les deux lectures sont vraies en même temps : 10⁵⁰ − 4/3 et 2·10⁵⁰ − 4/3 au grain 10⁻⁵⁰.
+  - Le 2 repose sur des triangles semblables, donc sur le postulat des parallèles (Wallis, 1663) : c'est un test de platitude.
+  - Ne réécris pas « ton modèle doit choisir ».
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -119,10 +131,10 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
   - L'aire de la lentille F(δ, k) sert pour la chèvre, l'éclipse, le vignettage et la FTM.
   - Le piquet au centre donne k = 1/√2 : un cran.
   - « Un cran sépare le cercle tangent aux côtés et le cercle qui passe par les coins » (§ 6.4).
-  - r_n² = 2n/(n + 1) + 2/(3n²), dérivé au § 5.4.
+  - r_n² = 2n/(n + 1) + 2/(3n²), esquissé au § 5.4, démontré dans la partie XXIV (avec tous les termes suivants).
   - Le plan de la lentille est à x₀ ≈ R/(n + 1).
   - La corde est la distance médiane ; la coquille et l'équateur (§ 5.2–5.3).
-  - Les cercles k² = δ² + c, avec c = (n − 1)/(n + 1).
+  - Les cercles k² = δ² + c, avec c = (n − 1)/(n + 1) (démontré dans la partie XXIV, avec la correction + 2/(3n²δ²)).
 - **Partie IV.** La suite des trois solides, π = 2 + ⅓(2 + ⅖(…)), part du carré inscrit (aire 2). Seuils 6 et 8.
 - **Parties V et VI.**
   - Le triangle de hauteur R, puis le simplexe d'arête √(2n/(n + 1)), terme principal de la corde.
@@ -136,7 +148,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
   - La grille carrée n'offre que 1 et √2.
   - Une grille grossière confond la chèvre et son simplexe.
 - **Partie XVI.**
-  - r² = 1 + (n − 1)/(n + 1) + μ (piquet, projection, ménisque).
+  - r² = 1 + (n − 1)/(n + 1) + μ (piquet, projection, ménisque) ; le c_n/ρ² du piquet lointain (§ 6), retrouvé dans la partie XXIV.
   - Le plateau 2^(−1/n) ; les contacts à 45° (Laguerre).
 - **Partie XVII.** Le disque de demi-aire 1/√2 ; les jumeaux d·d′ = ½ (la forme de Newton x·x′ = f²) ; la récursion d'argent (Pell).
 - **Partie XVIII.** Le grain grossier honnête : un chiffre certain par niveau décimal. L'aire converge sous le grain, la longueur jamais (« π = 4 »).
@@ -160,7 +172,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

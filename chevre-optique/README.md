@@ -48,6 +48,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXIII — la relecture : les lentilles, les boules et le grain grossier recousent les pas de 10 et √2](lentilles-boules-grain.md)** (trois corrections de la partie XXII à la lumière des chapitres précédents : le plan de la lentille à R/(n + 1), centre de gravité du simplexe, qui fait d'une décade de dimension une décade de longueur et du miroir 49-50-51 un miroir de plans ; 2/√3 comme arête du simplexe et non comme coïncidence ; le terme 2/(3n²) déjà dérivé dans la partie I ; puis les décimales en deux couches, la projection qui répète 9², 99², 999² et le ménisque qui entre par une retenue ; les quatre taux de change entre grain et dimension, ε⁻², ε⁻¹ et ε^(−1/2), soit 10¹⁰⁰, 10⁵⁰ et 10²⁵ au grain 10⁻⁵⁰ ; et toutes les dimensions dans un seul cran de diaphragme).
 
+**Et : [Partie XXIV — un tiers de dimension : le terme 2/(3n²) démontré, et le facteur 2 de Thalès](tiers-dimension.md)** (la démonstration complète du développement de la corde, avec la borne |r_n² − 2n/(n + 1) − 2/(3n²)| < 1 800/n³ vérifiée exactement, et tous les termes suivants à coefficients rationnels ; 2/3 = 2 × 1/6 × 2, le double produit, la courbure de l'équateur et l'asymétrie de la coquille ; la chèvre de dimension n qui a la corde du simplexe de dimension n + 1/3 ; une série qui diverge au rythme 1/ln √2 et donne la corde à 2^(−n/2)/n près ; les décimales en blocs de 50 chiffres en dimension 10⁵⁰ ; la loi du piquet à distance δ de la partie I et le c_n de la partie XVI, qui sont le même terme ; puis le facteur 2 entre le plan et l'aire, qui est le diamètre d'Euclide (r² = 2R·(R − x₀)), un cran de diaphragme et un test de platitude par le postulat de Wallis).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -348,6 +350,8 @@ On écrit $X = \rho\,U$ avec $U$ uniforme sur la sphère. Alors $\rho^n$ est uni
 - Le terme suivant vient de la courbure de la densité de $U_1$ (terme en $\tau^3$). On utilise que $E = n(1-\rho)$ suit asymptotiquement une loi exponentielle, pour laquelle $\mathbb E\,(1-E)^3 = -2$. On obtient $+\frac{2}{3n^2}$.
 
 Numériquement, $(r_n^2 - \frac{2n}{n+1})\,n^2$ vaut 0,606, 0,660 et 0,666 pour $n = 10^2, 10^3, 10^4$. Le même calcul avec un piquet à distance $\delta$ donne $k^2 \approx \delta^2 + \frac{n-1}{n+1}$, valable tant que $\delta \gg 1/\sqrt n$.
+
+*Démonstration complète, avec une borne explicite et tous les termes suivants : [partie XXIV](tiers-dimension.md).*
 </details>
 
 ### 5.5 Pair, impair : pourquoi la 2D est la plus « compliquée »
@@ -462,8 +466,8 @@ L'**obscuration** (fraction de la *surface* du Soleil cachée) est exactement $F
 - **Établi (littérature)** : la formule d'Ullisch et son erratum, la valeur 2D, la quartique 3D, la limite $\sqrt2$ (Fraser 1984, corrigé par Meyerson 1984), les formules de calottes, d'anneaux de Newton, de FTM et d'Airy, et les définitions NASA de la magnitude et de l'obscuration.
 - **Calculé et recoupé ici** : toutes les valeurs numériques. Chacune est obtenue par au moins deux méthodes indépendantes (quotient de contour contre recherche directe de racine, formule close contre polynôme).
 - **Dérivé ici, à faire relire par un spécialiste** :
-  - le développement $r_n^2 = \frac{2n}{n+1} + \frac{2}{3n^2}+\dots$ (très bien vérifié numériquement) ;
-  - la loi $k^2\approx\delta^2+\frac{n-1}{n+1}$ ;
+  - le développement $r_n^2 = \frac{2n}{n+1} + \frac{2}{3n^2}+\dots$ (très bien vérifié numériquement ; *démontré en entier dans la [partie XXIV](tiers-dimension.md)*) ;
+  - la loi $k^2\approx\delta^2+\frac{n-1}{n+1}$ (*démontrée dans la [partie XXIV](tiers-dimension.md)*) ;
   - l'annulation exacte de l'erreur du pôle par la division ;
   - l'argument de transcendance par le théorème de Baker en dimension paire ;
   - les groupes de Galois en dimension impaire (calcul rigoureux, mais fait ici, je ne l'ai pas trouvé publié).
@@ -505,6 +509,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/vingt_quatre_miroir.py`](scripts/vingt_quatre_miroir.py) : la partie XXI.
 - [`scripts/carre_neuf_points.py`](scripts/carre_neuf_points.py) : la partie XXII.
 - [`scripts/lentilles_boules_grain.py`](scripts/lentilles_boules_grain.py) : la partie XXIII.
+- [`scripts/tiers_dimension.py`](scripts/tiers_dimension.py) : la partie XXIV.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
