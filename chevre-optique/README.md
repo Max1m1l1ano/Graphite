@@ -26,6 +26,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XII — 144, la douzième lentille](lentille-144.md)** (137,5° et 222,5° sont exactement 55/144 et 89/144 de tour, avec un pas de 2,5°, la dernière approximation de Fibonacci de l'angle d'or qui tombe juste en degrés, le théorème de Carmichael, 144 = 12², la lentille à 144 anneaux, et la corde de la chèvre entre 2D et 3D).
 
+**Et : [Partie XIII — les Perron tournés de 90°, les branchages et le déphasage cos/sin](perron-dephasage.md)** (les branchages du spectre comme nœuds d'aiguilles placés aux centres fantômes des battements, la loi du nœud, le passage de cos à sin qui inverse les nœuds miroirs, l'arbre de Perron tourné de 90° qui suit la même loi, la rotation de 90° comme transformée de Fourier, la bande 2,44–2,56 face à Fibonacci, aux bases et aux constantes, la ligne de Fibonacci de rⁿ, et la borne 5/2 de Wolff pour Kakeya en 3D).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -472,6 +474,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/carre_ptolemee.py`](scripts/carre_ptolemee.py) : la partie X.
 - [`scripts/angle_or_aiguilles.py`](scripts/angle_or_aiguilles.py) : la partie XI.
 - [`scripts/lentille_144.py`](scripts/lentille_144.py) : la partie XII.
+- [`scripts/perron_dephasage.py`](scripts/perron_dephasage.py) : la partie XIII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

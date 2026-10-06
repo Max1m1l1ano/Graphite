@@ -8,6 +8,8 @@
 
 Tout est recalculé par [`scripts/lentille_144.py`](scripts/lentille_144.py) (≈ 5 s). Les tableaux complets sont dans [`resultats/lentille_144.md`](resultats/lentille_144.md).
 
+**Suite : [Partie XIII — les Perron tournés de 90°, les branchages et le déphasage cos/sin](perron-dephasage.md).**
+
 ## En bref
 
 - **Tu avais raison sur les deux points que je contestais.**
