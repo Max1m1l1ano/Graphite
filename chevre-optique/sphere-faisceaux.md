@@ -17,6 +17,8 @@
 
 Tout est recalculé par [`scripts/sphere_faisceaux.py`](scripts/sphere_faisceaux.py) (≈ 50 s). Les tableaux complets sont dans [`resultats/sphere_faisceaux.md`](resultats/sphere_faisceaux.md).
 
+**Suite : [Partie XXI — les trois 24 se rejoignent en 5² et 7² : le miroir 49-50-51, √7 vu du sommet e₃ et le croisement du plan](vingt-quatre-miroir.md).**
+
 ## En bref
 
 - **Tu as raison : j'avais mal nommé la chèvre.**

@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que la partie XX a établi (à garder en tête)
+## 6. Ce que les parties XX et XXI ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -101,6 +101,11 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 - **Le losange de √2 dans la figure de diffraction.** Fantômes |m| = 1 : sommets ; |m| = √2 : milieux des côtés (rapport d'aires ½). En dimension n : le polytope croisé, arêtes √2. Retourner l'aiguille = i·i = −1.
 - **√2 partout.** La chèvre infinie, le centre du cube en 8D (E₈ = D₈ ∪ (D₈ + ½·(1, …, 1))), la distance entre deux directions au hasard en grande dimension (les plongements d'IA).
 - **2 et 3 donnent 12 :** 3¹² ≈ 2¹⁹ (réduite 19/12 de log₂ 3), le comma pythagoricien.
+- **Partie XXI : les trois 24 sont une seule arithmétique.** 24 + 1 = 5², 2·24 + 1 = 7², 24/6 = 2² : les boulets 1² + … + 24² = 70² (Watson) d'où sort Leech ; les exposants 24·P + 1 = (6k − 1)² de η(24τ) = q − q²⁵ − q⁴⁹ + … (les unités modulo 24 ont pour carré 1) ; Δ = η²⁴ et le thêta de Leech ; κ₂₄·h₂₅ = 1/5², h₂₄·h₂₅ = π/50. La symétrie ne passe pas (S₂₄ pour la chèvre, M₂₄ pour Leech).
+- **Le miroir 49-50-51.** 10⁻⁴⁹ × 10⁻⁵¹ = (10⁻⁵⁰)² ; 7² ≡ −1 (mod 50) ; 7² = 2·5² − 1 (Pell) ; (7 + i)² = 2·(24 + 7i) ; (3 + i)²(7 + i) = 50·(1 + i), donc 3 et 7 (i et −i modulo 10) font 45°.
+- **Le doublement de l'aire est un pas de √2, pas de 10** : une décade vaut 6,644 diaphragmes. Au point de Rayleigh d'un faisceau gaussien, l'aire double, l'intensité et le produit de Newton sont divisés par deux (Self, 1983).
+- **√7 vu de e₃.** Dans la boîte 1 × 1 × 2 (Σ_x rectifié, étiré de −e₁ à e₁), les coins sont à √3 et √7 en unités de 1/√2. √7 n'est jamais une distance entre points rationnels (Legendre) : il faut l'unité 1/√2, une arête √2 (la boîte 1 × √2 × 2) ou une quatrième dimension.
+- **Le croisement.** En tournant de e₃ vers e₂, le sommet passe le bord des chèvres de toutes les dimensions (α_n → 90°, seule la chèvre infinie a son bord au croisement). Au croisement : √3 ↔ √7, le disque inscrit a la moitié de l'aire, et les tritons se ratent d'un comma autour de √2.
 
 ## 7. Travailler sur un modèle de l'auteur « comme exact »
 
@@ -119,7 +124,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

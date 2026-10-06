@@ -42,6 +42,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XX — deux chèvres au même endroit : les faisceaux des n-sphères, le losange de √2 et la figure de diffraction](sphere-faisceaux.md)** (la chèvre plane et la chèvre de dimension infinie au même piquet, la division d'intégrales complexes d'Ullisch appliquée à toutes les dimensions dans le plan méridien avec des cordes certifiées à 50 chiffres, les deux chaînes paire et impaire de la partie IV et leurs seuils 3, 6 et 8, n + 1 chèvres placées sur un simplexe qui couvrent la clôture et dont le nerf calcule la cohomologie des sphères, les deux cartes stéréographiques recollées par l'inversion de rayon √2, le losange des fantômes de l'étoile de Siemens et le polytope croisé aux arêtes √2, le retournement de l'aiguille par i·i = −1, E₈ comme grille décalée de dimension 8, le comma pythagoricien qui fait 12 notes avec 2 et 3, √2 entre deux directions au hasard dans une IA, l'histoire des notations en dates, et 10⁻⁵⁰ comme précision et comme postulat).
 
+**Et : [Partie XXI — les trois 24 se rejoignent en 5² et 7² : le miroir 49-50-51, √7 vu du sommet e₃ et le croisement du plan](vingt-quatre-miroir.md)** (la partie VII, les diviseurs de 24 et le réseau de Leech reliés par 24 + 1 = 5², 2·24 + 1 = 7², 24/6 = 2² : les boulets 1² + … + 24² = 70², les deux premiers termes −q²⁵ − q⁴⁹ de η(24τ), Δ = η²⁴ et les 196 560 voisins, κ₂₄·h₂₅ = 1/5² et h₂₄·h₂₅ = π/50 ; le miroir 10⁻⁴⁹ × 10⁻⁵¹ = (10⁻⁵⁰)², avec 7² ≡ −1 modulo 50 et Pell, et l'aiguille de 50 dont le carré est le triangle 7-24-25 ; le doublement de l'aire, exact sur un pas de √2 (Ménon, diaphragme, faisceau gaussien) ; √3 et √7 vus de e₃ dans la boîte 1 × 1 × 2, Legendre qui impose l'unité 1/√2 ; les chèvres de toutes les dimensions passées avant le croisement, et le comma des tritons au même point).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -496,6 +498,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/pixels_longitudes.py`](scripts/pixels_longitudes.py) : la partie XVIII.
 - [`scripts/bases_objets.py`](scripts/bases_objets.py) : la partie XIX.
 - [`scripts/sphere_faisceaux.py`](scripts/sphere_faisceaux.py) : la partie XX.
+- [`scripts/vingt_quatre_miroir.py`](scripts/vingt_quatre_miroir.py) : la partie XXI.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
