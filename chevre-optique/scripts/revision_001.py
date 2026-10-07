@@ -1118,8 +1118,10 @@ else:
     assert max(sauts) < 0.05
     del zz, RR_, TH_, Bn_
     del Lk, Ck, cls, dmin
-    TESTS.append(("006 et 007", "classes de teinte, montée cyclique, masques de 0,02 à 0,40",
-                  f"pas d'ordre de dessin ; le seuil déplace le centre de {fr(MASQ[0][2], '{:.2f}')} à {fr(MASQ[-1][2], '{:.0f}')} px"))
+    TESTS.append(("006 et 007", "classes de teinte, montée cyclique, masques sans seuil puis de t = 0,001 à 0,40",
+                  f"pas d'ordre de dessin ni de repli signé ; sans seuil {fr(abs(b0), '{:.3f}')} px, puis le seuil déplace le centre"
+                  f" jusqu'à {fr(MASQ[-1][2], '{:.0f}')} px ; la moitié reste entre {fr(100 * min(m_[2] for m_ in MOIT), '{:.1f}')}"
+                  f" et {fr(100 * max(m_[2] for m_ in MOIT), '{:.1f}')} %"))
 
 # ===========================================================================
 # La figure (panneau a : la diagonale √2)

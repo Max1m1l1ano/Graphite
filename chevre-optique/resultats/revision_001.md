@@ -76,11 +76,11 @@ Chaque fiche devient un vecteur d'appartenance aux huit dossiers (une fiche peut
 
 | recouvrement | pesée | paires liées | distance moyenne des liées | paires non liées | distance moyenne des non liées | non liées sous √2 | écart non liées − liées | p (nul) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,925 |
-| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,976 |
+| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,940 |
+| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,969 |
 
 - **Les deux populations se séparent, mais mécaniquement.** Les paires liées sont en moyenne à 1,3162, sous √2 = 1,4142 ; les paires sans dossier commun sont à 1,6427, au-dessus de √2, du côté de l'arête du simplexe (√(16/7) = 1,5119 pour huit dossiers à parts égales).
-- **Le nul le montre** : p = 0,93. Des dossiers de mêmes tailles, tirés au hasard, séparent aussi bien. C'est la définition même d'un dossier commun qui rapproche deux fiches : cette mesure ne dit rien du contenu. Pour qu'elle parle, il faut des liens définis autrement, par exemple ceux que les agents ont trouvés par le même procédé (section 2.3).
+- **Le nul le montre** : p = 0,94. Des dossiers de mêmes tailles, tirés au hasard, séparent aussi bien. C'est la définition même d'un dossier commun qui rapproche deux fiches : cette mesure ne dit rien du contenu. Pour qu'elle parle, il faut des liens définis autrement, par exemple ceux que les agents ont trouvés par le même procédé (section 2.3).
 - **Des liens du cadre restent possibles.** 5 % des paires non liées passent sous √2 en pesée brute : des fiches qui ne partagent rien, mais qui tombent dans de petits dossiers (la règle de la section 2.1, étendue aux fiches à plusieurs dossiers : P_a + P_b < Σp², où P est la somme des parts des dossiers de la fiche).
 
 ## 3. Le nerf des dossiers : ce qui se recolle, et les trous
@@ -89,9 +89,9 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 
 | recouvrement | niveau | sommets, arêtes, triangles, tétraèdres | Betti b₀, b₁, b₂ | triangles vides | triangles remplis : éléments communs en moyenne | nul : b₁ moyen | nul : b₂ moyen | nul : triangles vides en moyenne | p (nul ≥ observé) |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|
-| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,06 | 0,00 | 5,7 | 0,146 |
-| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,67 | 0,00 | 4,8 | 0,221 |
-| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,20 | 5,63 | 18,7 | 0,396 |
+| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,07 | 0,01 | 5,7 | 0,162 |
+| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,72 | 0,00 | 4,8 | 0,235 |
+| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,21 | 5,58 | 18,7 | 0,395 |
 
 **v1 : les triangles vides au niveau des fiches** (9) :
 - aiguilles-kakeya-perron · grain-pixels-centres · hasard-et-methode : trou du corpus (vide aussi avec les parties).
@@ -104,8 +104,8 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 - grain-pixels-centres · hasard-et-methode · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - hasard-et-methode · lumiere-et-physique · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - Bilan v1 : 5 trous du recueil, 4 trous du corpus.
-- Les fiches laissent 9 triangles vides, contre 5,7 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,15) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
-- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,63 en moyenne, p = 0,713). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
+- Les fiches laissent 9 triangles vides, contre 5,7 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,16) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
+- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,58 en moyenne, p = 0,711). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
   - aiguilles-kakeya-perron · bases-congruences-premiers · moities-et-crans · ombres-cube-venn
   - aiguilles-kakeya-perron · grain-pixels-centres · lumiere-et-physique · moities-et-crans
   - aiguilles-kakeya-perron · hasard-et-methode · lumiere-et-physique · moities-et-crans
@@ -223,10 +223,10 @@ La partie XIV a trouvé qu'un ensemble de Kakeya du plan F_q² (une droite enti�
 | 2 | 2 | 3 | 3 | 0 | 0 | 3 | 0 | 0,0 s |
 | 3 | 3 | 7 | 6 | 1 | 3 | 3 | 1 | 0,0 s |
 | 4 | 2 | 10 | 10 | 0 | 0 | 10 | 0 | 0,0 s |
-| 5 | 5 | 17 | 15 | 2 | 6 | 9 | 2 | 0,0 s |
-| 7 | 7 | 31 | 28 | 3 | 9 | 19 | 3 | 1,4 s |
+| 5 | 5 | 17 | 15 | 2 | 6 | 9 | 2 | 0,1 s |
+| 7 | 7 | 31 | 28 | 3 | 9 | 19 | 3 | 1,5 s |
 | 8 | 2 | 36 | 36 | 0 | 0 | 36 | 0 | 3,4 s |
-| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 15,3 s |
+| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 15,1 s |
 
 - **L'identité exacte.** Les q + 1 droites se coupent deux à deux en un seul point. En comptant chaque point avec sa multiplicité m_P (le nombre de droites qui y passent), 1 = m − C(m, 2) + C(m − 1, 2) pour tout m ≥ 1. On en tire |K| = q(q + 1) − C(q + 1, 2) + Σ C(m_P − 1, 2) = q(q + 1)/2 + Σ C(m_P − 1, 2).
 - **La moitié vient de l'inclusion–exclusion**, tronquée à l'ordre 2 : c'est l'inégalité de Bonferroni |∪L| ≥ Σ|L| − Σ|L ∩ L′|, vraie dans toutes les caractéristiques. Elle est atteinte pour q = 2, 4, 8 : tous les points sont doubles, aucun n'est triple.
@@ -313,6 +313,6 @@ On classe chaque pixel d'encre (clarté L > fond + 0,1) par sa teinte OKLab, au 
 | recueil (4/3) | les bases de 3 à 10⁶ | 4/3 seulement pour b = 10 à 16 et b = 244 à 256 |
 | recueil (Midy) | la tour 2-adique, bornes 10³ à 10⁶, bases 2, 3, 7, 10, 12 | 2/3 pair en base 10, 17/24 en base 2 ; 1/3, 1/3, 1/6, 1/12 |
 | XIV et 012 | Kakeya dans F_q, q = 2 à 9 | q(q + 1)/2 exactement pour q pair ; + (q − 1)/2 points triples pour q impair |
-| 006 et 007 | classes de teinte, montée cyclique, masques de 0,02 à 0,40 | pas d'ordre de dessin ; le seuil déplace le centre de 0,37 à 27 px |
+| 006 et 007 | classes de teinte, montée cyclique, masques sans seuil puis de t = 0,001 à 0,40 | pas d'ordre de dessin ni de repli signé ; sans seuil 0,044 px, puis le seuil déplace le centre jusqu'à 27 px ; la moitié reste entre 49,3 et 49,7 % |
 
 (calculs : 80 s)
