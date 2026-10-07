@@ -146,7 +146,7 @@ TITRES = {
     21: "les trois 24, le miroir 49-50-51", 22: "le carré de neuf points", 23: "la relecture : lentilles, boules, grain",
     24: "un tiers de dimension", 25: "les ouverts, la tranche 49 – 55", 26: "Kakeya à 10⁻⁵⁰, kibi, cube",
     27: "la carte des connexions", 28: "octaèdre, Perron démontré, Venn à 17",
-    29: "le Venn à 17 au ppm"}
+    29: "le Venn à 17 au ppm", 30: "le centre du Venn, la moitié, les diaphragmes"}
 ligne("\n| partie | sujet | voisins | renvois reçus |")
 ligne("|---|---|---:|---:|")
 RECUS = collections.Counter()

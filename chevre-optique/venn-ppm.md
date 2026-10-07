@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/venn_ppm.py`](scripts/venn_ppm.py) (≈ 40 s), à partir du dépôt de Chris Dzoba ([github.com/dzoba/venn17](https://github.com/dzoba/venn17) ; certificats et image sous licence CC BY 4.0). Les tableaux complets sont dans [`resultats/venn_ppm.md`](resultats/venn_ppm.md).
 
+**Suite : [Partie XXX — le centre du Venn : la moitié du disque, les diaphragmes, les grains repositionnés et les tests du hasard](centre-venn.md).**
+
 ## En bref
 
 - **Ton image est retrouvée.** C'est le dessin qui ouvre le dépôt de Chris Dzoba : un Venn simple et symétrique à 17 courbes, « dessiné à densité de croisements uniforme ». J'ai lu ses fichiers (les « certificats ») et mesuré l'image.

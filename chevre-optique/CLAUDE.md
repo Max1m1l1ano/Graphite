@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXIX ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXX ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -154,6 +154,12 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - Prix de 1 ppm : Venn et Perron 20 pas (un bit par pas) ; Venn en longueur 40 et série de la chèvre 31 (un demi-bit) ; ménisque 817 dimensions et diaphragme 2 566 lames (même forme x²/6) ; plan 10⁶ ; équateur 10¹².
   - Perron et le Venn : deux ombres du même cube (XXVIII, § 3.5), mesurées — direction quelconque, binaire (2^(k−j) fentes) ; grande diagonale, binomiale. Les veines ne sont pas des arbres de Perron. Le cercle de demi-aire R/√2 sépare les niveaux ≥ 9 et ≤ 8 (49,935 %, à 649 ppm de la moitié). Gelé et liquide : 12 % de régions non monotones, rangs 0 – 2 et 15 – 17 gelés (0,23 % des régions), épaisseur constante en n : pas de cercle arctique macroscopique.
   - L'ombre S ↦ Σ ω^i : le centre ne reçoit que ∅ et tout si et seulement si n est premier ; les ensembles fixés par une rotation tombent au centre, d'où n | 2ⁿ − 2 et n | C(n, k) (Henderson) ; contour = 34-gone. Test des coïncidences (31 × 20 nombres, catalogue brouillé) : rien sous 100 ppm.
+- **Partie XXX : le centre du Venn, la moitié, les diaphragmes, les grains repositionnés, les tests du hasard** (`scripts/centre_venn.py`).
+  - Le centre de symétrie d'ordre 17 (corrélation avec les rotations, sur la clarté OKLab) est le centre exact de l'image à 0,004 px. Le centre de la lumière bouge selon la pesée (luminance 0,6 px, masque RGB de la partie XXIX 13,6 px, énergie 46 px) : les 17 couleurs ont des poids inégaux, donc un dipôle (même procédé que le déplacement induit par la couleur des étoiles doubles, Wielen 1996). Un écart de centre est une mesure, pas un bruit : l'auteur l'a relevé à juste titre.
+  - La moitié du disque fait la moitié du Venn dans le dessin à aire égale (49,4 % de l'encre dans le contour réduit de 1/√2, la moitié par cran jusqu'au 6ᵉ), pas dans le dessin de Tutte (26,7 %). Le complément coupe exactement les régions (2^(n−1)) ; les croisements, à quelques milliers de ppm (un Venn à 19 courbes pile : 1,6 % de chances). Budget de l'image : ±1 830 ppm en pixels certains.
+  - Sphère : χ = 2 donne 2ⁿ − 2 et les deux pôles ; Lambert + Archimède mettent l'équateur à la corde √2 (chèvre infinie), soit R/√2 ; deux miroirs du complément (aire r² + r′² = R², inversion r·r′ = R²/2 des jumeaux de la partie XVII). Crans binaires contre niveaux binomiaux, 12,91 crans de f/1 à f/88 ; trois chèvres broutent chacune la moitié ; Niven : cran entier entre cercles inscrit et circonscrit seulement pour le triangle (2) et le carré (1).
+  - Diffraction : 34 aigrettes du contour (diaphragme à 17 lames) + 34 de l'intérieur ; multiples de 34 (Friedel), ordre 4 des pixels. Empiler les 17 copies (drizzle) donne le centre au quart de pixel ; 1 px d'erreur de centre détruit la moitié de l'information commune ; gain maximal ×2 (FTM du pixel), soit ≈ 2 courbes. Défocalisation : inversion aux zéros de J₁ (93 %). Le centre est le goulot de la granularité (19,0 courbes à 2 000 px).
+  - **Pour juger un rapprochement** (banc d'essai, § 7) : identité → pousser la précision ; lien de structure → faire varier le paramètre et vérifier la loi de l'écart ; mesure → budget de grain ; coïncidence d'entiers → répliquer. Les tests à tolérance (Bonferroni, nul brouillé, longueur de description) déclarent « hasard » des liens de structure : ne pas les utiliser seuls pour ça.
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -204,7 +210,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI, ab = XXVII, ac = XXVIII, ad = XXIX ; ensuite ae, af…) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI, ab = XXVII, ac = XXVIII, ad = XXIX, ae = XXX ; ensuite af, ag…) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 
