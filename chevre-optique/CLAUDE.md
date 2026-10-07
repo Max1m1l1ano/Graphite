@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXVIII ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXIX ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -146,7 +146,14 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - L'octaèdre |x| + |y| + |z| ≤ 1 est le polaire du cube [−½, ½]³ par leur sphère médiane commune (rayon √2/2, 12 milieux d'arêtes communs) : ‖u‖₁ est sa jauge. Même hexagone d'ombre et de coupe le long de (1, 1, 1). Son ombre vaut max(‖u‖₁, 2‖u‖∞) : égale à celle du cube sur 8 triangles sphériques d'angles arccos(1/3) (35,10 % des directions) ; moyenne √3.
   - Les deux cercles arctiques (XXVII) sont l'ombre de la même sphère médiane : axe d'ordre 4 pour les dominos (le losange est l'ombre de l'octaèdre), axe d'ordre 3 pour l'hexagone. Argument direct pour l'hexagone : Kenyon–Okounkov (cité) + cinq tangentes fixent une conique. La récurrence de l'octaèdre compte les deux pavages (Dodgson, Kuo) ; linéarisée, |v| ≤ 1/√2 : le losange est le cône exact, le cercle arctique le cône des vitesses de groupe.
   - Perron démontré pour tout k : borne « cœur + oreilles » F = P_k² + 2Σ(P_j − P_(j+1))² pour tous les rapports ; minimum 2/(k + 2) aux seuls rapports télescopiques (oreilles égales) ; aire exacte par la coupe en plateau 1/(k + 2), prouvée par l'ombre du cube. Kakeya : N éventails donnent le polygone circonscrit à 2N côtés ; à 10⁻⁵⁰, l'aire minimale est démontrée entre 0,01344 et 0,02096 (13 éventails ; 17 : 0,02097) ; constantes asymptotiques π/2 et π·ln 2.
-  - Le Venn à 17 : Henderson (n premier, démontré), 131 070 = 17 × 7 710 formes (Fermat), 15 420 croisements par courbe (Venn simple) ; image probablement de Dzoba (2026). Diaphragme à 17 lames : 97,74 % de la lumière, 34 aigrettes ; la même parité fait couvrir chaque direction une fois par 17 éventails de Perron posés comme les lames. Fefferman et Córdoba relient diaphragmes et Perron. Chaque coupe de Perron est un Venn à une dimension. 17 = 4² + 1 (4 ≡ i), Gauss, Midy pour 1/17.
+  - Le Venn à 17 : Henderson (n premier, démontré), 131 070 = 17 × 7 710 formes (Fermat), 15 420 croisements par courbe (Venn simple) ; image de Chris Dzoba (2026, confirmé en partie XXIX). Diaphragme à 17 lames : 97,74 % de la lumière, 34 aigrettes ; la même parité fait couvrir chaque direction une fois par 17 éventails de Perron posés comme les lames. Fefferman et Córdoba relient diaphragmes et Perron. Chaque coupe de Perron est un Venn à une dimension. 17 = 4² + 1 (4 ≡ i), Gauss, Midy pour 1/17.
+- **Partie XXIX : le Venn à 17 au ppm** (`scripts/venn_ppm.py`, qui demande une copie de github.com/dzoba/venn17, CC BY 4.0).
+  - L'image de l'auteur est le rendu « à densité de croisements uniforme » du dépôt de Dzoba : dessin de Tutte sur le quotient par la rotation (7 710 inconnues = Fermat), contour épinglé sur un 17-gone (un choix de dessin), anneaux de niveaux d'aire proportionnelle à leur nombre de croisements (niveau = rang moyen des 4 régions autour d'un croisement : k, k + 1, k + 1, k + 2).
+  - Au ppm : 7,63 ppm et 22,6 px par croisement ; 2⁻¹⁷ a les chiffres de 5¹⁷ ; la texture (≈ 36 % de triangles, 38 % de quadrilatères) ne dépend pas de n (11 à 19) ; croisements par niveau ≈ C(17, l) (rapport 0,825 à 1,045, exact aux bouts).
+  - Granularité : plein au grain d'une région (4,75 px, 7,6 ppm), veines de dimension 0,97 à 1,31 (des lignes), une courbe = un cran (√2) de largeur d'image.
+  - Prix de 1 ppm : Venn et Perron 20 pas (un bit par pas) ; Venn en longueur 40 et série de la chèvre 31 (un demi-bit) ; ménisque 817 dimensions et diaphragme 2 566 lames (même forme x²/6) ; plan 10⁶ ; équateur 10¹².
+  - Perron et le Venn : deux ombres du même cube (XXVIII, § 3.5), mesurées — direction quelconque, binaire (2^(k−j) fentes) ; grande diagonale, binomiale. Les veines ne sont pas des arbres de Perron. Le cercle de demi-aire R/√2 sépare les niveaux ≥ 9 et ≤ 8 (49,935 %, à 649 ppm de la moitié). Gelé et liquide : 12 % de régions non monotones, rangs 0 – 2 et 15 – 17 gelés (0,23 % des régions), épaisseur constante en n : pas de cercle arctique macroscopique.
+  - L'ombre S ↦ Σ ω^i : le centre ne reçoit que ∅ et tout si et seulement si n est premier ; les ensembles fixés par une rotation tombent au centre, d'où n | 2ⁿ − 2 et n | C(n, k) (Henderson) ; contour = 34-gone. Test des coïncidences (31 × 20 nombres, catalogue brouillé) : rien sous 100 ppm.
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -197,7 +204,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI, ab = XXVII, ac = XXVIII ; ensuite ad, ae…) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI, ab = XXVII, ac = XXVIII, ad = XXIX ; ensuite ae, af…) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

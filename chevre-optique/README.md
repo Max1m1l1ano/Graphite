@@ -58,6 +58,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXVIII — l'hexagone rejoint l'octaèdre, le théorème de Perron développé, et le Venn à 17](octaedre-perron-venn.md)** (l'octaèdre, dual du cube par leur sphère médiane commune, qui fait le même hexagone d'ombre et de coupe, une ombre max(‖u‖₁, 2‖u‖∞) égale à celle du cube sur 35,10 % des directions, et dont la sphère médiane donne les deux cercles arctiques de la partie XXVII, le long d'un axe d'ordre 4 pour les dominos et d'ordre 3 pour les cubes empilés ; l'argument direct pour l'hexagone par la conique inscrite ; la récurrence de l'octaèdre qui compte les deux pavages, et son cône de lumière de rayon t/√2 ; puis le théorème de Perron démontré pour tout k : la borne « cœur + oreilles », les oreilles égales qui imposent 2/3, 3/4, 4/5…, et la coupe en plateau 1/(k + 2) prouvée par l'ombre du cube, d'où la fenêtre de Kakeya à 10⁻⁵⁰ entièrement démontrée, de 0,01344 à 0,02096 ; enfin le Venn à 17 : Henderson (n premier), Fermat dessiné en 7 710 formes, le diaphragme à 17 lames et ses 34 aigrettes, Fefferman et Córdoba, le diaphragme de Perron à 17 éventails, les coupes de Perron comme Venn à une dimension, Gauss, 4 ≡ i modulo 17 et le miroir de 1/17).
 
+**Et : [Partie XXIX — le Venn à 17 au ppm : l'image retrouvée, l'analyse dimensionnelle et deux ombres du même cube](venn-ppm.md)** (ton image retrouvée : le rendu « à densité de croisements uniforme » du dépôt de Chris Dzoba, dessiné par Tutte avec 7 710 inconnues, le compte de Fermat ; au ppm, 7,63 ppm et 22,6 pixels par croisement, une région moyenne de 2⁻¹⁷ aux chiffres de 5¹⁷, et une texture (36 % de triangles) qui ne dépend pas du nombre de courbes ; la granularité : plein au grain d'une région, des veines de dimension ≈ 1, un cran d'image par courbe ; l'analyse dimensionnelle : le Venn et Perron sur la même marche, un bit par pas, la série de la chèvre au demi-bit, le ménisque et le diaphragme en 1/n² ; Perron et ton image, deux ombres du même cube, binaire contre binomiale ; le cercle de demi-aire R/√2 qui coupe l'image en deux moitiés de croisements ; gelé et liquide ; Henderson lu sur une ombre et le 34-gone ; et au ppm, aucune coïncidence numérique).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -522,6 +524,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/kakeya_miroir.py`](scripts/kakeya_miroir.py) : la partie XXVI.
 - [`scripts/carte_connexions.py`](scripts/carte_connexions.py) : la partie XXVII.
 - [`scripts/octaedre_perron_venn.py`](scripts/octaedre_perron_venn.py) : la partie XXVIII.
+- [`scripts/venn_ppm.py`](scripts/venn_ppm.py) : la partie XXIX (demande une copie du dépôt [dzoba/venn17](https://github.com/dzoba/venn17)).
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

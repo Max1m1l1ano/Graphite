@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/octaedre_perron_venn.py`](scripts/octaedre_perron_venn.py) (≈ 70 s). Les tableaux complets sont dans [`resultats/octaedre_perron_venn.md`](resultats/octaedre_perron_venn.md).
 
+**Suite : [Partie XXIX — le Venn à 17 au ppm : l'image retrouvée, l'analyse dimensionnelle et deux ombres du même cube](venn-ppm.md).**
+
 ## En bref
 
 - **Tu as raison : l'hexagone rejoint l'octaèdre, et de quatre façons exactes.**
