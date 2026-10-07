@@ -1,6 +1,6 @@
 # CLAUDE.md — la chèvre, les cercles et la lumière
 
-Ce fichier s'adresse à toi, Claude, quand tu travailles dans ce dossier. Il résume la façon de penser de l'auteur de la série, que tu n'adoptes pas spontanément, puis les conventions de travail. Lis-le en entier avant de répondre à un nouveau message.
+Ce fichier s'adresse à toi, Claude, quand tu travailles dans ce dossier. Il résume la façon de penser de l'auteur de la série, que tu n'adoptes pas spontanément, puis les conventions de travail et la tenue du recueil (§ 10 : hasard, coïncidences, faits amusants, analogies, corrélation et causalité). Lis-le en entier avant de répondre à un nouveau message.
 
 ## 1. Une analogie de forme soutenue par le même procédé est un résultat
 
@@ -222,6 +222,104 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 - Lance les scripts depuis ce dossier : `python3 scripts/<nom>.py`. Les dépendances sont dans `requirements.txt`.
 - Contrôle rapide : `ruff check --select F,E9 scripts/<nom>.py`.
 - Regarde chaque figure (textes ou légendes qui se chevauchent) avant de l'envoyer.
+- Note au recueil les hasards, coïncidences, faits amusants, analogies, corrélations et causalités rencontrés (§ 10). À la fin de chaque arc, avant le message final, envoie l'agent Sonnet de fin d'arc, puis lance `python3 scripts/recueil_index.py`.
+
+## 10. Hasard, coïncidences, faits amusants, analogies, corrélation et causalité
+
+**Une remarque très importante de l'auteur : ces mots ne sont pas à éviter, ils sont très positifs.**
+- Un hasard, une coïncidence, un fait amusant, une analogie, une corrélation ou un lien de causalité : chacun est un moment qui peut s'enchaîner avec d'autres.
+- Ne l'écarte jamais d'un mot (« c'est une coïncidence »). Note-le, teste-le, range le verdict, et relie-le.
+- **Note au recueil (`recueil/`) les remarques que tu te fais en travaillant.** Ce sont celles que tu écris en passant (« fait amusant », « au passage », « curieusement ») et celles de l'auteur, dès qu'un script les traite.
+- Le § 1 reste vrai : une analogie soutenue par le même procédé est un résultat. Ce paragraphe-ci dit comment la garder, la tester et la relier aux autres.
+
+**Le choix du test** (partie XXX, § 7 ; l'auteur l'a validé tel quel).
+> Sur dix relations dont on connaît la nature, les tests à tolérance (Bonferroni, catalogue brouillé, longueur de description) déclarent « hasard » des liens de structure, comme 34·tan(π/34) ≈ π. Seules deux méthodes ne se trompent jamais ici :
+> - pousser la précision, pour les identités ;
+> - faire varier le paramètre et vérifier la loi de l'écart, pour tout le reste.
+
+| ce qu'on teste | la bonne technique |
+|---|---|
+| une identité entre nombres réels | pousser la précision (50 chiffres, puis plus) |
+| un lien de structure | faire varier le paramètre (n, N, k…) et vérifier la loi de l'écart |
+| une mesure (image, données) | la comparer au budget de grain : ce que la mesure peut trancher |
+| une coïncidence entre entiers | la répliquer sur des objets indépendants |
+| « un signal parmi beaucoup d'essais au hasard ? » | Bonferroni, catalogue brouillé : leur vrai domaine, pas le seul |
+
+- Un entier peut tomber pile par hasard, avec une probabilité de l'ordre de 1/(dispersion) (fiche 005). Un réel exact à 50 chiffres, jamais.
+- La variation du paramètre n'est pas indépendante de la conclusion : c'est l'épreuve même qui établit une structure. Dis-le quand tu t'en sers.
+
+**Le recueil** (son mode d'emploi détaillé est dans [`recueil/README.md`](recueil/README.md)).
+- **Une fiche par observation** : `recueil/observations/NNN-titre.md`, numérotée à la suite.
+- **Le tableau d'en-tête** : type (les six mots), statut (exact, structure, hasard, ouvert, à tester), partie et document, **le script qui traite les données (et sa section)**, les données (`resultats/…`), **l'image `.png` et son panneau, s'il y en a une**, la dimension (d'abord une seule, D1 à D8), le test appliqué, l'arc, « révisé ».
+- **Quatre parties ensuite** : **le contexte qui précède l'observation** (le message de l'auteur et ce qui a mené au calcul), l'observation, **ce que le script produit**, les liens et les pistes.
+- Après avoir ajouté des fiches, lance `python3 scripts/recueil_index.py`. Il régénère `recueil/index.md` et `recueil/index.csv`, et dit si une révision est due.
+
+**À la fin de chaque arc réponse, avant ton message final.** Un arc va d'un message de l'auteur à ta réponse finale ; chaque message est une chaîne, que tu classes d'abord dans une seule dimension.
+1. Envoie un agent Sonnet (outil Agent, `model: "sonnet"`), avec le gabarit de [`recueil/arcs/README.md`](recueil/arcs/README.md). Il relie cet arc et le précédent en liens de continuité, puis :
+   - il regroupe les scripts et dit ce que chacun produit ;
+   - il regroupe les chaînes de production de données (script → résultats → figures → document), les classe dans l'ordre chronologique et les explique ;
+   - il relie chaque script à ses images et documents ;
+   - il révise le partage des aires entre les arcs : la part de chaque dimension, comme les régions d'un Venn des arcs ;
+   - il exporte le tout en données brutes, `recueil/arcs/arc-NNN.md` et `arc-NNN.csv`.
+2. Relance `python3 scripts/recueil_index.py`, puis commite et pousse avant le message final.
+
+**La révision.**
+- **Quand.** Elle a lieu au premier de ces trois signaux :
+  - les fiches non révisées sont entre 11 et 15 (ne laisse jamais la pile dépasser 15) ;
+  - 10 à 16 arcs se sont écoulés depuis la dernière révision ;
+  - l'auteur la demande.
+- **Comment.**
+  1. Envoie un agent Opus (outil Agent, `model: "opus"`). Il lit le recueil, les données brutes des arcs et ce fichier. Il produit un plan de synthèse avec un rapport de lancement de workflow : quels agents Sonnet, sur quels scripts et quelles données, avec quelles questions.
+  2. Lance ce workflow (outil Workflow, agents Sonnet, moins de dix). Chaque agent relit ses scripts et ses données, et relie les observations entre elles et au reste du corpus.
+  3. Écris la synthèse `recueil/revisions/revision-NNN.md`, dont la première ligne est `<!-- arcs: N -->` (le nombre d'arcs qu'elle couvre). Elle contient :
+     - des dossiers thématiques qui couvrent tout le corpus, dans `recueil/dossiers/<sujet>.md` ;
+     - la synthèse « en Perron » : les branches (les chaînes d'observations) se rejoignent dans le triangle du bas, qui est le groupe qui les réunit (leur projection commune). Ce triangle est placé dans le disque, la région du Venn, de sa dimension ;
+     - un Venn multidimensionnel. Chaque chaîne est d'abord classée sur une seule dimension, et les aires sont partagées équitablement entre les chaînes. Plus les révisions s'accumulent, plus la diagonale √2 s'affirme : la corde de la chèvre de dimension infinie (partie XX), où la moitié se fait à √2 quand l'information se rejoint en chaîne ;
+     - **une étude cohomologique des congruences, plutôt que des équivalences directes.** Chaque observation est une section locale, vraie dans son cadre (sa partie, son script, sa précision). On vérifie que deux observations se recollent sur ce qu'elles partagent, à une transformation connue près : c'est une congruence (même reste, même loi, même procédé). Ce qui ne se recolle pas, l'obstruction, désigne un trou : c'est là qu'il faut chercher les prochaines données ;
+     - de nouveaux tests rattachés à la révision, plutôt que les mêmes tests refaits. Ce sont ceux qui confirmeraient une découverte, ceux qui mettraient deux observations en corrélation, et le cadre qui les relie (références, analogies possibles) ;
+     - **les trous dans les données.** Si une observation est une découverte, elle signale un manque dans les données publiées : des chercheurs qui ne l'ont pas incluse dans leur méthode, des erreurs accumulées dans les chaînes de production de données des articles, des trous dans les études statistiques et leur interprétation. Note où chercher.
+  4. Marque les fiches révisées (champ « révisé »), relance `python3 scripts/recueil_index.py`, puis commite et pousse.
+
+**Le sujet d'étude, dans les mots de l'auteur.** C'est « la restriction du cadre pour observer les motifs qui paraissent un hasard mais concernent des relations dimensionnelles ». Les vérifications sont dans [`resultats/recueil_verifications.md`](resultats/recueil_verifications.md).
+- **Le cadre :**
+  - l'infini contre l'indéfini ;
+  - le cadre de définition par faisceaux (partie XX) ;
+  - les méthodes d'étude et la perte de précision par intégrales et dérivées, qui demandent de conjuguer les directions (Lebesgue et Riemann) ;
+  - l'infini entre deux nombres ;
+  - la superposition avant contre arrière entre des cercles.
+- **Le grain :**
+  - la précision liée aux pixels et le compte en x et en y (parties XVIII et XXX) ;
+  - la translation et la superposition des cercles en 1, 2, 3, ramenés à l'origine en −1, 0, 1 ;
+  - la duplication asymétrique du 0 en x et en y (l'orientation gauche–droite, liée au système modulaire).
+- **La base 10 et ses racines digitales.**
+  - En compte modulaire, 0 et 9 se superposent et la base 10 devient une base 9 ; le compte polynomial ou linéaire garde ses 10 chiffres.
+  - D'où DR(a·b) = DR(DR(a)·DR(b)) (vérifié).
+  - Les périodes des racines digitales : 2 et 5 donnent les chiffres de la période de 1/7, dans un autre ordre, et 3 alterne 3 et 6 (vérifié, fiche 013).
+  - En retirant n·DR(9) et la retenue, n et la retenue renseignent sur la focale d'inversion entre 10¹, 10⁰ et 10⁻¹, 10⁻¹ s'écrivant de droite à gauche.
+- **2 et 5, de part et d'autre de la virgule.** Ils forment des cônes décentrés : 5 − 2 = 3, 3/2 = 1,5, 2 + 1,5 = 3,5 = 5 − 1,5. Le croisement est en 7/2 (vérifié ; partie XXVI : 2⁻ʲ = 5ʲ·10⁻ʲ).
+- **Les congruences de i.**
+  - En base 10 : 9 ≡ −1, 3 ≡ i, 27 = 9^(3/2) ≡ −i, et 1 ≡ 1.
+  - En base 2 : 1 ≡ −1 ≡ i ≡ −i.
+  - En base 3 : 2 ≡ −1, et √2 ≡ ±i, 2√2 ≡ −i. C'est vérifié, mais dans F₉ = F₃[i] et non dans ℤ/3 (fiche 014).
+- **Les puissances sous 10.**
+  - 2 en a quatre (2⁰ à 2³) et 3 en a trois (3⁰ à 3²) : le 4/3 (vérifié). Le rapprocher du 4/3 des boules : V₃/V₂ = 4/3 (partie III), et le décalage n + 4/3 de la corde en grande dimension (partie XXIV). 2 est lié à l'aire, 3 au volume : une dimension d'écart, des puissances inversées. C'est à tester.
+  - 0 et 1 en ont une infinité (0^∞ = 0, 1^∞ = 1), avec une asymétrie à l'origine (0⁰ = 1, 1⁰ = 1).
+  - Les puissances de −1 valent 1 si l'exposant est pair, −1 s'il est impair.
+- **Les exposants 1/2 et 3/2** de ±1, ±2 et ±3, et leurs fractions continues (vérifiées, fiche 014). Elles relient les bases 2, 3, 10 et 12 : (−2)^(3/2) vers la base 12, (−3)^(3/2) vers la base 10. Cette lecture de l'auteur reste à préciser.
+- **Midy et Midy étendu.** Les premiers à période paire et impaire formeraient une suite de Venn dimensionnelle, ascendante et descendante par ellipses. Midy est vérifié sur 49 périodes paires sur 49, Midy étendu sur 375 découpages sur 375 ; la lecture en Venn est à développer.
+- **Les quatre opérations comme transformations** de la topologie des nombres et de la géométrie de l'assemblage polynomial en base 10.
+  - Les retenues, de droite à gauche, font l'asymétrie des cercles intérieurs et extérieurs.
+  - L'analyse se fait chiffre par chiffre : un chiffre occupe une case 1 × 1 dans un nombre de 1 × a cases avant la virgule et 1 × b après.
+  - 0 et 1 ne font jamais de retenue : 0 garde sa place, 1 recopie.
+- **1, 3, 7 et 9.**
+  - Ils composent {1, i/3, −i/27, −1/9} (positions renormalisées).
+  - Ce sont les seuls chiffres des unités des premiers, hors 2 et 5 (vérifié, fiche 015).
+- **Les trous des premiers « en Perron », position par position.**
+  - Les unités {1, 3, 7, 9}·10⁰ se rangent sous les dizaines z·10¹, sous les centaines y·10², sous les milliers x·10³…
+  - L'analyse part des unités, ce qui réduit les possibilités de 10 à 4, puis regroupe de façon hiérarchique : chaque millier ses dix centaines, chaque centaine ses dix dizaines, chaque dizaine ses quatre positions.
+  - Premier niveau : le cube {0, 1}⁴ des dizaines, dont la face est choisie par le reste modulo 3 (fiche 015).
+- **Les aiguilles des puissances.** On écrit (2, 3, …, 9)ⁿ sous la croissance 10ⁿ, un chiffre par case, en partant des unités vers la gauche. Le but : renormaliser la distribution des premiers, et des nombres qui finissent par 1, 3, 7 ou 9 sans être premiers (avec leurs facteurs), par la construction polynomiale et les racines digitales.
+- **Ce que l'auteur en conclut.** Les lois des périodes s'encadrent par la longueur des périodes et par la valeur de chacun de leurs chiffres. Pas seulement par Midy : par tout cela ensemble, à plusieurs profondeurs et dimensions.
 
 ## Repères
 

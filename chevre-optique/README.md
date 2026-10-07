@@ -62,6 +62,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXX — le centre du Venn : la moitié du disque, les diaphragmes, les grains repositionnés et les tests du hasard](centre-venn.md)** (l'écart des centres est significatif : le centre de symétrie d'ordre 17 tombe au centre exact de l'image à 0,004 px, mais le centre de la lumière bouge de 0,6 à 46 px selon qu'on la pèse comme l'œil ou en énergie, parce que les 17 courbes n'ont pas la même couleur, comme le photocentre d'une étoile double ; la moitié du disque fait la moitié du Venn dans le dessin à aire égale (49,4 % de l'encre, chaque cran de diaphragme en garde la moitié) mais pas dans le dessin de Tutte (26,7 %) ; le Venn comme sphère, son équateur à la corde √2 de la chèvre infinie, et les deux miroirs du complément (aire et inversion des jumeaux) ; les crans en binaire contre les niveaux en binomiale, de f/1 à f/88 ; trois chèvres qui broutent chacune la moitié ; le cran du carré par Niven ; la diffraction de l'image, 34 aigrettes du diaphragme à 17 lames et 34 de l'intérieur ; les 17 copies empilées au quart de pixel, où 1 px d'erreur sur le centre coûte la moitié ; la défocalisation qui inverse les rayons ; le centre, goulot de la granularité ; et un banc d'essai de six tests du hasard sur dix relations de nature connue).
 
+**Le recueil : [hasards, coïncidences, faits amusants, analogies, corrélations et causalités](recueil/README.md)** (une fiche par remarque née pendant le travail, avec son script, sa partie, son image et le contexte qui la précède ; les données brutes de chaque arc réponse ; les révisions qui regroupent les fiches en dossiers ; le protocole est dans [CLAUDE.md, § 10](CLAUDE.md), et l'[index](recueil/index.md) dit où en est la pile).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -528,6 +530,8 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/octaedre_perron_venn.py`](scripts/octaedre_perron_venn.py) : la partie XXVIII.
 - [`scripts/venn_ppm.py`](scripts/venn_ppm.py) : la partie XXIX (demande une copie du dépôt [dzoba/venn17](https://github.com/dzoba/venn17)).
 - [`scripts/centre_venn.py`](scripts/centre_venn.py) : la partie XXX (même copie du dépôt).
+- [`scripts/recueil_verifications.py`](scripts/recueil_verifications.py) : les vérifications du recueil (congruences de i, puissances sous 10, fractions continues, racines digitales, Midy, décades des premiers).
+- [`scripts/recueil_index.py`](scripts/recueil_index.py) : l'index du recueil et l'état de la révision.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
