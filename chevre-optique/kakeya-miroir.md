@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/kakeya_miroir.py`](scripts/kakeya_miroir.py) (≈ 45 s). Les tableaux complets sont dans [`resultats/kakeya_miroir.md`](resultats/kakeya_miroir.md).
 
+**Suite : [Partie XXVII — la carte des connexions : le graphe de nos chapitres et les liens qu'il prédit](carte-connexions.md).**
+
 ## En bref
 
 - **Kakeya à 10⁻⁵⁰ : entre 0,0134 et 0,025.**

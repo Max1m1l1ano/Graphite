@@ -34,6 +34,7 @@ Tout est recalculé par [`scripts/recursion_argent.py`](scripts/recursion_argent
     - Ce sont des nombres de Pell, ceux des fractions qui approchent √2.
     - Elles convergent vers le point orange et gagnent 0,77 chiffre à chaque aller-retour.
   - Entre les deux foyers, les points de croisement glissent sur la circonférence vers P. Leur angle est divisé par √2 + 1 à chaque pas.
+  - *Voir la [partie XXVII](carte-connexions.md), § 7 : ses rapports sont les aiguilles de Pell de la grille (partie XIV), qui visent 67,5° à une demi-case par pas.*
 - **Les anneaux de Newton aux deux foyers.**
   - Au contact intérieur, la lame d'air est un ménisque de courbure √2 − 1. Au contact extérieur, sa courbure vaut √2 + 1.
   - Les anneaux du contact intérieur sont donc √2 + 1 fois plus larges.

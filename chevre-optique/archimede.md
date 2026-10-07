@@ -123,6 +123,8 @@ Le script compare ce profil au calcul direct sur les arêtes du cube : l'écart 
 | vide entre col et sphère médiane | $\pi/(12\sqrt3)$ | |
 | ombre le long de la diagonale | hexagone régulier = 3 losanges de 60°/120° | son cercle inscrit (rayon $\sqrt2/2$) est l'ombre de la sphère médiane |
 
+*Voir la [partie XXVII](carte-connexions.md), § 2 : ce cercle inscrit est aussi le cercle arctique des cubes empilés au hasard dans une boîte.*
+
 Le contact par **trois cercles** est la version exacte de l'intuition « au moins trois points de contact sur deux cercles, donc 6 ». Une sphère et un cylindre ne se touchent jamais en un point, et une sphère logée dans ce solide le touche le long de trois cercles, soit six points dans toute coupe par l'axe.
 
 ---

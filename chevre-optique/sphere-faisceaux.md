@@ -318,6 +318,7 @@ C'est ta remarque de la partie XIX : il est inutile d'écrire une infinité de c
 
 **Analogie de structure (même procédé), donc un résultat :**
 - les deux hémisphères d'aire ½ de chaque sphère, recollés par l'inversion, et les deux cercles du losange (rapport des aires ½) dans ta figure de diffraction ;
+  - *Voir la [partie XXVII](carte-connexions.md), § 2 : le petit cercle du losange est aussi son cercle arctique, celui des dominos posés au hasard.*
 - le √2 de la chèvre infinie, des arêtes du polytope croisé, du centre du cube en 8D et des directions au hasard en grande dimension.
 
 **Mes lectures (corrige-moi si je t'ai mal compris) :**

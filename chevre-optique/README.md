@@ -54,6 +54,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXVI — la surface de Kakeya à 10⁻⁵⁰, la virgule du kibi dans son miroir et le cube qui tourne](kakeya-miroir.md)** (l'aire minimale d'un ensemble de Kakeya au grain δ : au moins π/(1 + 2γ + 2 ln(2/δ)) par l'argument de Córdoba, dont l'inverse est une droite en k pour δ = 10⁻ᵏ, et les arbres de Perron en tubes calculés jusqu'à 10⁻⁵, d'où 0,0134 à 0,025 à 10⁻⁵⁰ ; le miroir harmonique 49-50-51 et Wang–Zahl en 3D ; la virgule kilo/kibi 128/125, qui est le diesis des musiciens, son miroir aux chiffres de 5ʲ (le « 1 To » qui s'affiche 931 Go), 9,49 – 9,72 – 9,95 % comme trois lectures du même double séparées par les retenues, et les trois écarts des crans sur le cercle des décades ; puis le cube qui tourne : l'ombre |u₁| + |u₂| + |u₃|, le demi-tour autour d'un axe d'ordre 2, les deux carrés qui se quittent exactement à l'hexagone, les écarts 109,47° et 70,53° du losange de la partie II, les deux pavages de Necker, et le carré du prince Rupert qui passe dans l'hexagone, avec le meilleur tunnel le long de la direction pythagoricienne (2, 2, 1)/3, sur le même tour).
 
+**Et : [Partie XXVII — la carte des connexions : le graphe de nos chapitres et les liens qu'il prédit](carte-connexions.md)** (le graphe des renvois entre les 26 parties, calculé depuis les textes — 178 paires reliées sur 325, avec la relecture, l'aiguille sur la grille et le ménisque de 0,35 % comme carrefours —, la prédiction des liens manquants par les voisins communs, puis onze liens calculés : les cercles arctiques, où des dominos au hasard dans le losange et des cubes empilés au hasard dans l'hexagone ne se mélangent que dans le cercle inscrit, ombre de la sphère médiane et disque de demi-aire ; l'échelle des taux de change du grain, des puissances ε⁻², ε⁻¹, ε^(−1/2) jusqu'au logarithme de la série et de Kakeya ; les aiguilles d'argent de Pell, qui sont la récursion d'argent ; les deux chèvres au même endroit comme les deux bouts du ménisque ; les 26 directions du cube de 27 points où ombre × cosinus = 1 ; arccos(1/3), du triangle au tétraèdre dans le cube ; et Archimède dans l'ombre du cube, 3/2 < π/2 < √3).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -516,6 +518,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/tiers_dimension.py`](scripts/tiers_dimension.py) : la partie XXIV.
 - [`scripts/tranche_aiguilles.py`](scripts/tranche_aiguilles.py) : la partie XXV.
 - [`scripts/kakeya_miroir.py`](scripts/kakeya_miroir.py) : la partie XXVI.
+- [`scripts/carte_connexions.py`](scripts/carte_connexions.py) : la partie XXVII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

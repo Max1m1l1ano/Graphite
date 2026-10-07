@@ -93,6 +93,7 @@ x₀ = 1/(n + 1) − μ/2.
 | **10⁻⁵⁰** | **≈ 0,45·10¹⁰⁰** | **≈ 0,69·10⁵⁰** | **10⁵⁰** | **≈ 0,58·10²⁵** |
 
 - **Les puissances et leurs racines.** À un même grain, l'équateur demande ε⁻² dimensions, la coquille et le plan ε⁻¹, le ménisque ε^(−1/2). Pour ton 10⁻⁵⁰ : 10¹⁰⁰, 10⁵⁰ et 10²⁵, c'est-à-dire le carré, le nombre et la racine.
+  - *Voir la [partie XXVII](carte-connexions.md), § 3 : la marche suivante de cette échelle est le logarithme, celui de la série de la chèvre (partie XXV) et de Kakeya (partie XXVI).*
 - **Ce qu'on voit de la chèvre à un grain donné** (panneau d). Trois régimes :
   - au-dessous de n ≈ 0,58/√ε, le grain voit le ménisque : la chèvre diffère de son simplexe ;
   - entre les deux, il voit encore le plan, mais plus le ménisque : la chèvre se confond avec son simplexe, comme sur la grille grossière de la partie XV ;

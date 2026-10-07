@@ -27,6 +27,7 @@ Tout est recalculé par [`scripts/pixels_longitudes.py`](scripts/pixels_longitud
 - **Compter les pixels, c'est le problème du cercle de Gauss.**
   - On trouve N(10) = 317 et N(100) = 31 417, les valeurs de Gauss lui-même, puis N(10⁶) = 3 141 592 649 625. Les chiffres de π sortent du comptage, en décimal comme en binaire.
   - L'écart se coupe exactement en deux. Les tangentes verticales donnent une part lisse, 4√2 ζ(−1/2)·√R = −1,176·√R. Le reste est une somme de dents de scie : le « mod 1 » de chaque colonne.
+  - *Voir la [partie XXVII](carte-connexions.md), § 2 : des dominos posés au hasard dans un losange font aussi un rond, le cercle arctique.*
 - **L'espace entre les nombres.**
   - Les pixels entièrement dedans et ceux qui touchent le disque l'enferment, comme le cercle bleu et le cercle rouge.
   - Leur écart vaut exactement 8R pixels. La raison est un argument modulo 4 : le cercle ne passe jamais par un coin de pixel.

@@ -35,6 +35,7 @@ C'est le panneau a de la partie VIII (pivoter au milieu, π/4 ; le deltoïde, π
   - Deux voisines (F(k), F(k+1)) et (F(k+1), F(k+2)) enferment une seule case : le triangle entre elles a l'aire 1/2 (Cassini, Pick).
   - Elles passent d'un côté à l'autre de la direction d'or, à la distance exacte (−1/φ)^k : ce sont tes « croisements de convergences ».
   - La suivante est la somme des deux précédentes. C'est la même somme qui donne le battement d'un nœud (partie XIII) et le nombre d'anneaux à partir des deux foyers (partie IX).
+  - *Voir la [partie XXVII](carte-connexions.md), § 7 : les aiguilles de Pell font de même vers 67,5°, et ce sont les nombres de la récursion d'argent de la partie XVII.*
 - **Les directions de la grille forment le bord du plan hyperbolique de la partie X.** Les aiguilles voisines y dessinent le pavage de Farey. Les aires entre aiguilles sont les longueurs λ de Penner, et elles suivent Ptolémée exactement.
 - **Sur une grille, l'aiguille de Kakeya ne peut plus se faire toute petite.**
   - *Grille finie* (q × q points, calculs modulo q) : le plus petit ensemble qui contient une droite dans chaque direction occupe la moitié du plan, soit q(q+1)/2 + (q−1)/2 points (Blokhuis et Mazzocca). Je l'ai recalculé exactement pour q = 3, 5 et 7. Il est fait des tangentes d'une parabole, la courbe des foyers.

@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXVI ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXVII ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -133,6 +133,15 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - 2¹⁰/10³ = 128/125 = le diesis (2 et 5, comme le comma pythagoricien pour 2 et 3) ; le miroir 10⁶/2²⁰ = 5⁶/2¹⁴ a les chiffres de 5²⁰ (« 1 To » = 931 Go : 5³⁰). 9,49 / 9,72 / 9,95 % = écart cran–miroir, double 2c, carré : égaux en log (2 × 0,0206 décade), séparés en chiffres par les retenues c²/(1 + c) et c².
   - Les 21 crans 2⁰ … 2²⁰ sur le cercle des décades : trois écarts, 128/125 (×11), 625/512 (×8), 5/4 (×2) ; les 5ʲ sont le reflet exact.
   - Le cube : ombre |u₁| + |u₂| + |u₃| (1, √2, √3) ; le mouvement complet autour d'un axe d'ordre 2 donne √2|cos t| + |sin t|, des hexagones séparés par 109,47° et 70,53° (le losange de la partie II) ; les deux carrés (faces avant et arrière) se recouvrent de (|u₃| − |u₁|)(|u₃| − |u₂|)/|u₃| et se quittent exactement à l'hexagone ; Prince Rupert : Wallis √6 − √2 dans l'hexagone, Nieuwland 3√2/4 le long de (2, 2, 1)/3, sur le même tour (t = arcsin 1/3).
+- **Partie XXVII : la carte des connexions.** Le graphe des renvois entre les parties I à XXVI (`scripts/carte_connexions.py`) : 178 paires sur 325 ; carrefours XXIII, XIV, VI ; liens prédits par les voisins communs (Adamic–Adar). **Pour chercher de nouvelles connexions : `python3 scripts/carte_connexions.py N` affiche la carte des parties I à N, les paires prédites et leurs voisins communs, sans réécrire les fichiers de la partie XXVII.** Établis :
+  - cercles arctiques : dominos au hasard dans le losange (2^(n(n+1)/2) pavages, 1 024 à l'ordre 4) et cubes empilés dans l'hexagone (MacMahon ; côté 1 = Necker) ne se mélangent que dans le cercle inscrit — pour l'hexagone, l'ombre de la sphère médiane (II) ; pour le losange, le disque de demi-aire (XVII) ;
+  - échelle du grain : ε⁻², ε⁻¹, ε^(−1/2) (XXIII), puis la marche 0, le logarithme : la série (XXV, 316 dimensions à 10⁻⁵⁰, un cran de √2 par dimension = 6,644 par décade comme en XXI) et Kakeya (XXVI, 1/aire = 74) ;
+  - ‖u‖₁·‖u‖∞ ≥ 1 : ombre du cube × cos(angle au piquet) ≥ 1, égalité sur les 26 directions de {−1, 0, 1}³ ; le seuil des 2n chèvres (XXII) est la plus grande ombre √n ; 1/x₀ = n + 4/3 − … (XXIV) ;
+  - 3/2 < π/2 < √3 ⟺ 3 < π < 2√3 (Archimède dans l'ombre du cube) ;
+  - la chèvre plane et la chèvre infinie (XX) = sommet (n ≈ 2,08 relatif, 2,24 absolu, VI) et bout de la bosse du ménisque ; en dimensions, N − n → ⅓ ;
+  - aiguilles de Pell (1, 2), (2, 5), (5, 12)… vers 67,5° à une demi-case par pas = la récursion d'argent (XVII) ; contact 1 + 1/√2, fois √2 = 1 + √2 ;
+  - arccos(1/3) de la zone de confusion (VI) = écart entre hexagones (XXVI) : le tétraèdre inscrit ; cos = −1/(n + 1) pour le simplexe de dimension n + 1.
+  - Pistes encore ouvertes : XIV–XX, VI–VIII, XIV–XXIV, VI–XXI, V–IX.
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -183,7 +192,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI ; ensuite ab, ac…) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI, ab = XXVII ; ensuite ac, ad…) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

@@ -116,6 +116,7 @@ C'est le sens exact de ta phrase. Les neuf points donnent le squelette (0, 1, �
 
 - **Le nerf est le bord du polytope croisé**, une sphère S^(n−1), dans toute dimension finie. La condition tient toujours : l'écart 90° − α_n se referme comme 1/(n + 1) radian, et le seuil comme 1/√n, beaucoup plus lentement. C'est vérifié de 2 à 30, en 100 et pour les décades jusqu'à 10⁸.
 - **Les sommets du cube sont exactement les endroits où n chèvres se recouvrent.** Dans la direction (±1, …, ±1), les n chèvres d'un même signe broutent ensemble ; sur un piquet, une seule. En 3D (panneau e), les 8 triangles de l'octaèdre sont les 8 sommets du cube.
+  - *Voir la [partie XXVII](carte-connexions.md), § 4 : le seuil arccos(1/√n) est la plus grande ombre du cube, √n, et les 26 directions du cube de 27 points sont les vues où ombre × cos(angle au piquet) = 1.*
 - **Le croisement casse le faisceau.** À l'infini (α = 90°), les arcs deviennent des demi-cercles fermés et les chèvres opposées se touchent. En 2D, Est et Ouest se rencontrent en deux points séparés. Le recouvrement n'est plus bon, et le nerf devient le bord d'un tétraèdre : une sphère S² au lieu du cercle. Le croisement est exactement l'endroit où le calcul des faisceaux cesse de voir juste.
 
 ## 4. 24 pour la sphère 24D
