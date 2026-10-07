@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/carte_connexions.py`](scripts/carte_connexions.py) (≈ 20 s). Les tableaux complets sont dans [`resultats/carte_connexions.md`](resultats/carte_connexions.md).
 
+**Suite : [Partie XXVIII — l'hexagone rejoint l'octaèdre, le théorème de Perron développé, et le Venn à 17](octaedre-perron-venn.md).**
+
 ## En bref
 
 - **D'abord, la carte.** Le script lit les 26 parties et relève chaque renvoi : « partie XIX », « parties V et XIV », ou un lien vers un fichier.

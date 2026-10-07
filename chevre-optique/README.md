@@ -56,6 +56,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXVII — la carte des connexions : le graphe de nos chapitres et les liens qu'il prédit](carte-connexions.md)** (le graphe des renvois entre les 26 parties, calculé depuis les textes — 178 paires reliées sur 325, avec la relecture, l'aiguille sur la grille et le ménisque de 0,35 % comme carrefours —, la prédiction des liens manquants par les voisins communs, puis onze liens calculés : les cercles arctiques, où des dominos au hasard dans le losange et des cubes empilés au hasard dans l'hexagone ne se mélangent que dans le cercle inscrit, ombre de la sphère médiane et disque de demi-aire ; l'échelle des taux de change du grain, des puissances ε⁻², ε⁻¹, ε^(−1/2) jusqu'au logarithme de la série et de Kakeya ; les aiguilles d'argent de Pell, qui sont la récursion d'argent ; les deux chèvres au même endroit comme les deux bouts du ménisque ; les 26 directions du cube de 27 points où ombre × cosinus = 1 ; arccos(1/3), du triangle au tétraèdre dans le cube ; et Archimède dans l'ombre du cube, 3/2 < π/2 < √3).
 
+**Et : [Partie XXVIII — l'hexagone rejoint l'octaèdre, le théorème de Perron développé, et le Venn à 17](octaedre-perron-venn.md)** (l'octaèdre, dual du cube par leur sphère médiane commune, qui fait le même hexagone d'ombre et de coupe, une ombre max(‖u‖₁, 2‖u‖∞) égale à celle du cube sur 35,10 % des directions, et dont la sphère médiane donne les deux cercles arctiques de la partie XXVII, le long d'un axe d'ordre 4 pour les dominos et d'ordre 3 pour les cubes empilés ; l'argument direct pour l'hexagone par la conique inscrite ; la récurrence de l'octaèdre qui compte les deux pavages, et son cône de lumière de rayon t/√2 ; puis le théorème de Perron démontré pour tout k : la borne « cœur + oreilles », les oreilles égales qui imposent 2/3, 3/4, 4/5…, et la coupe en plateau 1/(k + 2) prouvée par l'ombre du cube, d'où la fenêtre de Kakeya à 10⁻⁵⁰ entièrement démontrée, de 0,01344 à 0,02096 ; enfin le Venn à 17 : Henderson (n premier), Fermat dessiné en 7 710 formes, le diaphragme à 17 lames et ses 34 aigrettes, Fefferman et Córdoba, le diaphragme de Perron à 17 éventails, les coupes de Perron comme Venn à une dimension, Gauss, 4 ≡ i modulo 17 et le miroir de 1/17).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -519,6 +521,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/tranche_aiguilles.py`](scripts/tranche_aiguilles.py) : la partie XXV.
 - [`scripts/kakeya_miroir.py`](scripts/kakeya_miroir.py) : la partie XXVI.
 - [`scripts/carte_connexions.py`](scripts/carte_connexions.py) : la partie XXVII.
+- [`scripts/octaedre_perron_venn.py`](scripts/octaedre_perron_venn.py) : la partie XXVIII.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
