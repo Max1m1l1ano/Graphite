@@ -1012,7 +1012,112 @@ else:
           " (Bertin et Arnouts, SExtractor, 1996), et la raison des corrections de chromaticité des catalogues.")
     assert T4[0.04][1] < 10 and T4[0.04][4] > 0.05 and T4[0.06][4] > 0.05
     assert MASQ[0][2] < 0.5 and MASQ[-1][2] > 20 and all(-140 < m_[3] < -120 for m_ in MASQ[2:])
-    del Lk, Ck, cls, dmin, zz
+    # --- 4.9 la question de l'auteur : quel masque, quel seuil, et que vaut 0,37 px ? -------------------------------
+    ligne()
+    ligne("### 4.9 Le masque binaire : de quoi, où, et ce que vaut 0,37 px (question de l'auteur)")
+    ligne()
+    coin = S8[:20, :20].reshape(-1, 3)
+    vals_, cnt_ = np.unique(coin, axis=0, return_counts=True)
+    FOND_RGB = tuple(int(v) for v in vals_[np.argmax(cnt_)])
+    bord = np.concatenate([S8[:50].reshape(-1, 3), S8[-50:].reshape(-1, 3), S8[:, :50].reshape(-1, 3), S8[:, -50:].reshape(-1, 3)])
+    part_fond = float(np.mean(np.all(bord == np.array(FOND_RGB, np.uint8), axis=1)))
+    ligne(f"- **L'image** : `{os.path.basename(IMG_P)}` (dépôt de Dzoba, copie locale ; c'est l'image de son README, celle des"
+          f" parties XXIX et XXX), {S8.shape[1]} × {S8.shape[0]} pixels, trois canaux de 8 bits non signés (0 à 255,"
+          f" type `{S8.dtype}`). Le fond est une couleur exacte, RGB = {FOND_RGB} : un gris bleuté ({fr(100 * part_fond, '{:.1f}')} %"
+          " des pixels des bandes de 50 px au bord).")
+    ligne(f"- **Le seuil, de quoi** : de la clarté perçue OKLab L (0 = noir, 1 = blanc), calculée pixel par pixel à partir des"
+          f" trois canaux. Le fond vaut L = {fr(fondL, '{:.4f}')} (médiane du coin 20 × 20). Le masque est l'ensemble des pixels"
+          " où L > fond + t : chacun pèse 1, les autres 0. Son centre est la moyenne des positions de ses pixels ; on le"
+          " compare au centre de symétrie d'ordre 17, (999,497 ; 999,499), connu à 0,003 px (partie XXX, § 1).")
+    ligne("- **Où** : partie XXX ([centre-venn.md](../centre-venn.md), § 1, la deuxième des six pesées, « masque de clarté"
+          " OKLab (L > fond + 0,1) » ; § 2, la mesure de la moitié avec le même seuil) ; script `scripts/centre_venn.py`"
+          " (section 1, liste `POIDS` ; fonction `mesure_moitie`, `seuil=0.1`) ; balayage du seuil : `scripts/revision_001.py`,"
+          " sections 4.8 et 4.9 ; figure `rev001_diagonale_cadre.png`, panneau c ; fiche 018. La partie XXIX utilisait un"
+          " autre masque binaire, sur la moyenne des canaux : moyenne RGB > fond + 25.")
+    ligne()
+    hR = np.bincount(S8[..., 0].ravel(), minlength=256)
+    hB = np.bincount(S8[..., 2].ravel(), minlength=256)
+    rap = lambda h_, k: h_[k + 1] / h_[k]  # noqa: E731
+    sauts = [abs(np.log(rap(h_, 127)) - np.median([np.log(rap(h_, k)) for k in range(110, 145) if k != 127])) for h_ in (hR, hB)]
+    ligne(f"**Signé ou non signé ?** Un passage par des octets signés (−128 à 127) replierait les valeurs au-delà de 127 :"
+          f" l'histogramme des canaux sauterait entre 127 et 128. Il est lisse (rouge : {ent(int(hR[127]))} puis {ent(int(hR[128]))} ;"
+          f" bleu : {ent(int(hB[127]))} puis {ent(int(hB[128]))} ; l'écart du rapport 128/127 à ses voisins est de"
+          f" {fr(100 * max(sauts), '{:.1f}')} % au plus). Et le calcul lui-même ne passe jamais par des entiers signés : les"
+          " canaux sont lus de 0 à 255 puis divisés par 255.")
+    ligne()
+    zz = None
+    yy_, xx_ = np.mgrid[0:S8.shape[0], 0:S8.shape[1]]
+    zz = (xx_ - C_SYM[0]) + 1j * (C_SYM[1] - yy_)
+    del yy_, xx_
+    diff = np.any(S8 != np.array(FOND_RGB, np.uint8), axis=2)
+    b0 = zz[diff].mean()
+    ligne("**Le seuil, descendu jusqu'à zéro** :")
+    ligne()
+    ligne("| masque | pixels | écart au centre de symétrie | direction (°, y vers le haut) |")
+    ligne("|---|---:|---:|---:|")
+    ligne(f"| tout pixel différent du fond exact {FOND_RGB} (aucun seuil) | {ent(int(diff.sum()))} | {fr(abs(b0), '{:.3f}')} px |"
+          f" {fr(np.degrees(np.angle(b0)), '{:.0f}')} |")
+    BAS = []
+    for t_ in (0.001, 0.002, 0.005, 0.01, 0.015, 0.02, 0.03, 0.05):
+        mm = Lk > fondL + t_
+        bb = zz[mm].mean()
+        BAS.append((t_, abs(bb)))
+        ligne(f"| L > fond + {fr(t_, '{:.3f}')} | {ent(int(mm.sum()))} | {fr(abs(bb), '{:.3f}')} px | {fr(np.degrees(np.angle(bb)), '{:.0f}')} |")
+    ligne()
+    ligne(f"- **0,37 px n'est pas une constante** : c'est la valeur du balayage à t = 0,02. Sans aucun seuil, l'encre est"
+          f" centrée à {fr(abs(b0), '{:.3f}')} px près ; jusqu'à t = 0,01, l'écart reste entre"
+          f" {fr(min(v for t_, v in BAS if t_ <= 0.01), '{:.2f}')} et {fr(max(v for t_, v in BAS if t_ <= 0.01), '{:.2f}')} px (le niveau du bruit) ;"
+          " au-delà, il monte avec le seuil. Rapporté au rayon du dessin (984 px), 0,37 px fait 3,8·10⁻⁴, soit 380 ppm :"
+          " petit, mais cent fois la précision du centre.")
+    biais = (999.5 - 1000.0) + 1j * (1000.0 - 999.5)
+    ligne(f"- **Le zéro qui déséquilibre** : ton intuition a un vrai pendant dans l'image. Un axe de 2 000 pixels n'a pas de"
+          f" pixel central : le milieu tombe entre 999 et 1 000, en 999,5, comme le milieu de −128 … 127 tombe en −0,5."
+          f" Qui prendrait 1 000 (= 2 000/2) pour centre se tromperait d'un demi-pixel sur chaque axe : {fr(abs(biais), '{:.4f}')} px"
+          f" = √2/2, vers {fr(np.degrees(np.angle(biais)), '{:.0f}')}°. Le centre de symétrie mesuré, (999,497 ; 999,499), dit que le"
+          " dessin respecte la bonne convention. Et le masque ne suit pas ce biais : sa direction est opposée en hauteur"
+          " (−99° à −136°) et sa taille grandit avec le seuil. Il passe par 0,71 px à t = 0,05, à 1 % de √2/2 : encore une"
+          " dérive qui croise une constante, comme les dizaines de premiers croisent π puis 2√2 (section 4.2).")
+    ligne(f"- **Le 10/3** : le fond n'est pas un zéro neutre. Ses canaux valent {FOND_RGB}, donc sa moyenne RGB vaut"
+          f" ({FOND_RGB[0]} + {FOND_RGB[1]} + {FOND_RGB[2]})/3 = 22/3, dont 10/3 viennent du bleu. Ce décalage est uniforme : il est"
+          " retranché avant la pesée, et un fond uniforme n'a pas de dipôle (son centre est celui du cadre). Il agit"
+          " seulement aux bords anticrénelés, où chaque courbe se mélange à ce zéro bleuté : il fait partie de l'effet du"
+          " seuil. Pour le séparer, il faudrait un rendu sur un fond neutre (piste).")
+    ligne()
+    ligne("**Ce que le seuil change, et ce qu'il ne change pas** (la mesure de la moitié de la partie XXX, § 2, refaite à"
+          " chaque seuil ; ρ est le rayon rapporté au contour, mesuré angle par angle) :")
+    ligne()
+    ligne("| seuil t | part de l'intérieur qui est de l'encre | encre dans le contour réduit de 1/√2 | ρ médian (1/√2 = 0,7071) |"
+          " ⟨ρ²⟩ | écart du centre |")
+    ligne("|---:|---:|---:|---:|---:|---:|")
+    RR_ = np.abs(zz)
+    TH_ = np.angle(zz)
+    NB_ = 3600
+    Bn_ = ((TH_ + np.pi) / (2 * np.pi) * NB_).astype(int) % NB_
+    MOIT = []
+    for t_ in (0.005, 0.02, 0.05, 0.1, 0.2, 0.3):
+        mm = Lk > fondL + t_
+        RMAX_ = np.zeros(NB_)
+        np.maximum.at(RMAX_, Bn_[mm], RR_[mm])
+        rout = np.interp((TH_ + np.pi) / (2 * np.pi) * NB_, np.arange(NB_), RMAX_)
+        DED_ = RR_ < rout - 2
+        rho_ = (RR_ / np.maximum(rout, 1.0))[mm & DED_]
+        MOIT.append((t_, (mm & DED_).sum() / DED_.sum(), np.mean(rho_ <= 2**-0.5), np.median(rho_), np.mean(rho_**2), abs(zz[mm].mean())))
+        ligne(f"| {fr(t_, '{:.3f}')} | {fr(100 * MOIT[-1][1], '{:.1f}')} % | {fr(100 * MOIT[-1][2], '{:.2f}')} % | {fr(MOIT[-1][3])} |"
+              f" {fr(MOIT[-1][4])} | {fr(MOIT[-1][5], '{:.2f}')} px |")
+    ligne()
+    ligne(f"- Le seuil change la quantité d'encre de {fr(100 * MOIT[0][1], '{:.0f}')} % à {fr(100 * MOIT[-1][1], '{:.0f}')} %, et le centre"
+          f" de {fr(MOIT[0][5], '{:.2f}')} à {fr(MOIT[-1][5], '{:.1f}')} px. Mais la moitié reste à sa place : entre"
+          f" {fr(100 * min(m_[2] for m_ in MOIT), '{:.2f}')} % et {fr(100 * max(m_[2] for m_ in MOIT), '{:.2f}')} % de l'encre dans le contour"
+          f" réduit de 1/√2, ρ médian entre {fr(min(m_[3] for m_ in MOIT))} et {fr(max(m_[3] for m_ in MOIT))}.")
+    ligne("- **Pourquoi.** Le seuil change la couleur en largeur, et les couleurs tournent autour du centre : il touche le"
+          " premier harmonique (le dipôle, donc le centre). La moitié ne regarde que la distance au centre, en moyenne sur"
+          " toutes les courbes : l'harmonique zéro, que la rotation d'ordre 17 protège. Le résultat de la partie XXX sur la"
+          " moitié est donc robuste au cadre ; ses centres de la lumière, eux, dépendent du cadre.")
+    assert abs(b0) < 0.1 and max(v for t_, v in BAS if t_ <= 0.01) < 0.2 and abs(abs(biais) - 2**-0.5) < 1e-12
+    assert max(m_[2] for m_ in MOIT) - min(m_[2] for m_ in MOIT) < 0.01 and MOIT[-1][5] > 10
+    assert max(sauts) < 0.05
+    del zz, RR_, TH_, Bn_
+    del Lk, Ck, cls, dmin
     TESTS.append(("006 et 007", "classes de teinte, montée cyclique, masques de 0,02 à 0,40",
                   f"pas d'ordre de dessin ; le seuil déplace le centre de {fr(MASQ[0][2], '{:.2f}')} à {fr(MASQ[-1][2], '{:.0f}')} px"))
 
@@ -1089,20 +1194,29 @@ def panneau_seuil(ax):
     if "MASQ" not in globals():
         ax.text(0.5, 0.5, "image de Dzoba absente", ha="center", transform=ax.transAxes)
         return
-    t_ = [m_[0] for m_ in MASQ]
-    e_ = [m_[2] for m_ in MASQ]
-    ax.plot(t_, e_, "-o", color=F.BLEU, ms=6, mec=F.SURF, mew=1.3)
-    for tt, ee, (_, _, _, ang) in zip(t_, e_, MASQ):
-        if tt in (0.02, 0.1, 0.25, 0.4):
-            ax.annotate(f"{fr(ee, '{:.2f}') if ee < 10 else fr(ee, '{:.1f}')} px, {fr(ang, '{:.0f}')}°", (tt, ee),
-                        xytext=(7, 2) if tt == 0.02 else (-78, -4) if tt == 0.4 else (6, -12), textcoords="offset points",
+    pts = sorted({round(t_, 4): e_ for t_, e_ in [(m_[0], m_[2]) for m_ in MASQ] + BAS}.items())
+    t_ = [a_ for a_, _ in pts]
+    e_ = [b_ for _, b_ in pts]
+    ax.plot(t_, e_, "-o", color=F.BLEU, ms=5.5, mec=F.SURF, mew=1.2, label="masque L > fond + t : écart du centre")
+    ax.axhline(abs(b0), color=F.AQUA, lw=1.2, ls=(0, (4, 3)))
+    ax.text(0.0012, abs(b0) * 1.12, f"aucun seuil (tout pixel ≠ fond {FOND_RGB}) : {fr(abs(b0), '{:.3f}')} px", fontsize=7.8, color=F.INK2)
+    ax.axhline(2**-0.5, color=F.ORANGE, lw=1.2, ls=(0, (4, 3)))
+    ax.text(0.0012, 2**-0.5 * 1.12, "centre pris en 1 000 au lieu de 999,5 : √2/2 = 0,707 px", fontsize=7.8, color=F.INK2)
+    for tt, ee in pts:
+        if tt in (0.02, 0.1, 0.4):
+            ax.annotate(f"t = {fr(tt, '{:.2f}')} : {fr(ee, '{:.2f}') if ee < 10 else fr(ee, '{:.1f}')} px", (tt, ee),
+                        xytext={0.4: (-112, -3), 0.1: (-100, 9), 0.02: (6, -13)}[tt], textcoords="offset points",
                         fontsize=7.8, color=F.INK2)
+    ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.set_xlabel("seuil du masque binaire : clarté L > fond + t")
+    ax.set_xlim(0.0009, 0.5)
+    ax.set_ylim(0.02, 60)
+    ax.set_xlabel("seuil t du masque binaire (clarté OKLab au-dessus du fond)")
     ax.set_ylabel("écart au centre de symétrie (px)")
-    ax.set_title("c. Le seuil déplace le centre de la lumière")
-    ax.text(0.03, 0.95, "chaque pixel d'encre pèse pareil :\nni palette, ni ordre de dessin", transform=ax.transAxes,
-            fontsize=8, color=F.INK2, va="top")
+    ax.set_title("c. Le seuil déplace le centre ; la moitié ne bouge pas")
+    ax.text(0.03, 0.8, "encre dans le contour réduit de 1/√2 :\nde " + fr(100 * min(m_[2] for m_ in MOIT), '{:.1f}') + " à "
+            + fr(100 * max(m_[2] for m_ in MOIT), '{:.1f}') + " % pour t = 0,005 à 0,3", transform=ax.transAxes, fontsize=8,
+            color=F.INK2, va="top")
 
 
 def panneau_derive(ax):

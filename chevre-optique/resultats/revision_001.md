@@ -76,11 +76,11 @@ Chaque fiche devient un vecteur d'appartenance aux huit dossiers (une fiche peut
 
 | recouvrement | pesée | paires liées | distance moyenne des liées | paires non liées | distance moyenne des non liées | non liées sous √2 | écart non liées − liées | p (nul) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,943 |
-| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,960 |
+| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,925 |
+| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,976 |
 
 - **Les deux populations se séparent, mais mécaniquement.** Les paires liées sont en moyenne à 1,3162, sous √2 = 1,4142 ; les paires sans dossier commun sont à 1,6427, au-dessus de √2, du côté de l'arête du simplexe (√(16/7) = 1,5119 pour huit dossiers à parts égales).
-- **Le nul le montre** : p = 0,94. Des dossiers de mêmes tailles, tirés au hasard, séparent aussi bien. C'est la définition même d'un dossier commun qui rapproche deux fiches : cette mesure ne dit rien du contenu. Pour qu'elle parle, il faut des liens définis autrement, par exemple ceux que les agents ont trouvés par le même procédé (section 2.3).
+- **Le nul le montre** : p = 0,93. Des dossiers de mêmes tailles, tirés au hasard, séparent aussi bien. C'est la définition même d'un dossier commun qui rapproche deux fiches : cette mesure ne dit rien du contenu. Pour qu'elle parle, il faut des liens définis autrement, par exemple ceux que les agents ont trouvés par le même procédé (section 2.3).
 - **Des liens du cadre restent possibles.** 5 % des paires non liées passent sous √2 en pesée brute : des fiches qui ne partagent rien, mais qui tombent dans de petits dossiers (la règle de la section 2.1, étendue aux fiches à plusieurs dossiers : P_a + P_b < Σp², où P est la somme des parts des dossiers de la fiche).
 
 ## 3. Le nerf des dossiers : ce qui se recolle, et les trous
@@ -89,9 +89,9 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 
 | recouvrement | niveau | sommets, arêtes, triangles, tétraèdres | Betti b₀, b₁, b₂ | triangles vides | triangles remplis : éléments communs en moyenne | nul : b₁ moyen | nul : b₂ moyen | nul : triangles vides en moyenne | p (nul ≥ observé) |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|
-| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,12 | 0,01 | 5,7 | 0,160 |
-| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,66 | 0,00 | 4,7 | 0,241 |
-| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,21 | 5,63 | 18,7 | 0,393 |
+| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,06 | 0,00 | 5,7 | 0,146 |
+| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,67 | 0,00 | 4,8 | 0,221 |
+| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,20 | 5,63 | 18,7 | 0,396 |
 
 **v1 : les triangles vides au niveau des fiches** (9) :
 - aiguilles-kakeya-perron · grain-pixels-centres · hasard-et-methode : trou du corpus (vide aussi avec les parties).
@@ -104,8 +104,8 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 - grain-pixels-centres · hasard-et-methode · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - hasard-et-methode · lumiere-et-physique · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - Bilan v1 : 5 trous du recueil, 4 trous du corpus.
-- Les fiches laissent 9 triangles vides, contre 5,7 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,16) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
-- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,63 en moyenne, p = 0,735). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
+- Les fiches laissent 9 triangles vides, contre 5,7 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,15) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
+- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,63 en moyenne, p = 0,713). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
   - aiguilles-kakeya-perron · bases-congruences-premiers · moities-et-crans · ombres-cube-venn
   - aiguilles-kakeya-perron · grain-pixels-centres · lumiere-et-physique · moities-et-crans
   - aiguilles-kakeya-perron · hasard-et-methode · lumiere-et-physique · moities-et-crans
@@ -225,8 +225,8 @@ La partie XIV a trouvé qu'un ensemble de Kakeya du plan F_q² (une droite enti�
 | 4 | 2 | 10 | 10 | 0 | 0 | 10 | 0 | 0,0 s |
 | 5 | 5 | 17 | 15 | 2 | 6 | 9 | 2 | 0,0 s |
 | 7 | 7 | 31 | 28 | 3 | 9 | 19 | 3 | 1,4 s |
-| 8 | 2 | 36 | 36 | 0 | 0 | 36 | 0 | 3,5 s |
-| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 15,1 s |
+| 8 | 2 | 36 | 36 | 0 | 0 | 36 | 0 | 3,4 s |
+| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 15,3 s |
 
 - **L'identité exacte.** Les q + 1 droites se coupent deux à deux en un seul point. En comptant chaque point avec sa multiplicité m_P (le nombre de droites qui y passent), 1 = m − C(m, 2) + C(m − 1, 2) pour tout m ≥ 1. On en tire |K| = q(q + 1) − C(q + 1, 2) + Σ C(m_P − 1, 2) = q(q + 1)/2 + Σ C(m_P − 1, 2).
 - **La moitié vient de l'inclusion–exclusion**, tronquée à l'ordre 2 : c'est l'inégalité de Bonferroni |∪L| ≥ Σ|L| − Σ|L ∩ L′|, vraie dans toutes les caractéristiques. Elle est atteinte pour q = 2, 4, 8 : tous les points sont doubles, aucun n'est triple.
@@ -262,6 +262,46 @@ On classe chaque pixel d'encre (clarté L > fond + 0,1) par sa teinte OKLab, au 
 - **Verdict.** La cause unique « le premier harmonique des poids » ne suffit pas (K6), mais la seconde cause n'est pas l'ordre de dessin : c'est le seuil. La couleur déplace le centre par deux canaux, le poids (la pesée) et la largeur visible au-dessus d'un seuil. La phrase de la partie XXX, « tout écart vient des poids », devient « tout écart vient de la couleur, par le poids et par le seuil » ; la géométrie reste symétrique.
 - **Le lien avec le sujet d'étude.** Restreindre le cadre (monter le seuil) fabrique un déplacement qui n'est pas dans la géométrie, comme le partage inégal des aires fabrique des liens (section 2.1). En astrométrie, c'est la différence entre un centroïde isophote (au-dessus d'un seuil) et un centroïde pondéré (Bertin et Arnouts, SExtractor, 1996), et la raison des corrections de chromaticité des catalogues.
 
+### 4.9 Le masque binaire : de quoi, où, et ce que vaut 0,37 px (question de l'auteur)
+
+- **L'image** : `venn17-pressure-dark-2000.png` (dépôt de Dzoba, copie locale ; c'est l'image de son README, celle des parties XXIX et XXX), 2000 × 2000 pixels, trois canaux de 8 bits non signés (0 à 255, type `uint8`). Le fond est une couleur exacte, RGB = (6, 6, 10) : un gris bleuté (92,7 % des pixels des bandes de 50 px au bord).
+- **Le seuil, de quoi** : de la clarté perçue OKLab L (0 = noir, 1 = blanc), calculée pixel par pixel à partir des trois canaux. Le fond vaut L = 0,1246 (médiane du coin 20 × 20). Le masque est l'ensemble des pixels où L > fond + t : chacun pèse 1, les autres 0. Son centre est la moyenne des positions de ses pixels ; on le compare au centre de symétrie d'ordre 17, (999,497 ; 999,499), connu à 0,003 px (partie XXX, § 1).
+- **Où** : partie XXX ([centre-venn.md](../centre-venn.md), § 1, la deuxième des six pesées, « masque de clarté OKLab (L > fond + 0,1) » ; § 2, la mesure de la moitié avec le même seuil) ; script `scripts/centre_venn.py` (section 1, liste `POIDS` ; fonction `mesure_moitie`, `seuil=0.1`) ; balayage du seuil : `scripts/revision_001.py`, sections 4.8 et 4.9 ; figure `rev001_diagonale_cadre.png`, panneau c ; fiche 018. La partie XXIX utilisait un autre masque binaire, sur la moyenne des canaux : moyenne RGB > fond + 25.
+
+**Signé ou non signé ?** Un passage par des octets signés (−128 à 127) replierait les valeurs au-delà de 127 : l'histogramme des canaux sauterait entre 127 et 128. Il est lisse (rouge : 4 552 puis 4 377 ; bleu : 4 677 puis 4 504 ; l'écart du rapport 128/127 à ses voisins est de 0,6 % au plus). Et le calcul lui-même ne passe jamais par des entiers signés : les canaux sont lus de 0 à 255 puis divisés par 255.
+
+**Le seuil, descendu jusqu'à zéro** :
+
+| masque | pixels | écart au centre de symétrie | direction (°, y vers le haut) |
+|---|---:|---:|---:|
+| tout pixel différent du fond exact (6, 6, 10) (aucun seuil) | 2 981 328 | 0,044 px | −54 |
+| L > fond + 0,001 | 2 447 266 | 0,117 px | 11 |
+| L > fond + 0,002 | 2 441 864 | 0,063 px | −27 |
+| L > fond + 0,005 | 2 427 167 | 0,086 px | −29 |
+| L > fond + 0,010 | 2 398 326 | 0,124 px | −80 |
+| L > fond + 0,015 | 2 369 380 | 0,265 px | −94 |
+| L > fond + 0,020 | 2 342 258 | 0,375 px | −99 |
+| L > fond + 0,030 | 2 298 524 | 0,477 px | −105 |
+| L > fond + 0,050 | 2 215 030 | 0,715 px | −122 |
+
+- **0,37 px n'est pas une constante** : c'est la valeur du balayage à t = 0,02. Sans aucun seuil, l'encre est centrée à 0,044 px près ; jusqu'à t = 0,01, l'écart reste entre 0,06 et 0,12 px (le niveau du bruit) ; au-delà, il monte avec le seuil. Rapporté au rayon du dessin (984 px), 0,37 px fait 3,8·10⁻⁴, soit 380 ppm : petit, mais cent fois la précision du centre.
+- **Le zéro qui déséquilibre** : ton intuition a un vrai pendant dans l'image. Un axe de 2 000 pixels n'a pas de pixel central : le milieu tombe entre 999 et 1 000, en 999,5, comme le milieu de −128 … 127 tombe en −0,5. Qui prendrait 1 000 (= 2 000/2) pour centre se tromperait d'un demi-pixel sur chaque axe : 0,7071 px = √2/2, vers 135°. Le centre de symétrie mesuré, (999,497 ; 999,499), dit que le dessin respecte la bonne convention. Et le masque ne suit pas ce biais : sa direction est opposée en hauteur (−99° à −136°) et sa taille grandit avec le seuil. Il passe par 0,71 px à t = 0,05, à 1 % de √2/2 : encore une dérive qui croise une constante, comme les dizaines de premiers croisent π puis 2√2 (section 4.2).
+- **Le 10/3** : le fond n'est pas un zéro neutre. Ses canaux valent (6, 6, 10), donc sa moyenne RGB vaut (6 + 6 + 10)/3 = 22/3, dont 10/3 viennent du bleu. Ce décalage est uniforme : il est retranché avant la pesée, et un fond uniforme n'a pas de dipôle (son centre est celui du cadre). Il agit seulement aux bords anticrénelés, où chaque courbe se mélange à ce zéro bleuté : il fait partie de l'effet du seuil. Pour le séparer, il faudrait un rendu sur un fond neutre (piste).
+
+**Ce que le seuil change, et ce qu'il ne change pas** (la mesure de la moitié de la partie XXX, § 2, refaite à chaque seuil ; ρ est le rayon rapporté au contour, mesuré angle par angle) :
+
+| seuil t | part de l'intérieur qui est de l'encre | encre dans le contour réduit de 1/√2 | ρ médian (1/√2 = 0,7071) | ⟨ρ²⟩ | écart du centre |
+|---:|---:|---:|---:|---:|---:|
+| 0,005 | 81,5 % | 49,70 % | 0,7093 | 0,5019 | 0,09 px |
+| 0,020 | 78,7 % | 49,60 % | 0,7100 | 0,5028 | 0,37 px |
+| 0,050 | 74,4 % | 49,53 % | 0,7105 | 0,5032 | 0,71 px |
+| 0,100 | 66,8 % | 49,43 % | 0,7112 | 0,5037 | 1,26 px |
+| 0,200 | 47,4 % | 49,32 % | 0,7121 | 0,5037 | 4,67 px |
+| 0,300 | 18,6 % | 49,41 % | 0,7118 | 0,5008 | 13,75 px |
+
+- Le seuil change la quantité d'encre de 81 % à 19 %, et le centre de 0,09 à 13,7 px. Mais la moitié reste à sa place : entre 49,32 % et 49,70 % de l'encre dans le contour réduit de 1/√2, ρ médian entre 0,7093 et 0,7121.
+- **Pourquoi.** Le seuil change la couleur en largeur, et les couleurs tournent autour du centre : il touche le premier harmonique (le dipôle, donc le centre). La moitié ne regarde que la distance au centre, en moyenne sur toutes les courbes : l'harmonique zéro, que la rotation d'ordre 17 protège. Le résultat de la partie XXX sur la moitié est donc robuste au cadre ; ses centres de la lumière, eux, dépendent du cadre.
+
 ## 5. Le tableau des tests de la révision
 
 | fiche ou partie | ce qui varie | verdict |
@@ -269,10 +309,10 @@ On classe chaque pixel d'encre (clarté L > fond + 0,1) par sa teinte OKLab, au 
 | 013 | variation de la base (3 à 60) et du premier (jusqu'à 400) | 3 cas, dont un seul non trivial : (10, 7) |
 | 015 | variation de la taille N (10⁴ à 10⁸) | le rapport par motif dérive (3,90 → 2,53) ; les paires larges restent à 2 |
 | 013 et XIX | la famille b = q² + 1 (q premier jusqu'à 19) | q = 2 et 3 seulement ; ailleurs période 6 |
-| 011 et 003 | le seuil du centre : cercle contre n-gone | 4π = 12,566 et π/arctan(1/4) = 12,798 |
-| recueil (4/3) | les bases de 3 à 10⁶ | 4/3 seulement pour b = 10 à 16 et 244 à 256 |
+| 011 et 003 | le seuil du centre : cercle contre n-gone | 4π = 12,566 et π/arctan(1/4) = 12,824 : 13 courbes dans les deux cas |
+| recueil (4/3) | les bases de 3 à 10⁶ | 4/3 seulement pour b = 10 à 16 et b = 244 à 256 |
 | recueil (Midy) | la tour 2-adique, bornes 10³ à 10⁶, bases 2, 3, 7, 10, 12 | 2/3 pair en base 10, 17/24 en base 2 ; 1/3, 1/3, 1/6, 1/12 |
 | XIV et 012 | Kakeya dans F_q, q = 2 à 9 | q(q + 1)/2 exactement pour q pair ; + (q − 1)/2 points triples pour q impair |
 | 006 et 007 | classes de teinte, montée cyclique, masques de 0,02 à 0,40 | pas d'ordre de dessin ; le seuil déplace le centre de 0,37 à 27 px |
 
-(calculs : 76 s)
+(calculs : 80 s)
