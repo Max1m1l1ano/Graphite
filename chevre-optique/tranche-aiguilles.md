@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/tranche_aiguilles.py`](scripts/tranche_aiguilles.py) (≈ 1 min). Les tableaux complets sont dans [`resultats/tranche_aiguilles.md`](resultats/tranche_aiguilles.md).
 
+**Suite : [Partie XXVI — la surface de Kakeya à 10⁻⁵⁰, la virgule du kibi dans son miroir et le cube qui tourne](kakeya-miroir.md).**
+
 ## En bref
 
 - **La divergence de la série est expliquée, constante comprise.**
@@ -242,7 +244,7 @@ La série diverge, mais elle n'a rien perdu.
 | XXI | le τ de Ramanujan, Δ = η²⁴ | r₂₄(k) de la tranche par τ(k) |
 | [XIV](aiguille-grille.md) | aiguilles de la grille, 3-4-5, une demi-case par pas | rotations 3-4-5, 7-24-25, 5-12-13, 28-45-53 ; demi-tours |
 | [XIX](bases-objets.md) | i modulo une base = aiguille primitive | i n'existe que modulo 50 et 53 dans la tranche |
-| XIX | kilo contre kibi | 20 crans ≈ 6 décades, à 4,86 % près |
+| XIX | kilo contre kibi | 20 crans ≈ 6 décades, à 4,86 % près (et son miroir, −4,63 % : [partie XXVI](kakeya-miroir.md)) |
 | XX | retournement : une sphère S^(d−2) de chemins | arrêts du réseau ; aucun pour (7, 1, 1) en 3D |
 | [XVII](recursion-argent.md), XXI | la forme de Newton x·x′ = f² | le plan, miroir des lectures du grain |
 | I ([README](README.md)), § 4.3 | x₀ ≈ 1/((n + 1)δ) | en 2D, x₀ = sin(1/(3d) + 1/(810d³) + …) exactement développé |
@@ -279,7 +281,7 @@ La série diverge, mais elle n'a rien perdu.
 
 **Mes lectures (corrige-moi si je t'ai mal compris) :**
 - **« Compléter la tranche ».** Je l'ai lu comme prolonger 49-50-51 jusqu'à 55, niveau par niveau. Les sept niveaux, centre 52, forment ta colonne de 7 carrés, 4 en bas et 4 en haut avec le centre compté deux fois (CLAUDE.md, § 4).
-- **« Les tournants d'aiguilles ».** Je les ai lus comme les rotations des aiguilles de la tranche : leurs angles, leurs quarts de tour, leurs retournements et leur passage au croisement. Si tu pensais à la surface minimale de Kakeya à ces échelles, dis-le-moi.
+- **« Les tournants d'aiguilles ».** Je les ai lus comme les rotations des aiguilles de la tranche : leurs angles, leurs quarts de tour, leurs retournements et leur passage au croisement. Si tu pensais à la surface minimale de Kakeya à ces échelles, dis-le-moi. *C'était bien ça : la [partie XXVI](kakeya-miroir.md) la calcule, entre 0,0134 et 0,025 à 10⁻⁵⁰.*
 - **L'unité du grain.** Je propose l'angle (la lecture du plan) pour un modèle d'aiguilles qui tournent. Pour un modèle de lumière qui passe, ce serait l'aire, un cran au-dessus.
 
 **Ouvert :**

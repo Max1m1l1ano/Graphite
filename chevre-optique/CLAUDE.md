@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXV ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXVI ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -128,6 +128,11 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - Ordres 2 à 8 démontrés (n ≥ 100) ; c₂ = 4/405 et c₃ = 1/96 démontrés par la lentille exacte.
   - Le grain comme angle : cos α_n = x₀ ; le plan est le miroir des lectures (paires κ·κ′ = 1).
 - **La tranche 49 – 55 et les aiguilles.** Sept niveaux, miroir autour de 52 ; l'aiguille (7, 1, …, 1) gagne une dimension par niveau ; carrés minimaux 1, 2, 3, 2, 2, 3, 4 (55 ≡ 7 mod 8, Legendre) ; i n'existe que modulo 50 et 53 ; rotations 3-4-5, 7-24-25, 5-12-13, 28-45-53 ; r₂₄ par le τ de Ramanujan ; (7, 1, 1) n'a aucun arrêt perpendiculaire sur le réseau 3D.
+- **Partie XXVI : Kakeya au grain δ, la virgule et son miroir, le cube qui tourne.**
+  - Aire minimale de N tubes 1 × δ (une direction chacun) : au moins π/(1 + 2γ + 2 ln(2/δ)) (Córdoba, constante calculée), donc 1/aire ≤ 1,127 + 1,466·k pour δ = 10⁻ᵏ ; arbres de Perron en tubes (calculés jusqu'à 10⁻⁵) : ≈ 2,9/ln(1/δ). À 10⁻⁵⁰ : entre 0,0134 et ≈ 0,025. Kakeya lit l'exposant k, la chèvre lit 10⁻ᵏ ; miroir harmonique 1/L(49) + 1/L(51) = 2/L(50).
+  - 2¹⁰/10³ = 128/125 = le diesis (2 et 5, comme le comma pythagoricien pour 2 et 3) ; le miroir 10⁶/2²⁰ = 5⁶/2¹⁴ a les chiffres de 5²⁰ (« 1 To » = 931 Go : 5³⁰). 9,49 / 9,72 / 9,95 % = écart cran–miroir, double 2c, carré : égaux en log (2 × 0,0206 décade), séparés en chiffres par les retenues c²/(1 + c) et c².
+  - Les 21 crans 2⁰ … 2²⁰ sur le cercle des décades : trois écarts, 128/125 (×11), 625/512 (×8), 5/4 (×2) ; les 5ʲ sont le reflet exact.
+  - Le cube : ombre |u₁| + |u₂| + |u₃| (1, √2, √3) ; le mouvement complet autour d'un axe d'ordre 2 donne √2|cos t| + |sin t|, des hexagones séparés par 109,47° et 70,53° (le losange de la partie II) ; les deux carrés (faces avant et arrière) se recouvrent de (|u₃| − |u₁|)(|u₃| − |u₂|)/|u₃| et se quittent exactement à l'hexagone ; Prince Rupert : Wallis √6 − √2 dans l'hexagone, Nieuwland 3√2/4 le long de (2, 2, 1)/3, sur le même tour (t = arcsin 1/3).
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -178,7 +183,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV ; ensuite deux lettres : aa, ab…) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV, aa = XXVI ; ensuite ab, ac…) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

@@ -52,6 +52,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXV — les ouverts refermés, la tranche 10⁻⁴⁹ – 10⁻⁵⁵ et les tournants d'aiguilles](tranche-aiguilles.md)** (l'équation de la chèvre écrite comme une intégrale de Laplace, d'où la loi exacte des grands ordres de la série, (−1)^m e^(−1/2) √(ln 2/π) Γ(m − ½) (2/ln 2)^m, et sa meilleure précision 1,03·2^(−n/2)/n ; la série de la dimension infinie qui, resommée par Borel–Padé, redonne la chèvre plane d'Ullisch ; les ordres 2 à 8 démontrés avec des bornes explicites ; le c_n de la partie XVI démontré en 2D et 3D par l'aire et le volume exacts de la lentille ; le grain lu comme un angle, cos α_n = x₀ ; puis la tranche 49 – 55, sept niveaux en miroir autour de 52, l'aiguille (7, 1, …, 1) d'une dimension par niveau et 55 qui exige quatre carrés ; et les tournants d'aiguilles : angles pythagoriciens, i modulo 50 et 53, τ de Ramanujan en 24D, et l'aiguille (7, 1, 1) qui ne peut pas se retourner sur le réseau 3D).
 
+**Et : [Partie XXVI — la surface de Kakeya à 10⁻⁵⁰, la virgule du kibi dans son miroir et le cube qui tourne](kakeya-miroir.md)** (l'aire minimale d'un ensemble de Kakeya au grain δ : au moins π/(1 + 2γ + 2 ln(2/δ)) par l'argument de Córdoba, dont l'inverse est une droite en k pour δ = 10⁻ᵏ, et les arbres de Perron en tubes calculés jusqu'à 10⁻⁵, d'où 0,0134 à 0,025 à 10⁻⁵⁰ ; le miroir harmonique 49-50-51 et Wang–Zahl en 3D ; la virgule kilo/kibi 128/125, qui est le diesis des musiciens, son miroir aux chiffres de 5ʲ (le « 1 To » qui s'affiche 931 Go), 9,49 – 9,72 – 9,95 % comme trois lectures du même double séparées par les retenues, et les trois écarts des crans sur le cercle des décades ; puis le cube qui tourne : l'ombre |u₁| + |u₂| + |u₃|, le demi-tour autour d'un axe d'ordre 2, les deux carrés qui se quittent exactement à l'hexagone, les écarts 109,47° et 70,53° du losange de la partie II, les deux pavages de Necker, et le carré du prince Rupert qui passe dans l'hexagone, avec le meilleur tunnel le long de la direction pythagoricienne (2, 2, 1)/3, sur le même tour).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -513,6 +515,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/lentilles_boules_grain.py`](scripts/lentilles_boules_grain.py) : la partie XXIII.
 - [`scripts/tiers_dimension.py`](scripts/tiers_dimension.py) : la partie XXIV.
 - [`scripts/tranche_aiguilles.py`](scripts/tranche_aiguilles.py) : la partie XXV.
+- [`scripts/kakeya_miroir.py`](scripts/kakeya_miroir.py) : la partie XXVI.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
