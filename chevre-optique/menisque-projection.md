@@ -303,6 +303,7 @@ Cela donne c₂ = 4/405 en 2D et c₃ = 1/96 en 3D.
 - Le manque de moitié le long de l'hyperbole suit c_n V_{n−1}/(2V_nρ³), où V_n est le volume de la boule de dimension n. En d = 20 et en 2D : 3,929·10⁻⁷ mesuré, 3,925·10⁻⁷ prédit.
 - Je n'ai pas trouvé cette formule dans la littérature. Il faut la prendre comme un calcul fait ici et vérifié numériquement, pas comme un résultat publié.
 - *Retrouvée dans la [partie XXIV](tiers-dimension.md) par une seconde méthode (les moments de la coquille), avec la même formule exacte. C'est le même terme que le 2/(3n²) de la partie I, vu de loin : n²c_n → 2/3.*
+- *Démontrée en dimensions 2 et 3 dans la [partie XXV](tranche-aiguilles.md), par l'aire et le volume exacts de la lentille : 4/405 et 1/96.*
 
 ## 7. Le tri
 

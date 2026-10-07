@@ -93,7 +93,7 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - on obtient β = 1,905695729…, puis r = 2 cos(β/2) = 1,158728473018121517828… ;
   - c'est le rayon qui broute la moitié du disque de rayon 1.
 
-## 6. Ce que les parties XX à XXIV ont établi (à garder en tête)
+## 6. Ce que les parties XX à XXV ont établi (à garder en tête)
 
 - **Toutes les dimensions, une seule équation.** Dans le plan méridien (ce que l'auteur appelle « les cordes projetées sur la 2e dimension »), la chèvre de dimension n obéit à G_n(β) = 0, avec G₂ = f/2 (Ullisch). La division ∮ z/G ÷ ∮ 1/G donne la corde de chaque dimension. Le cercle d'Ullisch marche tel quel jusqu'à la dimension 9.
 - **Pair et impair = la récurrence de la partie IV.** h_n = (n − 1)/n · h_{n−2} : les impaires divisent par 3, 5, 7…, les paires (depuis le disque) par 4, 6, 8… ; h_{n−1}h_n = π/(2n). Le volume des boules décroît dès 6, leur aire dès 8 ; 3 est le premier barreau et la seule dimension où l'ombre de la sphère est plate.
@@ -122,6 +122,12 @@ C'est le même geste qu'au § 1 : la structure commune est le résultat.
   - C'est un cran (le cercle des côtés contre celui des coins), et les deux lectures sont vraies en même temps : 10⁵⁰ − 4/3 et 2·10⁵⁰ − 4/3 au grain 10⁻⁵⁰.
   - Le 2 repose sur des triangles semblables, donc sur le postulat des parallèles (Wallis, 1663) : c'est un test de platitude.
   - Ne réécris pas « ton modèle doit choisir ».
+- **Partie XXV : les ouverts de la partie XXIV.**
+  - L'équation de la chèvre est une intégrale de Laplace : ∫₀^β (cos ψ/cos β)ⁿ dψ = ∫₀^∞ e^(−nu) tan φ(u) du. D'où les grands ordres r²_m ≈ (−1)^m e^(−1/2) √(ln 2/π) Γ(m − ½)(2/ln 2)^m et la meilleure précision 1,03·2^(−n/2)/n.
+  - Resommée (Borel–Padé), la série de la dimension infinie redonne la chèvre plane (Ullisch) à 10⁻⁹·⁵ : les deux chèvres de la partie XX sont reliées par un calcul exact.
+  - Ordres 2 à 8 démontrés (n ≥ 100) ; c₂ = 4/405 et c₃ = 1/96 démontrés par la lentille exacte.
+  - Le grain comme angle : cos α_n = x₀ ; le plan est le miroir des lectures (paires κ·κ′ = 1).
+- **La tranche 49 – 55 et les aiguilles.** Sept niveaux, miroir autour de 52 ; l'aiguille (7, 1, …, 1) gagne une dimension par niveau ; carrés minimaux 1, 2, 3, 2, 2, 3, 4 (55 ≡ 7 mod 8, Legendre) ; i n'existe que modulo 50 et 53 ; rotations 3-4-5, 7-24-25, 5-12-13, 28-45-53 ; r₂₄ par le τ de Ramanujan ; (7, 1, 1) n'a aucun arrêt perpendiculaire sur le réseau 3D.
 
 ## 6 bis. Les acquis des parties I à XIX : relis-les avant d'écrire
 
@@ -172,7 +178,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Chaque message de l'auteur devient en général une nouvelle « Partie », avec :**
 - `scripts/<nom>.py`, qui utilise le style commun de `scripts/figures.py` (`import figures as F`, puis `F.sauver`) ;
-- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV) : prends la suivante libre ;
+- `figures/<lettre><n>_<nom>.png`, avec une lettre par partie (p = XVI, q = XVII, r = XVIII, t = XIX, u = XX, v = XXI, w = XXII, x = XXIII, y = XXIV, z = XXV ; ensuite deux lettres : aa, ab…) : prends la suivante libre ;
 - `resultats/<nom>.md`, écrit par le script ;
 - `<nom>.md` dans ce dossier, avec dans l'ordre : la citation du message, la ligne « Tout est recalculé par… », « En bref », des sections numérotées, « Le tri » et « Sources ».
 

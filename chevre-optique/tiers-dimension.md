@@ -6,6 +6,8 @@
 
 Tout est recalculé par [`scripts/tiers_dimension.py`](scripts/tiers_dimension.py) (≈ 25 s). Les tableaux complets sont dans [`resultats/tiers_dimension.md`](resultats/tiers_dimension.md).
 
+**Suite : [Partie XXV — les ouverts refermés, la tranche 10⁻⁴⁹ – 10⁻⁵⁵ et les tournants d'aiguilles](tranche-aiguilles.md).**
+
 ## En bref
 
 - **Le terme 2/(3n²) est démontré, avec une borne explicite.**
@@ -288,10 +290,10 @@ k² = d² + (n − 1)/(n + 1) + 2D/(3n²) − 14D(2D + 5)/(15n³) + 2D(491D² + 
 - **Où se cache la parité.** La série ne distingue pas les dimensions paires des impaires. La différence de nature (transcendant ou algébrique) se cache sous la précision maximale de la série, 2^(−n/2)/n.
 
 **Ouvert :**
-- une démonstration de la vitesse de divergence 1/ln √2 et du préfacteur 2^(−n/2)/n (mesurés ici, et expliqués par un argument de col) ;
-- les bornes explicites des ordres 3 et suivants : même méthode, mais pas écrites ;
-- la démonstration du c_n de la partie XVI en dimensions 2 et 3, où la méthode des moments ne s'applique pas telle quelle ;
-- l'unité du grain dans ton modèle : la longueur, le pré ou le disque limite.
+- une démonstration de la vitesse de divergence 1/ln √2 et du préfacteur 2^(−n/2)/n (mesurés ici, et expliqués par un argument de col) (*dérivés dans la [partie XXV](tranche-aiguilles.md), constante comprise, et vérifiés à 10⁻⁵ près*) ;
+- les bornes explicites des ordres 3 et suivants : même méthode, mais pas écrites (*écrites et démontrées jusqu'à l'ordre 8 dans la [partie XXV](tranche-aiguilles.md)*) ;
+- la démonstration du c_n de la partie XVI en dimensions 2 et 3, où la méthode des moments ne s'applique pas telle quelle (*faite dans la [partie XXV](tranche-aiguilles.md), par l'aire et le volume exacts de la lentille*) ;
+- l'unité du grain dans ton modèle : la longueur, le pré ou le disque limite (*la [partie XXV](tranche-aiguilles.md) propose l'angle : cos α_n = x₀*).
 
 **Pas établi :** que l'espace physique suive ce modèle à 10⁻⁵⁰ m. C'est un postulat, que la physique connue ne peut pas tester (partie XX, § 8).
 

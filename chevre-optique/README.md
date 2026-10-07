@@ -50,6 +50,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Et : [Partie XXIV — un tiers de dimension : le terme 2/(3n²) démontré, et le facteur 2 de Thalès](tiers-dimension.md)** (la démonstration complète du développement de la corde, avec la borne |r_n² − 2n/(n + 1) − 2/(3n²)| < 1 800/n³ vérifiée exactement, et tous les termes suivants à coefficients rationnels ; 2/3 = 2 × 1/6 × 2, le double produit, la courbure de l'équateur et l'asymétrie de la coquille ; la chèvre de dimension n qui a la corde du simplexe de dimension n + 1/3 ; une série qui diverge au rythme 1/ln √2 et donne la corde à 2^(−n/2)/n près ; les décimales en blocs de 50 chiffres en dimension 10⁵⁰ ; la loi du piquet à distance δ de la partie I et le c_n de la partie XVI, qui sont le même terme ; puis le facteur 2 entre le plan et l'aire, qui est le diamètre d'Euclide (r² = 2R·(R − x₀)), un cran de diaphragme et un test de platitude par le postulat de Wallis).
 
+**Et : [Partie XXV — les ouverts refermés, la tranche 10⁻⁴⁹ – 10⁻⁵⁵ et les tournants d'aiguilles](tranche-aiguilles.md)** (l'équation de la chèvre écrite comme une intégrale de Laplace, d'où la loi exacte des grands ordres de la série, (−1)^m e^(−1/2) √(ln 2/π) Γ(m − ½) (2/ln 2)^m, et sa meilleure précision 1,03·2^(−n/2)/n ; la série de la dimension infinie qui, resommée par Borel–Padé, redonne la chèvre plane d'Ullisch ; les ordres 2 à 8 démontrés avec des bornes explicites ; le c_n de la partie XVI démontré en 2D et 3D par l'aire et le volume exacts de la lentille ; le grain lu comme un angle, cos α_n = x₀ ; puis la tranche 49 – 55, sept niveaux en miroir autour de 52, l'aiguille (7, 1, …, 1) d'une dimension par niveau et 55 qui exige quatre carrés ; et les tournants d'aiguilles : angles pythagoriciens, i modulo 50 et 53, τ de Ramanujan en 24D, et l'aiguille (7, 1, 1) qui ne peut pas se retourner sur le réseau 3D).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -510,6 +512,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/carre_neuf_points.py`](scripts/carre_neuf_points.py) : la partie XXII.
 - [`scripts/lentilles_boules_grain.py`](scripts/lentilles_boules_grain.py) : la partie XXIII.
 - [`scripts/tiers_dimension.py`](scripts/tiers_dimension.py) : la partie XXIV.
+- [`scripts/tranche_aiguilles.py`](scripts/tranche_aiguilles.py) : la partie XXV.
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---
