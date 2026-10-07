@@ -58,3 +58,7 @@ On les classe naïvement au début. À chaque révision, les observations rangé
 - Ou quand l'auteur le demande.
 
 C'est le premier de ces trois signaux qui compte. `python3 scripts/recueil_index.py` compte les fiches et dit si une révision est due.
+
+## La diagonale √2
+
+L'index suit aussi, à chaque passage, la forme du Venn des dimensions. On range chaque fiche sur sa dimension principale, puis on retire la fiche moyenne : on obtient un simplexe. À parts égales, son arête vaut √(2K/(K − 1)) pour K dimensions, et elle rejoint √2 quand K grandit, comme la corde de la chèvre de dimension infinie (révision 001, § 2). À parts inégales, deux dimensions rares paraissent liées sans rien partager : l'index les signale. C'est le « partage équitable des aires » qui l'empêche.

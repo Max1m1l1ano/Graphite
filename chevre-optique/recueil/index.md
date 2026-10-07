@@ -4,6 +4,7 @@ Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `obs
 
 - Fiches : 15, dont 15 non révisées. Arcs réponses : 0 (0 depuis la dernière révision). Révisions : 0.
 - État : **révision due** : 15 fiches non révisées (entre 11 et 15).
+- La diagonale √2 : K = 6 dimensions principales occupées, nombre effectif 1/Σp² = 4,79, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5492 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 3 (D1–D4, D1–D6, D4–D6) ; fiches rangées sur plusieurs dimensions : 0.
 
 | n° | observation | type | statut | partie | script | image | dimension | révisé |
 |---:|---|---|---|---|---|---|---|---|

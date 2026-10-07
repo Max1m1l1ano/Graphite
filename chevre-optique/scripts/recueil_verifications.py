@@ -2,7 +2,7 @@
 Le recueil : vérification des remarques calculables de l'auteur (message qui fonde la section « Hasard, coïncidences,
 faits amusants, analogies, corrélation et causalité » de CLAUDE.md).
 
-    python3 scripts/recueil_verifications.py        # ≈ 5 s
+    python3 scripts/recueil_verifications.py        # ≈ 1 s
 
 Écrit resultats/recueil_verifications.md. Chaque section nourrit une fiche du recueil (recueil/observations/).
 

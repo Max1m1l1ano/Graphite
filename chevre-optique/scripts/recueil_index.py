@@ -8,6 +8,10 @@ recueil/index.csv, et compte :
 - les fiches non révisées : une révision est due entre 11 et 15, en retard au-delà ;
 - les arcs réponses depuis la dernière révision (recueil/arcs/arc-NNN.md) : une révision est due entre 10 et 16.
 La dernière révision note les arcs qu'elle couvre sur sa première ligne : <!-- arcs: N -->.
+
+Il suit aussi la diagonale √2 du Venn des dimensions (révision 001, § 2) : le nombre de dimensions principales occupées,
+leur nombre effectif 1/Σp², l'arête du simplexe à parts égales et les paires de dimensions que le seul cadre fait
+paraître liées (p_a + p_b < Σp²).
 """
 
 import csv
@@ -62,12 +66,34 @@ elif arcs_depuis > 16:
 else:
     etat = f"pas de révision due ({len(non_revisees)} fiches non révisées, {arcs_depuis} arcs depuis la dernière révision)"
 
+# La diagonale √2 (CLAUDE.md, § 10 ; révision 001, § 2) : la classification par dimension principale, centrée, est un
+# simplexe ; à parts égales, son arête vaut √(2K/(K − 1)) et rejoint √2 quand K grandit. Avec des parts inégales, deux
+# dimensions a et b paraissent liées (arête sous √2) exactement quand p_a + p_b < Σp² : le cadre fabrique ce lien.
+prim = [re.findall(r"D[1-8]", ch.get("dimension", ""))[:1] for _, _, ch in fiches]
+prim = [d[0] for d in prim if d]
+occ = sorted(set(prim))
+parts = [prim.count(d) / len(prim) for d in occ] if prim else []
+somme2 = sum(x * x for x in parts)
+K = len(occ)
+faux_liens = [(a, b) for i, a in enumerate(occ) for b in occ[i + 1:]
+              if parts[occ.index(a)] + parts[occ.index(b)] < somme2]
+multi = sum(1 for _, _, ch in fiches if len(set(re.findall(r"D[1-8]", ch.get("dimension", "")))) > 1)
+if K >= 2:
+    diag = (f"K = {K} dimensions principales occupées, nombre effectif 1/Σp² = {1 / somme2:.2f}".replace(".", ",")
+            + f", arête du simplexe à parts égales √(2K/(K − 1)) = {(2 * K / (K - 1)) ** 0.5:.4f}".replace(".", ",")
+            + f" (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : {len(faux_liens)}"
+            + (" (" + ", ".join(f"{a}–{b}" for a, b in faux_liens) + ")" if faux_liens else "")
+            + f" ; fiches rangées sur plusieurs dimensions : {multi}")
+else:
+    diag = "moins de deux dimensions occupées"
+
 md = ["# Index du recueil", "",
       "Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `observations/`. Le protocole est dans"
       " [CLAUDE.md, § 10](../CLAUDE.md) et [`README.md`](README.md).", "",
       f"- Fiches : {len(fiches)}, dont {len(non_revisees)} non révisées. Arcs réponses : {len(arcs)}"
       f" ({arcs_depuis} depuis la dernière révision). Révisions : {len(revisions)}.",
-      f"- État : {etat}.", "",
+      f"- État : {etat}.",
+      f"- La diagonale √2 : {diag}.", "",
       "| n° | observation | type | statut | partie | script | image | dimension | révisé |",
       "|---:|---|---|---|---|---|---|---|---|"]
 for nom, titre, ch in fiches:
@@ -87,3 +113,4 @@ with open(os.path.join(REC, "index.csv"), "w", encoding="utf-8", newline="") as 
         w.writerow([num, txt, f"observations/{nom}"] + [sans_liens(ch.get(c, "")) for c in CHAMPS])
 print(f"{len(fiches)} fiches ({len(non_revisees)} non révisées), {len(arcs)} arcs ({arcs_depuis} depuis la dernière révision).")
 print("État :", etat.replace("**", ""))
+print("Diagonale :", diag)
