@@ -219,7 +219,7 @@ Le zoom sur le centre de l'étoile (panneaux d, e et f) compare trois façons de
 - **les trois points de la tangente verticale** : la colonne verticale de pixels ;
 - **les géodésiques à chaque longitude** : les méridiens, vus du pôle comme les rayons d'une étoile.
 
-**Pas établi :** une loi qui donnerait les chiffres de la corde par une récursion en base 2 ou 10. La base ne fait que choisir le pas du grain grossier. La géométrie, elle, ne dépend pas de la base.
+**Pas établi :** une loi qui donnerait les chiffres de la corde par une récursion en base 2 ou 10. La base ne fait que choisir le pas du grain grossier. La géométrie, elle, ne dépend pas de la base. *(Corrigé à la [partie XIX](bases-objets.md), § 1 : cette phrase mélangeait deux choses, et les bases 2 et 10 sont deux objets ; renvoi ajouté par la révision 001.)*
 
 ## Sources
 

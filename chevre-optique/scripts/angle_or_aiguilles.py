@@ -47,7 +47,8 @@ ligne(f"Angle d'or : 360°/φ² = {fr(OR, '{:.6f}')}° ; complément : 360°/φ 
 ligne(f"En tours : 1/φ² = {fr(1 / PHI ** 2, '{:.6f}')} et 1/φ = {fr(1 / PHI, '{:.6f}')} ; somme = {fr(1 / PHI ** 2 + 1 / PHI, '{:.12f}')}.")
 ligne("Les deux foyers de la lentille de Fibonacci (partie IX) : 1/z₁ + 1/z₂ = 1/z_N avec z₁ → φ², z₂ → φ (en unités de z_N)."
       " Le foyer proche porte 1/φ de la puissance 1/z_N, le foyer lointain 1/φ² : le même partage.")
-ligne("222,5° est un arrondi : la valeur exacte 222,4922…° est irrationnelle (φ l'est) et n'a pas d'écriture décimale finie.")
+ligne("222,5° n'est pas un simple arrondi de 360°/φ = 222,4922…° (irrationnel) : c'est exactement 89/144 de tour,"
+      " l'approximation de Fibonacci de rang 12 (partie XII ; correction de la révision 001).")
 
 # ---------------------------------------------------------------------------
 # 2. Le théorème des trois trous

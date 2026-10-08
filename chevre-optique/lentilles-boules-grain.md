@@ -35,7 +35,7 @@ Tout est recalculé par [`scripts/lentilles_boules_grain.py`](scripts/lentilles_
 | « l'accord se fait dans les dimensions, pas dans les longueurs » | Le plan de la lentille est à x₀ ≈ R/(n + 1) du centre : ½, ⅓, ¼… Avec la corde du simplexe, il passe exactement par son centre de gravité. | parties I (§ 5.4) et VI |
 
 - **Une nuance sur 2/√3.** En 2D, le rapport trou/rayon du réseau hexagonal tombe sur le même nombre, parce que c'est aussi le rapport côté/hauteur du triangle équilatéral. En 3D, les deux se séparent : √2 pour le trou du cubique à faces centrées, √(3/2) pour le simplexe. Le lien établi avec la chèvre passe par le simplexe.
-- **Le développement de la partie I, recontrôlé.** n²·μ_n doit tendre vers 2/3, avec μ_n = r_n² − 2n/(n + 1). Il vaut 0,037 en 2D, 0,306 en 10D, 0,606 en 100D, 0,660 en 1 000D, puis 0,6666 et 0,6668 en 10⁵ et 10⁶ dimensions.
+- **Le développement de la partie I, recontrôlé.** n²·μ_n doit tendre vers 2/3, avec μ_n = r_n² − 2n/(n + 1). Il vaut 0,037 en 2D, 0,306 en 10D, 0,606 en 100D, 0,660 en 1 000D, puis 0,6666 et 0,6668 en 10⁵ et 10⁶ dimensions. *Correction de la révision 001 : à partir de 10⁶, ces chiffres sont du bruit de double précision (μ_n est la différence de deux nombres presque égaux) ; la série exacte de la partie XXIV donne 0,66660 en 10⁵, 0,66666 en 10⁶ et 0,666666 en 10⁷, en montant vers 2/3 sans le dépasser.*
 - **Ce que j'ai fait.** La partie XXII est corrigée sur place, avec un renvoi ici. Et le [CLAUDE.md](CLAUDE.md) reçoit un index des acquis des parties I à XIX, à relire avant d'écrire.
 
 ## 2. La lentille : le plan qui suit la dimension

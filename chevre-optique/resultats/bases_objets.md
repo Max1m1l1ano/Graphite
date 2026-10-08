@@ -89,7 +89,7 @@ Premier chiffre des puissances de 2 (n = 1 à 10000) contre la loi de Benford lo
 
 En base 2, le premier chiffre d'un nombre non nul est toujours 1 : la loi de Benford y est triviale.
 
-Théorème des trois distances (partie XI) pour les points n·log₁₀ 2 mod 1 : 10 points : 2 longueurs ; 30 points : 3 longueurs ; 93 points : 2 longueurs ; 100 points : 3 longueurs. Deux longueurs seulement aux dénominateurs des réduites (10, 93).
+Théorème des trois distances (partie XI) pour les points n·log₁₀ 2 mod 1 : 10 points : 2 longueurs ; 30 points : 3 longueurs ; 93 points : 2 longueurs ; 100 points : 3 longueurs. Deux longueurs aux dénominateurs des réduites (10, 93), et plus généralement pour N = m·q_k + q_(k−1) : 2, 3, 4, 7, 10, 13, 23, 33, …, 93, 103 (correction de la révision 001).
 
 **L'atlas de la virgule flottante.** Un nombre flottant = mantisse × base^exposant : chaque exposant est une carte (une décade, ou une « binade » de 1 à 2), découpée en un nombre fixe de pas. L'écart entre deux nombres voisins grandit avec le nombre (un cône sur deux échelles logarithmiques), et l'écart relatif oscille d'un facteur égal à la base dans chaque carte : 2 en binaire, 10 en décimal.
 

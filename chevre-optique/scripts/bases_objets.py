@@ -210,7 +210,8 @@ for M in (10, 30, 93, 100):
     GAPS[M] = sorted(set(np.round(g, 9)))
 ligne("\nThéorème des trois distances (partie XI) pour les points n·log₁₀ 2 mod 1 : "
       + " ; ".join(f"{M} points : {len(v)} longueurs" for M, v in GAPS.items())
-      + ". Deux longueurs seulement aux dénominateurs des réduites (10, 93).")
+      + ". Deux longueurs aux dénominateurs des réduites (10, 93), et plus généralement pour N = m·q_k + q_(k−1) :"
+      " 2, 3, 4, 7, 10, 13, 23, 33, …, 93, 103 (correction de la révision 001).")
 ligne("\n**L'atlas de la virgule flottante.** Un nombre flottant = mantisse × base^exposant : chaque exposant est une"
       " carte (une décade, ou une « binade » de 1 à 2), découpée en un nombre fixe de pas. L'écart entre deux nombres"
       " voisins grandit avec le nombre (un cône sur deux échelles logarithmiques), et l'écart relatif oscille d'un"

@@ -192,7 +192,7 @@ Tout est recalculé par [`scripts/bases_objets.py`](scripts/bases_objets.py) (�
 | Benford | 0,3010 | 0,1761 | 0,1249 | 0,0969 | 0,0792 | 0,0669 | 0,0580 | 0,0512 | 0,0458 |
 
 - En base 2, la loi est vide : le premier chiffre d'un nombre non nul est toujours 1.
-- Les trous entre les points n·log₁₀ 2 obéissent au théorème des trois distances (partie XI) : 2 ou 3 longueurs seulement, et 2 aux dénominateurs des réduites (10 et 93 points).
+- Les trous entre les points n·log₁₀ 2 obéissent au théorème des trois distances (partie XI) : 2 ou 3 longueurs seulement, et 2 aux dénominateurs des réduites (10 et 93 points). *Correction de la révision 001 : pas seulement là ; il y en a 2 pour tous les N = m·q_k + q_(k−1), soit 2, 3, 4, 7, 10, 13, 23, 33, …, 93, 103 sous 120.*
 
 **Furstenberg : deux dynamiques indépendantes.**
 - Sur le cercle [0, 1[, « × 2 » décale l'écriture binaire d'un chiffre et « × 10 » l'écriture décimale.
