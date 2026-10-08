@@ -29,7 +29,7 @@ Tout est recalculé par [`scripts/carte_connexions.py`](scripts/carte_connexions
      - Le seuil des 2n chèvres est la plus grande ombre du cube, √n.
   6. **arccos(1/3)** (VI–XXVI). L'angle de la zone de confusion est l'écart entre deux hexagones du cube qui tourne : c'est le tétraèdre inscrit dans le cube.
   7. **Archimède dans l'ombre du cube** (III, IV–XXVI) : 3/2 < π/2 < √3, c'est-à-dire 3 < π < 2√3.
-- **Il reste des pistes** : XIV–XX, VI–VIII, XIV–XXIV, VI–XXI, V–IX… Le graphe les désigne, mais je ne les ai pas encore établies.
+- **Il reste des pistes** : XIV–XX, VI–VIII, XIV–XXIV, VI–XXI, V–IX… Le graphe les désigne, mais je ne les ai pas encore établies. *(Révision 001 : la piste XIV–XX se ferme par une obstruction. La moitié de Kakeya fini vient de l'inclusion–exclusion, celle des hémisphères d'une involution : ce ne sont pas le même procédé. Voir la fiche 019.)*
 
 ![La carte des connexions](figures/ab1_carte.png)
 

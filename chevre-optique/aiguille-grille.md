@@ -179,6 +179,7 @@ Le plan hyperbolique de la partie X (le disque de Poincaré) contient exactement
 **Pourquoi la moitié.**
 - Un point (x, y) est sur la tangente de pente a si a² − 4ax + 4y = 0, c'est-à-dire si x² − y est un carré modulo q.
 - Or les carrés non nuls sont exactement la moitié des nombres non nuls modulo q. Chaque colonne a donc (q+1)/2 points couverts.
+- *Correction de la révision 001 (test T5, fiche 019).* Ce décompte explique la construction par les tangentes, pour q impair. Il n'explique pas la moitié elle-même. Les q + 1 droites se coupent deux à deux en un seul point, d'où exactement q(q + 1)/2 + Σ C(m_P − 1, 2) points (m_P droites passent par P) : la borne q(q + 1)/2 vient de l'inclusion–exclusion (Bonferroni à l'ordre 2) et vaut dans toutes les caractéristiques. Pour q = 2, 4, 8, où l'involution x ↦ −x est l'identité, le minimum calculé vaut exactement q(q + 1)/2 ; pour q impair, l'involution ne compte que l'excès (q − 1)/2.
 
 **La parabole, la courbe des foyers.**
 - Dans le plan réel, une parabole renvoie tous les rayons parallèles à son axe vers un seul point, son foyer. Ses tangentes l'enveloppent.
