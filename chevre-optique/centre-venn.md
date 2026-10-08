@@ -69,7 +69,7 @@ Tout est recalculé par [`scripts/centre_venn.py`](scripts/centre_venn.py) (≈ 
 - Chaque rotation, prise seule (k = 1, 2, 4, 8), redonne le même point à 0,003 px près. La corrélation vaut 0,994.
 - **Le dessin est donc parfaitement centré**, et sa symétrie d'ordre 17 est exacte au millième de pixel.
 
-**Pourquoi la clarté perçue.** La palette du traceur de Dzoba donne aux 17 courbes la même clarté OKLab (L = 0,58), avec des teintes 25° + 360°·i/17. C'est le canal où les courbes pèsent le plus également.
+**Pourquoi la clarté perçue.** La palette du traceur de Dzoba (`plotter_svg.py`) donne à toutes les courbes la même clarté OKLab (L = 0,58), avec des teintes 25° + 360°·i/17. L'image à 17 courbes garde ces teintes (révision 001, § 4.8), mais pas cette clarté : ses courbes vont de 0,60 à 0,71 (plus bas, § 1.2), et le programme qui l'a rendue n'est pas publié (correction de la révision 001). La clarté reste le canal où les courbes pèsent le plus également.
 
 ### 1.2 Le centre de la lumière dépend de la façon de la peser
 

@@ -48,7 +48,7 @@ Tout est recalculé par [`scripts/venn_ppm.py`](scripts/venn_ppm.py) (≈ 40 s),
 
 ### 1.2 Comment elle est dessinée
 
-Le programme de dessin du dépôt (`plotter/plotter_svg.py`) fait trois choses.
+Le programme de dessin du dépôt (`plotter/plotter_svg.py`) fait trois choses. *Correction de la révision 001 : le README ne dit pas que ce programme a rendu l'image ; sa légende dit seulement « à densité de croisements uniforme », et le dépôt appelle « rose » l'autre rendu. Ce qui suit décrit la méthode du programme publié, qui est une lecture de la façon dont l'image a pu être faite.*
 1. **Un dessin de Tutte.** Chaque croisement est placé au barycentre de ses quatre voisins, et les 17 croisements qui bordent le dehors sont épinglés sur un 17-gone régulier. **Le contour à 17 côtés est donc un choix de dessin.**
 2. **Le calcul passe par les orbites.** Grâce à la symétrie, il ne faut qu'une inconnue par orbite de 17 croisements : 131 070/17 = **7 710 inconnues**. C'est exactement le nombre de « formes » de la partie XXVIII, le compte de Fermat.
 3. **Des anneaux à aire égale par croisement.** Les croisements sont rangés par *niveau* : le rang moyen des quatre régions qui les entourent. Le dessin donne à chaque niveau un anneau d'aire proportionnelle à son nombre de croisements : du bord (niveau 1) au centre (niveau 16).

@@ -25,7 +25,7 @@ Chaque fiche commence par un tableau `champ | valeur` (le script d'index le lit)
 | champ | ce qu'on y met |
 |---|---|
 | type | un ou plusieurs des six mots : Hasard, Coïncidence, Fait amusant, Analogie, Corrélation, Causalité |
-| statut | exact, structure (un mécanisme connu et la loi de l'écart), hasard (testé), ouvert, à tester |
+| statut | exact, structure (un mécanisme connu et la loi de l'écart), calculé (une mesure ou un calcul numérique, avec sa précision), hasard (testé), ouvert, à tester |
 | partie | le numéro de la partie (ou « recueil » si la remarque est née hors d'une partie) |
 | document | le document et la section |
 | script | le script qui traite les données, et sa section |

@@ -250,7 +250,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 
 **Le recueil** (son mode d'emploi détaillé est dans [`recueil/README.md`](recueil/README.md)).
 - **Une fiche par observation** : `recueil/observations/NNN-titre.md`, numérotée à la suite.
-- **Le tableau d'en-tête** : type (les six mots), statut (exact, structure, hasard, ouvert, à tester), partie et document, **le script qui traite les données (et sa section)**, les données (`resultats/…`), **l'image `.png` et son panneau, s'il y en a une**, la dimension (d'abord une seule, D1 à D8), le test appliqué, l'arc, « révisé ».
+- **Le tableau d'en-tête** : type (les six mots), statut (exact, structure, calculé, hasard, ouvert, à tester), partie et document, **le script qui traite les données (et sa section)**, les données (`resultats/…`), **l'image `.png` et son panneau, s'il y en a une**, la dimension (d'abord une seule, D1 à D8), le test appliqué, l'arc, « révisé ».
 - **Quatre parties ensuite** : **le contexte qui précède l'observation** (le message de l'auteur et ce qui a mené au calcul), l'observation, **ce que le script produit**, les liens et les pistes.
 - Après avoir ajouté des fiches, lance `python3 scripts/recueil_index.py`. Il régénère `recueil/index.md` et `recueil/index.csv`, et dit si une révision est due.
 
