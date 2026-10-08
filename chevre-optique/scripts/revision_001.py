@@ -1123,6 +1123,44 @@ else:
                   f" jusqu'à {fr(MASQ[-1][2], '{:.0f}')} px ; la moitié reste entre {fr(100 * min(m_[2] for m_ in MOIT), '{:.1f}')}"
                   f" et {fr(100 * max(m_[2] for m_ in MOIT), '{:.1f}')} %"))
 
+# --- 4.10 trois énoncés des dossiers, refaits ici avant d'être cités ------------------------------------------------------
+from math import comb, factorial  # noqa: E402
+
+ligne()
+ligne("### 4.10 Trois énoncés des dossiers, vérifiés avant d'être cités")
+ligne()
+
+
+def derangements(j):
+    return sum((-1) ** (j - k) * comb(j, k) * factorial(k) for k in range(j + 1))
+
+
+def moment_exp(j):
+    """E[(1 − E)^j] pour E exponentielle de moyenne 1 (moments E[E^k] = k!)."""
+    return sum(comb(j, k) * (-1) ** k * factorial(k) for k in range(j + 1))
+
+
+ok_a = all(moment_exp(j) == (-1) ** j * derangements(j) for j in range(1, 21))
+ligne(f"- **Dossier corde, § 3.3** : E[(1 − E)^j] = (−1)^j·!j pour une loi exponentielle (!j : les dérangements"
+      f" {', '.join(str(derangements(j)) for j in range(1, 7))}…). Vérifié pour j = 1 à 20 : {'oui' if ok_a else 'NON'}."
+      " Le « dernier 2 » du ménisque 2/3 = 2 × 1/6 × 2 (partie XXIV) est donc −E[(1 − E)³] = !3 = 2.")
+ok_b = (10**2 - 10 + 1 == 91 == 7 * 13) and pow(10, 3, 91) == 90 and pow(10, 6, 91) == 1
+ligne(f"- **Dossier bases, § 3.2** : Φ₆(10) = 10² − 10 + 1 = 91 = 7 × 13, et 10³ ≡ −1 (mod 91) : 1/7 et 1/13 ont la même"
+      f" période 6 parce qu'ils sont les deux facteurs du même polynôme cyclotomique. Vérifié : {'oui' if ok_b else 'NON'}."
+      " C'est pourquoi la fiche 013 s'était demandé si 1/13 se comportait comme 1/7.")
+ok_c = []
+for q in range(2, 31):
+    b_, p_ = q * q + 1, q * q - q + 1
+    manque = set(range(b_)) - {(b_ * r) // p_ for r in range(1, p_)}
+    ok_c.append(manque == {k * q for k in range(q + 1)})
+ligne(f"- **Dossier bases, § 3.2 (le lemme des chiffres)** : pour b = q² + 1 et p = q² − q + 1, les chiffres que peut"
+      f" prendre un développement de r/p en base b sont tous les chiffres sauf les multiples k·q (k = 0 … q). Vérifié pour"
+      f" q = 2 à 30 : {'oui' if all(ok_c) else 'NON'}. Pour q premier, ces chiffres sont exactement les unités modulo b − 1 = q² :"
+      " le cas (10, 7) de la section 4.1 n'est plus un fait isolé, c'est le lemme quand la période est pleine.")
+assert ok_a and ok_b and all(ok_c)
+TESTS.append(("dossiers corde et bases", "trois énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30) : vérifiés"))
+
+
 # ===========================================================================
 # La figure (panneau a : la diagonale √2)
 # ===========================================================================
