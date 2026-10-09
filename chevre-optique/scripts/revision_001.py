@@ -51,6 +51,12 @@ def mpf(x, k=12):
     return mp.nstr(x, k).replace(".", ",").replace("-", "−")
 
 
+def sci(x, k=2):
+    """2,5·10⁻⁷ plutôt que 2.5e-07."""
+    m_, e_ = f"{float(x):.{k - 1}e}".split("e")
+    return m_.replace(".", ",") + "·10" + str(int(e_)).translate(str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹"))
+
+
 # ===========================================================================
 # Outils : le nerf d'un recouvrement (le procédé de Čech de la partie XX, généralisé)
 # ===========================================================================
@@ -1125,11 +1131,11 @@ else:
                   f" jusqu'à {fr(MASQ[-1][2], '{:.0f}')} px ; la moitié reste entre {fr(100 * min(m_[2] for m_ in MOIT), '{:.1f}')}"
                   f" et {fr(100 * max(m_[2] for m_ in MOIT), '{:.1f}')} %"))
 
-# --- 4.10 quatre énoncés des dossiers, refaits ici avant d'être cités ------------------------------------------------------
+# --- 4.10 six énoncés des dossiers, refaits ici avant d'être cités ------------------------------------------------------
 from math import comb, factorial  # noqa: E402
 
 ligne()
-ligne("### 4.10 Quatre énoncés des dossiers, vérifiés avant d'être cités")
+ligne("### 4.10 Six énoncés des dossiers, vérifiés avant d'être cités")
 ligne()
 
 
@@ -1160,7 +1166,7 @@ ligne(f"- **Dossier bases, § 3.2 (le lemme des chiffres)** : pour b = q² + 1 e
       f" q = 2 à 30 : {'oui' if all(ok_c) else 'NON'}. Pour q premier, ces chiffres sont exactement les unités modulo b − 1 = q² :"
       " le cas (10, 7) de la section 4.1 n'est plus un fait isolé, c'est le lemme quand la période est pleine.")
 assert ok_a and ok_b and all(ok_c)
-TESTS.append(("dossiers corde, bases et aiguilles", "quatre énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30), arbre de Perron 43/108 : vérifiés"))
+TESTS.append(("dossiers corde, bases, aiguilles et méthode", "six énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30), arbre de Perron 43/108, presque-entiers de Heegner, critère du centre : vérifiés"))
 # l'arbre de Perron à 8 branches du dossier aiguilles : on reprend les fonctions de scripts/aiguille.py (partie V) sans
 # exécuter le reste du script
 import ast  # noqa: E402
@@ -1177,6 +1183,30 @@ ligne(f"- **Dossier aiguilles, § 3** : l'arbre de Perron à 8 branches de rappo
       " La partie V l'avait trouvé en réglant les rapports (0,7778 ; 0,5953 ; 0,8602 → 0,3981482) : ce sont ces fractions."
       " 2/(k + 2) est le minimum de la borne « cœur + oreilles » de la partie XXVIII, pas celui de l'aire.")
 assert abs(aire_43 - mp.mpf(43) / 108) < mp.mpf(10) ** -20
+
+# deux énoncés du dossier méthode : la loi de l'écart des presque-entiers de Heegner, et le critère du centre de la fiche 011
+heeg = []
+for d_ in (19, 43, 67, 163):
+    x_ = mp.e ** (mp.pi * mp.sqrt(d_))
+    heeg.append((d_, (x_ - mp.nint(x_)) / (-196884 * mp.e ** (-mp.pi * mp.sqrt(d_))), abs(x_ - mp.nint(x_)) / x_))
+ligne("- **Dossier méthode, § 6.3 (un banc à vérités indépendantes)** : e^(π√d) tombe près d'un entier, et l'écart suit la loi"
+      " −196 884·e^(−π√d) (le deuxième coefficient de j) : rapport " + " ; ".join(f"{fr(float(r_), '{:.5f}')} (d = {d_})" for d_, r_, _ in heeg)
+      + f", pour des écarts relatifs de {sci(heeg[0][2])} à {sci(heeg[-1][2])}. C'est une structure, et son écart a une loi."
+      f" Sans mécanisme connu : e^π − π ≈ 20 ({sci((20 - (mp.e ** mp.pi - mp.pi)) / 20)}) et π⁴ + π⁵ ≈ e⁶"
+      f" ({sci(abs(mp.pi ** 4 + mp.pi ** 5 - mp.e ** 6) / mp.e ** 6)}).")
+assert all(abs(r_ - 1) < 2e-4 for _, r_, _ in heeg)
+
+
+def n_centre(a_px, largeur=2000):
+    """Le nombre de courbes que le centre résout (partie XXX, § 6.4), pour a_px pixels d'arc entre deux croisements."""
+    return mp.findroot(lambda n_: a_px / mp.pi * mp.sqrt(n_ * (2 ** n_ - 2)) - largeur, 19)
+
+
+crit = {a_: n_centre(a_) for a_ in (1.5, 2, 3)}
+ligne(f"- **Dossier méthode, § 4 (fiche 011)** : à 2 000 px, le centre résout {fr(float(crit[2]), '{:.2f}')} courbes avec 2 px"
+      f" d'arc entre croisements, mais {fr(float(crit[1.5]), '{:.2f}')} avec 1,5 px et {fr(float(crit[3]), '{:.2f}')} avec 3 px. « Pile à la limite » dépend"
+      " du critère.")
+assert abs(crit[2] - 18.99) < 0.01
 
 
 # --- 4.11 le « 93 % » de la défocalisation, contre le taux de base (dossier lumière, N4) --------------------------------

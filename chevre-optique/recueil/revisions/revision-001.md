@@ -43,7 +43,7 @@ La chaîne de production de cette révision, dans l'ordre :
    - Le conteneur a redémarré deux fois pendant la révision. Quatre dossiers ont survécu (corde, moitiés, bases, grain). Les quatre autres (lumière, aiguilles, ombres, méthode) ont été relancés dans un second workflow, avec la consigne d'être plus concis.
    - Une limite d'usage hebdomadaire a encore arrêté trois agents. Lumière avait fini d'écrire son dossier (sa sortie structurée est perdue : j'en ai relevé les corrections à la main). Ombres et méthode ont été relancés une troisième fois, après ton « Réessayer ».
    - La vérification croisée prévue pour un neuvième agent, je l'ai faite moi-même à partir des corrections de chaque agent ([`verification-croisee-001.md`](verification-croisee-001.md)).
-3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte), que l'agent méthode a fait hors du dépôt (A). J'y ai ajouté quatre tests nés en route (§ 4.1, 4.2, 4.9, 4.11). Quatre énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
+3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte), que l'agent méthode a fait hors du dépôt (A). J'y ai ajouté quatre tests nés en route (§ 4.1, 4.2, 4.9, 4.11). Six énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
 4. **La synthèse.** C'est ce document, avec les nouvelles fiches 016 à 021, les fiches 001 à 015 marquées « révisé : 001 », et les corrections du corpus.
 
 **Une étiquette pour chaque énoncé**, comme dans « Le tri » :
@@ -197,7 +197,7 @@ Presque chaque test fait varier un paramètre, comme le demande le choix du test
 | 4.6, K9 | la borne et la base | 2/3 de périodes paires (17/24 en base 2) ; tour 1/3, 1/3, 1/6, 1/12 | le « Venn de Midy » a des aires inégales par nature ; sa tour a la forme d'un arbre de Perron, pas sa loi |
 | 4.7, K4 | le corps F_q, q = 2 à 9 | q(q + 1)/2 pour q pair ; + (q − 1)/2 points triples pour q impair | la moitié vient de Bonferroni (fiche 019) |
 | 4.8 et 4.9, K6 | le seuil du masque (sans seuil, puis 0,001 à 0,40) | pas d'ordre de dessin ni de repli signé ; le centre glisse de 0,044 à 27 px ; la moitié reste à 49,3–49,7 % | la couleur déplace le centre par le poids et par le seuil (fiche 018) |
-| 4.10 | quatre énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108 : vérifiés | ils peuvent être cités sans (A) |
+| 4.10 | six énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108, loi de l'écart des presque-entiers de Heegner, critère du centre de la fiche 011 : vérifiés | ils peuvent être cités sans (A) |
 | 4.11 | le score du modèle de défocalisation contre un prédicteur constant | 71 rayons sur 76 contre 70 | le « 93 % » de la partie XXX est le taux de base (dossier lumière) |
 | T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal en v1. Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
 
@@ -242,6 +242,10 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 - *README, § 7.* « Analogies, pas équivalences… ne prouvent rien » contredit le § 1 de CLAUDE.md : à réécrire en trois temps, partagé, transporté, ouvert (dossier lumière).
 - *Partie VIII, § 7.* La symétrie des deux foyers vaut pour tout masque ; la récurrence de Fibonacci dit où ils tombent, pas qu'ils sont symétriques (dossier lumière).
 - *Partie XVIII, § 7.* Le Nikon D800E n'ôte pas la lame passe-bas, il en annule l'effet par une seconde lame (dossier lumière, à vérifier).
+- *Partie VI, § 3 bis, et figure f2 (panneau b).* « δ₂ ≈ δ₃ : c'est le hasard ». Le calcul qui juge la fiche 002 donne ici 1,7·10⁻⁴ pour une racine tirée au hasard (de l'ordre de 10⁻³ avec la marge d'essais), contre 0,61 pour la fiche 002. Le statut juste est « ouvert » (dossiers méthode et corde).
+- *Partie XXIX, § 5.5.* « ppm » y désigne la valeur absolue du logarithme du rapport ; ailleurs, c'est l'écart relatif (2 852 contre 2 856 pour la fiche 003) (dossier méthode).
+- *Partie XXVII, § 1.3.* Le prédicteur d'Adamic–Adar n'est validé que par les liens qu'il a fait chercher : 4 des 11 liens établis sont dans ses 15 premiers rangs, que l'auteur a cherchés d'abord. Sans eux, les 7 autres ne font pas mieux que le hasard (p = 0,28) (dossier méthode, (A)).
+- *Le facteur d'essais de Bonferroni* (1 240, parties XXIX et XXX) compte les comparaisons faites, pas les formules possibles (VI § 4 : 10 × 1 000 × 12 par grandeur). C'est un choix de cadre, à écrire (dossier méthode).
 
 ## 9. Les trous dans les données publiées, et où chercher
 
@@ -257,6 +261,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 | Midy et la tour 2-adique | les aires 1/3, 1/3, 1/6, 1/12 en base 10 | pas de table de la tour par base, ni de lien explicite avec le i (à vérifier) | Hasse (1966) ; Moree (2005, 2012) |
 | les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique (la partie V l'avait trouvé en nombres, 0,3981 ; minimum local, pas prouvé global) | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
 | le déplacement induit par la couleur | le centre de N sources colorées en symétrie d'ordre N dépend du poids et du seuil | les catalogues à source unique rangent ce déplacement dans le bruit ou dans le point zéro (à tester) | les solutions astrométriques de Gaia pour les étoiles non résolues |
+| un banc d'essai à vérités indépendantes | les presque-entiers de Heegner suivent la loi de l'écart −196 884·e^(−π√d) (rapport 0,9999 à 1 pour d = 19, 43, 67, 163, vérifié) ; e^π − π ≈ 20 (4,5·10⁻⁵) et π⁴ + π⁵ ≈ e⁶ (4,4·10⁻⁸) n'ont pas de mécanisme connu | pas de liste publique de relations de nature démontrée et de presque-entiers sans mécanisme, pour juger les tests eux-mêmes (dossier méthode) | Cox, *Primes of the Form x² + ny²* (1989) ; Diaconis et Mosteller (1989) |
 | les tests de coïncidences | la loi de l'écart tranche ce que les tests à tolérance déclarent « hasard » | on corrige pour le nombre d'essais, on fait rarement varier le paramètre (à vérifier sur quelques analyses publiées) | Gross et Vitells (2010) ; Gelman et Loken (2014) |
 
 **Le cadre qui conceptualise ces liens** (plan, § 6.3) :
@@ -321,6 +326,8 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - Le nerf v2 et les quatre derniers dossiers *(à compléter)*.
 - T8 en v2, et le test prospectif du prédicteur de la partie XXVII : geler son classement et compter, aux révisions suivantes, les liens établis dans ses premiers rangs (dossier méthode).
 - La cause de la fiche 005.
+- Une intervention sur l'image : refaire les six pesées sur un rendu à palette et ordre connus, le Venn à 13 courbes du traceur de Dzoba (dossier méthode, N5).
+- Un banc d'essai à vérités indépendantes, avec plus de cas négatifs.
 - δ₂ ≈ δ₃.
 - La cause commune du logarithme (K7).
 - Le lien entre la chèvre et les réseaux records.
