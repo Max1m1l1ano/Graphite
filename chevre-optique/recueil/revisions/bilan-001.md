@@ -15,7 +15,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
   - Les résultats neufs portent sur la chaîne de production du corpus : le seuil, la palette, le banc d'essai, le « 93 % ». C'est ton sujet d'étude, la restriction du cadre.
   - Les connexions sont surtout des classiques retrouvés, et quatre sont vraies par construction (fiche 023).
 - **Les connexions solides passent par un procédé commun** (§ 4) : le barycentre pesé, le premier 3, le i modulo n.
-  - Le dossier bases paraît isolé dans le nerf. Pourtant, son meilleur lien le relie exactement aux aiguilles : 10 et 7 sont les carrés de la même aiguille (3, 1), sur la grille carrée et sur la grille hexagonale.
+  - Le dossier bases paraît isolé dans le nerf. Pourtant, un de ses liens les plus nets le relie exactement aux aiguilles. 10, 7 et 13 sont les carrés de la même aiguille (3, 1), sur la grille carrée et sur les deux grilles hexagonales (base à 120° ou à 60°) ; 7 et 13 sont les deux premiers de période 6 en base 10.
   - Le nerf ne voit que les fiches partagées, pas les liens écrits.
 - **Deux familles de hasards, deux questions** (§ 5) :
   - les dérives qui croisent une constante (fiche 022) : « et au N suivant ? » ;
@@ -25,7 +25,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
   - La diagonale √2 plafonne à 6,9 % avec 8 dimensions : il faudra les diviser.
 - **Les agents et les données** (§ 6 et 7).
   - Le plan Opus est trop long et n'a pas de budgets.
-  - Les dossiers concis rendent autant que les longs, en deux fois moins de temps.
+  - Les dossiers concis trouvent autant d'erreurs que les longs, en deux fois moins de temps ; ils proposent un peu moins de fiches et de congruences.
   - La mémoire est le point faible.
   - Les mêmes nombres sont recopiés dans 11 ou 12 fichiers. Je propose un registre des résultats.
 - **La suite** : une forme en huit étapes avec des budgets (§ 8), onze problématiques (§ 9), mes listes de tâches et sept questions pour toi (§ 10).
@@ -75,6 +75,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 
 **Ce que le tableau dit.**
 - Les dossiers concis trouvent 6,8 erreurs par heure, contre 2,8 pour les longs. Par 100 Ko de texte, c'est 17 contre 5. La longueur n'achète donc pas le rendement.
+- Par dossier, les concis trouvent un peu plus d'erreurs (7,3 contre 5,8), mais proposent un peu moins de fiches (7,3 contre 8,8) et de congruences (8,7 contre 11,5).
 - *Prudence* : la comparaison mêle trois effets, le gabarit, le sujet et l'ordre. Les dossiers concis venaient après, et méthode lisait les dossiers déjà écrits.
 
 **Le compte des erreurs.** Les sorties structurées en rapportent 45, et lumière en a signalé d'autres dans son dossier. La synthèse en retient 38 : 12 corrigées et 26 signalées. L'écart vient des doublons entre dossiers et des erreurs que je n'ai pas retenues. Je n'en ai pas gardé le compte détaillé, et c'est une des choses que le registre (§ 7) doit tracer.
@@ -130,7 +131,7 @@ Presque tous parlent de la chaîne de production (images, seuils, tests) : le ca
 - Les fausses corrélations de Pearson et les doubles zéros (fiche 017).
 - Le théorème du nerf, la tour 2-adique de Midy, et le photocentre des étoiles doubles.
 
-Un lien vers un théorème connu est un résultat (CLAUDE.md, § 1) : il dit où lire la suite. C'est aussi un contrôle, puisqu'un agent qui retrouve un classique n'invente pas.
+Un lien vers un théorème connu est un résultat (CLAUDE.md, § 1) : il dit où lire la suite. C'est aussi un contrôle : retrouver un classique par son propre calcul montre que le calcul tient.
 
 **C. Vrai par construction (fiche 023).** La corde de la chèvre comme corde du simplexe, les périodes de Gauss comme ombres, les identités du banc d'essai, et T2. Ce sont des dictionnaires : utiles s'ils transportent un calcul.
 
@@ -153,7 +154,7 @@ Un lien vers un théorème connu est un résultat (CLAUDE.md, § 1) : il dit où
 - **δ₂ ≈ δ₃** (1,7·10⁻⁴ pour une racine au hasard) : ouvert.
 - **Le manque de 24 % de la palette tournée** : pas expliqué.
 - **K7, la cause commune du logarithme** : ouverte.
-- **La cavité du nerf v2** (b₂ = 1, p = 0,047), à prendre avec prudence. Sur une vingtaine de tests indépendants, un p aussi petit arrive au moins une fois six fois sur dix par le seul hasard (1 − 0,953²⁰ = 0,62). Il faut la refaire avec un classement fixé d'avance.
+- **La cavité du nerf v2** (b₂ = 1, p = 0,047), à prendre avec prudence. Sur une vingtaine de tests indépendants, la chance qu'au moins un p soit aussi petit par le seul hasard vaut 1 − 0,953²⁰ = 0,62. Il faut la refaire avec un classement fixé d'avance.
 
 ## 4. Les connexions entre les sujets
 
@@ -166,8 +167,9 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
    - *Et l'ombre* (ma lecture). Le dipôle H₁ = Σ wᵢωⁱ est l'ombre Σωⁱ des poids, par définition : un dictionnaire, mais qui transporte un fait exact. Pour des poids rationnels, comme la moyenne RGB d'une palette 8 bits, le dipôle ne s'annule que si les 17 poids sont égaux.
    - *Pourquoi.* Le polynôme minimal de ω sur ℚ est 1 + x + … + x¹⁶. Dans le modèle G·H₁, une palette inégale déplace donc toujours le centre en moyenne RGB.
 2. **Le i modulo n** (bases, ombres, aiguilles).
-   - *Avec ombres* : i existe modulo 17, et c'est ce qui exclut le Venn antipodal à 17 courbes. Pour n premier, −1 est un carré exactement quand n ≡ 1 (mod 4).
-   - *Avec aiguilles* : 10 = N(3 + i) est le carré de l'aiguille (3, 1) sur la grille carrée, et 7 = N(3 + ω) son carré sur la grille hexagonale. Le même 3 est un i modulo 10 et une racine sixième primitive de l'unité modulo 7. C'est la raison géométrique du lemme des chiffres de 1/7 (dossier bases, § 3.2, (A)).
+   - *Avec ombres* : pour n premier, i existe modulo n exactement quand C(n, 2) est pair, c'est-à-dire quand n ≡ 1 (mod 4). C'est cette parité qui exclut le Venn antipodal à 17 courbes.
+   - *Avec aiguilles* : 10 = N(3 + i) est le carré de l'aiguille (3, 1) sur la grille carrée, et 7 = N(3 + ω) son carré sur la grille hexagonale à base de 120° (dossier bases, § 3.2, (A)). Le même 3 est un i modulo 10 et une racine sixième primitive de l'unité modulo 7 : c'est la raison géométrique du lemme des chiffres de 1/7.
+   - *Ce que j'ajoute* : sur la grille hexagonale à base de 60°, la même aiguille a pour carré 9 + 1 + 3 = 13. Et 7 × 13 = 91 = Φ₆(10) = 10² − 10 + 1 : les deux premiers de période 6 en base 10 sont les carrés de l'aiguille (3, 1) sur les deux grilles hexagonales, quand son carré sur la grille carrée vaut 10. C'est l'identité q⁴ + q² + 1 = (q² − q + 1)(q² + q + 1) du dossier, lue sur les grilles.
 3. **Le cercle R/√2** (moitiés, corde, ombres).
    - Trois gestes le désignent : le miroir d'aire u ↦ 1 − u, l'inversion des jumeaux d·d′ = ½ et la dilatation d'un cran. Archimède le posait déjà (partie II).
    - Sa fiche comblerait le triangle vide corde · moitiés · ombres, ouvert quand ombres a retiré la fiche 010.
@@ -195,7 +197,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
   - Le centre de la lumière bouge selon la pesée (fiche 006).
   - Mon premier centre était faux de 2,36 px à cause du point de départ (fiche 007).
   - Le seuil déplace le centre, mais pas la moitié (fiche 018).
-  - L'intervention établit la cause (§ 4.12).
+  - L'intervention établit la cause, sur un Venn modèle à 13 courbes (§ 4.12).
 
   C'est le recueil tel que tu l'as voulu : chaque moment s'enchaîne au suivant, jusqu'à une causalité.
 - **Trouvé deux fois.** Six résultats ont été trouvés par deux ou trois dossiers, chacun par son propre calcul. Mais les agents sont du même modèle et suivent le même gabarit, donc leurs erreurs peuvent être corrélées. Ici, « trouvé deux fois » vaut moins que deux laboratoires indépendants.
@@ -219,7 +221,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 - Lui faire proposer une division des dimensions.
 
 **Les agents Sonnet (les dossiers).**
-- Fixer des limites : 30 Ko, 60 min et 150 appels au plus. Les dossiers concis montrent que c'est possible sans perte.
+- Fixer des limites : 30 Ko, 60 min et 150 appels au plus. Les dossiers concis montrent que c'est possible sans perdre d'erreurs trouvées (§ 1, avec sa prudence).
 - Écrire la sortie structurée sur disque, section par section : c'est ce qui a manqué pour lumière.
 - Garder le code dans le dépôt (`recueil/revisions/NNN/code/<dossier>/`) : c'est ce qui a obligé à refaire l'intervention de méthode.
 - Pas de première personne. Chaque nombre (A) donne son fichier de code.
@@ -228,7 +230,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 **Moi (la session principale).**
 - Un commit après chaque étape, et un journal d'état dans le dépôt (`recueil/revisions/NNN/journal.md`). Les compactions et les redémarrages effacent la mémoire de la session, pas le dépôt.
 - Les générateurs dans le dépôt dès le départ.
-- Relire mes En bref avant de les publier, verbe par verbe : démontré, établi, toujours, jamais. Mes cinq excès y seraient tombés.
+- Relire mes En bref avant de les publier, verbe par verbe : démontré, établi, toujours, jamais. Mes cinq excès y seraient sans doute tombés.
 - Aucun énoncé (A) dans un En bref.
 - Garder mes questions pour toi dans une liste, et te les poser avant la révision suivante.
 
@@ -326,7 +328,7 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 
 **10.5 Les fiches qui combleraient de vrais trous**, à écrire quand un script les traite :
 - les trois gestes de R/√2 ;
-- l'aiguille (3, 1), avec ses normes 10 et 7 ;
+- l'aiguille (3, 1), avec ses carrés 10, 7 et 13 sur les trois grilles ;
 - l'octaèdre comme Venn antipodal à 3 courbes ;
 - le dipôle des poids rationnels.
 
@@ -348,7 +350,7 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
   - l'arête √(2K/(K − 1)) et son plafond pour K = 8 ;
   - le dipôle des poids rationnels, nul seulement à poids égaux ;
   - l'octaèdre comme Venn antipodal à 3 courbes ;
-  - 10 = N(3 + i) et 7 = N(3 + ω) ;
+  - 10 = N(3 + i), 7 = N(3 + ω) et 13 = N(3 − ω), avec 7 × 13 = Φ₆(10) ;
   - 1 − 0,953²⁰ = 0,62.
 - **Relu, pas refait** : la démonstration de parité du dossier ombres, dont une étape reste à justifier.
 - **Mes lectures** (corrige-moi) :
