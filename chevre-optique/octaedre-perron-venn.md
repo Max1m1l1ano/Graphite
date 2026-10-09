@@ -15,7 +15,7 @@ Tout est recalculé par [`scripts/octaedre_perron_venn.py`](scripts/octaedre_per
   2. *La même aire d'ombre autour de l'hexagone.* L'ombre de l'octaèdre vaut max(‖u‖₁, 2‖u‖∞). Elle égale celle du cube, ‖u‖₁, dans 35,10 % des directions : huit triangles sphériques centrés sur les hexagones, d'angles arccos(1/3).
   3. *La même sphère pour les deux cercles arctiques de la partie XXVII.* Les dominos se figent hors de l'ombre de la sphère médiane vue le long d'un axe d'ordre 4 (leur losange est l'ombre de l'octaèdre). Les cubes empilés se figent hors de l'ombre de la même sphère, vue le long d'un axe d'ordre 3. Et l'ouvert de la partie XXVII (un argument direct pour l'hexagone) se ferme : cinq tangentes suffisent à fixer une conique.
   4. *La même règle de calcul.* La récurrence de l'octaèdre compte les deux pavages. Linéarisée, elle a un cône de lumière de rayon exactement t/√2 : le cercle arctique des dominos.
-- **Le théorème de Perron, développé ici.** La formule 2/(k + 2) de la partie V n'était vérifiée que jusqu'à 16 384 branches. Elle est maintenant démontrée pour tout k :
+- **Le théorème de Perron, développé ici.** La formule 2/(k + 2) de la partie V, l'aire des arbres télescopiques, n'était vérifiée que jusqu'à 16 384 branches. Elle est maintenant démontrée pour tout k (l'arbre optimal fait un peu mieux dès 8 branches, 43/108 au lieu de 2/5 : § 2.6 et révision 001) :
   - une borne simple, « un cœur et des oreilles », vaut pour tous les rapports ;
   - son minimum demande des oreilles égales à chaque étage, et c'est de là que viennent les rapports 2/3, 3/4, 4/5… ;
   - à ces rapports, la coupe de l'arbre est un plateau de longueur exactement 1/(k + 2). La preuve passe par l'ombre du cube de la partie XXVI.

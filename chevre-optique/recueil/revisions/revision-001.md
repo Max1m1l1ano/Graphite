@@ -5,7 +5,7 @@
 >
 > (le message qui fonde le recueil, 7 octobre 2026 ; la révision est due : 15 fiches non révisées)
 
-Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revision_001.py) (≈ 80 s, il demande la copie locale du dépôt de Dzoba pour le § 4.8). Les tableaux complets sont dans [`resultats/revision_001.md`](../../resultats/revision_001.md). Le plan de l'agent Opus est dans [`plan-001.md`](plan-001.md), la vérification croisée dans [`verification-croisee-001.md`](verification-croisee-001.md), les huit dossiers dans [`../dossiers/`](../dossiers/).
+Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revision_001.py) (≈ 2 min, il demande la copie locale du dépôt de Dzoba pour le § 4.8). Les tableaux complets sont dans [`resultats/revision_001.md`](../../resultats/revision_001.md). Le plan de l'agent Opus est dans [`plan-001.md`](plan-001.md), la vérification croisée dans [`verification-croisee-001.md`](verification-croisee-001.md), les huit dossiers dans [`../dossiers/`](../dossiers/).
 
 ## En bref
 
@@ -18,15 +18,16 @@ Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revisio
   - **Les liens.** Avec des parts inégales, deux dimensions rares paraissent liées sans rien partager, exactement quand p_a + p_b < Σp². Le partage équitable des aires empêche ce faux lien.
   - **Les déplacements.** Dans l'image du Venn à 17 courbes, monter le seuil d'un masque binaire déplace le centre de 0,044 px à 27 px, sans toucher à la moitié de l'aire (§ 3).
 - **Huit dossiers couvrent les 30 parties.** Le nerf du recouvrement a 9 triangles vides au niveau des fiches : 5 trous du recueil et 4 trous du corpus, tous les quatre autour du dossier « grain » (§ 4).
-- **Dix nouveaux tests, chacun en faisant varier un paramètre :**
+- **Onze nouveaux tests, chacun en faisant varier un paramètre :**
   - **Kakeya fini.** La moitié vient de Bonferroni, pas de l'involution. La piste XIV–XX se ferme.
   - **Le centre du Venn.** Le seuil de 13 courbes est la constante isopérimétrique 4π.
   - **1/7 et la base 10.** C'est la famille q² + 1, et 7 × 13 = Φ₆(10).
   - **Les dizaines de premiers.** Leur rapport dérive, et croise π puis 2√2.
-  - **Midy.** C'est un arbre de Perron à aires inégales.
+  - **Midy.** Sa tour de périodes se divise par deux à chaque étage (1/3, 1/3, 1/6, 1/12) : la forme binaire d'un arbre de Perron, pas sa loi.
   - **Les trois 4/3.** C'est une coïncidence de petits entiers (§ 7).
-- **Les chaînes de production ont des erreurs, et la révision en a corrigé sept,** après vérification :
-  - parties XI, XIV, XVIII, XIX, XXIII, XXIX et XXX, plus la phrase de la partie XXVII sur la piste XIV–XX ;
+- **Les chaînes de production ont des erreurs, et la révision en a corrigé dix,** après vérification :
+  - parties XI, XIV, XVIII, XIX, XXIII, XXVIII, XXIX et XXX (deux), la phrase de la partie XXVII sur la piste XIV–XX, et une ligne de CLAUDE.md ;
+  - par exemple, le « 93 % » de la défocalisation (partie XXX) n'est que le taux de base : un prédicteur constant fait presque aussi bien (70 rayons sur 76, contre 71) ;
   - les autres sont listées avec leur statut (§ 8).
 - **Où chercher les prochaines données** : § 9.
 
@@ -40,8 +41,9 @@ La chaîne de production de cette révision, dans l'ordre :
    - le rapport de lancement du workflow, soit 9 agents Sonnet.
 2. **Le workflow.** Les agents Sonnet ont écrit un dossier chacun.
    - Le conteneur a redémarré deux fois pendant la révision. Quatre dossiers ont survécu (corde, moitiés, bases, grain). Les quatre autres (lumière, aiguilles, ombres, méthode) ont été relancés dans un second workflow, avec la consigne d'être plus concis.
+   - Une limite d'usage hebdomadaire a encore arrêté trois agents. Lumière avait fini d'écrire son dossier (sa sortie structurée est perdue : j'en ai relevé les corrections à la main). Ombres et méthode ont été relancés une troisième fois, après ton « Réessayer ».
    - La vérification croisée prévue pour un neuvième agent, je l'ai faite moi-même à partir des corrections de chaque agent ([`verification-croisee-001.md`](verification-croisee-001.md)).
-3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte, qui reste à faire). J'y ai ajouté trois tests nés en route (§ 4.1, 4.2, 4.9). Trois énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
+3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte), que l'agent méthode a fait hors du dépôt (A). J'y ai ajouté quatre tests nés en route (§ 4.1, 4.2, 4.9, 4.11). Quatre énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
 4. **La synthèse.** C'est ce document, avec les nouvelles fiches 016 à 021, les fiches 001 à 015 marquées « révisé : 001 », et les corrections du corpus.
 
 **Une étiquette pour chaque énoncé**, comme dans « Le tri » :
@@ -87,6 +89,7 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 - La règle est exacte : deux classes a et b passent sous √2 exactement quand p_a + p_b < Σp². Elle est vérifiée sur les 15 paires.
 - Avec des parts égales, p_a + p_b = 2/K reste toujours plus grand que Σp² = 1/K : aucun faux lien. **Le partage équitable des aires est la condition qui empêche le cadre de fabriquer des corrélations.**
 - En statistique, c'est le « problème des doubles zéros » de l'écologie numérique, de la même famille que les corrélations parasites des données à somme constante.
+- **Le « 3 » dépend du classement** (dossier méthode, (A)). Si chaque fiche peut aussi tomber sur une des dimensions voisines qu'elle déclare, il y a 27 648 classements plausibles : le nombre de faux liens va de 0 à 21 (3,2 en moyenne), et 17,7 % des classements n'en ont aucun. Le 3 du recueil est une réalisation, pas une mesure. Le partage égal des aires supprime le faux lien, pas le choix du classement : c'est le « jardin des chemins qui bifurquent » (Gelman et Loken, 2014). Pour le fermer, on fixe le classement avant de calculer, ou on calcule sur toutes les variantes.
 
 **Des déplacements** (vérifié ; ta question sur le masque binaire).
 - Le masque binaire est l'ensemble des pixels dont la clarté perçue OKLab dépasse celle du fond, une couleur exacte (6, 6, 10), de t.
@@ -169,7 +172,7 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 | K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain, ma lecture) |
 | K7 | le grain plafonne la profondeur | se recolle modulo un cran **pour la pente**, pas pour les valeurs (le « 2,8 » n'est pas une constante, dossier aiguilles) ; la cause commune du logarithme reste ouverte |
 | K8 | les trois 4/3 | **obstruction** : une coïncidence de petits entiers (vérifié) |
-| K9 | Midy, pair et impair | se recolle en un arbre de Perron (1/3, 1/3, 1/6, 1/12, vérifié), **à aires inégales**. Le dossier bases ajoute l'enchevêtrement par la réciprocité quadratique (A) |
+| K9 | Midy, pair et impair | se recolle en une tour binaire (1/3, 1/3, 1/6, 1/12, vérifié), **à aires inégales**. Le dossier bases ajoute l'enchevêtrement par la réciprocité quadratique (A). Le dossier méthode précise : la division par deux est la queue géométrique de toute valuation 2-adique ; c'est la forme d'un arbre de Perron, pas sa loi 2/(k + 2) |
 | K10 | le seuil du centre et l'isopérimétrie | **se recolle exactement** : 4π, et n·tan(π/n) pour le polygone (vérifié) |
 
 **Les obstructions nouvelles des dossiers** (une sélection ; chaque dossier a sa table, § 5.3) :
@@ -180,7 +183,7 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 
 ## 7. Les nouveaux tests de la révision, et leurs verdicts
 
-Chaque test fait varier un paramètre, comme le demande le choix du test du § 10 de CLAUDE.md. Résultats : [`resultats/revision_001.md`](../../resultats/revision_001.md), § 4 et 5.
+Presque chaque test fait varier un paramètre, comme le demande le choix du test du § 10 de CLAUDE.md. Le nerf (T1) et sa comparaison à la carte (T8) sont des nuls, la dernière ligne de la table du § 10 (dossier méthode). Résultats : [`resultats/revision_001.md`](../../resultats/revision_001.md), § 4 et 5.
 
 | test | ce qui varie | verdict | ce que ça change |
 |---|---|---|---|
@@ -190,11 +193,12 @@ Chaque test fait varier un paramètre, comme le demande le choix du test du § 1
 | 4.4, K1 | l'ordre du développement | même 1/6 ; l'ordre 4 ne se recolle pas | même exposant, pas le même ménisque |
 | 4.4, K10 | le centre en cercle ou en polygone | 4π = 12,566 et π/arctan(1/4) = 12,824 | le seuil des 13 courbes est isopérimétrique (fiche 020) |
 | 4.5, K8 | les bases de 3 à 10⁶ | 4/3 pour b = 10 à 16 et 244 à 256 seulement | une coïncidence de petits entiers. Le dossier bases ajoute la loi des fenêtres : 2 pour 4/3, 81 pour 19/12 (A) |
-| 4.6, K9 | la borne et la base | 2/3 de périodes paires (17/24 en base 2) ; tour 1/3, 1/3, 1/6, 1/12 | Midy est un arbre de Perron à aires inégales |
+| 4.6, K9 | la borne et la base | 2/3 de périodes paires (17/24 en base 2) ; tour 1/3, 1/3, 1/6, 1/12 | le « Venn de Midy » a des aires inégales par nature ; sa tour a la forme d'un arbre de Perron, pas sa loi |
 | 4.7, K4 | le corps F_q, q = 2 à 9 | q(q + 1)/2 pour q pair ; + (q − 1)/2 points triples pour q impair | la moitié vient de Bonferroni (fiche 019) |
 | 4.8 et 4.9, K6 | le seuil du masque (sans seuil, puis 0,001 à 0,40) | pas d'ordre de dessin ni de repli signé ; le centre glisse de 0,044 à 27 px ; la moitié reste à 49,3–49,7 % | la couleur déplace le centre par le poids et par le seuil (fiche 018) |
 | 4.10 | quatre énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108 : vérifiés | ils peuvent être cités sans (A) |
 | 4.11 | le score du modèle de défocalisation contre un prédicteur constant | 71 rayons sur 76 contre 70 | le « 93 % » de la partie XXX est le taux de base (dossier lumière) |
+| T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal en v1. Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
 
 ## 8. Les erreurs trouvées dans les chaînes de production
 
@@ -212,7 +216,8 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 | XXIII § 1 | 0,6668 et 0,6661 en 10⁶ et 10⁷ dimensions | dossier corde | du bruit de double précision : la série exacte donne 0,66666 et 0,666666 |
 | XIV § 5 et XXVII § 9 | la moitié de Kakeya fini expliquée par les carrés | plan (K4), test T5 | elle vient de l'inclusion–exclusion ; la piste XIV–XX se ferme |
 | XXX (En bref et § 6.3), CLAUDE.md § 6 | « 93 % des signes en accord » avec la défocalisation | dossier lumière | c'est le taux de base : 71 rayons sur 76, contre 70 pour un prédicteur constant (§ 4.11) |
-| CLAUDE.md § 6 (partie XXVIII) | « minimum 2/(k + 2) » lu comme l'aire minimale | dossier aiguilles | c'est le minimum d'une borne ; l'aire exacte descend à 43/108 < 2/5 pour k = 3 (§ 4.10) |
+| XXVIII, En bref | « la formule 2/(k + 2) … démontrée pour tout k », sans dire laquelle | dossier aiguilles | précisé : c'est l'aire des arbres télescopiques ; l'arbre optimal fait mieux dès 8 branches (§ 2.6 de la partie) |
+| CLAUDE.md § 6 (partie XXVIII) | « minimum 2/(k + 2) » lu comme l'aire minimale | dossier aiguilles | c'est le minimum d'une borne ; l'aire exacte descend à 43/108 < 2/5 pour k = 3 (§ 4.10). La partie V l'avait trouvé en nombres (0,3981482) ; le dossier en reconnaît les fractions, 7/9, 25/42 et 43/50 |
 
 **Signalées, pas encore corrigées** (à vérifier une à une à la prochaine révision ; le dossier qui les signale donne la preuve) :
 - *Fiche 010.* « Chaque anneau du bord » n'est exact que pour le cercle du bord : la part monte quand on rentre (dossiers corde et moitiés). La fiche est corrigée dans son texte ; les valeurs par niveau sont à refaire avec le certificat.
@@ -222,7 +227,10 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 - *README, § 9.* En 1984, la revue de Fraser s'appelait *The Two-Year College Mathematics Journal*, et le doi n'est pas confirmé (dossier corde, à vérifier).
 - *Partie V, § 3.* L'aire ½ de Perron vaut pour deux rapports égaux. Avec deux rapports indépendants, elle vaut ½ sur tout un segment (dossier moitiés, (A)).
 - *Parties XXIX, § 2.3 et § 5.2, et XXX, § 2.5.* « Je ne sais pas lequel des quatre certificats il dessine » devient plus loin un fait : un choix qui devient une donnée (dossier grain).
-- *Partie XXIX, § 4.* Le tableau « ce que coûte 1 ppm » mêle des longueurs et des aires (dossier grain).
+- *Partie XXIX, § 4.* Le tableau « ce que coûte 1 ppm » mêle des longueurs et des aires (dossier grain). De même, « un bit par pas » est un bit de largeur pour Perron et un bit d'aire pour le Venn.
+- *Parties XXIII et XXIV.* Le plan de la lentille s'écrit n = 1/ε − 1 dans l'une et n + 4/3 = 1/ε dans l'autre : les deux sont justes à leur ordre (le 1/3 est le ménisque). À écrire une seule fois (dossier grain).
+- *Partie XXVIII, § 3.5.* « 2^(k−j) fentes de largeur 2^j » : pour j = 0, la largeur vaut v et non 1 (dossier aiguilles ; imprécision mineure).
+- *Parties X, XVII, XIX et XXVIII.* Les sections des scripts et des résultats ne suivent pas la numérotation du document (XIX § 2 = section 1 des résultats, par exemple). Le champ « script » des fiches doit donner les deux (dossier aiguilles).
 - *Partie XVIII, § 4.* La loi des 8R devient exacte en 8⌊R + ½⌋ au milieu d'un pixel et 8⌊r⌋ + 4 au coin de quatre pixels (dossier grain, (A)).
 - *Fiche 014.* La phrase « (−2)^(3/2) ≡ −i modulo 3 » réunit 2^(3/2) (≡ −i dans F₉) et (−2)^(3/2) (= ±1 dans F₉). La fiche le signalait déjà ; c'est à te demander (dossier bases).
 - *Partie XIV, § 6.* « Son produit par log₂ n reste vers 2,8 » : il culmine à 2,83 puis baisse à 2,57 (dossier aiguilles, (A)).
@@ -244,7 +252,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 | la corde en dimension n | le développement 2n/(n + 1) + 2/(3n²) − 98/(15n³) + …, divergent en 2/ln 2 | aucune source atteinte ne le donne (Fraser et Meyerson, 1984, non relus) | Fraser (1984) ; Meyerson (1984) ; la Mathematical Gazette |
 | Kakeya fini, q pair | le minimum q(q + 1)/2, calculé pour q = 2, 4, 8 | la publication qui le démontre (une duale d'hyperovale, d'après des résumés ; à vérifier) | Blokhuis et Mazzocca (2008) ; Blokhuis, De Boeck, Mazzocca et Storme (2014) |
 | Midy et la tour 2-adique | les aires 1/3, 1/3, 1/6, 1/12 en base 10 | pas de table de la tour par base, ni de lien explicite avec le i (à vérifier) | Hasse (1966) ; Moree (2005, 2012) |
-| les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
+| les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique (la partie V l'avait trouvé en nombres, 0,3981 ; minimum local, pas prouvé global) | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
 | le déplacement induit par la couleur | le centre de N sources colorées en symétrie d'ordre N dépend du poids et du seuil | les catalogues à source unique rangent ce déplacement dans le bruit ou dans le point zéro (à tester) | les solutions astrométriques de Gaia pour les étoiles non résolues |
 | les tests de coïncidences | la loi de l'écart tranche ce que les tests à tolérance déclarent « hasard » | on corrige pour le nombre d'essais, on fait rarement varier le paramètre (à vérifier sur quelques analyses publiées) | Gross et Vitells (2010) ; Gelman et Loken (2014) |
 
@@ -285,6 +293,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - Le minimum de Kakeya dans F_q pour q = 2 à 9, et l'identité q(q + 1)/2 + Σ C(m_P − 1, 2).
 - W_c/W_r = √(n/(4π)) ; les seuils 4π et π/arctan(1/4).
 - La famille q² + 1, le lemme des chiffres (q ≤ 30), Φ₆(10) = 7 × 13, E[(1 − E)^j] = (−1)^j·!j.
+- L'aire 43/108 de l'arbre de Perron à 8 branches de rapports 7/9, 25/42 et 43/50 (la partie V l'avait trouvée en nombres).
 - T3 : l'obstruction à l'ordre 4 ; T7 : les deux fenêtres de bases.
 
 **Calculé (vérifié par le script)**
@@ -292,12 +301,13 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - La tour 2-adique des périodes.
 - Le balayage du seuil, la moitié robuste et le test de l'ordre de dessin.
 - Le nerf v1, ses triangles vides et son nul.
+- Le « 93 % » de la partie XXX contre un prédicteur constant : 71 rayons sur 76 contre 70.
 
 **Analogie de structure (même procédé), donc un résultat**
 - La diagonale √2 des révisions et la corde √2 de la chèvre (Thalès).
 - La moitié de Kakeya fini et la correction de Bonferroni de la fiche 012 : tronquer l'inclusion–exclusion.
 - Le seuil du centre du Venn et le polygone circonscrit de la fiche 003 : la constante isopérimétrique.
-- Midy et un arbre de Perron.
+- Midy et un arbre de Perron : ce qui est partagé exactement, c'est la division binaire à chaque étage. Rien de plus ne se transporte : la loi de Perron, 2/(k + 2), n'a pas d'équivalent dans la tour, dont la queue géométrique est celle de toute valuation 2-adique (dossier méthode). Ouvert : ta lecture en Venn ascendant et descendant.
 
 **Mes lectures (corrige-moi si je t'ai mal compris)**
 - Mesurer « la diagonale √2 qui s'affirme » par le simplexe centré et par l'arête de la classification naïve. C'est une définition que je propose ; elle colle à ta phrase, mais tu avais peut-être autre chose en tête.
@@ -306,7 +316,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 
 **Ouvert**
 - Le nerf v2 et les quatre derniers dossiers *(à compléter)*.
-- T8, le nerf contre la carte des connexions.
+- T8 en v2, et le test prospectif du prédicteur de la partie XXVII : geler son classement et compter, aux révisions suivantes, les liens établis dans ses premiers rangs (dossier méthode).
 - La cause de la fiche 005.
 - δ₂ ≈ δ₃.
 - La cause commune du logarithme (K7).

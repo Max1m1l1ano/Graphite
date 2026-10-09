@@ -76,8 +76,10 @@ Chaque fiche devient un vecteur d'appartenance aux huit dossiers (une fiche peut
 
 | recouvrement | pesée | paires liées | distance moyenne des liées | paires non liées | distance moyenne des non liées | non liées sous √2 | écart non liées − liées | p (nul) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,932 |
-| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,961 |
+| v1 | brute | 65 | 1,3162 | 40 | 1,6427 | 5 % | 0,3264 | 0,928 |
+| v1 | aires égales | 65 | 1,3224 | 40 | 1,5645 | 10 % | 0,2421 | 0,966 |
+| v2 | brute | 74 | 1,3458 | 31 | 1,6735 | 0 % | 0,3277 | 0,677 |
+| v2 | aires égales | 74 | 1,3481 | 31 | 1,6193 | 10 % | 0,2711 | 0,821 |
 
 - **Les deux populations se séparent, mais mécaniquement.** Les paires liées sont en moyenne à 1,3162, sous √2 = 1,4142 ; les paires sans dossier commun sont à 1,6427, au-dessus de √2, du côté de l'arête du simplexe (√(16/7) = 1,5119 pour huit dossiers à parts égales).
 - **Le nul le montre** : p = 0,93. Des dossiers de mêmes tailles, tirés au hasard, séparent aussi bien. C'est la définition même d'un dossier commun qui rapproche deux fiches : cette mesure ne dit rien du contenu. Pour qu'elle parle, il faut des liens définis autrement, par exemple ceux que les agents ont trouvés par le même procédé (section 2.3).
@@ -89,9 +91,12 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 
 | recouvrement | niveau | sommets, arêtes, triangles, tétraèdres | Betti b₀, b₁, b₂ | triangles vides | triangles remplis : éléments communs en moyenne | nul : b₁ moyen | nul : b₂ moyen | nul : triangles vides en moyenne | p (nul ≥ observé) |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|
-| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,04 | 0,00 | 5,5 | 0,133 |
-| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,72 | 0,00 | 4,9 | 0,266 |
-| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,22 | 5,58 | 18,7 | 0,409 |
+| v1 | 1 | 8, 18, 7, 1 | 1, 5, 0 | 9 | 1,1 | 3,08 | 0,00 | 5,7 | 0,162 |
+| v1 | 2 | 8, 17, 7, 1 | 1, 4, 0 | 7 | 1,1 | 2,66 | 0,00 | 4,8 | 0,238 |
+| v1 | 3 | 8, 28, 36, 11 | 1, 0, 5 | 20 | 1,5 | 0,21 | 5,59 | 18,6 | 0,387 |
+| v2 | 1 | 8, 24, 26, 16 | 1, 2, 0 | 10 | 1,2 | 1,77 | 0,10 | 10,2 | 0,528 |
+| v2 | 2 | 8, 23, 25, 16 | 1, 2, 0 | 7 | 1,2 | 1,85 | 0,05 | 9,3 | 0,712 |
+| v2 | 3 | 8, 28, 55, 55 | 1, 0, 1 | 1 | 4,1 | 0,00 | 0,17 | 0,5 | 0,372 |
 
 **v1 : les triangles vides au niveau des fiches** (9) :
 - aiguilles-kakeya-perron · grain-pixels-centres · hasard-et-methode : trou du corpus (vide aussi avec les parties).
@@ -104,14 +109,39 @@ Un sommet par dossier ; une arête quand deux dossiers partagent un élément ; 
 - grain-pixels-centres · hasard-et-methode · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - hasard-et-methode · lumiere-et-physique · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
 - Bilan v1 : 5 trous du recueil, 4 trous du corpus.
-- Les fiches laissent 9 triangles vides, contre 5,5 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,13) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
-- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,58 en moyenne, p = 0,706). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
+- Les fiches laissent 9 triangles vides, contre 5,7 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,16) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
+- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 5 cavités (nul : 5,59 en moyenne, p = 0,713). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 6 tétraèdres creux :
   - aiguilles-kakeya-perron · bases-congruences-premiers · moities-et-crans · ombres-cube-venn
   - aiguilles-kakeya-perron · grain-pixels-centres · lumiere-et-physique · moities-et-crans
   - aiguilles-kakeya-perron · hasard-et-methode · lumiere-et-physique · moities-et-crans
   - aiguilles-kakeya-perron · hasard-et-methode · lumiere-et-physique · ombres-cube-venn
   - aiguilles-kakeya-perron · lumiere-et-physique · moities-et-crans · ombres-cube-venn
   - bases-congruences-premiers · corde-et-dimensions · hasard-et-methode · moities-et-crans
+
+**v2 : les triangles vides au niveau des fiches** (10) :
+- bases-congruences-premiers · corde-et-dimensions · grain-pixels-centres : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · corde-et-dimensions · hasard-et-methode : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · corde-et-dimensions · lumiere-et-physique : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · corde-et-dimensions · moities-et-crans : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · corde-et-dimensions · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · grain-pixels-centres · hasard-et-methode : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · grain-pixels-centres · lumiere-et-physique : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · grain-pixels-centres · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
+- bases-congruences-premiers · lumiere-et-physique · ombres-cube-venn : trou du recueil (une partie les réunit, la fiche manque).
+- corde-et-dimensions · hasard-et-methode · moities-et-crans : trou du recueil (une partie les réunit, la fiche manque).
+- Bilan v2 : 10 trous du recueil, 0 trous du corpus.
+- Les fiches laissent 10 triangles vides, contre 10,2 en moyenne pour des dossiers de mêmes tailles tirés au hasard (p = 0,53) : un peu plus que le hasard, sans plus. Les trous se lisent donc un par un, comme des pistes, pas comme une preuve.
+- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = 0), mais il reste b₂ = 1 cavités (nul : 0,17 en moyenne, p = 0,156). Une cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre : un trou d'un étage plus haut. Les 10 tétraèdres creux :
+  - aiguilles-kakeya-perron · bases-congruences-premiers · grain-pixels-centres · lumiere-et-physique
+  - bases-congruences-premiers · corde-et-dimensions · grain-pixels-centres · lumiere-et-physique
+  - bases-congruences-premiers · corde-et-dimensions · hasard-et-methode · lumiere-et-physique
+  - bases-congruences-premiers · corde-et-dimensions · hasard-et-methode · ombres-cube-venn
+  - bases-congruences-premiers · grain-pixels-centres · hasard-et-methode · ombres-cube-venn
+  - bases-congruences-premiers · grain-pixels-centres · lumiere-et-physique · moities-et-crans
+  - bases-congruences-premiers · grain-pixels-centres · lumiere-et-physique · ombres-cube-venn
+  - bases-congruences-premiers · hasard-et-methode · lumiere-et-physique · moities-et-crans
+  - bases-congruences-premiers · hasard-et-methode · lumiere-et-physique · ombres-cube-venn
+  - corde-et-dimensions · hasard-et-methode · lumiere-et-physique · moities-et-crans
 
 
 ## 4. Les nouveaux tests
@@ -224,9 +254,9 @@ La partie XIV a trouvé qu'un ensemble de Kakeya du plan F_q² (une droite enti�
 | 3 | 3 | 7 | 6 | 1 | 3 | 3 | 1 | 0,0 s |
 | 4 | 2 | 10 | 10 | 0 | 0 | 10 | 0 | 0,0 s |
 | 5 | 5 | 17 | 15 | 2 | 6 | 9 | 2 | 0,1 s |
-| 7 | 7 | 31 | 28 | 3 | 9 | 19 | 3 | 1,9 s |
-| 8 | 2 | 36 | 36 | 0 | 0 | 36 | 0 | 4,8 s |
-| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 21,6 s |
+| 7 | 7 | 31 | 28 | 3 | 9 | 19 | 3 | 2,0 s |
+| 8 | 2 | 36 | 36 | 0 | 0 | 36 | 0 | 4,6 s |
+| 9 | 3 | 49 | 45 | 4 | 12 | 33 | 4 | 21,5 s |
 
 - **L'identité exacte.** Les q + 1 droites se coupent deux à deux en un seul point. En comptant chaque point avec sa multiplicité m_P (le nombre de droites qui y passent), 1 = m − C(m, 2) + C(m − 1, 2) pour tout m ≥ 1. On en tire |K| = q(q + 1) − C(q + 1, 2) + Σ C(m_P − 1, 2) = q(q + 1)/2 + Σ C(m_P − 1, 2).
 - **La moitié vient de l'inclusion–exclusion**, tronquée à l'ordre 2 : c'est l'inégalité de Bonferroni |∪L| ≥ Σ|L| − Σ|L ∩ L′|, vraie dans toutes les caractéristiques. Elle est atteinte pour q = 2, 4, 8 : tous les points sont doubles, aucun n'est triple.
@@ -307,7 +337,7 @@ On classe chaque pixel d'encre (clarté L > fond + 0,1) par sa teinte OKLab, au 
 - **Dossier corde, § 3.3** : E[(1 − E)^j] = (−1)^j·!j pour une loi exponentielle (!j : les dérangements 0, 1, 2, 9, 44, 265…). Vérifié pour j = 1 à 20 : oui. Le « dernier 2 » du ménisque 2/3 = 2 × 1/6 × 2 (partie XXIV) est donc −E[(1 − E)³] = !3 = 2.
 - **Dossier bases, § 3.2** : Φ₆(10) = 10² − 10 + 1 = 91 = 7 × 13, et 10³ ≡ −1 (mod 91) : 1/7 et 1/13 ont la même période 6 parce qu'ils sont les deux facteurs du même polynôme cyclotomique. Vérifié : oui. C'est pourquoi la fiche 013 s'était demandé si 1/13 se comportait comme 1/7.
 - **Dossier bases, § 3.2 (le lemme des chiffres)** : pour b = q² + 1 et p = q² − q + 1, les chiffres que peut prendre un développement de r/p en base b sont tous les chiffres sauf les multiples k·q (k = 0 … q). Vérifié pour q = 2 à 30 : oui. Pour q premier, ces chiffres sont exactement les unités modulo b − 1 = q² : le cas (10, 7) de la section 4.1 n'est plus un fait isolé, c'est le lemme quand la période est pleine.
-- **Dossier aiguilles, § 3** : l'arbre de Perron à 8 branches de rapports (7/9, 25/42, 43/50) a l'aire exacte 0,398148148148148 = 43/108 (fonction `aire_exacte` de la partie V), sous les 2/5 de l'arbre télescopique. 2/(k + 2) est le minimum de la borne « cœur + oreilles » de la partie XXVIII, pas celui de l'aire.
+- **Dossier aiguilles, § 3** : l'arbre de Perron à 8 branches de rapports (7/9, 25/42, 43/50) a l'aire exacte 0,398148148148148 = 43/108 (fonction `aire_exacte` de la partie V), sous les 2/5 de l'arbre télescopique. La partie V l'avait trouvé en réglant les rapports (0,7778 ; 0,5953 ; 0,8602 → 0,3981482) : ce sont ces fractions. 2/(k + 2) est le minimum de la borne « cœur + oreilles » de la partie XXVIII, pas celui de l'aire.
 
 ### 4.11 Le « 93 % » de la défocalisation, contre un prédicteur constant (dossier lumière)
 
@@ -332,4 +362,4 @@ La partie XXX (§ 6.3) annonce des signes en accord avec 2 J₁(x)/x sur 93 % de
 | dossiers corde, bases et aiguilles | quatre énoncés refaits | dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30), arbre de Perron 43/108 : vérifiés |
 | XXX § 6.3 | le score du modèle contre un prédicteur constant | 71/76 contre 70/76 : le « 93 % » est le taux de base |
 
-(calculs : 141 s)
+(calculs : 181 s)

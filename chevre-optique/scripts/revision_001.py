@@ -143,7 +143,7 @@ def curveball(couv, rng, echanges=400):
         A_, B_ = rows[a_] - commun, rows[b_] - commun
         if not A_ or not B_:
             continue
-        pool = list(A_ | B_)
+        pool = sorted(A_ | B_)          # trié : l'ordre d'un ensemble de chaînes change d'une exécution à l'autre
         rng.shuffle(pool)
         rows[a_], rows[b_] = commun | set(pool[:len(A_)]), commun | set(pool[len(A_):])
     return dict(zip(noms, rows))
@@ -780,7 +780,9 @@ ligne()
 t = TOUR[(10, 10**6)]
 ligne(f"- **La tour se divise par deux.** En base 10 sous 10⁶ : v₂(L) = 0, 1, 2, 3 pour {', '.join(fr(x, '{:.3f}') for x in t[1])}"
       " des premiers. Au-delà du premier étage, chaque étage garde à peu près la moitié du précédent (1/3, 1/3, 1/6,"
-      " 1/12 attendus) : un arbre de Perron sur les périodes, dont les fentes se referment de moitié à chaque étage.")
+      " 1/12 attendus). C'est la forme binaire d'un arbre de Perron, pas sa loi : la queue géométrique de raison 1/2 est"
+      " celle de toute valuation 2-adique (un entier tiré au hasard donne 1/2, 1/4, 1/8…), et rien n'y joue le rôle de"
+      " l'aire 2/(k + 2) (précision du dossier méthode).")
 ligne(f"- **Les aires ne sont pas égales.** La part des périodes paires vaut {fr(t[0], '{:.4f}')} en base 10 (2/3 = 0,6667,"
       f" Hasse, 1966) et {fr(TOUR[(2, 10**6)][0], '{:.4f}')} en base 2 (17/24 = 0,7083). Le « Venn de Midy » de l'auteur"
       " est donc un Venn à aires inégales par nature : deux tiers pour les périodes paires, un tiers pour les impaires.")
@@ -1172,6 +1174,7 @@ exec(compile(ast.Module(body=[n for n in _arbre.body if isinstance(n, ast.Functi
 aire_43 = _g["aire_exacte"](3, [mp.mpf(7) / 9, mp.mpf(25) / 42, mp.mpf(43) / 50])
 ligne(f"- **Dossier aiguilles, § 3** : l'arbre de Perron à 8 branches de rapports (7/9, 25/42, 43/50) a l'aire exacte"
       f" {mpf(aire_43, 15)} = 43/108 (fonction `aire_exacte` de la partie V), sous les 2/5 de l'arbre télescopique."
+      " La partie V l'avait trouvé en réglant les rapports (0,7778 ; 0,5953 ; 0,8602 → 0,3981482) : ce sont ces fractions."
       " 2/(k + 2) est le minimum de la borne « cœur + oreilles » de la partie XXVIII, pas celui de l'aire.")
 assert abs(aire_43 - mp.mpf(43) / 108) < mp.mpf(10) ** -20
 
