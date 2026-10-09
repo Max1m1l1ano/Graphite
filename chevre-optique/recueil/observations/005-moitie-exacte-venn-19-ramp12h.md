@@ -9,10 +9,10 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), section 2 (les 18 certificats) |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae1_centre_moitie.png`](../../figures/ae1_centre_moitie.png), panneau f |
-| dimension | D6 sphères, cubes, Venn et symétries |
+| dimension | D6 sphères, cubes, Venn et symétries ; puis, à la révision 001 : D2 bases, chiffres et congruences, D7 hasard et méthode |
 | test | réplication sur les 12 Venn à 19 courbes (écart quadratique ±24,7 orbites ; les deux autres ramp12h : +11 et −28) |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,9 @@ Le script lit les 18 certificats, compte les croisements par niveau, l'écart à
 
 L'auteur pense qu'un résultat exact ne vient pas du hasard (message du 7 octobre). Pour un réel à 50 chiffres, c'est vrai ; pour un entier, l'exactitude arrive avec une probabilité de l'ordre de 1/(dispersion). Piste : chercher une cause dans la méthode `ramp12h` (une rampe de 12 h sur le paramètre λ).
 
-Dimensions voisines, à confirmer à la révision : D2 congruences (Fermat) ; D7 hasard.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Le dossier moitiés trouve « miroir + complément » en tête dans les 18 certificats, à 1,5 à 2,3 fois le hasard (calcul de l'agent, à refaire) ; la cause reste inconnue.
+- Dossier [moitiés](../dossiers/moities-et-crans.md) : hasard testé, cause ouverte.
+- Dossier [bases](../dossiers/bases-congruences-premiers.md) : ouvert, compatible avec le hasard (statut inchangé) ; côté bases, Fermat est une condition nécessaire, pas sélective.

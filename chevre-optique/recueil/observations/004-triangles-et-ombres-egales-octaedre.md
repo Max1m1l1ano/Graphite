@@ -12,7 +12,7 @@
 | dimension | D7 hasard et méthode |
 | test | variation du paramètre : 36,0, 37,3, 35,8 et 35,7 % pour 11, 13, 17 et 19 courbes ; rien ne suit 35,10 % |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,6 @@ La texture vient des certificats (partie XXIX), et le verdict du banc d'essai et
 
 Fiche 002 (même test).
 
-Dimensions voisines, à confirmer à la révision : D6 sphères et cubes.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).

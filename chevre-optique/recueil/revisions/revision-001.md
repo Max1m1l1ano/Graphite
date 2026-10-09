@@ -77,7 +77,8 @@ Résultats : [`resultats/revision_001.md`](../../resultats/revision_001.md), § 
   - l'arête du simplexe à parts égales ;
   - les paires de dimensions que le seul cadre fait paraître liées.
 - Pour les 15 premières fiches : K = 6, 1/Σp² = 4,79, une arête à parts égales de 1,5492, et 3 faux liens.
-- La diagonale s'affirme quand K grandit et que les parts s'égalisent.
+- Après la révision (21 fiches, avec les six nouvelles) : K = 7, car D5 est occupée par la fiche 019 ; 1/Σp² = 5,19 ; une arête à parts égales de 1,5275, plus près de √2. Mais il y a 6 faux liens au lieu de 3, tous entre les quatre dimensions rares (D1, D4, D5 et D6, une ou deux fiches chacune ; D1–D6 passe de justesse, 0,1905 contre 0,1927).
+- La diagonale s'affirme quand K grandit, et le cadre fabrique plus de liens tant que les parts restent inégales : c'est la règle de la fiche 017, vue d'une révision à l'autre. Elle s'affirme vraiment quand K grandit **et** que les parts s'égalisent.
 
 ## 3. Le cadre fabrique des liens, et des déplacements
 
@@ -125,7 +126,7 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 
 **Le nerf** (vérifié ; § 3 des résultats ; figure [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panneau a).
 - On met un sommet par dossier, une arête quand deux dossiers partagent une fiche, et un triangle quand trois en partagent une.
-- **Au niveau des fiches (v1)**, b₀ = 1 et b₁ = 5, avec 9 triangles vides. Des dossiers de mêmes tailles tirés au hasard en laissent 5,6 en moyenne (p = 0,16) : un peu plus que le hasard, sans plus. Les trous se lisent un par un, comme des pistes.
+- **Au niveau des fiches (v1)**, b₀ = 1 et b₁ = 5, avec 9 triangles vides. Des dossiers de mêmes tailles tirés au hasard en laissent 5,7 en moyenne (p = 0,16) : un peu plus que le hasard, sans plus. Les trous se lisent un par un, comme des pistes.
 - **5 trous du recueil.** Une partie réunit les trois dossiers ; il manque la fiche.
   - bases · corde · moitiés ;
   - bases · corde · ombres ;
@@ -138,7 +139,7 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
   - bases · grain · méthode ;
   - bases · grain · ombres.
   - **Tous passent par le grain.** Le corpus mesure le grain avec chacun de ces sujets, mais jamais avec deux à la fois. Par exemple, aucune partie ne teste le hasard sur une construction de Perron limitée par le grain.
-- **Avec les parties**, toutes les boucles se remplissent (b₁ = 0). Il reste b₂ = 5 cavités, comme pour des dossiers tirés au hasard (p = 0,73) : un effet de la taille des dossiers, pas une donnée.
+- **Avec les parties**, toutes les boucles se remplissent (b₁ = 0). Il reste b₂ = 5 cavités, comme pour des dossiers tirés au hasard (p = 0,71) : un effet de la taille des dossiers, pas une donnée.
 
 *(Le nerf v2, après les corrections des agents : à compléter.)*
 

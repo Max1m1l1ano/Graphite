@@ -12,7 +12,7 @@
 | dimension | D7 hasard et méthode |
 | test | le banc lui-même : précision poussée 4/4 et variation du paramètre 10/10 ; Bonferroni 7/10, catalogue brouillé 6/10, longueur de description 7/10 |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -29,3 +29,8 @@ Le script définit les dix relations, applique les six techniques et mesure les 
 ## Liens et pistes
 
 Fiches 002, 003, 004 et 005. Limite : la variation du paramètre n'est pas indépendante de la vérité du banc.
+
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Test 4.7 (T5) : la même inégalité de Bonferroni, tronquée à l'ordre 2, donne la moitié de Kakeya fini (fiche 019). Le banc relu (dossier méthode, vérifié dans le code) : quatre cas sont des identités, trois verdicts de la variation sont écrits à la main, et la précision ne dit jamais « hasard ». « Ne se trompent jamais » est trop fort ; CLAUDE.md, § 10, le précise.

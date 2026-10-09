@@ -9,10 +9,10 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), section 1 |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae1_centre_moitie.png`](../../figures/ae1_centre_moitie.png), panneaux a et b |
-| dimension | D3 grain, pixels et précision |
+| dimension | D3 grain, pixels et précision ; puis, à la révision 001 : D7 hasard et méthode, D8 physique |
 | test | mesure contre la précision du centre de symétrie (0,003 px) : l'écart du masque RGB en vaut 4 462 fois |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,9 @@ Le script calcule les six barycentres, mesure les couleurs des 17 courbes et le 
 
 Fiche 007 (le biais propagé) ; fiche 008 (le centre exact).
 
-Dimensions voisines, à confirmer à la révision : D8 physique ; D6 symétries.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Tests 4.8 et 4.9 (T4) : la seconde cause est le seuil, pas l'ordre de dessin ; la moitié ne bouge pas avec le seuil (fiche 018). La cause « dipôle des couleurs » est établie sur l'analyse (la pesée, le seuil), pas encore sur l'image : la palette est ajustée, et le code de rendu n'est pas publié (dossiers grain, lumière et méthode).
+- Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort ; la causalité se précise grâce à T4.
+- Dossier [lumière](../dossiers/lumiere-et-physique.md) : structure, causalité précisée : une palette de conception presque isoluminante et le seuil ; la branche « photocentre » est à détacher de P8 en un triangle « barycentre pesé » (D8 contre D3).

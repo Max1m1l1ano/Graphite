@@ -9,10 +9,10 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), section 6 (granularité) |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae3_grains_hasard.png`](../../figures/ae3_grains_hasard.png), panneau e |
-| dimension | D3 grain, pixels et précision |
+| dimension | D3 grain, pixels et précision ; puis, à la révision 001 : D5 Kakeya, Perron et aiguilles, D6 sphères, cubes, Venn et symétries |
 | test | loi : W_centre(n) = (2/π)·√(n(2ⁿ − 2)) contre W_reste(n) = 4·√((2ⁿ − 2)/π) |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,10 @@ Le script calcule les deux largeurs nécessaires de n = 11 à 25, et la limite �
 
 Partie XIV (Perron sur une grille ne descend plus à zéro) ; partie XVIII (le disque de confusion de l'étoile de Siemens).
 
-Dimensions voisines, à confirmer à la révision : D5 Perron (le même plafond que Perron sur une grille).
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Test 4.4 (K10) : le seuil des 13 courbes est la constante isopérimétrique 4π (fiche 020). Il vaut 4π·(s/a)² et dépend du choix a = s = 2 px : « pile à la limite » ne tient pas (dossiers grain et méthode).
+- Dossier [corde](../dossiers/corde-et-dimensions.md) : ajoutée par moi : K10 exact ; troisième série de T3 (cordes) ; obstruction à l'ordre 4.
+- Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort et exact : c'est le cas n = 19 de K10.
+- Dossier [aiguilles](../dossiers/aiguilles-kakeya-perron.md) : calculé, juste ; place dans les arbres : P5 (branche du Venn : XXIX § 4, XXX § 6.4, fiche 011) et P3 par K10 (seuil √(n/4π)) ; pas dans P1. K7 précise le lien « à un cran près » : +2,6 % par courbe au centre à n = 19.

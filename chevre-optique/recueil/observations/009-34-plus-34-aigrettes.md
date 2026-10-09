@@ -9,10 +9,10 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), section 5 |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae2_diaphragmes_diffraction.png`](../../figures/ae2_diaphragmes_diffraction.png), panneaux e et f |
-| dimension | D4 optique et diffraction |
+| dimension | D4 optique et diffraction ; puis, à la révision 001 : D6 sphères, cubes, Venn et symétries, D5 Kakeya, Perron et aiguilles |
 | test | séparer les sources : le masque du contour seul (34 aigrettes, 100 % dans la famille du contour), le cœur seul (85 % dans la seconde) |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,8 @@ La transformée de Fourier de l'image, la recherche des pics angulaires et leurs
 
 Partie XXVIII (34 aigrettes) ; partie XX (le losange de √2 dans la diffraction) ; partie X (l'ordre 4 des pixels).
 
-Dimensions voisines, à confirmer à la révision : D6 symétries.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Dossier [aiguilles](../dossiers/aiguilles-kakeya-perron.md) : juste ; à ajouter à ce dossier : troisième objet de K2 (les aigrettes d'un diaphragme à N lames et les N éventails de Perron dépendent de la même parité).
+- Dossier [lumière](../dossiers/lumiere-et-physique.md) : structure, et cas de K2 : les 34 aigrettes du contour sont l'orbite d'une direction sous le groupe engendré par 2π/17 et le demi-tour.

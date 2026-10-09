@@ -9,10 +9,10 @@
 | script | [`scripts/venn_ppm.py`](../../scripts/venn_ppm.py), section 2 (les comptes au ppm) |
 | données | [`resultats/venn_ppm.md`](../../resultats/venn_ppm.md) |
 | image | — |
-| dimension | D2 bases, chiffres et congruences |
+| dimension | D2 bases, chiffres et congruences ; puis, à la révision 001 : D3 grain, pixels et précision, D6 sphères, cubes, Venn et symétries |
 | test | précision poussée : identité 2⁻ʲ = 5ʲ·10⁻ʲ, vraie pour tout j |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,8 @@ Le script calcule 2⁻¹⁷ en décimal exact (module Decimal) et l'écrit à c�
 
 Partie XXVI : 10⁶/2²⁰ a les chiffres de 5²⁰, et « 1 To » = 931 Go fait apparaître 5³⁰. C'est l'inversion 2 ↔ 5 de part et d'autre de la virgule (fiche 015 et `resultats/recueil_verifications.md`, § 7).
 
-Dimensions voisines, à confirmer à la révision : D3 grain.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Dossier [grain](../dossiers/grain-pixels-centres.md) : garder, partagée avec bases : lien exact, fort par l'unité, faible par le calcul.
+- Dossier [bases](../dossiers/bases-congruences-premiers.md) : exact : identité 2⁻ʲ = 5ʲ·10⁻ʲ pour tout j ; statut inchangé ; rien à répliquer (17 n'a pas de rôle dans l'identité).

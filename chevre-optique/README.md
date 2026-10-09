@@ -64,6 +64,8 @@ Chaque chiffre de ce document est recalculé par les scripts de [`scripts/`](scr
 
 **Le recueil : [hasards, coïncidences, faits amusants, analogies, corrélations et causalités](recueil/README.md)** (une fiche par remarque née pendant le travail, avec son script, sa partie, son image et le contexte qui la précède ; les données brutes de chaque arc réponse ; les révisions qui regroupent les fiches en dossiers ; le protocole est dans [CLAUDE.md, § 10](CLAUDE.md), et l'[index](recueil/index.md) dit où en est la pile).
 
+**Et : [Révision 001 du recueil — la diagonale √2, le cadre qui fabrique des liens, et huit dossiers](recueil/revisions/revision-001.md)** (la classification naïve, centrée, est un simplexe dont l'arête rejoint √2 par en dessus, et la corde de la chèvre de dimension n est sa corde vers l'antipode : Thalès, d² + c² = 4 ; à parts inégales, deux dimensions rares paraissent liées exactement quand p_a + p_b < Σp² ; le seuil d'un masque déplace le centre de la lumière du Venn de 0,044 à 27 px sans toucher à la moitié ; huit dossiers écrits par des agents, leur nerf et leur vérification croisée ; onze tests : la moitié de Kakeya fini vient de Bonferroni, le seuil de 13 courbes est la constante isopérimétrique, 1/7 et la famille q² + 1, les dizaines de premiers qui croisent π puis 2√2, la tour de Midy, les trois 4/3, l'arbre de Perron à 43/108, le « 93 % » qui n'est que le taux de base ; dix corrections vérifiées du corpus ; et les trous des données publiées).
+
 Pour jouer avec les paramètres (distance du piquet, longueur de corde, dimension, lecture « éclipse » ou « photo », formule d'Ullisch calculée en direct), ouvrez [`explorateur.html`](explorateur.html) dans un navigateur : c'est une page autonome, sans installation.
 
 **Sommaire**
@@ -532,6 +534,7 @@ python3 scripts/figures.py    # ≈ 10 s : les 9 figures -> figures/
 - [`scripts/centre_venn.py`](scripts/centre_venn.py) : la partie XXX (même copie du dépôt).
 - [`scripts/recueil_verifications.py`](scripts/recueil_verifications.py) : les vérifications du recueil (congruences de i, puissances sous 10, fractions continues, racines digitales, Midy, décades des premiers).
 - [`scripts/recueil_index.py`](scripts/recueil_index.py) : l'index du recueil et l'état de la révision.
+- [`scripts/revision_001.py`](scripts/revision_001.py) : la révision 001 du recueil (≈ 2 min ; même copie du dépôt de Dzoba, pour le § 4.8).
 - [`explorateur.html`](explorateur.html) : l'explorateur interactif (page autonome, calculs en JavaScript recoupés avec les scripts Python).
 
 ---

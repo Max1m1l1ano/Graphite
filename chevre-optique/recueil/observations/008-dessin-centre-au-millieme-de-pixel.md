@@ -9,10 +9,10 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), fonction `centre_symetrie` |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae1_centre_moitie.png`](../../figures/ae1_centre_moitie.png), panneau a |
-| dimension | D3 grain, pixels et précision |
+| dimension | D3 grain, pixels et précision ; puis, à la révision 001 : D6 sphères, cubes, Venn et symétries |
 | test | quatre rotations indépendantes donnent le même point |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
-| révisé | non |
+| révisé | 001 (2026-10-09) |
 
 ## Le contexte qui précède
 
@@ -30,4 +30,7 @@ La corrélation de l'image (clarté OKLab) avec ses rotations, cherchée au pas 
 
 Fiches 006 et 007 ; partie IV (le point au centre de la case).
 
-Dimensions voisines, à confirmer à la révision : D6 symétries.
+## Révision 001
+
+Synthèse : [revision-001.md](../revisions/revision-001.md).
+- Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort et exact.
