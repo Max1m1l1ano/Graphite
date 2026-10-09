@@ -46,6 +46,7 @@ Les sections 4.8 et 4.9 de `scripts/revision_001.py` :
   - la fiche 017 : le cadre fabrique des liens ; ici, il fabrique un déplacement ;
   - la fiche 021 : une dérive qui croise des constantes.
 - En astrométrie, on retrouve la même différence entre un centroïde isophote (au-dessus d'un seuil) et un centroïde pondéré (Bertin et Arnouts, SExtractor, 1996). C'est aussi la raison des corrections de chromaticité des catalogues (Gaia ; référence exacte à vérifier).
+- **Le témoin, trouvé pendant la révision** (dossier [méthode](../dossiers/hasard-et-methode.md), § 3.6, calcul de l'agent) : sur le PNG à 13 courbes du traceur, dont toutes les courbes ont la même clarté OKLab (0,58), un seuil sur la clarté ne déplace le centre que de 0,07 à 0,30 px ; un seuil sur la moyenne RGB, qui varie d'une courbe à l'autre, de 1,1 à 11,7 px. Un effet de seuil prouve que la grandeur seuillée varie d'une courbe à l'autre. Ici, c'est la clarté des 17 courbes, de 0,60 à 0,71 (correction de la partie XXX, § 1.1).
 - Les pistes :
   - refaire la mesure sur le rendu « rose » du dépôt (`venn17-rose-dark-2000.png`), à seuil variable ;
   - faire un rendu sur un fond neutre, pour séparer l'effet du fond bleuté.

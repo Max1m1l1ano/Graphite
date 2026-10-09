@@ -105,6 +105,11 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 - **Ce qu'ajoute le dossier grain** (§ 3.5, (A)) :
   - Le « contraste d'ordre » des PNG du traceur, dessinés de 0 à n − 1, vaut +14,8 % et +8,6 %. Celui de l'image à 17 courbes vaut −6,0 %, comme les témoins sans ordre : l'ordre de dessin est écarté une seconde fois, par une autre méthode.
   - Une palette presque isoluminante en luminance Y (Y₀ ≈ 0,30 à 0,36) redonne les quatre pesées continues avec un seul facteur géométrique. C'est pourquoi la luminance donne le plus petit écart (0,61 px).
+- **L'intervention qui manquait, faite sur un système modèle** (dossier méthode, § 3.6, (A)). Le Venn à 13 courbes du traceur de Dzoba a une palette et un ordre de dessin connus. L'agent en a lu la géométrie dans le SVG, l'a repeinte avec son propre rendu (aucun code de Dzoba exécuté), puis a changé une seule chose à la fois.
+  - *La palette* : le centre se déplace de G·H₁(poids), **sans paramètre libre** (le bras de levier G est lu dans le SVG) : 2,08 px prédits, 2,05 à 2,20 px observés selon le rendu, phases à 11° près. Avec une palette à luminance égale, l'écart en luminance tombe à 0,13 px, et ceux de la moyenne RGB et de l'énergie restent à 2,3 et 1,6 px : c'est le motif de l'image à 17 courbes.
+  - *L'ordre de dessin* : quatre autres ordres déplacent le centre de 0,3 px au plus, contre 2,1 px pour la palette.
+  - *Un témoin du seuil* : sur le PNG à 13 courbes, dont toutes les courbes ont la même clarté OKLab (0,58), un seuil sur la clarté ne déplace le centre que de 0,07 à 0,30 px ; un seuil sur la moyenne RGB, qui varie d'une courbe à l'autre, de 1,1 à 11,7 px. **Un effet de seuil prouve donc que la grandeur seuillée varie d'une courbe à l'autre** : dans l'image à 17 courbes, la clarté va de 0,60 à 0,71 (correction de la partie XXX, § 1.1). C'est la cause du balayage de la fiche 018.
+  - La causalité « palette → centre » est donc établie par intervention, sur un système modèle. Pour l'image à 17 courbes elle-même, la palette reste inconnue.
 - **Le dossier grain nomme aussi les quatre variables cachées de l'image de référence** : le certificat, la mise en page, la palette et l'ordre de dessin. Son code de rendu n'est pas publié. C'est un trou de la chaîne de production des parties XXIX et XXX (§ 8).
 
 ## 4. Les huit dossiers et leur nerf
@@ -157,7 +162,7 @@ Figure : [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panne
 | P6 | les réduites et les trois distances | D2 | Le diésis et le comma sont deux écarts du même théorème des trois distances (dossier bases, (A)) ; les deux longueurs ne tombent pas seulement aux dénominateurs des réduites (corrigé). La demi-case (déterminant ±1, aire ½, Pick) est un seul procédé pour Fibonacci, Pell, Farey et l'hexagone ; l'or et l'argent sont les deux premiers points du spectre de Markov (dossier aiguilles) |
 | P7 | la loi de l'écart | D7 | Elle tranche 10 tests de cette révision ; elle a sa réserve : la dérive qui croise une constante (4.2, 4.9) |
 | P8 | le cône à sommet imaginaire | D8 | La branche « photocentre » s'en détache (dossier lumière) : le photocentre n'a ni col ni distance de Rayleigh. La forme de Newton x·x′ = c revient cinq fois : lentille, œil de poisson, jumeaux de la chèvre, fantômes des pixels, complément du Venn (dossier lumière) |
-| P9 (nouveau) | le barycentre pesé (le dipôle H₁ des poids) | D8 contre D3 | Les étoiles doubles (Wielen), la molécule HD et le Venn : le centre de la lumière est le premier harmonique des poids, et le seuil en est un second canal (fiches 006 et 018 ; dossier lumière) |
+| P9 (nouveau) | le barycentre pesé (le dipôle H₁ des poids) | D8 contre D3 | Les étoiles doubles (Wielen), la molécule HD et le Venn : le centre de la lumière est le premier harmonique des poids, et le seuil en est un second canal (fiches 006 et 018 ; dossier lumière). Établi par une intervention sur un Venn à 13 courbes de palette connue, sans paramètre libre (dossier méthode, (A)) |
 
 ## 6. L'étude cohomologique : ce qui se recolle, et ce qui ne se recolle pas
 
@@ -170,7 +175,7 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 | K3 | 1/7, les racines digitales de 2ⁿ, i modulo 10 | **se recolle** par la famille q² + 1 et le lemme des chiffres (vérifiés) |
 | K4 | les moitiés | l'involution et la dilatation se recollent en R/√2 ; **Kakeya fini fait obstruction** (vérifié) |
 | K5 | le 17 de Henderson et le 17 de i | **obstruction** : 19 et 23 ont des Venn et pas de i |
-| K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain, ma lecture) |
+| K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain). **Sur un Venn à 13 courbes de palette connue, la loi G·H₁ prédit l'écart sans paramètre libre, et l'ordre de dessin ne compte pas** (dossier méthode, intervention, (A)). Pour l'image à 17 courbes, la palette reste inconnue |
 | K7 | le grain plafonne la profondeur | se recolle modulo un cran **pour la pente**, pas pour les valeurs (le « 2,8 » n'est pas une constante, dossier aiguilles) ; la cause commune du logarithme reste ouverte |
 | K8 | les trois 4/3 | **obstruction** : une coïncidence de petits entiers (vérifié) |
 | K9 | Midy, pair et impair | se recolle en une tour binaire (1/3, 1/3, 1/6, 1/12, vérifié), **à aires inégales**. Le dossier bases ajoute l'enchevêtrement par la réciprocité quadratique (A). Le dossier méthode précise : la division par deux est la queue géométrique de toute valuation 2-adique ; c'est la forme d'un arbre de Perron, pas sa loi 2/(k + 2) |
@@ -199,7 +204,7 @@ Presque chaque test fait varier un paramètre, comme le demande le choix du test
 | 4.8 et 4.9, K6 | le seuil du masque (sans seuil, puis 0,001 à 0,40) | pas d'ordre de dessin ni de repli signé ; le centre glisse de 0,044 à 27 px ; la moitié reste à 49,3–49,7 % | la couleur déplace le centre par le poids et par le seuil (fiche 018) |
 | 4.10 | six énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108, loi de l'écart des presque-entiers de Heegner, critère du centre de la fiche 011 : vérifiés | ils peuvent être cités sans (A) |
 | 4.11 | le score du modèle de défocalisation contre un prédicteur constant | 71 rayons sur 76 contre 70 | le « 93 % » de la partie XXX est le taux de base (dossier lumière) |
-| T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal en v1. Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
+| T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal, ni en v1 ni en v2 (ρ = +0,090, p = 0,23). Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
 
 ## 8. Les erreurs trouvées dans les chaînes de production
 
@@ -315,6 +320,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - La diagonale √2 des révisions et la corde √2 de la chèvre (Thalès).
 - La moitié de Kakeya fini et la correction de Bonferroni de la fiche 012 : tronquer l'inclusion–exclusion.
 - Le seuil du centre du Venn et le polygone circonscrit de la fiche 003 : la constante isopérimétrique.
+- Le photocentre des étoiles doubles et le centre de la lumière du Venn : le même barycentre pesé, G·H₁(poids). Il est confirmé sans paramètre libre sur un Venn à 13 courbes de palette connue (dossier méthode, (A)).
 - Midy et un arbre de Perron : ce qui est partagé exactement, c'est la division binaire à chaque étage. Rien de plus ne se transporte : la loi de Perron, 2/(k + 2), n'a pas d'équivalent dans la tour, dont la queue géométrique est celle de toute valuation 2-adique (dossier méthode). Ouvert : ta lecture en Venn ascendant et descendant.
 
 **Mes lectures (corrige-moi si je t'ai mal compris)**
@@ -326,7 +332,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - Le nerf v2 et les quatre derniers dossiers *(à compléter)*.
 - T8 en v2, et le test prospectif du prédicteur de la partie XXVII : geler son classement et compter, aux révisions suivantes, les liens établis dans ses premiers rangs (dossier méthode).
 - La cause de la fiche 005.
-- Une intervention sur l'image : refaire les six pesées sur un rendu à palette et ordre connus, le Venn à 13 courbes du traceur de Dzoba (dossier méthode, N5).
+- La palette réelle de l'image à 17 courbes. L'intervention est faite sur un système modèle (le Venn à 13 courbes du traceur, dossier méthode) ; sur l'image elle-même, il faudrait le code de rendu de Dzoba.
 - Un banc d'essai à vérités indépendantes, avec plus de cas négatifs.
 - δ₂ ≈ δ₃.
 - La cause commune du logarithme (K7).
