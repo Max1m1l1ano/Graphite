@@ -35,3 +35,4 @@ Partie XXVI : 10⁶/2²⁰ a les chiffres de 5²⁰, et « 1 To » = 931 Go fait
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Dossier [grain](../dossiers/grain-pixels-centres.md) : garder, partagée avec bases : lien exact, fort par l'unité, faible par le calcul.
 - Dossier [bases](../dossiers/bases-congruences-premiers.md) : exact : identité 2⁻ʲ = 5ʲ·10⁻ʲ pour tout j ; statut inchangé ; rien à répliquer (17 n'a pas de rôle dans l'identité).
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test ; le verdict tient.

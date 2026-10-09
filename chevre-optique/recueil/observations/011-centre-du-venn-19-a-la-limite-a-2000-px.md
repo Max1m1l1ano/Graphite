@@ -33,7 +33,8 @@ Partie XIV (Perron sur une grille ne descend plus à zéro) ; partie XVIII (le d
 ## Révision 001
 
 Synthèse : [revision-001.md](../revisions/revision-001.md).
-- Test 4.4 (K10) : le seuil des 13 courbes est la constante isopérimétrique 4π (fiche 020). Il vaut 4π·(s/a)² et dépend du choix a = s = 2 px (dossier grain). De même, les 18,99 courbes à 2 000 px dépendent des 2 px d'arc par croisement : 19,76 courbes à 1,5 px, 17,90 à 3 px (recalculé pendant la révision ; dossier méthode). « Pile à la limite » ne tient qu'avec ce critère : le titre est précisé.
+- Test 4.4 (K10) : le seuil des 13 courbes est la constante isopérimétrique 4π (fiche 020). Il vaut 4π·(s/a)² et dépend du choix a = s = 2 px (dossier grain). De même, les 18,99 courbes à 2 000 px dépendent des 2 px d'arc par croisement : 19,76 courbes à 1,5 px, 17,90 à 3 px (revision_001.py, § 4.10 ; dossier méthode). « Pile à la limite » ne tient qu'avec ce critère : le titre est précisé.
 - Dossier [corde](../dossiers/corde-et-dimensions.md) : ajoutée au dossier par son agent : K10 exact ; troisième série de T3 (cordes) ; obstruction à l'ordre 4.
 - Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort et exact : c'est le cas n = 19 de K10.
 - Dossier [aiguilles](../dossiers/aiguilles-kakeya-perron.md) : calculé, juste ; place dans les arbres : P5 (branche du Venn : XXIX § 4, XXX § 6.4, fiche 011) et P3 par K10 (seuil √(n/4π)) ; pas dans P1. K7 précise le lien « à un cran près » : +2,6 % par courbe au centre à n = 19.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test ; la loi tient, « pile à la limite » dépasse le test.

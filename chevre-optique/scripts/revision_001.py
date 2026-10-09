@@ -1,15 +1,17 @@
 """
 Révision 001 du recueil : les tests attachés à la révision (CLAUDE.md, § 10).
 
-    python3 scripts/revision_001.py        # ≈ 10 s
+    python3 scripts/revision_001.py        # ≈ 4 min
 
-Écrit resultats/revision_001.md et la figure figures/rev001_perron_venn.png. La synthèse est dans
-recueil/revisions/revision-001.md, les dossiers dans recueil/dossiers/.
+Les § 4.8 et 4.12 demandent une copie locale du dépôt github.com/dzoba/venn17 (CC BY 4.0), lue comme des données.
+Écrit resultats/revision_001.md et les figures figures/rev001_diagonale_cadre.png et figures/rev001_perron_venn.png.
+La synthèse est dans recueil/revisions/revision-001.md, la vérification croisée (qui donne le recouvrement v2) dans
+recueil/revisions/verification-croisee-001.md, les dossiers dans recueil/dossiers/.
 
 1. La diagonale √2 : le simplexe de la classification naïve, la corde de la chèvre et le triangle de Thalès.
 2. Les fiches dans le Venn des dimensions, avant et après la révision.
-3. Le nerf du recouvrement par les dossiers : nombres de Betti et triangles vides.
-4. Les nouveaux tests.
+3. Le nerf du recouvrement par les dossiers (v1 du plan, v2 des agents) : nombres de Betti et triangles vides.
+4. Les nouveaux tests (4.1 à 4.12), puis le tableau des tests.
 """
 
 import csv
@@ -473,12 +475,14 @@ for version in COUV:
               + " ; ".join(' · '.join(t) for t in hasard) + ". Un hasard testé y tenait la place d'une observation de structure.")
     ligne(f"- Bilan {version} : {len(recueil)} trous du recueil, {len(corpus)} trous du corpus.")
     n1 = NERF[(version, 1)]
+    verdict_tv = "un peu plus que le hasard, sans plus" if n1["p"] < 0.3 else "autant que le hasard"
     ligne(f"- Les fiches laissent {len(tv1)} triangles vides, contre {fr(n1['ntv'], '{:.1f}')} en moyenne pour des dossiers"
-          f" de mêmes tailles tirés au hasard (p = {fr(n1['p'], '{:.2f}')}) : un peu plus que le hasard, sans plus. Les trous"
+          f" de mêmes tailles tirés au hasard (p = {fr(n1['p'], '{:.2f}')}) : {verdict_tv}. Les trous"
           " se lisent donc un par un, comme des pistes, pas comme une preuve.")
     n3 = NERF[(version, 3)]
+    b2 = n3["b"][2]
     ligne(f"- **Avec les parties (niveau 3), les boucles se remplissent** (b₁ = {n3['b'][1]}), mais il reste"
-          f" b₂ = {n3['b'][2]} cavités (nul : {fr(n3['nb2'], '{:.2f}')} en moyenne, p = {fr(n3['pb2'], '{:.3f}')}). Une"
+          f" b₂ = {b2} cavité{'s' if b2 > 1 else ''} (nul : {fr(n3['nb2'], '{:.2f}')} en moyenne, p = {fr(n3['pb2'], '{:.3f}')}). Une"
           f" cavité, ce sont quatre dossiers dont les quatre triplets se recollent, sans élément commun aux quatre :"
           f" un trou d'un étage plus haut. Les {len(n3['creux'])} tétraèdres creux :")
     for q in n3["creux"]:
@@ -1186,9 +1190,10 @@ assert abs(aire_43 - mp.mpf(43) / 108) < mp.mpf(10) ** -20
 
 # deux énoncés du dossier méthode : la loi de l'écart des presque-entiers de Heegner, et le critère du centre de la fiche 011
 heeg = []
-for d_ in (19, 43, 67, 163):
-    x_ = mp.e ** (mp.pi * mp.sqrt(d_))
-    heeg.append((d_, (x_ - mp.nint(x_)) / (-196884 * mp.e ** (-mp.pi * mp.sqrt(d_))), abs(x_ - mp.nint(x_)) / x_))
+with mp.workdps(60):        # e^(π√163) a 18 chiffres avant la virgule et s'écarte d'un entier de 7,5·10⁻¹³ : il faut pousser la précision
+    for d_ in (19, 43, 67, 163):
+        x_ = mp.e ** (mp.pi * mp.sqrt(d_))
+        heeg.append((d_, float((x_ - mp.nint(x_)) / (-196884 * mp.e ** (-mp.pi * mp.sqrt(d_)))), float(abs(x_ - mp.nint(x_)) / x_)))
 ligne("- **Dossier méthode, § 6.3 (un banc à vérités indépendantes)** : e^(π√d) tombe près d'un entier, et l'écart suit la loi"
       " −196 884·e^(−π√d) (le deuxième coefficient de j) : rapport " + " ; ".join(f"{fr(float(r_), '{:.5f}')} (d = {d_})" for d_, r_, _ in heeg)
       + f", pour des écarts relatifs de {sci(heeg[0][2])} à {sci(heeg[-1][2])}. C'est une structure, et son écart a une loi."
@@ -1239,6 +1244,186 @@ ligne(f"- **Verdict** : le 93 % ne bat le taux de base que d'{'un rayon' if acc_
       " (17, 34, 51) et vérifie que la couronne suit r entre m·b/7,016 et m·b/3,832 (dossier lumière, N4).")
 assert acc_modele == 71 and acc_constant == 70
 TESTS.append(("XXX § 6.3", "le score du modèle contre un prédicteur constant", f"{acc_modele}/{n_ray} contre {acc_constant}/{n_ray} : le « 93 % » est le taux de base"))
+
+
+# --- 4.12 l'intervention : un Venn à 13 courbes repeint, à palette et ordre connus (dossier méthode, § 3.6) ----------------
+SVG13 = "/home/user/dzoba/venn17/plotter/venn-13-color.svg"         # copie locale du dépôt de Dzoba : lue comme des données
+PNG13 = "/home/user/dzoba/venn17/plotter/venn-13-color.svg.png"
+ligne()
+ligne("### 4.12 L'intervention : un Venn à 13 courbes repeint, à palette et ordre connus (dossier méthode)")
+ligne()
+if not (os.path.exists(SVG13) and os.path.exists(PNG13)):
+    ligne(f"Les fichiers `{SVG13}` et `{PNG13}` sont absents : ce test demande une copie du dépôt dzoba/venn17.")
+else:
+    from PIL import Image, ImageDraw  # noqa: E402
+
+    with open(SVG13, encoding="utf-8") as fh:
+        chemins = re.findall(r'<path id="curve-(\d+)"[^>]*stroke="(#[0-9a-fA-F]{6})"[^>]*d="([^"]+)"', fh.read())
+    n13 = len(chemins)
+    PAL13 = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for _, c, _ in chemins], float) / 255
+
+    def bezier(d, k=14):
+        """Les points d'une courbe du SVG (commandes M, C, Z), k points par arc de Bézier cubique."""
+        toks = re.findall(r"[MCZ]|-?\d+\.?\d*(?:e-?\d+)?", d)
+        pts, i, cur, debut = [], 0, None, None
+        while i < len(toks):
+            if toks[i] == "M":
+                cur = np.array([float(toks[i + 1]), float(toks[i + 2])])
+                debut = cur.copy()
+                pts.append(cur.copy())
+                i += 3
+            elif toks[i] == "C":
+                i += 1
+                while i < len(toks) and toks[i] not in "MCZ":
+                    p1, p2, p3 = (np.array([float(toks[i + 2 * j]), float(toks[i + 2 * j + 1])]) for j in range(3))
+                    for u in np.linspace(0, 1, k + 1)[1:]:
+                        pts.append((1 - u) ** 3 * cur + 3 * (1 - u) ** 2 * u * p1 + 3 * (1 - u) * u ** 2 * p2 + u ** 3 * p3)
+                    cur = p3
+                    i += 6
+            else:                                                     # Z : on referme la courbe
+                if debut is not None and np.hypot(*(cur - debut)) > 1e-9:
+                    pts.append(debut.copy())
+                i += 1
+        return np.array(pts)
+
+    POLY13 = [bezier(d) for _, _, d in chemins]
+    W13, SUR = 2000, 4                      # 2 000 px pour 512 mm, comme le PNG du dépôt ; rendu sur-échantillonné 4 fois
+    PXMM = W13 * SUR / 512
+    yy13, xx13 = np.mgrid[0:W13, 0:W13]
+    Z13 = (xx13 - (W13 - 1) / 2) + 1j * ((W13 - 1) / 2 - yy13)
+    del yy13, xx13
+
+    def lin13(c):
+        return np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+
+    PESEES = {"luminance Y": lambda c: (lin13(c) * np.array([0.2126, 0.7152, 0.0722])).sum(-1),
+              "moyenne RGB": lambda c: c.mean(-1),
+              "énergie": lambda c: lin13(c).sum(-1)}
+
+    def rendu13(palette, ordre, largeur=5):
+        """Notre rendu : les 13 traits dans l'ordre donné, sur fond blanc, puis réduits 4 fois (moyenne par blocs)."""
+        img = Image.new("RGB", (W13 * SUR, W13 * SUR), (255, 255, 255))
+        dr = ImageDraw.Draw(img)
+        for i in ordre:
+            dr.line([tuple(p) for p in POLY13[i] * PXMM], fill=tuple(int(round(255 * v)) for v in palette[i]),
+                    width=largeur, joint="curve")
+        return np.asarray(img.resize((W13, W13), Image.BOX)).astype(float) / 255
+
+    def centres13(img):
+        """Le centre de la lumière pour chaque pesée : l'encre pèse ce qu'elle retire au fond blanc."""
+        out = {}
+        for nom, f in PESEES.items():
+            w = np.clip(f(np.ones(3)) - f(img), 0, None)
+            out[nom] = complex((w * Z13).sum() / w.sum())
+        return out
+
+    def centroide_trait(P):
+        seg = np.diff(P, axis=0)
+        lg = np.hypot(seg[:, 0], seg[:, 1])
+        c = (((P[1:] + P[:-1]) / 2) * lg[:, None]).sum(0) / lg.sum() - 256          # mm, depuis le centre du dessin
+        return complex(c[0], -c[1]) * W13 / 512                                      # px, y vers le haut
+
+    C13 = np.array([centroide_trait(P) for P in POLY13])           # le bras de levier, lu dans la géométrie
+    om13 = np.exp(2j * np.pi * np.arange(n13) / n13)
+    rot13 = float(np.max(np.abs(C13 / C13[0] - om13)))
+
+    def predit13(palette):
+        """G·H₁ des poids, sans paramètre libre : Σ wᵢ cᵢ / Σ wᵢ, avec cᵢ le centroïde du trait i."""
+        out = {}
+        for nom, f in PESEES.items():
+            w = f(np.ones(3)) - f(palette)
+            out[nom] = complex(w @ C13 / w.sum())
+        return out
+
+    lp13 = lin13(PAL13)
+    Yp13 = lp13 @ np.array([0.2126, 0.7152, 0.0722])
+    li13 = lp13 * (Yp13.min() / Yp13)[:, None]                     # même teinte, même luminance Y (la plus basse)
+    PAL_ISO13 = np.clip(np.where(li13 <= 0.0031308, 12.92 * li13, 1.055 * np.clip(li13, 0, None) ** (1 / 2.4) - 0.055), 0, 1)
+    rng13 = np.random.default_rng(3)
+    ORDRES13 = {"0 → 12 (celui du traceur)": list(range(n13)), "12 → 0": list(range(n13 - 1, -1, -1)),
+                "départ en 6": [(6 + i) % n13 for i in range(n13)], "une permutation": list(rng13.permutation(n13)),
+                "une autre": list(rng13.permutation(n13))}
+    o0 = ORDRES13["0 → 12 (celui du traceur)"]
+    ref13 = centres13(rendu13(np.tile(PAL13.mean(0), (n13, 1)), o0))           # une seule couleur : la référence
+    ligne(f"Le Venn à 13 courbes du traceur de Dzoba donne sa géométrie (le SVG, lu comme des données : aucun code de Dzoba"
+          f" n'est exécuté), sa palette et son ordre de dessin. On le repeint avec notre propre rendu (traits de 1,25 px,"
+          f" sur-échantillonnés 4 fois), en ne changeant qu'une chose à la fois. Le bras de levier est lu, pas ajusté : le"
+          f" centroïde de chaque trait est à {fr(abs(C13[0]), '{:.3f}')} px du centre, et la courbe i est la courbe 0 tournée de"
+          f" i·360°/13 (écart {sci(rot13)}). Chaque écart est mesuré contre le même dessin peint d'une seule couleur.")
+    ligne()
+    ligne("| palette (ordre 0 → 12) | pesée | écart observé | prédit, Σ wᵢcᵢ/Σ wᵢ |")
+    ligne("|---|---|---:|---:|")
+    INT13 = {}
+    for nom_p, pal in (("celle du traceur", PAL13), ("décalée de 4 courbes", np.roll(PAL13, -4, axis=0)),
+                       ("même luminance Y", PAL_ISO13)):
+        ob = centres13(rendu13(pal, o0))
+        pr = predit13(pal)
+        INT13[nom_p] = {k: (ob[k] - ref13[k], pr[k]) for k in PESEES}
+        for k in PESEES:
+            d_, q_ = INT13[nom_p][k]
+            ligne(f"| {nom_p} | {k} | {fr(abs(d_), '{:.2f}')} px à {fr(np.degrees(np.angle(d_)), '{:.0f}')}° |"
+                  f" {fr(abs(q_), '{:.2f}')} px à {fr(np.degrees(np.angle(q_)), '{:.0f}')}° |")
+    ligne()
+    base13 = centres13(rendu13(PAL13, o0))
+    ORD13 = {nom: centres13(rendu13(PAL13, o)) for nom, o in ORDRES13.items() if o != o0}
+    ligne("| ordre de dessin (palette du traceur) | luminance Y | moyenne RGB | énergie |")
+    ligne("|---|---:|---:|---:|")
+    for nom, c in ORD13.items():
+        ligne(f"| {nom} | " + " | ".join(f"{fr(abs(c[k] - base13[k]), '{:.2f}')} px" for k in PESEES) + " |")
+    ligne()
+    # le témoin du seuil, sur le PNG du dépôt : la clarté OKLab des 13 courbes est la même, la moyenne RGB ne l'est pas
+    a13 = np.asarray(Image.open(PNG13).convert("RGBA")).astype(float) / 255
+    rgb13 = a13[..., :3] * a13[..., 3:4] + (1 - a13[..., 3:4])                 # composé sur blanc
+    li = lin13(rgb13)
+    l_ = np.cbrt(0.4122214708 * li[..., 0] + 0.5363325363 * li[..., 1] + 0.0514459929 * li[..., 2])
+    m_ = np.cbrt(0.2119034982 * li[..., 0] + 0.6806995451 * li[..., 1] + 0.1073969566 * li[..., 2])
+    s_ = np.cbrt(0.0883024619 * li[..., 0] + 0.2817188376 * li[..., 1] + 0.6299787005 * li[..., 2])
+    L13 = 0.2104542553 * l_ + 0.7936177850 * m_ - 0.0040720468 * s_
+    del a13, li, l_, m_, s_
+    yy13, xx13 = np.mgrid[0:L13.shape[0], 0:L13.shape[1]]
+    Zp = (xx13 - (L13.shape[1] - 1) / 2) + 1j * ((L13.shape[0] - 1) / 2 - yy13)
+    del yy13, xx13
+    SEUIL13 = {nom: [(t, abs(Zp[g > t].mean())) for t in (0.05, 0.1, 0.2, 0.3)] + ([(t, abs(Zp[g > t].mean())) for t in (0.4, 0.5, 0.6)] if nom == "moyenne RGB" else [])
+               for nom, g in (("clarté OKLab", 1 - L13), ("moyenne RGB", 1 - rgb13.mean(-1)))}
+    ligne("**Le témoin du seuil**, sur le PNG du dépôt (`venn-13-color.svg.png`) : un masque « 1 − grandeur > t », et l'écart de son centre au"
+          " centre de l'image.")
+    ligne()
+    ligne("| seuil t | " + " | ".join(fr(t, '{:.2f}') for t, _ in SEUIL13["moyenne RGB"]) + " |")
+    ligne("|---|" + "---:|" * len(SEUIL13["moyenne RGB"]))
+    for nom, v in SEUIL13.items():
+        cases = {t: e for t, e in v}
+        ligne(f"| {nom} | " + " | ".join(f"{fr(cases[t], '{:.2f}')} px" if t in cases else "—" for t, _ in SEUIL13["moyenne RGB"]) + " |")
+    ligne()
+    obs_rgb, pr_rgb = INT13["celle du traceur"]["moyenne RGB"]
+    obs_e, pr_e = INT13["celle du traceur"]["énergie"]
+    rot_obs = np.degrees(np.angle(INT13["décalée de 4 courbes"]["moyenne RGB"][0] / obs_rgb))
+    ordre_max = max(abs(c["moyenne RGB"] - base13["moyenne RGB"]) for c in ORD13.values())
+    ligne(f"- **La palette déplace le centre comme le prévoit G·H₁, sans paramètre libre** : {fr(abs(obs_rgb), '{:.2f}')} px observés pour"
+          f" {fr(abs(pr_rgb), '{:.2f}')} prédits en moyenne RGB, {fr(abs(obs_e), '{:.2f}')} pour {fr(abs(pr_e), '{:.2f}')} en énergie."
+          f" Décalée de 4 courbes, la palette fait tourner l'écart de {fr(rot_obs, '{:.1f}')}° (prédit : −{fr(4 * 360 / 13, '{:.1f}')}°),"
+          f" mais son module tombe à {fr(abs(INT13['décalée de 4 courbes']['moyenne RGB'][0]), '{:.2f}')} px, sous la prédiction. Cet"
+          " écart n'est pas expliqué : le modèle suppose que chaque courbe garde la même encre visible, quelle que soit sa couleur.")
+    ligne(f"- **À luminance égale**, l'écart en luminance tombe à {fr(abs(INT13['même luminance Y']['luminance Y'][0]), '{:.2f}')} px (prédit : 0),"
+          f" et ceux de la moyenne RGB et de l'énergie restent à {fr(abs(INT13['même luminance Y']['moyenne RGB'][0]), '{:.1f}')} et"
+          f" {fr(abs(INT13['même luminance Y']['énergie'][0]), '{:.1f}')} px : c'est le motif de l'image à 17 courbes (0,61 px en luminance,"
+          " 46 px en énergie), avec une palette presque isoluminante (dossier grain).")
+    ligne(f"- **L'ordre de dessin ne compte presque pas** : {fr(ordre_max, '{:.2f}')} px au plus en moyenne RGB, contre"
+          f" {fr(abs(obs_rgb), '{:.2f}')} pour la palette.")
+    ligne(f"- **Le témoin du seuil** : la clarté OKLab des 13 courbes est la même (0,58, la palette du traceur), et un seuil sur la"
+          f" clarté ne déplace le centre que de {fr(min(e for _, e in SEUIL13['clarté OKLab']), '{:.2f}')} à"
+          f" {fr(max(e for _, e in SEUIL13['clarté OKLab']), '{:.2f}')} px jusqu'à t = 0,3 ; un seuil sur la moyenne RGB, qui varie"
+          f" d'une courbe à l'autre, de {fr(dict(SEUIL13['moyenne RGB'])[0.3], '{:.1f}')} à {fr(dict(SEUIL13['moyenne RGB'])[0.6], '{:.1f}')} px"
+          " (t = 0,3 à 0,6). Un effet de seuil prouve que la grandeur seuillée varie d'une courbe à l'autre : dans l'image à 17"
+          " courbes, la clarté va de 0,60 à 0,71 (fiche 018).")
+    ligne("- **Limite** : un système modèle (13 courbes, notre anticrénelage). Il établit la cause et la taille des effets ; la palette"
+          " de l'image à 17 courbes reste inconnue.")
+    assert rot13 < 1e-3
+    assert abs(abs(obs_rgb) - abs(pr_rgb)) < 0.1 * abs(pr_rgb) and abs(abs(obs_e) - abs(pr_e)) < 0.1 * abs(pr_e)
+    assert ordre_max < 0.2 * abs(obs_rgb) and abs(INT13["même luminance Y"]["luminance Y"][0]) < 0.2
+    assert max(e for _, e in SEUIL13["clarté OKLab"]) < 0.5 < dict(SEUIL13["moyenne RGB"])[0.6]
+    TESTS.append(("006 et 018 (dossier méthode)", "la palette, puis l'ordre, d'un Venn à 13 courbes repeint ; le seuil sur son PNG",
+                  f"G·H₁ prédit l'écart sans paramètre libre ({fr(abs(obs_rgb), '{:.2f}')} px observés, {fr(abs(pr_rgb), '{:.2f}')} prédits) ;"
+                  f" l'ordre : {fr(ordre_max, '{:.2f}')} px au plus ; un seuil n'agit que sur une grandeur qui varie d'une courbe à l'autre"))
 
 
 # ===========================================================================
@@ -1418,7 +1603,12 @@ def panneau_nerf(ax, version):
     ax.plot([], [], color=F.INK, lw=1.3, ls=(0, (3, 2.5)), label="triangle vide, trou du corpus (aucune partie)")
     ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.2), fontsize=7.8, ncol=2)
     b = NERF[(version, 1)]["b"]
-    ax.set_title(f"a. Le nerf des dossiers (fiches, {version}) : b₀ = {b[0]}, b₁ = {b[1]}")
+    tvs = NERF[(version, 1)]["tv"]
+    compte = {n: sum(n in t for t in tvs) for n in noms}
+    top = max(compte, key=compte.get)
+    ax.set_title(f"a. Le nerf des dossiers (fiches, {version}) : b₀ = {b[0]}, b₁ = {b[1]}", pad=20)
+    ax.text(0.5, 1.005, f"{compte[top]} des {len(tvs)} triangles vides passent par « {COURT.get(top, top)} »",
+            transform=ax.transAxes, ha="center", va="bottom", fontsize=9.5, color=F.INK2)
     ax.set_xlim(-1.45, 1.45)
     ax.set_ylim(-1.32, 1.3)
     ax.set_aspect("equal")

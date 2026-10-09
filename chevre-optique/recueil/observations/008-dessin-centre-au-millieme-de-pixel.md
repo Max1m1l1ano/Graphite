@@ -34,3 +34,5 @@ Fiches 006 et 007 ; partie IV (le point au centre de la case).
 
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort et exact.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test avec réserve ; le verdict tient.
+- Dossier [ombres](../dossiers/ombres-cube-venn.md) : calculé.

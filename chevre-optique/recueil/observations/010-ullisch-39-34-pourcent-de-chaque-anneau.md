@@ -9,7 +9,7 @@
 | script | [`scripts/centre_venn.py`](../../scripts/centre_venn.py), section 4 (les chèvres dans le Venn) |
 | données | [`resultats/centre_venn.md`](../../resultats/centre_venn.md) |
 | image | [`ae2_diaphragmes_diffraction.png`](../../figures/ae2_diaphragmes_diffraction.png), panneau d |
-| dimension | D1 la chèvre et les cordes ; puis, à la révision 001 : D6 sphères, cubes, Venn et symétries |
+| dimension | D1 la chèvre et les cordes ; puis, à la révision 001 : D6 sphères, cubes, Venn et symétries, D4 optique et diffraction |
 | test | précision : l'identité 2 arcsin(k/2) = arccos(1 − k²/2) tient à 50 chiffres (banc d'essai, E3) |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
 | révisé | 001 (2026-10-09) |
@@ -36,3 +36,5 @@ Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Correction : 39,34 % est la part exacte du cercle du bord (la limite du niveau 1) ; la part monte quand on rentre vers le centre (dossiers corde et moitiés). Le titre est corrigé.
 - Dossier [corde](../dossiers/corde-et-dimensions.md) : lien fort et exact : reste dans le dossier. Réserve : « chaque anneau du bord » est vrai du cercle de bord seul ; titre à corriger.
 - Dossier [moitiés](../dossiers/moities-et-crans.md) : exact ; pas un hasard : le lien était déjà posé.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test ; le verdict tient pour le cercle du bord, « chaque anneau » dépasse le test.
+- Dossier [ombres](../dossiers/ombres-cube-venn.md) : exact ; à retirer de ce dossier (fiche de P2).

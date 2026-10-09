@@ -40,3 +40,5 @@ Le Venn multidimensionnel que l'auteur propose pour le recueil ; la série singu
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Test 4.2 : en faisant varier N, le rapport par motif dérive et croise π puis 2√2 (fiche 021) ; les paires larges restent à 2 (Hardy et Littlewood).
 - Dossier [bases](../dossiers/bases-congruences-premiers.md) : exact pour la face (10a + u ≡ a + u modulo 3) ; calculé pour les comptes ; structure pour la dérive, qui est la prédiction de Hardy et Littlewood à taille finie (sans paramètre ajusté) ; la limite 2 reste une conjecture.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test pour la face, avec réserve ; « près de trois fois » dépasse le test.
+- Dossier [ombres](../dossiers/ombres-cube-venn.md) : exact.

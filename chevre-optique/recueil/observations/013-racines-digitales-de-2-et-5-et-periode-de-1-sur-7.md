@@ -9,7 +9,7 @@
 | script | [`scripts/recueil_verifications.py`](../../scripts/recueil_verifications.py), section 4 |
 | données | [`resultats/recueil_verifications.md`](../../resultats/recueil_verifications.md) |
 | image | — |
-| dimension | D2 bases, chiffres et congruences ; puis, à la révision 001 : D5 Kakeya, Perron et aiguilles, D7 hasard et méthode |
+| dimension | D2 bases, chiffres et congruences ; puis, à la révision 001 : D7 hasard et méthode, D5 Kakeya, Perron et aiguilles |
 | test | variation du paramètre : 1/13 a la période 076923, d'autres chiffres |
 | arc | 2026-10-07, arc 001 (le recueil : message fondateur du § 10 de CLAUDE.md) |
 | révisé | 001 (2026-10-09) |
@@ -35,3 +35,4 @@ Parties XXVIII (Midy pour 1/17) et XIX (les horloges des derniers chiffres). Pis
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Tests 4.1, 4.3 et 4.10 : le lien est propre à la base 10, expliqué par la famille q² + 1 et le lemme des chiffres ; Φ₆(10) = 7 × 13 explique la fausse piste de 1/13.
 - Dossier [bases](../dossiers/bases-congruences-premiers.md) : exact, propre à la base 10, et expliqué : le mécanisme est trouvé (K3) et démontré pour toute base q² + 1.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test, mince, avec réserve ; le verdict tient.

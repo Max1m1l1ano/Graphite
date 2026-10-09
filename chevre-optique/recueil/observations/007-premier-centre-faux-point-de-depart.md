@@ -35,3 +35,4 @@ Fiche 006. Leçon : un point de départ biaisé et une fenêtre trop étroite fa
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Une autre erreur de chaîne de mesure est trouvée par la révision : le seuil (fiche 018).
 - Dossier [grain](../dossiers/grain-pixels-centres.md) : lien fort, de méthode : la fiche est le premier cas d'une famille de douze chaînes (trois encore ouvertes).
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test (refaire l'essai : une intervention) ; le verdict tient.

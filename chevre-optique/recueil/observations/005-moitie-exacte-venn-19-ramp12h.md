@@ -33,6 +33,8 @@ L'auteur pense qu'un résultat exact ne vient pas du hasard (message du 7 octobr
 ## Révision 001
 
 Synthèse : [revision-001.md](../revisions/revision-001.md).
-- Le dossier moitiés trouve « miroir + complément » en tête dans les 18 certificats, à 1,5 à 2,3 fois le hasard (calcul de l'agent, à refaire) ; la cause reste inconnue.
+- Le dossier moitiés trouve « miroir + complément » en tête dans les 18 certificats, à 1,5 à 2,3 fois le hasard (calcul de l'agent, à refaire) ; la cause reste inconnue. Le dossier ombres montre que le complément n'est une symétrie d'aucun des 18 certificats (N_l ≠ N_(n−l)), et qu'au sens fort il ne peut pas l'être à 17 courbes (une obstruction de parité) : rien ne force la moitié exacte.
 - Dossier [moitiés](../dossiers/moities-et-crans.md) : hasard testé, cause ouverte.
 - Dossier [bases](../dossiers/bases-congruences-premiers.md) : ouvert, compatible avec le hasard (statut inchangé) ; côté bases, Fermat est une condition nécessaire, pas sélective.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test (réplication sur 12 Venn) ; le verdict tient.
+- Dossier [ombres](../dossiers/ombres-cube-venn.md) : ouvert, compatible avec le hasard.

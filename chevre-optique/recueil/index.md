@@ -4,7 +4,7 @@ Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `obs
 
 - Fiches : 21, dont 6 non révisées. Arcs réponses : 0 (0 depuis la dernière révision). Révisions : 1.
 - État : pas de révision due (6 fiches non révisées, 0 arcs depuis la dernière révision).
-- La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 5,19, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 13.
+- La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 5,19, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 15.
 
 | n° | observation | type | statut | partie | script | image | dimension | révisé |
 |---:|---|---|---|---|---|---|---|---|
@@ -18,7 +18,7 @@ Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `obs
 | 008 | [Le dessin de Dzoba est centré au millième de pixel](observations/008-dessin-centre-au-millieme-de-pixel.md) | Fait amusant | calculé | XXX | scripts/centre_venn.py | ae1_centre_moitie.png | D3 grain, pixels et précision | 001 (2026-10-09) |
 | 009 | [Ton Venn diffracte comme un diaphragme à 17 lames : 34 + 34 aigrettes](observations/009-34-plus-34-aigrettes.md) | Analogie | structure | XXX | scripts/centre_venn.py | ae2_diaphragmes_diffraction.png | D4 optique et diffraction | 001 (2026-10-09) |
 | 010 | [La chèvre d'Ullisch broute 39,34 % du cercle du bord](observations/010-ullisch-39-34-pourcent-de-chaque-anneau.md) | Fait amusant | exact | XXX | scripts/centre_venn.py | ae2_diaphragmes_diffraction.png | D1 la chèvre et les cordes | 001 (2026-10-09) |
-| 011 | [À 2 000 px, le centre du Venn à 19 courbes est pile à la limite](observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md) | Fait amusant ; Corrélation | calculé | XXX | scripts/centre_venn.py | ae3_grains_hasard.png | D3 grain, pixels et précision | 001 (2026-10-09) |
+| 011 | [À 2 000 px et 2 px par croisement, le centre du Venn à 19 courbes est à la limite](observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md) | Fait amusant ; Corrélation | calculé | XXX | scripts/centre_venn.py | ae3_grains_hasard.png | D3 grain, pixels et précision | 001 (2026-10-09) |
 | 012 | [Les tests à tolérance déclarent « hasard » des liens de structure](observations/012-tests-a-tolerance-et-liens-de-structure.md) | Hasard ; Corrélation ; Causalité | calculé | XXX | scripts/centre_venn.py | ae3_grains_hasard.png | D7 hasard et méthode | 001 (2026-10-09) |
 | 013 | [Les racines digitales de 2ⁿ et 5ⁿ parcourent les chiffres de la période de 1/7](observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md) | Fait amusant ; Coïncidence | exact pour 7 ; la variation échoue pour 13 | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |
 | 014 | [Les fractions continues imaginaires : multiplier par i alterne ±i à chaque étage](observations/014-fractions-continues-imaginaires.md) | Fait amusant ; Analogie | exact | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |

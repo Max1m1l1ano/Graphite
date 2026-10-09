@@ -35,3 +35,5 @@ Partie XXVIII (34 aigrettes) ; partie XX (le losange de √2 dans la diffraction
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Dossier [aiguilles](../dossiers/aiguilles-kakeya-perron.md) : juste ; à ajouter à ce dossier : troisième objet de K2 (les aigrettes d'un diaphragme à N lames et les N éventails de Perron dépendent de la même parité).
 - Dossier [lumière](../dossiers/lumiere-et-physique.md) : structure, et cas de K2 : les 34 aigrettes du contour sont l'orbite d'une direction sous le groupe engendré par 2π/17 et le demi-tour.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test ; le verdict tient.
+- Dossier [ombres](../dossiers/ombres-cube-venn.md) : structure.

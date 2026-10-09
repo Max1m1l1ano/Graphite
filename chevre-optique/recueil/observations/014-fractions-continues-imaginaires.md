@@ -36,3 +36,4 @@ Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Le dossier bases sépare 2^(3/2) (≡ −i dans F₉) et (−2)^(3/2) (= ±1 dans F₉) : la phrase de l'auteur est à préciser avec lui.
 - Dossier [corde](../dossiers/corde-et-dimensions.md) : lien faible, par les nombres (√2, 2/√3, √(3/2)) : gardée dans le dossier avec cette étiquette.
 - Dossier [bases](../dossiers/bases-congruences-premiers.md) : exact (quatre fractions justes à moins de 10⁻³⁰ sur 61 étages) ; le lien avec F₉ est exact pour 2^(3/2) (2√2 = −i), non pour (−2)^(3/2) (= ±1) ; les 10 et 12 des fractions continues sont des termes de clôture.
+- Dossier [méthode](../dossiers/hasard-et-methode.md) : bon test avec réserve (calcul fini dans F₉, pas précision) ; le verdict tient, sauf (−2)^(3/2) ≡ −i mod 3.

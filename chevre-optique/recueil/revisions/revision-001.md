@@ -5,7 +5,7 @@
 >
 > (le message qui fonde le recueil, 7 octobre 2026 ; la révision est due : 15 fiches non révisées)
 
-Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revision_001.py) (≈ 2 min, il demande la copie locale du dépôt de Dzoba pour le § 4.8). Les tableaux complets sont dans [`resultats/revision_001.md`](../../resultats/revision_001.md). Le plan de l'agent Opus est dans [`plan-001.md`](plan-001.md), la vérification croisée dans [`verification-croisee-001.md`](verification-croisee-001.md), les huit dossiers dans [`../dossiers/`](../dossiers/).
+Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revision_001.py) (≈ 4 min, il demande la copie locale du dépôt de Dzoba pour les § 4.8 et 4.12). Les tableaux complets sont dans [`resultats/revision_001.md`](../../resultats/revision_001.md). Le plan de l'agent Opus est dans [`plan-001.md`](plan-001.md), la vérification croisée dans [`verification-croisee-001.md`](verification-croisee-001.md), les huit dossiers dans [`../dossiers/`](../dossiers/).
 
 ## En bref
 
@@ -13,22 +13,27 @@ Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revisio
   - Une classification naïve à parts égales, une fois centrée, est un simplexe régulier. Son arête √(2K/(K − 1)) rejoint √2 par en dessus quand le nombre K de dimensions grandit.
   - Sa corde vers l'antipode la rejoint par en dessous, et Thalès les lie : d² + c² = 4.
   - La corde de la chèvre de dimension n est exactement une de ces cordes, pour K = n + 2 + le tiers de dimension de la partie XXIV.
-  - « Plus les révisions augmentent, plus la diagonale √2 s'affirme » devient un énoncé mesurable (§ 2).
-- **Le cadre fabrique des liens et des déplacements.** Deux résultats exacts touchent ton sujet d'étude, la restriction du cadre :
-  - **Les liens.** Avec des parts inégales, deux dimensions rares paraissent liées sans rien partager, exactement quand p_a + p_b < Σp². Le partage équitable des aires empêche ce faux lien.
-  - **Les déplacements.** Dans l'image du Venn à 17 courbes, monter le seuil d'un masque binaire déplace le centre de 0,044 px à 27 px, sans toucher à la moitié de l'aire (§ 3).
-- **Huit dossiers couvrent les 30 parties.** Le nerf du recouvrement a 9 triangles vides au niveau des fiches : 5 trous du recueil et 4 trous du corpus, tous les quatre autour du dossier « grain » (§ 4).
-- **Onze nouveaux tests, chacun en faisant varier un paramètre :**
+  - « Plus les révisions augmentent, plus la diagonale √2 s'affirme » devient un énoncé mesurable. Après cette révision, K = 7 et l'arête à parts égales vaut 1,5275, plus près de √2 ; mais les parts restent inégales, et le cadre fabrique 6 faux liens au lieu de 3 (§ 2).
+- **Le cadre fabrique des liens, des déplacements et des nombres.** Trois résultats touchent ton sujet d'étude, la restriction du cadre :
+  - **Les liens.** Avec des parts inégales, deux dimensions rares paraissent liées sans rien partager, exactement quand p_a + p_b < Σp². Le partage équitable des aires empêche ce faux lien. Mais leur nombre dépend aussi du classement : de 0 à 21 selon la dimension choisie pour chaque fiche (dossier méthode).
+  - **Les déplacements.** Dans l'image du Venn à 17 courbes, monter le seuil d'un masque binaire déplace le centre de 0,044 px à 27 px, sans toucher à la moitié de l'aire. Un effet de seuil prouve que la grandeur seuillée varie d'une courbe à l'autre (§ 3).
+  - **Les nombres.** Le seuil de 13 courbes du centre du Venn vaut 4π·(s/a)² : la loi est la constante isopérimétrique, le 13 vient du choix de 2 px.
+- **La cause du centre de la lumière est établie par une intervention.** L'agent méthode a repeint un Venn à 13 courbes de palette connue avec son propre rendu. Le photocentre G·H₁ des poids y prédit le déplacement sans paramètre libre (2,08 px prédits, 2,05 à 2,20 observés), et l'ordre de dessin ne compte pas (§ 3).
+- **Huit dossiers couvrent les 30 parties.** Les corrections des agents referment les 4 trous du corpus de v1. Il reste 11 trous du recueil, autant que le hasard, dont 9 passent par le dossier bases : c'est là que les prochaines fiches compteraient le plus (§ 4).
+- **Des liens nouveaux entre dossiers** (§ 6) :
+  - il n'existe pas de Venn simple à 17 courbes dont le complément soit une symétrie, parce que i existe modulo 17 (une obstruction de parité, dossier ombres) ;
+  - la face que choisit a modulo 3 dans la fiche 015 et la limite 2 de la fiche 021 sont le même nombre 3 ;
+  - les périodes de Gauss du 17-gone sont des ombres du cube.
+- **Douze nouveaux tests**, la plupart en faisant varier un paramètre :
   - **Kakeya fini.** La moitié vient de Bonferroni, pas de l'involution. La piste XIV–XX se ferme.
-  - **Le centre du Venn.** Le seuil de 13 courbes est la constante isopérimétrique 4π.
   - **1/7 et la base 10.** C'est la famille q² + 1, et 7 × 13 = Φ₆(10).
   - **Les dizaines de premiers.** Leur rapport dérive, et croise π puis 2√2.
   - **Midy.** Sa tour de périodes se divise par deux à chaque étage (1/3, 1/3, 1/6, 1/12) : la forme binaire d'un arbre de Perron, pas sa loi.
-  - **Les trois 4/3.** C'est une coïncidence de petits entiers (§ 7).
-- **Les chaînes de production ont des erreurs, et la révision en a corrigé dix,** après vérification :
-  - parties XI, XIV, XVIII, XIX, XXIII, XXVIII, XXIX et XXX (deux), la phrase de la partie XXVII sur la piste XIV–XX, et une ligne de CLAUDE.md ;
-  - par exemple, le « 93 % » de la défocalisation (partie XXX) n'est que le taux de base : un prédicteur constant fait presque aussi bien (70 rayons sur 76, contre 71) ;
-  - les autres sont listées avec leur statut (§ 8).
+  - **Les trois 4/3.** C'est une coïncidence de petits entiers.
+  - **L'arbre de Perron.** Il descend à 43/108, sous les 2/5 des arbres télescopiques ; la partie V l'avait trouvé en nombres.
+  - **Le « 93 % » de la défocalisation.** C'est le taux de base : un prédicteur constant fait 70 rayons sur 76, contre 71 (§ 7).
+- **La méthode relue.** Le banc d'essai de la partie XXX est en partie construit : la précision ne dit jamais « hasard », et trois verdicts de la variation sont posés à la main. Les erreurs des chaînes de production tombent en cinq classes ; la plus fréquente, le cadre, est la seule qu'aucun test ne voit (dossier méthode).
+- **La révision a corrigé douze erreurs**, après vérification : dans les parties XI, XIV, XVIII, XIX, XXIII, XXVII, XXVIII, XXIX et XXX, et dans CLAUDE.md. Les autres sont listées avec leur statut (§ 8).
 - **Où chercher les prochaines données** : § 9.
 
 ## 1. Comment la révision s'est faite
@@ -43,7 +48,7 @@ La chaîne de production de cette révision, dans l'ordre :
    - Le conteneur a redémarré deux fois pendant la révision. Quatre dossiers ont survécu (corde, moitiés, bases, grain). Les quatre autres (lumière, aiguilles, ombres, méthode) ont été relancés dans un second workflow, avec la consigne d'être plus concis.
    - Une limite d'usage hebdomadaire a encore arrêté trois agents. Lumière avait fini d'écrire son dossier (sa sortie structurée est perdue : j'en ai relevé les corrections à la main). Ombres et méthode ont été relancés une troisième fois, après ton « Réessayer ».
    - La vérification croisée prévue pour un neuvième agent, je l'ai faite moi-même à partir des corrections de chaque agent ([`verification-croisee-001.md`](verification-croisee-001.md)).
-3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte), que l'agent méthode a fait hors du dépôt (A). J'y ai ajouté quatre tests nés en route (§ 4.1, 4.2, 4.9, 4.11). Six énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
+3. **Les tests.** J'ai calculé les tests du plan dans `scripts/revision_001.py`, sauf T8 (le nerf contre la carte), que l'agent méthode a fait hors du dépôt (A). J'y ai ajouté cinq tests nés en route (§ 4.1, 4.2, 4.9, 4.11, 4.12). Six énoncés des dossiers y sont refaits avant d'être cités (§ 4.10).
 4. **La synthèse.** C'est ce document, avec les nouvelles fiches 016 à 021, les fiches 001 à 015 marquées « révisé : 001 », et les corrections du corpus.
 
 **Une étiquette pour chaque énoncé**, comme dans « Le tri » :
@@ -105,10 +110,10 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 - **Ce qu'ajoute le dossier grain** (§ 3.5, (A)) :
   - Le « contraste d'ordre » des PNG du traceur, dessinés de 0 à n − 1, vaut +14,8 % et +8,6 %. Celui de l'image à 17 courbes vaut −6,0 %, comme les témoins sans ordre : l'ordre de dessin est écarté une seconde fois, par une autre méthode.
   - Une palette presque isoluminante en luminance Y (Y₀ ≈ 0,30 à 0,36) redonne les quatre pesées continues avec un seul facteur géométrique. C'est pourquoi la luminance donne le plus petit écart (0,61 px).
-- **L'intervention qui manquait, faite sur un système modèle** (dossier méthode, § 3.6, (A)). Le Venn à 13 courbes du traceur de Dzoba a une palette et un ordre de dessin connus. L'agent en a lu la géométrie dans le SVG, l'a repeinte avec son propre rendu (aucun code de Dzoba exécuté), puis a changé une seule chose à la fois.
-  - *La palette* : le centre se déplace de G·H₁(poids), **sans paramètre libre** (le bras de levier G est lu dans le SVG) : 2,08 px prédits, 2,05 à 2,20 px observés selon le rendu, phases à 11° près. Avec une palette à luminance égale, l'écart en luminance tombe à 0,13 px, et ceux de la moyenne RGB et de l'énergie restent à 2,3 et 1,6 px : c'est le motif de l'image à 17 courbes.
-  - *L'ordre de dessin* : quatre autres ordres déplacent le centre de 0,3 px au plus, contre 2,1 px pour la palette.
-  - *Un témoin du seuil* : sur le PNG à 13 courbes, dont toutes les courbes ont la même clarté OKLab (0,58), un seuil sur la clarté ne déplace le centre que de 0,07 à 0,30 px ; un seuil sur la moyenne RGB, qui varie d'une courbe à l'autre, de 1,1 à 11,7 px. **Un effet de seuil prouve donc que la grandeur seuillée varie d'une courbe à l'autre** : dans l'image à 17 courbes, la clarté va de 0,60 à 0,71 (correction de la partie XXX, § 1.1). C'est la cause du balayage de la fiche 018.
+- **L'intervention qui manquait, faite sur un système modèle** (dossier méthode, § 3.6 ; refaite par le script, § 4.12 : vérifié). Le Venn à 13 courbes du traceur de Dzoba a une palette et un ordre de dessin connus. L'agent en a lu la géométrie dans le SVG, l'a repeinte avec son propre rendu (aucun code de Dzoba exécuté), puis a changé une seule chose à la fois.
+  - *La palette* : le centre se déplace de G·H₁(poids), **sans paramètre libre** (le bras de levier G est lu dans le SVG) : 2,08 px prédits, 2,05 à 2,20 px observés selon le rendu, phases à 11° près. Décalée de 4 courbes, la palette fait tourner l'écart de −109,5° (prédit : −110,8°), mais son module tombe à 1,58 px, 24 % sous la prédiction : un écart que le modèle n'explique pas. Avec une palette à luminance égale, l'écart en luminance tombe à 0,13 px, et ceux de la moyenne RGB et de l'énergie restent à 2,3 et 1,6 px : c'est le motif de l'image à 17 courbes.
+  - *L'ordre de dessin* : quatre autres ordres déplacent le centre de 0,26 px au plus, contre 2,20 px pour la palette.
+  - *Un témoin du seuil* : sur le PNG à 13 courbes, dont toutes les courbes ont la même clarté OKLab (0,58), un seuil sur la clarté ne déplace le centre que de 0,07 à 0,29 px ; un seuil sur la moyenne RGB, qui varie d'une courbe à l'autre, de 1,1 à 11,7 px. **Un effet de seuil prouve donc que la grandeur seuillée varie d'une courbe à l'autre** : dans l'image à 17 courbes, la clarté va de 0,60 à 0,71 (correction de la partie XXX, § 1.1). C'est la cause du balayage de la fiche 018.
   - La causalité « palette → centre » est donc établie par intervention, sur un système modèle. Pour l'image à 17 courbes elle-même, la palette reste inconnue.
 - **Le dossier grain nomme aussi les quatre variables cachées de l'image de référence** : le certificat, la mise en page, la palette et l'ordre de dessin. Son code de rendu n'est pas publié. C'est un trou de la chaîne de production des parties XXIX et XXX (§ 8).
 
@@ -124,10 +129,10 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 | [grain-pixels-centres](../dossiers/grain-pixels-centres.md) | que peut trancher un grain fini, et à quel taux s'échange-t-il ? | 7 → 11 | 5 → 6 |
 | [lumiere-et-physique](../dossiers/lumiere-et-physique.md) | quelles lois optiques suivent le même procédé que la chèvre et le Venn ? | 14 → 16 | 3 → 4 |
 | [aiguilles-kakeya-perron](../dossiers/aiguilles-kakeya-perron.md) | comment le grain plafonne-t-il Perron et Kakeya ? | 10 → 16 | 2 → 3 |
-| [ombres-cube-venn](../dossiers/ombres-cube-venn.md) | le cube {0, 1}ⁿ et ses ombres sont-ils le groupe commun ? | 10 → … | 8 → … |
-| [hasard-et-methode](../dossiers/hasard-et-methode.md) | quel test pour quelle observation, et où les chaînes de données ont-elles dérapé ? | 8 → … | 7 → … |
+| [ombres-cube-venn](../dossiers/ombres-cube-venn.md) | le cube {0, 1}ⁿ et ses ombres sont-ils le groupe commun ? | 10 → 11 | 8 → 7 |
+| [hasard-et-methode](../dossiers/hasard-et-methode.md) | quel test pour quelle observation, et où les chaînes de données ont-elles dérapé ? | 8 → 15 | 7 → 8 |
 
-*(À compléter quand les quatre derniers dossiers sont écrits.)*
+Aucun agent n'a retiré de partie ; un seul a retiré une fiche (ombres : la 010, qui relève de la moitié, pas du cube). Les raisons de chaque correction sont dans la [vérification croisée](verification-croisee-001.md), § 1.
 
 **Le nerf** (vérifié ; § 3 des résultats ; figure [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panneau a).
 - On met un sommet par dossier, une arête quand deux dossiers partagent une fiche, et un triangle quand trois en partagent une.
@@ -146,7 +151,13 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
   - **Tous passent par le grain.** Le corpus mesure le grain avec chacun de ces sujets, mais jamais avec deux à la fois. Par exemple, aucune partie ne teste le hasard sur une construction de Perron limitée par le grain.
 - **Avec les parties**, toutes les boucles se remplissent (b₁ = 0). Il reste b₂ = 5 cavités, comme pour des dossiers tirés au hasard (p = 0,71) : un effet de la taille des dossiers, pas une donnée.
 
-*(Le nerf v2, après les corrections des agents : à compléter.)*
+**Le nerf v2, après les corrections des huit agents** (vérifié ; figure, panneau a ; la lecture détaillée est au § 3 de la [vérification croisée](verification-croisee-001.md)).
+- **Les 4 trous du corpus de v1 sont refermés.** Les parties que les agents ont ajoutées donnent une partie commune à ces quatre triplets (XXIV à XXVII pour le grain, XIV et XXV pour méthode, XXIX et XXX pour aiguilles, XV et XVIII pour bases). C'étaient des trous de la lecture du plan, pas du corpus.
+- **Au niveau des fiches, 11 triangles vides**, autant que des dossiers de mêmes tailles tirés au hasard (10,1 en moyenne, p = 0,44). Tous sont des trous du recueil.
+- **Le dossier bases est dans 9 des 11, et dans les 10 tétraèdres creux.** Ses fiches touchent peu les autres dossiers (une seule fiche commune avec corde, grain, lumière ou moitiés, aucune avec aiguilles). C'est là que de nouvelles fiches compteraient le plus.
+- **Un trou ouvert par une correction.** En retirant la fiche 010, ombres ouvre le triangle corde · moitiés · ombres, que la 010 cachait. Il demande une fiche du cercle R/√2.
+- **Avec les parties**, plus aucun triangle vide (20 en v1) et une seule cavité, b₂ = 1 (p = 0,047 contre le nul). C'est un test parmi une dizaine, de justesse, et le nerf n'est pas la réunion (§ 6) : à surveiller, pas une découverte.
+- **Ce que le nerf apprend d'une révision à l'autre** : une correction d'agent referme des trous du corpus (on lit mieux le corpus) et en déplace vers le recueil (il manque des fiches). Le nerf dit donc où écrire les prochaines fiches.
 
 ## 5. La synthèse en Perron : les huit arbres
 
@@ -154,15 +165,15 @@ Figure : [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panne
 
 | arbre | triangle du bas | disque | ce que la révision change |
 |---|---|---|---|
-| P1 | l'ombre du cube {0, 1}ⁿ | D6 | Les trois 34 (aigrettes, ombre Σωⁱ, éventails) sont un seul fait : les N racines de l'unité et leurs opposées font les 2N racines d'ordre 2N quand N est impair (dossiers lumière et aiguilles, N = 3 à 20, (A)). C'est une section globale, à ajouter à l'arbre comme branche de la parité. *(dossier ombres : à compléter)* |
+| P1 | l'ombre du cube {0, 1}ⁿ | D6 | Les trois 34 (aigrettes, ombre Σωⁱ, éventails) sont un seul fait : les N racines de l'unité et leurs opposées font les 2N racines d'ordre 2N quand N est impair (dossiers lumière et aiguilles, N = 3 à 20, (A)). C'est une section globale, à ajouter à l'arbre comme branche de la parité. Le dossier ombres trouve huit regards sur le même cube, tous déjà écrits dans le corpus ; la fiche 015 y entre par une restriction (la fibre au-dessus de 0), pas par une ombre ; les périodes de Gauss du 17-gone sont des ombres Σωⁱ (calculé à 10⁻¹⁵, (A)) ; la branche Perron part de la partie V. « Groupe » est un mot trop fort : l'objet commun est le cube et ses projections ; le groupe géométrique est ℤ/n × ℤ/2 |
 | P2 | la moitié | D1 | Un seul cercle, R/√2, est fixé par trois gestes : le miroir d'aire, l'inversion des jumeaux et la dilatation d'un cran (dossier moitiés ; Archimède, II § 1). La branche « Kakeya fini » s'en détache : elle vient de Bonferroni (T5) |
 | P3 | le terme x²/6 | D1 | Même 1/6, pas le même ménisque : l'obstruction est à l'ordre 4 (T3). Le « dernier 2 » du ménisque compte les dérangements de 3 (vérifié, § 4.10) |
 | P4 | le quart de tour i modulo b | D2 | La famille q² + 1 et le lemme des chiffres (vérifiés) ; 7 × 13 = Φ₆(10) ; (ℤ/10)* est aussi un groupe de Galois, et le dernier chiffre d'un premier dit si le nombre d'or existe modulo p (dossier bases, (A)) |
 | P5 | le budget en bits | D3 | Le seuil des 13 courbes est la constante isopérimétrique (vérifié) ; la loi des 8R de la partie XVIII donne le budget de la moitié du Venn (dossier grain, (A)). K7 tient pour la pente, pas pour les valeurs : le « 2,8 » de Perron sur une grille culmine à 2,83 (n = 256) puis baisse à 2,57 (n = 65 536) (dossier aiguilles, (A)) |
 | P6 | les réduites et les trois distances | D2 | Le diésis et le comma sont deux écarts du même théorème des trois distances (dossier bases, (A)) ; les deux longueurs ne tombent pas seulement aux dénominateurs des réduites (corrigé). La demi-case (déterminant ±1, aire ½, Pick) est un seul procédé pour Fibonacci, Pell, Farey et l'hexagone ; l'or et l'argent sont les deux premiers points du spectre de Markov (dossier aiguilles) |
-| P7 | la loi de l'écart | D7 | Elle tranche 10 tests de cette révision ; elle a sa réserve : la dérive qui croise une constante (4.2, 4.9) |
+| P7 | la loi de l'écart | D7 | Elle tranche 10 tests de cette révision ; elle a sa réserve : la dérive qui croise une constante (4.2, 4.9 ; et la part des triangles, 35,95 puis 35,76 puis 35,12 % à 17, 19 et 23 courbes, qui passe par les 35,10 % de la fiche 004). Le dossier méthode en relit la lignée : la variation du paramètre date de la partie VI, le banc de la partie XXX l'a mise en tableau, et une partie de son « 10/10 » est posée à la main |
 | P8 | le cône à sommet imaginaire | D8 | La branche « photocentre » s'en détache (dossier lumière) : le photocentre n'a ni col ni distance de Rayleigh. La forme de Newton x·x′ = c revient cinq fois : lentille, œil de poisson, jumeaux de la chèvre, fantômes des pixels, complément du Venn (dossier lumière) |
-| P9 (nouveau) | le barycentre pesé (le dipôle H₁ des poids) | D8 contre D3 | Les étoiles doubles (Wielen), la molécule HD et le Venn : le centre de la lumière est le premier harmonique des poids, et le seuil en est un second canal (fiches 006 et 018 ; dossier lumière). Établi par une intervention sur un Venn à 13 courbes de palette connue, sans paramètre libre (dossier méthode, (A)) |
+| P9 (nouveau) | le barycentre pesé (le dipôle H₁ des poids) | D8 contre D3 | Les étoiles doubles (Wielen), la molécule HD et le Venn : le centre de la lumière est le premier harmonique des poids, et le seuil en est un second canal (fiches 006 et 018 ; dossier lumière). Établi par une intervention sur un Venn à 13 courbes de palette connue, sans paramètre libre (dossier méthode ; vérifié, § 4.12) |
 
 ## 6. L'étude cohomologique : ce qui se recolle, et ce qui ne se recolle pas
 
@@ -174,8 +185,8 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 | K2 | les trois 34 : aigrettes, ombre Σωⁱ, éventails | **section globale** : vérifiée pour N = 3 à 20 par deux dossiers (lumière, aiguilles, (A)) ; la réserve de la phase pour une ouverture complexe est dans le dossier lumière, § 5.1 |
 | K3 | 1/7, les racines digitales de 2ⁿ, i modulo 10 | **se recolle** par la famille q² + 1 et le lemme des chiffres (vérifiés) |
 | K4 | les moitiés | l'involution et la dilatation se recollent en R/√2 ; **Kakeya fini fait obstruction** (vérifié) |
-| K5 | le 17 de Henderson et le 17 de i | **obstruction** : 19 et 23 ont des Venn et pas de i |
-| K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain). **Sur un Venn à 13 courbes de palette connue, la loi G·H₁ prédit l'écart sans paramètre libre, et l'ordre de dessin ne compte pas** (dossier méthode, intervention, (A)). Pour l'image à 17 courbes, la palette reste inconnue |
+| K5 | le 17 de Henderson et le 17 de i | **obstruction** pour une transformation (19 et 23 ont des Venn et pas de i), mais **une implication nouvelle** (dossier ombres, démontrée sous l'hypothèse forte, (A)) : si i existe modulo n, aucun Venn simple et symétrique n'a le complément pour symétrie. Un tel Venn serait antipodal ; dans le plan projectif, deux courbes unilatères se coupent un nombre impair de fois, donc C(n, 2) doit être impair, n ≡ 2 ou 3 (mod 4). Impossible à 17 (4² ≡ −1) ; à 19 et 23, ni exclu ni construit |
+| K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain). **Sur un Venn à 13 courbes de palette connue, la loi G·H₁ prédit l'écart sans paramètre libre, et l'ordre de dessin ne compte pas** (dossier méthode ; vérifié, § 4.12). Pour l'image à 17 courbes, la palette reste inconnue |
 | K7 | le grain plafonne la profondeur | se recolle modulo un cran **pour la pente**, pas pour les valeurs (le « 2,8 » n'est pas une constante, dossier aiguilles) ; la cause commune du logarithme reste ouverte |
 | K8 | les trois 4/3 | **obstruction** : une coïncidence de petits entiers (vérifié) |
 | K9 | Midy, pair et impair | se recolle en une tour binaire (1/3, 1/3, 1/6, 1/12, vérifié), **à aires inégales**. Le dossier bases ajoute l'enchevêtrement par la réciprocité quadratique (A). Le dossier méthode précise : la division par deux est la queue géométrique de toute valuation 2-adique ; c'est la forme d'un arbre de Perron, pas sa loi 2/(k + 2) |
@@ -186,6 +197,10 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 - La chèvre n'atteint √2 qu'à l'infini, alors que les réseaux records (D₃, E₈, Leech) ont leur trou le plus profond à √2 fois le rayon en dimension 3, 8 et 24. Aucun lien démontré (dossier corde).
 - La fiche 005 : « miroir + complément » arrive en tête dans les 18 certificats, à 1,5 à 2,3 fois le hasard, mais aucun certificat n'est symétrique par le complément. Cause inconnue (dossier moitiés, (A)).
 - Le logarithme de K7 vient d'une troncature pour la série de la chèvre, et d'un grain fini pour Perron, le Venn et les pixels : deux causes pour une même loi (dossier grain).
+- Le nerf n'est pas la réunion (dossier ombres, (A)). Le théorème du nerf demande des intersections contractiles : c'est vrai des calottes des chèvres (partie XX), pas des dossiers. Dans le graphe des renvois de la partie XXVII, 6 intersections sur 81 ne le sont pas en v1 (36 sur 166 en v2), et les nombres de Betti du nerf diffèrent de ceux de la réunion. Les triangles vides restent des pistes ; les cavités sont des propriétés du classement, pas du corpus.
+- L'étiquette « structure » ou « hasard » n'est pas une fonction de l'écart (dossier méthode) : rangés par écart, les six cas non triviaux du banc alternent S C S S S C. Aucun test qui ne regarde que l'écart ne peut les séparer.
+
+**Un recollement nouveau** (dossier ombres, (A)) : la face que choisit a modulo 3 dans la fiche 015 et la limite 2 de la dérive de la fiche 021 sont le même nombre 3. C'est le seul premier impair, étranger à 10, qui divise une différence de deux chiffres des unités (6 = 7 − 1 = 9 − 3) : il interdit deux coordonnées à la fois, et c'est lui qui donne le facteur 2 de Hardy et Littlewood pour l'écart 6. La roue modulo 30 dessine les trois faces.
 
 ## 7. Les nouveaux tests de la révision, et leurs verdicts
 
@@ -204,6 +219,7 @@ Presque chaque test fait varier un paramètre, comme le demande le choix du test
 | 4.8 et 4.9, K6 | le seuil du masque (sans seuil, puis 0,001 à 0,40) | pas d'ordre de dessin ni de repli signé ; le centre glisse de 0,044 à 27 px ; la moitié reste à 49,3–49,7 % | la couleur déplace le centre par le poids et par le seuil (fiche 018) |
 | 4.10 | six énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108, loi de l'écart des presque-entiers de Heegner, critère du centre de la fiche 011 : vérifiés | ils peuvent être cités sans (A) |
 | 4.11 | le score du modèle de défocalisation contre un prédicteur constant | 71 rayons sur 76 contre 70 | le « 93 % » de la partie XXX est le taux de base (dossier lumière) |
+| 4.12 | la palette, puis l'ordre de dessin, d'un Venn à 13 courbes repeint ; le seuil sur son PNG | G·H₁ prédit l'écart sans paramètre libre ; l'ordre ne compte presque pas ; un seuil n'agit que sur une grandeur qui varie d'une courbe à l'autre | la cause du centre de la lumière est établie par une intervention (dossier méthode) |
 | T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal, ni en v1 ni en v2 (ρ = +0,090, p = 0,23). Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
 
 ## 8. Les erreurs trouvées dans les chaînes de production
@@ -250,6 +266,9 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 - *Partie VI, § 3 bis, et figure f2 (panneau b).* « δ₂ ≈ δ₃ : c'est le hasard ». Le calcul qui juge la fiche 002 donne ici 1,7·10⁻⁴ pour une racine tirée au hasard (de l'ordre de 10⁻³ avec la marge d'essais), contre 0,61 pour la fiche 002. Le statut juste est « ouvert » (dossiers méthode et corde).
 - *Partie XXIX, § 5.5.* « ppm » y désigne la valeur absolue du logarithme du rapport ; ailleurs, c'est l'écart relatif (2 852 contre 2 856 pour la fiche 003) (dossier méthode).
 - *Partie XXVII, § 1.3.* Le prédicteur d'Adamic–Adar n'est validé que par les liens qu'il a fait chercher : 4 des 11 liens établis sont dans ses 15 premiers rangs, que l'auteur a cherchés d'abord. Sans eux, les 7 autres ne font pas mieux que le hasard (p = 0,28) (dossier méthode, (A)).
+- *Partie XXIX, § 5.3.* « Épaisseur constante » du gel repose sur une ligne par taille, et « pas de cercle arctique macroscopique » compare un poids binomial à une aire : la couche gelée est mince en poids et en dessin, pas en rangs (20 à 33 % des rangs) (dossier ombres).
+- *Partie XXIX, § 2.2.* « La texture ne dépend presque pas de n » vaut de 11 à 19 courbes ; à 23, les cinq comptes publiés (35,01 à 35,18 % de triangles) sont sous toutes les valeurs à 17 et 19 (dossier ombres).
+- *Partie XXX, § 3 et § 9.* Un Venn simple à 17 courbes, symétrique et symétrique par le complément, n'existe pas au sens fort (l'obstruction de parité, § 6) ; à 19 courbes, la question reste entière (dossier ombres).
 - *Le facteur d'essais de Bonferroni* (1 240, parties XXIX et XXX) compte les comparaisons faites, pas les formules possibles (VI § 4 : 10 × 1 000 × 12 par grandeur). C'est un choix de cadre, à écrire (dossier méthode).
 
 ## 9. Les trous dans les données publiées, et où chercher
@@ -267,6 +286,8 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 | les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique (la partie V l'avait trouvé en nombres, 0,3981 ; minimum local, pas prouvé global) | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
 | le déplacement induit par la couleur | le centre de N sources colorées en symétrie d'ordre N dépend du poids et du seuil | les catalogues à source unique rangent ce déplacement dans le bruit ou dans le point zéro (à tester) | les solutions astrométriques de Gaia pour les étoiles non résolues |
 | un banc d'essai à vérités indépendantes | les presque-entiers de Heegner suivent la loi de l'écart −196 884·e^(−π√d) (rapport 0,9999 à 1 pour d = 19, 43, 67, 163, vérifié) ; e^π − π ≈ 20 (4,5·10⁻⁵) et π⁴ + π⁵ ≈ e⁶ (4,4·10⁻⁸) n'ont pas de mécanisme connu | pas de liste publique de relations de nature démontrée et de presque-entiers sans mécanisme, pour juger les tests eux-mêmes (dossier méthode) | Cox, *Primes of the Form x² + ny²* (1989) ; Diaconis et Mosteller (1989) |
+| un Venn antipodal | la parité exclut à 17 courbes un Venn simple dont le complément est une symétrie ; elle ne l'exclut pas à 19 et 23 | ni connu ni cherché : aucun texte du dépôt de Dzoba n'en parle ; la notion voisine de Venn « à symétrie polaire » est à lire | Ruskey et Weston, *A survey of Venn diagrams* (DS5) ; Grünbaum (1975) ; Henderson (1963) |
+| les certificats à 23 courbes | la part des triangles dérive (35,95 ; 35,76 ; 35,12 %) ; le premier rang non monotone vaut 2 ou 3 de 11 à 19 courbes | publiés (six fois 889 Mo) mais lus nulle part : k₁, les croisements par niveau, l'histogramme des degrés ; les droites au hasard donnent 2 − π²/6 = 35,51 % de triangles (Miles, à vérifier) | l'archive Zenodo du dépôt de Dzoba ; Miles (1964) |
 | les tests de coïncidences | la loi de l'écart tranche ce que les tests à tolérance déclarent « hasard » | on corrige pour le nombre d'essais, on fait rarement varier le paramètre (à vérifier sur quelques analyses publiées) | Gross et Vitells (2010) ; Gelman et Loken (2014) |
 
 **Le cadre qui conceptualise ces liens** (plan, § 6.3) :
@@ -285,7 +306,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
   - 019 : la moitié de Kakeya fini vient de Bonferroni ;
   - 020 : le seuil des 13 courbes est isopérimétrique ;
   - 021 : les dizaines de premiers croisent π puis 2√2.
-- **Les fiches proposées par les dossiers** : une quarantaine, chacune avec son type, son script et sa section. Elles restent dans les dossiers (§ 6.1 de chacun). On les écrira quand une partie les reprendra, pour ne pas remplir la pile sans les vérifier. Les plus fortes :
+- **Les fiches proposées par les dossiers** : 64, chacune avec son type, son script et sa section ; elles sont classées par dimension dans la vérification croisée (§ 7). Elles restent dans les dossiers (§ 6.1 de chacun). On les écrira quand une partie les reprendra, pour ne pas remplir la pile sans les vérifier. Les plus fortes :
   - les dérangements du ménisque (corde) ;
   - la chèvre plane dans la série de la chèvre infinie (corde) ;
   - les trois gestes qui fixent R/√2 (moitiés) ;
@@ -297,6 +318,13 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
   - Kakeya lit les chiffres du grain : 1/aire gagne entre 1,057 et 1,466 par décade (aiguilles) ;
   - la forme de Newton x·x′ = c, cinq fois (lumière) ;
   - le ppm d'un passage par 1 est uniforme : les 845 ppm de la fiche 002 sont au rang 0,6 (lumière).
+  - pas de Venn antipodal à 17 courbes : l'obstruction de parité (ombres) ;
+  - la face de la fiche 015 est une fibre, et 3 est le seul premier qui coupe deux coordonnées (ombres) ;
+  - les périodes de Gauss du 17-gone sont des ombres Σωⁱ (ombres) ;
+  - le nerf ne lit l'espace que si les intersections sont contractiles (ombres) ;
+  - le banc d'essai : six cas non triviaux, et un « 10/10 » en partie posé à la main (méthode) ;
+  - le nombre de liens apparents dépend du classement, de 0 à 21 (méthode) ;
+  - l'intervention sur un Venn à 13 courbes de palette connue (méthode).
 
 ## Le tri
 
@@ -313,28 +341,32 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - La dérive des dizaines (10⁴ à 10⁸) et le rapport 2 des paires larges.
 - La tour 2-adique des périodes.
 - Le balayage du seuil, la moitié robuste et le test de l'ordre de dessin.
-- Le nerf v1, ses triangles vides et son nul.
+- Le nerf v1 et le nerf v2, leurs triangles vides et leur nul (reproductible : le nul trie ses éléments avant de les mélanger).
 - Le « 93 % » de la partie XXX contre un prédicteur constant : 71 rayons sur 76 contre 70.
 
 **Analogie de structure (même procédé), donc un résultat**
 - La diagonale √2 des révisions et la corde √2 de la chèvre (Thalès).
 - La moitié de Kakeya fini et la correction de Bonferroni de la fiche 012 : tronquer l'inclusion–exclusion.
 - Le seuil du centre du Venn et le polygone circonscrit de la fiche 003 : la constante isopérimétrique.
-- Le photocentre des étoiles doubles et le centre de la lumière du Venn : le même barycentre pesé, G·H₁(poids). Il est confirmé sans paramètre libre sur un Venn à 13 courbes de palette connue (dossier méthode, (A)).
+- Le photocentre des étoiles doubles et le centre de la lumière du Venn : le même barycentre pesé, G·H₁(poids). Il est confirmé sans paramètre libre sur un Venn à 13 courbes de palette connue (dossier méthode ; vérifié, § 4.12).
+- La face de la fiche 015 et la limite 2 de la fiche 021 : le même premier 3, qui divise 6 = 7 − 1 = 9 − 3 (dossier ombres, (A)).
+- Les périodes de Gauss du 17-gone et l'ombre Σωⁱ du cube : la conjugaison de Galois agit sur les ombres (dossier ombres, (A)).
 - Midy et un arbre de Perron : ce qui est partagé exactement, c'est la division binaire à chaque étage. Rien de plus ne se transporte : la loi de Perron, 2/(k + 2), n'a pas d'équivalent dans la tour, dont la queue géométrique est celle de toute valuation 2-adique (dossier méthode). Ouvert : ta lecture en Venn ascendant et descendant.
 
 **Mes lectures (corrige-moi si je t'ai mal compris)**
 - Mesurer « la diagonale √2 qui s'affirme » par le simplexe centré et par l'arête de la classification naïve. C'est une définition que je propose ; elle colle à ta phrase, mais tu avais peut-être autre chose en tête.
-- Lire « l'étude cohomologique de congruences » comme le nerf du recouvrement par les dossiers, avec ses triangles vides comme trous.
+- Lire « l'étude cohomologique de congruences » comme le nerf du recouvrement par les dossiers, avec ses triangles vides comme trous. Le dossier ombres en fixe la limite : sans intersections contractiles, le nerf décrit le classement, pas la forme du corpus.
 - Placer chaque arbre « en Perron » dans un disque précis (figure, panneau b) : le placement est fait à la main.
 
 **Ouvert**
-- Le nerf v2 et les quatre derniers dossiers *(à compléter)*.
+- La cavité du nerf v2 avec les parties (b₂ = 1, p = 0,047) : à revoir à la révision 002, avec un classement fixé avant le calcul.
 - T8 en v2, et le test prospectif du prédicteur de la partie XXVII : geler son classement et compter, aux révisions suivantes, les liens établis dans ses premiers rangs (dossier méthode).
 - La cause de la fiche 005.
 - La palette réelle de l'image à 17 courbes. L'intervention est faite sur un système modèle (le Venn à 13 courbes du traceur, dossier méthode) ; sur l'image elle-même, il faudrait le code de rendu de Dzoba.
 - Un banc d'essai à vérités indépendantes, avec plus de cas négatifs.
-- δ₂ ≈ δ₃.
+- δ₂ ≈ δ₃ (1,7·10⁻⁴ pour une racine au hasard : ouvert, pas « hasard »).
+- Un Venn antipodal à 19 ou 23 courbes.
+- Le premier rang non monotone à 23 courbes : 2 ou 3 si l'épaisseur du gel est constante, 4 si elle croît avec n.
 - La cause commune du logarithme (K7).
 - Le lien entre la chèvre et les réseaux records.
 
@@ -360,3 +392,9 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - G. Carlsson, « Topology and data », *Bull. AMS* 46, 255–308 (2009).
 - N. J. Gotelli, « Null model analysis of species co-occurrence patterns », *Ecology* 81, 2606–2621 (2000) ; G. Strona et al., la méthode « curveball », *Nature Communications* 5, 4114 (2014) (à vérifier).
 - H. Reichenbach, *The Direction of Time*, University of California Press (1956) ; J. Pearl, *Causality*, 2e éd., Cambridge University Press (2009).
+- A. Gelman, E. Loken, « The statistical crisis in science », *American Scientist* 102, 460–465 (2014) : le jardin des chemins qui bifurquent.
+- P. Diaconis, F. Mosteller, « Methods for studying coincidences », *J. Amer. Statist. Assoc.* 84, 853–861 (1989) ; D. A. Cox, *Primes of the Form x² + ny²*, Wiley (1989).
+- L. A. Adamic, E. Adar, « Friends and neighbors on the Web », *Social Networks* 25, 211–230 (2003).
+- K. Borsuk, « On the imbedding of systems of compacta in simplicial complexes », *Fund. Math.* 35, 217–234 (1948) ; A. Hatcher, *Algebraic Topology*, Cambridge University Press (2002), corollaire 4G.3 : le théorème du nerf.
+- D. W. Henderson, « Venn diagrams for more than four classes », *Amer. Math. Monthly* 70, 424–426 (1963) ; F. Ruskey, M. Weston, « A survey of Venn diagrams », *Electron. J. Combin.*, Dynamic Survey DS5.
+- R. E. Miles, « Random polygons determined by random lines in a plane », *PNAS* 52, 901–907 (1964) (à vérifier).
