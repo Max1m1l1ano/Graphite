@@ -3,7 +3,7 @@
 | champ | valeur |
 |---|---|
 | type | Fait amusant ; Coïncidence |
-| statut | exact pour 7 ; la variation échoue pour 13 (l'autre période 6) : propre à 7, mécanisme à trouver |
+| statut | exact pour 7, et propre à la base 10 ; la variation échoue pour 13 (l'autre période 6). Mécanisme trouvé à la révision 001 : la famille q² + 1 et le lemme des chiffres, vérifié jusqu'à q = 30 |
 | partie | recueil |
 | document | [resultats/recueil_verifications.md](../../resultats/recueil_verifications.md), § 4 |
 | script | [`scripts/recueil_verifications.py`](../../scripts/recueil_verifications.py), section 4 |

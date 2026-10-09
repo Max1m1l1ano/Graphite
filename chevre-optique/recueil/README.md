@@ -62,3 +62,7 @@ C'est le premier de ces trois signaux qui compte. `python3 scripts/recueil_index
 ## La diagonale √2
 
 L'index suit aussi, à chaque passage, la forme du Venn des dimensions. On range chaque fiche sur sa dimension principale, puis on retire la fiche moyenne : on obtient un simplexe. À parts égales, son arête vaut √(2K/(K − 1)) pour K dimensions, et elle rejoint √2 quand K grandit, comme la corde de la chèvre de dimension infinie (révision 001, § 2). À parts inégales, deux dimensions rares paraissent liées sans rien partager : l'index les signale. C'est le « partage équitable des aires » qui l'empêche.
+
+Deux limites ([bilan de la révision 001](revisions/bilan-001.md), § 5 ; fiche 023) :
+- le lien avec la chèvre est un dictionnaire : K est défini par l'égalité des deux cordes ;
+- avec huit dimensions, l'arête ne descend pas sous 1,512, à 6,9 % de √2. La diagonale ne s'affirme que si les dimensions se divisent.

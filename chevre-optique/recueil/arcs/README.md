@@ -11,7 +11,7 @@ Un **arc réponse** va d'un message de l'auteur à la réponse finale. Chaque me
 `arc, ordre, horodatage, message, script, entree, sortie, type_sortie, partie, dimension, observation, commit`
 
 - `ordre` : rang chronologique dans l'arc (1, 2, 3…).
-- `type_sortie` : `resultats`, `figure`, `document`, `fiche`, `config` (CLAUDE.md, README) ou `donnees_externes`.
+- `type_sortie` : `resultats`, `figure`, `document`, `fiche`, `config` (CLAUDE.md, README), `donnees_externes` ou `script` (un script ou un outil ajouté, depuis l'arc 002).
 - `observation` : le numéro de fiche du recueil, s'il y en a une.
 
 ## Gabarit de la demande à l'agent Sonnet

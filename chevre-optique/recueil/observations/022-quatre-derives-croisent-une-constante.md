@@ -22,7 +22,7 @@ L'auteur a demandé un bilan de la révision 001, et de regarder ce qu'elle rapp
 
 - **Fiche 021.** Le rapport des dizaines de premiers vaut 3,1448 à 10⁵ (π à 0,10 %), puis 2,8321 à 10⁶ (2√2 à 0,13 %), puis 2,63 et 2,53 : il dérive vers 2.
 - **Fiche 018.** Le centre du masque binaire est à 0,71 px du centre de symétrie au seuil t = 0,05 (√2/2 à 1 %), puis il continue jusqu'à 27,4 px.
-- **Fiche 004.** La part des triangles vaut 35,95 %, puis 35,76 %, puis 35,12 % à 17, 19 et 23 courbes. Elle passe par les 35,0959 % de l'octaèdre vers 23 courbes (dossier ombres).
+- **Fiche 004.** La part des triangles vaut 35,95 %, puis 35,76 %, puis 35,12 % à 17, 19 et 23 courbes, en moyenne sur 4, 12 et 5 certificats (dossier ombres ; pour un seul certificat par n, la fiche 004 donne 35,8 et 35,7 %). Elle passe par les 35,0959 % de l'octaèdre vers 23 courbes.
 - **Fiche 002.** (128/125) × la lumière du N-gone ne vaut 1 qu'en N = 16,70, tout près de 17 : un passage, sans loi.
 
 À une seule valeur du paramètre, chacune ressemble à une découverte au niveau du ppm. Dès qu'on fait varier le paramètre, c'est une dérive qui traverse la constante.

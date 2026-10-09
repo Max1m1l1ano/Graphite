@@ -2,8 +2,8 @@
 
 Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `observations/`. Le protocole est dans [CLAUDE.md, § 10](../CLAUDE.md) et [`README.md`](README.md).
 
-- Fiches : 23, dont 8 non révisées. Arcs réponses : 1 (0 depuis la dernière révision). Révisions : 1.
-- État : pas de révision due (8 fiches non révisées, 0 arcs depuis la dernière révision).
+- Fiches : 23, dont 8 non révisées. Arcs réponses : 2 (1 depuis la dernière révision). Révisions : 1.
+- État : pas de révision due (8 fiches non révisées, 1 arcs depuis la dernière révision).
 - La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 4,85, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 15.
 
 | n° | observation | type | statut | partie | script | image | dimension | révisé |
@@ -20,7 +20,7 @@ Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `obs
 | 010 | [La chèvre d'Ullisch broute 39,34 % du cercle du bord](observations/010-ullisch-39-34-pourcent-de-chaque-anneau.md) | Fait amusant | exact | XXX | scripts/centre_venn.py | ae2_diaphragmes_diffraction.png | D1 la chèvre et les cordes | 001 (2026-10-09) |
 | 011 | [À 2 000 px et 2 px par croisement, le centre du Venn à 19 courbes est à la limite](observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md) | Fait amusant ; Corrélation | calculé | XXX | scripts/centre_venn.py | ae3_grains_hasard.png | D3 grain, pixels et précision | 001 (2026-10-09) |
 | 012 | [Les tests à tolérance déclarent « hasard » des liens de structure](observations/012-tests-a-tolerance-et-liens-de-structure.md) | Hasard ; Corrélation ; Causalité | calculé | XXX | scripts/centre_venn.py | ae3_grains_hasard.png | D7 hasard et méthode | 001 (2026-10-09) |
-| 013 | [Les racines digitales de 2ⁿ et 5ⁿ parcourent les chiffres de la période de 1/7](observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md) | Fait amusant ; Coïncidence | exact pour 7 ; la variation échoue pour 13 | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |
+| 013 | [Les racines digitales de 2ⁿ et 5ⁿ parcourent les chiffres de la période de 1/7](observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md) | Fait amusant ; Coïncidence | exact pour 7, et propre à la base 10 ; la variation échoue pour 13 | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |
 | 014 | [Les fractions continues imaginaires : multiplier par i alterne ±i à chaque étage](observations/014-fractions-continues-imaginaires.md) | Fait amusant ; Analogie | exact | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |
 | 015 | [Les dizaines de premiers forment un Venn à 4 ensembles, et le reste modulo 3 choisit la face du cube](observations/015-dizaines-de-premiers-cube-et-reste-modulo-3.md) | Analogie ; Fait amusant ; Corrélation | exact | recueil | scripts/recueil_verifications.py | — | D2 bases, chiffres et congruences | 001 (2026-10-09) |
 | 016 | [La classification naïve est un simplexe : sa diagonale et la corde de la chèvre font un angle droit (Thalès)](observations/016-classification-naive-simplexe-thales.md) | Analogie ; Corrélation | exact | révision 001 (parties XX et XXIV) | scripts/revision_001.py | rev001_diagonale_cadre.png | D1 la chèvre et les cordes | non |

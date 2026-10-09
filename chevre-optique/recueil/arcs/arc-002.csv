@@ -1,0 +1,26 @@
+arc,ordre,horodatage,message,script,entree,sortie,type_sortie,partie,dimension,observation,commit
+002,1,2026-10-09T20:49:36+00:00,1,scripts/revision_001.py; scripts/venn_ppm.py; scripts/centre_venn.py,resultats/revision_001.md; resultats/venn_ppm.md; resultats/centre_venn.md,recueil/observations/022-quatre-derives-croisent-une-constante.md,fiche,révision 001 (bilan),D7,022,b7505b5
+002,2,2026-10-09T20:49:36+00:00,1,scripts/revision_001.py; scripts/centre_venn.py,resultats/revision_001.md; resultats/centre_venn.md; recueil/dossiers/ombres-cube-venn.md,recueil/observations/023-quatre-liens-vrais-par-construction.md,fiche,révision 001 (parties XXIV et XXX),D7,023,b7505b5
+002,3,2026-10-09T20:49:36+00:00,1,scripts/revision_001.py,recueil/observations/023-quatre-liens-vrais-par-construction.md; resultats/revision_001.md,recueil/observations/016-classification-naive-simplexe-thales.md,fiche,révision 001 (parties XX et XXIV),D1,016,b7505b5
+002,4,2026-10-09T20:49:36+00:00,1,,recueil/observations/023-quatre-liens-vrais-par-construction.md; recueil/revisions/bilan-001.md,recueil/revisions/revision-001.md,document,révision 001,D7,023,b7505b5
+002,5,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/verif/v2.py,recueil/revisions/outils-001/v2.py,script,révision 001,D7,,b7505b5
+002,6,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/verif/croisee.py,recueil/revisions/outils-001/croisee.py,script,révision 001,D7,,b7505b5
+002,7,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/verif/maj_fiches.py,recueil/revisions/outils-001/maj_fiches.py,script,révision 001,D7,,b7505b5
+002,8,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/verif/fiches_par_dimension.py,recueil/revisions/outils-001/fiches_par_dimension.py,script,révision 001,D7,,b7505b5
+002,9,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/verif/sorties.py,recueil/revisions/outils-001/sorties.py,script,révision 001,D7,,b7505b5
+002,10,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/workflow/extraire.py,recueil/revisions/outils-001/extraire.py,script,révision 001,D7,,b7505b5
+002,11,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/workflow/revision_001.workflow.js,recueil/revisions/outils-001/workflow-1-revision_001.js,script,révision 001,D7,,b7505b5
+002,12,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/workflow/revision-001-recueil-reprise.js,recueil/revisions/outils-001/workflow-1b-recueil-reprise.js,script,révision 001,D7,,b7505b5
+002,13,2026-10-09T20:49:36+00:00,1,,ext:workflows/scripts/revision-001-dossiers-reprise-wf_1e8e90b9-8b7.js,recueil/revisions/outils-001/workflow-2-dossiers-reprise.js,script,révision 001,D7,,b7505b5
+002,14,2026-10-09T20:49:36+00:00,1,,ext:workflows/scripts/revision-001-ombres-methode-wf_71f4fcca-e1e.js,recueil/revisions/outils-001/workflow-3-ombres-methode.js,script,révision 001,D7,,b7505b5
+002,15,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/revision-001/workflow/schemas.json,recueil/revisions/outils-001/schemas.json,config,révision 001,D7,,b7505b5
+002,16,2026-10-09T20:49:36+00:00,1,,ext:scratchpad/bilan/stats_agents.py,recueil/revisions/outils-001/stats_agents.py,script,révision 001,D7,,b7505b5
+002,17,2026-10-09T20:49:36+00:00,1,,recueil/revisions/outils-001/; recueil/revisions/sorties-agents-001.json; recueil/revisions/verification-croisee-001.md,recueil/revisions/outils-001/README.md,document,révision 001,D7,,b7505b5
+002,18,2026-10-09T20:49:36+00:00,1,recueil/revisions/outils-001/stats_agents.py; scripts/revision_001.py,ext:transcriptions/subagents/*.jsonl; recueil/revisions/sorties-agents-001.json; resultats/revision_001.md; recueil/revisions/revision-001.md; recueil/revisions/verification-croisee-001.md; recueil/revisions/plan-001.md; recueil/dossiers/*.md; recueil/arcs/arc-001.md; msg:1,recueil/revisions/bilan-001.md,document,révision 001,D7,022;023,b7505b5
+002,19,2026-10-09T20:49:36+00:00,1,,recueil/revisions/bilan-001.md,README.md,config,recueil,D7,,b7505b5
+002,20,2026-10-09T20:49:36+00:00,1,,recueil/revisions/bilan-001.md; recueil/observations/023-quatre-liens-vrais-par-construction.md,CLAUDE.md,config,recueil,D7,023,b7505b5
+002,21,2026-10-09T20:49:36+00:00,1,scripts/recueil_index.py,recueil/observations/,recueil/index.csv,resultats,recueil,D7,,b7505b5
+002,22,2026-10-09T20:49:36+00:00,1,scripts/recueil_index.py,recueil/observations/,recueil/index.md,document,recueil,D7,,b7505b5
+002,23,2026-10-09T20:49:36+00:00,1,,recueil/revisions/bilan-001.md; recueil/revisions/outils-001/,recueil/README.md,config,recueil,D7,,b7505b5
+002,24,2026-10-09T20:52:35+00:00,1,,recueil/revisions/sorties-agents-001.json; recueil/dossiers/bases-congruences-premiers.md,recueil/revisions/bilan-001.md,document,révision 001,D7,,dea3a10
+002,25,2026-10-09T20:52:35+00:00,1,,recueil/revisions/bilan-001.md,README.md,config,recueil,D7,,dea3a10

@@ -9,7 +9,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 ## En bref
 
 - **L'exercice a marché, mais il coûte cher et il est fragile** (§ 1 et 2).
-  - Il a produit 8 dossiers, 12 corrections du corpus, 26 erreurs signalées, 12 tests nouveaux, 8 fiches et une intervention qui établit une cause.
+  - Il a produit 8 dossiers, 12 corrections du corpus, 26 erreurs signalées, 12 tests nouveaux, 6 fiches (8 avec ce bilan) et une intervention qui établit une cause.
   - Il a demandé 15 h d'agents, 49 h de calendrier (dont 40 h d'attente) et 1,4 Mo de texte, 1,7 fois le corpus qu'il révise.
 - **Ce qui vaut le plus, ce sont les corrections et les tests** (§ 3).
   - Les résultats neufs portent sur la chaîne de production du corpus : le seuil, la palette, le banc d'essai, le « 93 % ». C'est ton sujet d'étude, la restriction du cadre.
@@ -99,7 +99,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
    - Elle a été faite par un générateur, maintenant archivé (`outils-001/croisee.py`).
    - Elle a trouvé 6 confirmations, 3 désaccords et les 7 erreurs du plan.
    - La moitié de ce travail est mécanique (le v2, les doublons, le classement des fiches) : un script peut la faire.
-5. **La synthèse (moi).** Elle est complète, avec une étiquette par énoncé : 29 « (A) », 27 « vérifié », 16 « à vérifier ». Mais elle fait 57 Ko, elle répète les dossiers, et j'y ai fait cinq excès, corrigés depuis :
+5. **La synthèse (moi).** Elle est complète, avec une étiquette par énoncé : 29 « (A) », 27 « vérifié », 16 « à vérifier » (17 depuis ce bilan). Mais elle fait 57 Ko, elle répète les dossiers, et j'y ai fait cinq excès, corrigés depuis :
    - « la diagonale démontrée » est devenu « mise en équation » ;
    - « Midy est un arbre de Perron » est devenu « la forme binaire, pas la loi » ;
    - « chaque test fait varier un paramètre » est devenu « presque chaque » ;
@@ -116,7 +116,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 
 **A. Nouveau et vérifié : le cœur.**
 - Un seuil ne déplace le centre que si la grandeur seuillée varie d'une courbe à l'autre (fiche 018).
-- Le photocentre G·H₁ des poids prédit le déplacement sans paramètre libre : 2,08 px prédits, 2,05 à 2,20 observés sur le Venn à 13 courbes repeint (§ 4.12).
+- Le photocentre G·H₁ des poids prédit le déplacement sans paramètre libre, sur le Venn à 13 courbes repeint : 2,08 px prédits et 2,20 observés en moyenne RGB par le script de la révision (§ 4.12). Le dossier méthode trouve 2,05 à 2,20 selon le rendu.
 - Le « 93 % » de la partie XXX est le taux de base : 71 rayons sur 76, contre 70 pour un prédicteur constant.
 - Le banc d'essai de la partie XXX est en partie construit : trois verdicts y sont écrits à la main.
 - L'aire 43/108 de l'arbre de Perron optimal à 8 branches : la partie V l'avait en nombres, la révision en donne les fractions.
@@ -189,7 +189,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 ## 5. Les hasards et les coïncidences
 
 - **Le tri des coïncidences.** Cinq avaient été testées avant ce bilan.
-  - Deux sont devenues une structure : les fiches 003 et 013.
+  - Deux ont trouvé leur structure : la 003, par une loi de l'écart, et la 013, exacte et expliquée par la famille q² + 1.
   - Trois sont devenues un hasard testé : les fiches 002, 004 et 021.
 
   Un hasard testé est un résultat : il dit que la grandeur dérive.
@@ -233,10 +233,14 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 - Relire mes En bref avant de les publier, verbe par verbe : démontré, établi, toujours, jamais. Mes cinq excès y seraient sans doute tombés.
 - Aucun énoncé (A) dans un En bref.
 - Garder mes questions pour toi dans une liste, et te les poser avant la révision suivante.
+- *Une limite constatée* : ce bilan n'a fait que trois commits, dont le premier regroupait presque tout, après une compaction. La règle n'est pas encore une habitude.
 
 **L'agent de fin d'arc.**
 - Un script déduit le CSV de git à chaque arc.
 - Le récit Sonnet, de 10 Ko au plus, seulement aux révisions ou tous les N arcs (question 3 du § 10.7).
+- **Mesuré à l'arc 002.** Avec une consigne allégée (12 Ko au plus), l'agent a pris autant de temps qu'à l'arc 001 : 28 min et 146 appels, contre 29 min et 94 appels.
+  - La vérification a pris la place de la rédaction : il a trouvé six incohérences dans ce bilan, toutes réelles, et corrigées avant le message final ([`arc-002.md`](../arcs/arc-002.md), § h).
+  - Sa valeur est donc surtout celle d'un vérificateur. C'est ce rôle qu'il faudrait lui donner, avec le CSV fait par script.
 
 ## 7. Les données : la quantité et l'organisation
 
@@ -280,10 +284,10 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 | 3 | cohérence | des nombres recopiés dans 11 ou 12 fichiers ; 26 erreurs en attente | le registre, vérifié par script |
 | 4 | reproductibilité | 29 énoncés (A) non refaits ; un nul qui changeait d'une exécution à l'autre | le code dans le dépôt ; pas de (A) dans les En bref |
 | 5 | validité | liens vrais par construction ; dérives ; erreurs corrélées entre agents ; 0 à 21 faux liens selon le classement ; p = 0,047 parmi beaucoup de tests | les deux questions ; un classement fixé avant le calcul ; le contradicteur |
-| 6 | coût | 15 h d'agents pour 12 corrections et 8 fiches | des budgets ; le rendement par erreur trouvée |
+| 6 | coût | 15 h d'agents pour 12 corrections, 26 erreurs signalées et 6 fiches | des budgets ; le rendement par erreur trouvée |
 | 7 | gouvernance | mes lectures de tes images (la diagonale par le simplexe, la cohomologie par le nerf, les disques placés à la main) ne sont pas validées | tes réponses au § 10.7 |
 | 8 | taxonomie | 8 dimensions plafonnent la diagonale ; D8 est vide ; D7 tient 30 % ; 18 fiches sur 23 ont deux ou trois types | diviser, pondérer |
-| 9 | références | 16 « à vérifier » dans la synthèse ; ni les agents ni ce bilan ne lisent les articles (arXiv et combinatorics.org sont bloqués par le réseau de la session) | une passe de vérification ; « sûre » seulement avec un DOI relu |
+| 9 | références | 17 « à vérifier » dans la synthèse ; ni les agents ni ce bilan ne lisent les articles (arXiv et combinatorics.org sont bloqués par le réseau de la session) | une passe de vérification ; « sûre » seulement avec un DOI relu |
 | 10 | sécurité et licences | le dépôt de Dzoba (CC BY 4.0) est lu, jamais exécuté ; des chemins de session restent dans les outils archivés | garder la règle ; citer Dzoba sous chaque figure dérivée |
 | 11 | dimensions | le cadre du recueil fabrique 6 faux liens, et la session déplace les parts | en faire une donnée de ton sujet d'étude |
 
@@ -337,7 +341,7 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 **10.7 Mes questions pour toi.**
 1. La fiche 014 : quelle lecture de « (−2)^(3/2) ≡ −i modulo 3 » voulais-tu ? Dans F₉, 2^(3/2) est ≡ −i, mais (−2)^(3/2) vaut ±1.
 2. Mes trois lectures, la diagonale par le simplexe, la cohomologie par le nerf et les disques placés à la main, sont-elles ce que tu avais en tête ?
-3. L'agent de fin d'arc doit-il tourner à chaque arc ? Ou bien un script à chaque arc, et un récit aux révisions ?
+3. L'agent de fin d'arc : je propose de le garder à chaque arc, mais comme vérificateur (c'est ce qu'il a le mieux fait à l'arc 002), avec le CSV fait par script et le récit seulement aux révisions. D'accord ?
 4. Les budgets du § 8 te conviennent-ils ?
 5. Puis-je proposer à la révision 002 de diviser les dimensions, par exemple D7 en « tests » et « cadre » ?
 6. Parmi les 64 fiches proposées, lesquelles veux-tu voir écrites ? Les quatre du § 10.5 d'abord ?
