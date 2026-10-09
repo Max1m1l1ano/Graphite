@@ -113,8 +113,8 @@ Résultats : § 2.1, 4.8 et 4.9. Figure : panneaux b et c. Fiches 017 et 018.
 | [moities-et-crans](../dossiers/moities-et-crans.md) | toutes les moitiés viennent-elles de quelques procédés seulement ? | 14 → 22 | 2 → 3 |
 | [bases-congruences-premiers](../dossiers/bases-congruences-premiers.md) | quelles congruences relient bases, puissances, périodes et premiers ? | 11 → 17 | 5 → 6 |
 | [grain-pixels-centres](../dossiers/grain-pixels-centres.md) | que peut trancher un grain fini, et à quel taux s'échange-t-il ? | 7 → 11 | 5 → 6 |
-| [lumiere-et-physique](../dossiers/lumiere-et-physique.md) | quelles lois optiques suivent le même procédé que la chèvre et le Venn ? | 14 → … | 3 → … |
-| [aiguilles-kakeya-perron](../dossiers/aiguilles-kakeya-perron.md) | comment le grain plafonne-t-il Perron et Kakeya ? | 10 → … | 2 → … |
+| [lumiere-et-physique](../dossiers/lumiere-et-physique.md) | quelles lois optiques suivent le même procédé que la chèvre et le Venn ? | 14 → 16 | 3 → 4 |
+| [aiguilles-kakeya-perron](../dossiers/aiguilles-kakeya-perron.md) | comment le grain plafonne-t-il Perron et Kakeya ? | 10 → 16 | 2 → 3 |
 | [ombres-cube-venn](../dossiers/ombres-cube-venn.md) | le cube {0, 1}ⁿ et ses ombres sont-ils le groupe commun ? | 10 → … | 8 → … |
 | [hasard-et-methode](../dossiers/hasard-et-methode.md) | quel test pour quelle observation, et où les chaînes de données ont-elles dérapé ? | 8 → … | 7 → … |
 
@@ -145,14 +145,15 @@ Figure : [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panne
 
 | arbre | triangle du bas | disque | ce que la révision change |
 |---|---|---|---|
-| P1 | l'ombre du cube {0, 1}ⁿ | D6 | *(dossier ombres : à compléter)* |
+| P1 | l'ombre du cube {0, 1}ⁿ | D6 | Les trois 34 (aigrettes, ombre Σωⁱ, éventails) sont un seul fait : les N racines de l'unité et leurs opposées font les 2N racines d'ordre 2N quand N est impair (dossiers lumière et aiguilles, N = 3 à 20, (A)). C'est une section globale, à ajouter à l'arbre comme branche de la parité. *(dossier ombres : à compléter)* |
 | P2 | la moitié | D1 | Un seul cercle, R/√2, est fixé par trois gestes : le miroir d'aire, l'inversion des jumeaux et la dilatation d'un cran (dossier moitiés ; Archimède, II § 1). La branche « Kakeya fini » s'en détache : elle vient de Bonferroni (T5) |
 | P3 | le terme x²/6 | D1 | Même 1/6, pas le même ménisque : l'obstruction est à l'ordre 4 (T3). Le « dernier 2 » du ménisque compte les dérangements de 3 (vérifié, § 4.10) |
 | P4 | le quart de tour i modulo b | D2 | La famille q² + 1 et le lemme des chiffres (vérifiés) ; 7 × 13 = Φ₆(10) ; (ℤ/10)* est aussi un groupe de Galois, et le dernier chiffre d'un premier dit si le nombre d'or existe modulo p (dossier bases, (A)) |
-| P5 | le budget en bits | D3 | Le seuil des 13 courbes est la constante isopérimétrique (vérifié) ; la loi des 8R de la partie XVIII donne le budget de la moitié du Venn (dossier grain, (A)) |
-| P6 | les réduites et les trois distances | D2 | Le diésis et le comma sont deux écarts du même théorème des trois distances (dossier bases, (A)) ; les deux longueurs ne tombent pas seulement aux dénominateurs des réduites (corrigé) |
+| P5 | le budget en bits | D3 | Le seuil des 13 courbes est la constante isopérimétrique (vérifié) ; la loi des 8R de la partie XVIII donne le budget de la moitié du Venn (dossier grain, (A)). K7 tient pour la pente, pas pour les valeurs : le « 2,8 » de Perron sur une grille culmine à 2,83 (n = 256) puis baisse à 2,57 (n = 65 536) (dossier aiguilles, (A)) |
+| P6 | les réduites et les trois distances | D2 | Le diésis et le comma sont deux écarts du même théorème des trois distances (dossier bases, (A)) ; les deux longueurs ne tombent pas seulement aux dénominateurs des réduites (corrigé). La demi-case (déterminant ±1, aire ½, Pick) est un seul procédé pour Fibonacci, Pell, Farey et l'hexagone ; l'or et l'argent sont les deux premiers points du spectre de Markov (dossier aiguilles) |
 | P7 | la loi de l'écart | D7 | Elle tranche 10 tests de cette révision ; elle a sa réserve : la dérive qui croise une constante (4.2, 4.9) |
-| P8 | le cône à sommet imaginaire | D8 | *(dossier lumière : à compléter)* |
+| P8 | le cône à sommet imaginaire | D8 | La branche « photocentre » s'en détache (dossier lumière) : le photocentre n'a ni col ni distance de Rayleigh. La forme de Newton x·x′ = c revient cinq fois : lentille, œil de poisson, jumeaux de la chèvre, fantômes des pixels, complément du Venn (dossier lumière) |
+| P9 (nouveau) | le barycentre pesé (le dipôle H₁ des poids) | D8 contre D3 | Les étoiles doubles (Wielen), la molécule HD et le Venn : le centre de la lumière est le premier harmonique des poids, et le seuil en est un second canal (fiches 006 et 018 ; dossier lumière) |
 
 ## 6. L'étude cohomologique : ce qui se recolle, et ce qui ne se recolle pas
 
@@ -161,12 +162,12 @@ Chaque fiche, chaque résultat de partie, est une **section locale**, vraie dans
 | | ce qui est comparé | verdict de la révision |
 |---|---|---|
 | K1 | le ménisque de la chèvre et la lumière du polygone | se recolle aux ordres 2 et 3 (décalage s = 49/10), **obstruction à l'ordre 4** (vérifié). Le trou : un diaphragme à rayon distribué, partenaire de l'asymétrie de la coquille |
-| K2 | les trois 34 : aigrettes, ombre Σωⁱ, éventails | section globale (partie XXVIII) ; *(dossier ombres : à compléter)* |
+| K2 | les trois 34 : aigrettes, ombre Σωⁱ, éventails | **section globale** : vérifiée pour N = 3 à 20 par deux dossiers (lumière, aiguilles, (A)) ; la réserve de la phase pour une ouverture complexe est dans le dossier lumière, § 5.1 |
 | K3 | 1/7, les racines digitales de 2ⁿ, i modulo 10 | **se recolle** par la famille q² + 1 et le lemme des chiffres (vérifiés) |
 | K4 | les moitiés | l'involution et la dilatation se recollent en R/√2 ; **Kakeya fini fait obstruction** (vérifié) |
 | K5 | le 17 de Henderson et le 17 de i | **obstruction** : 19 et 23 ont des Venn et pas de i |
 | K6 | le dipôle de la pesée et le photocentre | la seconde cause est le seuil, pas l'ordre de dessin (vérifié) ; avec une palette presque isoluminante, l'obstruction se lève (dossier grain, ma lecture) |
-| K7 | le grain plafonne la profondeur | se recolle modulo un cran ; la cause commune du logarithme reste ouverte |
+| K7 | le grain plafonne la profondeur | se recolle modulo un cran **pour la pente**, pas pour les valeurs (le « 2,8 » n'est pas une constante, dossier aiguilles) ; la cause commune du logarithme reste ouverte |
 | K8 | les trois 4/3 | **obstruction** : une coïncidence de petits entiers (vérifié) |
 | K9 | Midy, pair et impair | se recolle en un arbre de Perron (1/3, 1/3, 1/6, 1/12, vérifié), **à aires inégales**. Le dossier bases ajoute l'enchevêtrement par la réciprocité quadratique (A) |
 | K10 | le seuil du centre et l'isopérimétrie | **se recolle exactement** : 4π, et n·tan(π/n) pour le polygone (vérifié) |
@@ -192,7 +193,8 @@ Chaque test fait varier un paramètre, comme le demande le choix du test du § 1
 | 4.6, K9 | la borne et la base | 2/3 de périodes paires (17/24 en base 2) ; tour 1/3, 1/3, 1/6, 1/12 | Midy est un arbre de Perron à aires inégales |
 | 4.7, K4 | le corps F_q, q = 2 à 9 | q(q + 1)/2 pour q pair ; + (q − 1)/2 points triples pour q impair | la moitié vient de Bonferroni (fiche 019) |
 | 4.8 et 4.9, K6 | le seuil du masque (sans seuil, puis 0,001 à 0,40) | pas d'ordre de dessin ni de repli signé ; le centre glisse de 0,044 à 27 px ; la moitié reste à 49,3–49,7 % | la couleur déplace le centre par le poids et par le seuil (fiche 018) |
-| 4.10 | trois énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres : vérifiés | ils peuvent être cités sans (A) |
+| 4.10 | quatre énoncés des dossiers | dérangements, Φ₆(10) = 7 × 13, lemme des chiffres, arbre de Perron 43/108 : vérifiés | ils peuvent être cités sans (A) |
+| 4.11 | le score du modèle de défocalisation contre un prédicteur constant | 71 rayons sur 76 contre 70 | le « 93 % » de la partie XXX est le taux de base (dossier lumière) |
 
 ## 8. Les erreurs trouvées dans les chaînes de production
 
@@ -209,6 +211,8 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 | XIX § 4 (script, résultats, texte) | deux longueurs « aux dénominateurs des réduites » seulement | dossier bases | tous les N = m·q_k + q_(k−1) (recalculé : 2, 3, 4, 7, 10, 13, 23, …, 93, 103) |
 | XXIII § 1 | 0,6668 et 0,6661 en 10⁶ et 10⁷ dimensions | dossier corde | du bruit de double précision : la série exacte donne 0,66666 et 0,666666 |
 | XIV § 5 et XXVII § 9 | la moitié de Kakeya fini expliquée par les carrés | plan (K4), test T5 | elle vient de l'inclusion–exclusion ; la piste XIV–XX se ferme |
+| XXX (En bref et § 6.3), CLAUDE.md § 6 | « 93 % des signes en accord » avec la défocalisation | dossier lumière | c'est le taux de base : 71 rayons sur 76, contre 70 pour un prédicteur constant (§ 4.11) |
+| CLAUDE.md § 6 (partie XXVIII) | « minimum 2/(k + 2) » lu comme l'aire minimale | dossier aiguilles | c'est le minimum d'une borne ; l'aire exacte descend à 43/108 < 2/5 pour k = 3 (§ 4.10) |
 
 **Signalées, pas encore corrigées** (à vérifier une à une à la prochaine révision ; le dossier qui les signale donne la preuve) :
 - *Fiche 010.* « Chaque anneau du bord » n'est exact que pour le cercle du bord : la part monte quand on rentre (dossiers corde et moitiés). La fiche est corrigée dans son texte ; les valeurs par niveau sont à refaire avec le certificat.
@@ -221,6 +225,12 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 - *Partie XXIX, § 4.* Le tableau « ce que coûte 1 ppm » mêle des longueurs et des aires (dossier grain).
 - *Partie XVIII, § 4.* La loi des 8R devient exacte en 8⌊R + ½⌋ au milieu d'un pixel et 8⌊r⌋ + 4 au coin de quatre pixels (dossier grain, (A)).
 - *Fiche 014.* La phrase « (−2)^(3/2) ≡ −i modulo 3 » réunit 2^(3/2) (≡ −i dans F₉) et (−2)^(3/2) (= ±1 dans F₉). La fiche le signalait déjà ; c'est à te demander (dossier bases).
+- *Partie XIV, § 6.* « Son produit par log₂ n reste vers 2,8 » : il culmine à 2,83 puis baisse à 2,57 (dossier aiguilles, (A)).
+- *Parties V, X, XIV, XXVI et XXVIII.* « Córdoba (1977) » désigne deux articles différents, la fonction maximale (*Amer. J. Math.*) et le multiplicateur du polygone (*Ann. of Math.*) (dossier aiguilles).
+- *Partie XXX, Sources.* Le titre donné pour Wielen (1996) n'est pas celui de l'article de *A&A* 314 (dossier lumière, à vérifier sur ADS).
+- *README, § 7.* « Analogies, pas équivalences… ne prouvent rien » contredit le § 1 de CLAUDE.md : à réécrire en trois temps, partagé, transporté, ouvert (dossier lumière).
+- *Partie VIII, § 7.* La symétrie des deux foyers vaut pour tout masque ; la récurrence de Fibonacci dit où ils tombent, pas qu'ils sont symétriques (dossier lumière).
+- *Partie XVIII, § 7.* Le Nikon D800E n'ôte pas la lame passe-bas, il en annule l'effet par une seconde lame (dossier lumière, à vérifier).
 
 ## 9. Les trous dans les données publiées, et où chercher
 
@@ -234,6 +244,8 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 | la corde en dimension n | le développement 2n/(n + 1) + 2/(3n²) − 98/(15n³) + …, divergent en 2/ln 2 | aucune source atteinte ne le donne (Fraser et Meyerson, 1984, non relus) | Fraser (1984) ; Meyerson (1984) ; la Mathematical Gazette |
 | Kakeya fini, q pair | le minimum q(q + 1)/2, calculé pour q = 2, 4, 8 | la publication qui le démontre (une duale d'hyperovale, d'après des résumés ; à vérifier) | Blokhuis et Mazzocca (2008) ; Blokhuis, De Boeck, Mazzocca et Storme (2014) |
 | Midy et la tour 2-adique | les aires 1/3, 1/3, 1/6, 1/12 en base 10 | pas de table de la tour par base, ni de lien explicite avec le i (à vérifier) | Hasse (1966) ; Moree (2005, 2012) |
+| les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
+| le déplacement induit par la couleur | le centre de N sources colorées en symétrie d'ordre N dépend du poids et du seuil | les catalogues à source unique rangent ce déplacement dans le bruit ou dans le point zéro (à tester) | les solutions astrométriques de Gaia pour les étoiles non résolues |
 | les tests de coïncidences | la loi de l'écart tranche ce que les tests à tolérance déclarent « hasard » | on corrige pour le nombre d'essais, on fait rarement varier le paramètre (à vérifier sur quelques analyses publiées) | Gross et Vitells (2010) ; Gelman et Loken (2014) |
 
 **Le cadre qui conceptualise ces liens** (plan, § 6.3) :
@@ -259,7 +271,11 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
   - le lemme des chiffres et Φ₆(10) (bases) ;
   - le dernier chiffre et le nombre d'or (bases) ;
   - la loi des 8R exacte (grain) ;
-  - les quatre variables cachées de l'image (grain).
+  - les quatre variables cachées de l'image (grain) ;
+  - la demi-case, un seul procédé pour l'or, l'argent, Farey, Pick et l'hexagone (aiguilles) ;
+  - Kakeya lit les chiffres du grain : 1/aire gagne entre 1,057 et 1,466 par décade (aiguilles) ;
+  - la forme de Newton x·x′ = c, cinq fois (lumière) ;
+  - le ppm d'un passage par 1 est uniforme : les 845 ppm de la fiche 002 sont au rang 0,6 (lumière).
 
 ## Le tri
 

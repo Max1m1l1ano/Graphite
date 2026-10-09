@@ -1123,11 +1123,11 @@ else:
                   f" jusqu'à {fr(MASQ[-1][2], '{:.0f}')} px ; la moitié reste entre {fr(100 * min(m_[2] for m_ in MOIT), '{:.1f}')}"
                   f" et {fr(100 * max(m_[2] for m_ in MOIT), '{:.1f}')} %"))
 
-# --- 4.10 trois énoncés des dossiers, refaits ici avant d'être cités ------------------------------------------------------
+# --- 4.10 quatre énoncés des dossiers, refaits ici avant d'être cités ------------------------------------------------------
 from math import comb, factorial  # noqa: E402
 
 ligne()
-ligne("### 4.10 Trois énoncés des dossiers, vérifiés avant d'être cités")
+ligne("### 4.10 Quatre énoncés des dossiers, vérifiés avant d'être cités")
 ligne()
 
 
@@ -1158,7 +1158,22 @@ ligne(f"- **Dossier bases, § 3.2 (le lemme des chiffres)** : pour b = q² + 1 e
       f" q = 2 à 30 : {'oui' if all(ok_c) else 'NON'}. Pour q premier, ces chiffres sont exactement les unités modulo b − 1 = q² :"
       " le cas (10, 7) de la section 4.1 n'est plus un fait isolé, c'est le lemme quand la période est pleine.")
 assert ok_a and ok_b and all(ok_c)
-TESTS.append(("dossiers corde et bases", "trois énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30) : vérifiés"))
+TESTS.append(("dossiers corde, bases et aiguilles", "quatre énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30), arbre de Perron 43/108 : vérifiés"))
+# l'arbre de Perron à 8 branches du dossier aiguilles : on reprend les fonctions de scripts/aiguille.py (partie V) sans
+# exécuter le reste du script
+import ast  # noqa: E402
+
+with open(os.path.join(ICI, "aiguille.py"), encoding="utf-8") as fh:
+    _arbre = ast.parse(fh.read())
+_g = {"mp": mp, "np": np, "BASE": 2 / np.sqrt(3), "AX": 1 / np.sqrt(3)}
+exec(compile(ast.Module(body=[n for n in _arbre.body if isinstance(n, ast.FunctionDef)
+                              and n.name in ("arbre", "longueur_union", "aire_exacte")], type_ignores=[]),
+             "aiguille.py (extrait)", "exec"), _g)
+aire_43 = _g["aire_exacte"](3, [mp.mpf(7) / 9, mp.mpf(25) / 42, mp.mpf(43) / 50])
+ligne(f"- **Dossier aiguilles, § 3** : l'arbre de Perron à 8 branches de rapports (7/9, 25/42, 43/50) a l'aire exacte"
+      f" {mpf(aire_43, 15)} = 43/108 (fonction `aire_exacte` de la partie V), sous les 2/5 de l'arbre télescopique."
+      " 2/(k + 2) est le minimum de la borne « cœur + oreilles » de la partie XXVIII, pas celui de l'aire.")
+assert abs(aire_43 - mp.mpf(43) / 108) < mp.mpf(10) ** -20
 
 
 # --- 4.11 le « 93 % » de la défocalisation, contre le taux de base (dossier lumière, N4) --------------------------------
@@ -1332,6 +1347,7 @@ ARBRES = [  # plan-001.md, § 2.2 (corrigé par la vérification croisée : recu
     ("P6", "les réduites", "D2", ["D5", "D4"], ["002", "014"]),
     ("P7", "la loi de l'écart", "D7", ["D3"], ["002", "003", "004", "005", "007", "012"]),
     ("P8", "le cône à sommet imaginaire", "D8", ["D1", "D4"], ["006"]),
+    ("P9", "le barycentre pesé", "D8", ["D3", "D7"], ["006", "018"]),   # nouveau (dossier lumière, fiche 018)
 ]
 ANNEAU = ["D1", "D6", "D5", "D2", "D3", "D7", "D8", "D4"]   # les dimensions voisines côte à côte
 COUL_D = {d: c_ for d, c_ in zip(ANNEAU, [F.BLEU, F.AQUA, F.JAUNE, F.ORANGE, F.BLEU, F.AQUA, F.JAUNE, F.ORANGE])}
@@ -1400,7 +1416,7 @@ def panneau_perron(ax):
                 fontsize=7.8, color=F.INK2)
     # où poser chaque triangle du bas : dans son disque, du côté des disques qu'il touche (placement à la main)
     decale = {"P1": (0.25, -0.35), "P2": (0.38, -0.12), "P3": (-0.42, 0.02), "P4": (0.45, 0.45), "P5": (0.3, 0.32),
-              "P6": (-0.15, -0.62), "P7": (0.35, -0.22), "P8": (0.3, 0.38)}
+              "P6": (-0.15, -0.62), "P7": (0.35, -0.22), "P8": (0.3, 0.55), "P9": (-0.2, -0.58)}
     for nom, titre, disque, contre, fiches in ARBRES:
         x0, y0 = cen[disque]
         bx, by = x0 + decale.get(nom, (0, 0))[0], y0 + decale.get(nom, (0, 0))[1]
