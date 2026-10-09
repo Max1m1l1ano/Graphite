@@ -28,6 +28,6 @@ La section 1 de `scripts/revision_001.py` recalcule les cordes ρ_n par les calo
 
 ## Liens et pistes
 
-Partie XX (deux directions au hasard en grande dimension sont à √2 ; les arêtes √2 du polytope croisé) ; partie XXIV (la chèvre de dimension n a la corde du simplexe de dimension n + 1/3, plan en 1/x₀ = n + 4/3 − …) ; partie III (la concentration de la mesure). Piste : le décalage 7/3 = 2 + 1/3 et le 4/3 de la partie XXIV dans la mesure de la diagonale des révisions suivantes.
+Partie XX (deux directions au hasard en grande dimension sont à √2 ; les arêtes √2 du polytope croisé) ; partie XXIV (la chèvre de dimension n a la corde du simplexe de dimension n + 1/3, plan en 1/x₀ = n + 4/3 − …) ; partie III (la concentration de la mesure). Piste : le décalage 7/3 = 2 + 1/3 et le 4/3 de la partie XXIV dans la mesure de la diagonale des révisions suivantes. *Précision du bilan de la révision 001 (fiche 023)* : l'égalité ρ_n = c_K définit K ; ce qui se calcule, c'est le développement de K − n, hérité de la partie XXIV. Et avec huit dimensions, l'arête ne descend pas sous 1,512, 6,9 % au-dessus de √2.
 
 Dimensions voisines, à confirmer à la révision : D7 hasard et méthode (la classification) ; D6 sphères, cubes, Venn et symétries (le simplexe).

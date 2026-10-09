@@ -1,0 +1,58 @@
+{
+  "dossier": {
+    "type": "object",
+    "properties": {
+      "fichier_ecrit": {"type": "string"},
+      "parties": {"type": "array", "items": {"type": "string"}},
+      "fiches": {"type": "array", "items": {"type": "object", "properties": {
+        "numero": {"type": "string"}, "dimensions": {"type": "array", "items": {"type": "string"}},
+        "raison": {"type": "string"}}, "required": ["numero", "dimensions", "raison"]}},
+      "liens": {"type": "array", "items": {"type": "object", "properties": {
+        "de": {"type": "string"}, "vers": {"type": "string"},
+        "nature": {"type": "string", "enum": ["même procédé", "congruence", "causalité", "corrélation", "analogie à tester", "hasard testé"]},
+        "partage_exact": {"type": "string"}, "transporte": {"type": "string"}, "ouvert": {"type": "string"},
+        "preuve": {"type": "string"}}, "required": ["de", "vers", "nature", "partage_exact", "preuve"]}},
+      "triangle_du_bas": {"type": "object", "properties": {
+        "branches": {"type": "array", "items": {"type": "string"}}, "groupe_commun": {"type": "string"},
+        "disque": {"type": "string"}, "statut": {"type": "string"}}, "required": ["branches", "groupe_commun", "disque", "statut"]},
+      "obstructions": {"type": "array", "items": {"type": "object", "properties": {
+        "elements": {"type": "array", "items": {"type": "string"}}, "ce_qui_ne_se_recolle_pas": {"type": "string"},
+        "trou": {"type": "string"}, "ou_chercher": {"type": "string"}}, "required": ["elements", "ce_qui_ne_se_recolle_pas", "trou"]}},
+      "nouveaux_tests": {"type": "array", "items": {"type": "object", "properties": {
+        "nom": {"type": "string"}, "but": {"type": "string"}, "calcul": {"type": "string"},
+        "si_structure": {"type": "string"}, "si_hasard": {"type": "string"},
+        "resultat_rapide": {"type": "string"}}, "required": ["nom", "but", "calcul", "si_structure", "si_hasard"]}},
+      "trous_publies": {"type": "array", "items": {"type": "object", "properties": {
+        "sujet": {"type": "string"}, "reference": {"type": "string"},
+        "statut": {"type": "string", "enum": ["référence sûre", "à vérifier"]}, "pourquoi": {"type": "string"}},
+        "required": ["sujet", "reference", "statut", "pourquoi"]}},
+      "observations_nouvelles": {"type": "array", "items": {"type": "object", "properties": {
+        "titre": {"type": "string"}, "type": {"type": "string"}, "contexte": {"type": "string"},
+        "script": {"type": "string"}, "image": {"type": "string"}, "statut": {"type": "string"}},
+        "required": ["titre", "type", "contexte", "script", "statut"]}},
+      "erreurs_trouvees": {"type": "array", "items": {"type": "object", "properties": {
+        "fichier": {"type": "string"}, "affirmation": {"type": "string"}, "probleme": {"type": "string"}},
+        "required": ["fichier", "affirmation", "probleme"]}}
+    },
+    "required": ["fichier_ecrit", "parties", "fiches", "liens", "triangle_du_bas", "obstructions", "nouveaux_tests", "trous_publies", "observations_nouvelles", "erreurs_trouvees"]
+  },
+  "verif": {
+    "type": "object",
+    "properties": {
+      "parties_sans_dossier": {"type": "array", "items": {"type": "string"}},
+      "fiches_sans_dossier": {"type": "array", "items": {"type": "string"}},
+      "erreurs": {"type": "array", "items": {"type": "object", "properties": {
+        "dossier": {"type": "string"}, "affirmation": {"type": "string"}, "probleme": {"type": "string"},
+        "correction": {"type": "string"}}, "required": ["dossier", "affirmation", "probleme", "correction"]}},
+      "liens_entre_dossiers": {"type": "array", "items": {"type": "object", "properties": {
+        "dossiers": {"type": "array", "items": {"type": "string"}}, "element_commun": {"type": "string"},
+        "nature": {"type": "string"}}, "required": ["dossiers", "element_commun", "nature"]}},
+      "trous_commentes": {"type": "array", "items": {"type": "object", "properties": {
+        "dossiers": {"type": "array", "items": {"type": "string"}}, "trou": {"type": "string"},
+        "ou_chercher": {"type": "string"}}, "required": ["dossiers", "trou", "ou_chercher"]}},
+      "tests_prioritaires": {"type": "array", "items": {"type": "string"}},
+      "remarques": {"type": "string"}
+    },
+    "required": ["parties_sans_dossier", "fiches_sans_dossier", "erreurs", "liens_entre_dossiers", "trous_commentes", "tests_prioritaires", "remarques"]
+  }
+}

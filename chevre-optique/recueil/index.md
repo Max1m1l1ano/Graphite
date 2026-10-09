@@ -2,9 +2,9 @@
 
 Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `observations/`. Le protocole est dans [CLAUDE.md, § 10](../CLAUDE.md) et [`README.md`](README.md).
 
-- Fiches : 21, dont 6 non révisées. Arcs réponses : 1 (0 depuis la dernière révision). Révisions : 1.
-- État : pas de révision due (6 fiches non révisées, 0 arcs depuis la dernière révision).
-- La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 5,19, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 15.
+- Fiches : 23, dont 8 non révisées. Arcs réponses : 1 (0 depuis la dernière révision). Révisions : 1.
+- État : pas de révision due (8 fiches non révisées, 0 arcs depuis la dernière révision).
+- La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 4,85, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 15.
 
 | n° | observation | type | statut | partie | script | image | dimension | révisé |
 |---:|---|---|---|---|---|---|---|---|
@@ -29,3 +29,5 @@ Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `obs
 | 019 | [La moitié de Kakeya fini vient de l'inclusion–exclusion (Bonferroni), pas de l'involution](observations/019-la-moitie-de-kakeya-fini-vient-de-bonferroni.md) | Analogie ; Causalité | structure | révision 001 (parties XIV et XXVII) | scripts/revision_001.py | — | D5 Kakeya, Perron et aiguilles | non |
 | 020 | [Le seuil des 13 courbes est la constante isopérimétrique, et le polygone donne la quantité de la fiche 003](observations/020-le-seuil-du-centre-du-venn-est-isoperimetrique.md) | Analogie ; Fait amusant | exact | révision 001 (partie XXX) | scripts/revision_001.py | — | D3 grain, pixels et précision | non |
 | 021 | [Le rapport des dizaines de premiers croise π à 10⁵ puis 2√2 à 10⁶ : une dérive, pas une constante](observations/021-les-dizaines-de-premiers-croisent-pi-puis-2-racine-2.md) | Coïncidence ; Hasard | hasard | révision 001 (fiche 015) | scripts/revision_001.py | rev001_diagonale_cadre.png | D2 bases, chiffres et congruences | non |
+| 022 | [Quatre dérives croisent une constante : π, 2√2, √2/2 et les 35,10 % de l'octaèdre](observations/022-quatre-derives-croisent-une-constante.md) | Coïncidence ; Hasard | structure | bilan de la révision 001 (fiches 002, 004, 018 et 021) | scripts/revision_001.py | rev001_diagonale_cadre.png | D7 hasard et méthode | non |
+| 023 | [Quatre liens de la révision 001 sont vrais par construction : ils ne pouvaient pas être faux](observations/023-quatre-liens-vrais-par-construction.md) | Analogie ; Corrélation | exact | bilan de la révision 001 (révision 001, parties XXIV et XXX) | scripts/revision_001.py | rev001_diagonale_cadre.png | D7 hasard et méthode | non |

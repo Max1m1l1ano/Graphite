@@ -1,5 +1,5 @@
 <!-- arcs: 1 -->
-# Révision 001 : la diagonale √2 démontrée, le cadre qui fabrique des liens, et huit dossiers
+# Révision 001 : la diagonale √2 mise en équation, le cadre qui fabrique des liens, et huit dossiers
 
 > « … réviser, lorsqu'il y a plus de 10 de ces observations et moins que 16, tous les scripts, leurs contexte, l'information qu'elles produisent et le cadre de l'observation pour les regrouper en dossiers sur les sujets englobant tout le corpus de recherche et qui permettent de synthétiser et regrouper ces information en Perron avec le triangle du bas, formé des différentes branches qui se rejoignent, comme projection du groupe qui rejoint ces informations et ce triangle placé dans un des disques. Essentiellement un Venn multidimensionnel qu'on sait va finir par donner la diagonale sqrt(2)… »
 >
@@ -9,11 +9,12 @@ Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revisio
 
 ## En bref
 
-- **La diagonale √2 se démontre.**
+- **La diagonale √2 devient mesurable.**
   - Une classification naïve à parts égales, une fois centrée, est un simplexe régulier. Son arête √(2K/(K − 1)) rejoint √2 par en dessus quand le nombre K de dimensions grandit.
   - Sa corde vers l'antipode la rejoint par en dessous, et Thalès les lie : d² + c² = 4.
   - La corde de la chèvre de dimension n est exactement une de ces cordes, pour K = n + 2 + le tiers de dimension de la partie XXIV.
   - « Plus les révisions augmentent, plus la diagonale √2 s'affirme » devient un énoncé mesurable. Après cette révision, K = 7 et l'arête à parts égales vaut 1,5275, plus près de √2 ; mais les parts restent inégales, et le cadre fabrique 6 faux liens au lieu de 3 (§ 2).
+  - *Précision du [bilan](bilan-001.md) (fiche 023)* : le lien avec la chèvre est un dictionnaire, car K est choisi pour que les deux cordes coïncident. Ce qui se calcule, c'est K − n → 7/3, hérité de la partie XXIV. Et avec huit dimensions, l'arête ne descend pas sous 1,512, 6,9 % au-dessus de √2 : pour que la diagonale s'affirme, il faudra diviser les dimensions.
 - **Le cadre fabrique des liens, des déplacements et des nombres.** Trois résultats touchent ton sujet d'étude, la restriction du cadre :
   - **Les liens.** Avec des parts inégales, deux dimensions rares paraissent liées sans rien partager, exactement quand p_a + p_b < Σp². Le partage équitable des aires empêche ce faux lien. Mais leur nombre dépend aussi du classement : de 0 à 21 selon la dimension choisie pour chaque fiche (dossier méthode).
   - **Les déplacements.** Dans l'image du Venn à 17 courbes, monter le seuil d'un masque binaire déplace le centre de 0,044 px à 27 px, sans toucher à la moitié de l'aire. Un effet de seuil prouve que la grandeur seuillée varie d'une courbe à l'autre (§ 3).
@@ -21,7 +22,7 @@ Les tests sont recalculés par [`scripts/revision_001.py`](../../scripts/revisio
 - **La cause du centre de la lumière est établie par une intervention.** L'agent méthode a repeint un Venn à 13 courbes de palette connue avec son propre rendu. Le photocentre G·H₁ des poids y prédit le déplacement sans paramètre libre (2,08 px prédits, 2,05 à 2,20 observés), et l'ordre de dessin ne compte pas (§ 3).
 - **Huit dossiers couvrent les 30 parties.** Les corrections des agents referment les 4 trous du corpus de v1. Il reste 11 trous du recueil, autant que le hasard, dont 9 passent par le dossier bases : c'est là que les prochaines fiches compteraient le plus (§ 4).
 - **Des liens nouveaux entre dossiers** (§ 6) :
-  - il n'existe pas de Venn simple à 17 courbes dont le complément soit une symétrie, parce que i existe modulo 17 (une obstruction de parité, dossier ombres) ;
+  - il n'existe pas de Venn simple antipodal à 17 courbes, parce que i existe modulo 17 (une obstruction de parité, dossier ombres). « Antipodal » veut dire qu'une involution sans point fixe garde chaque courbe et envoie chaque région sur son complément. *Précision du bilan (§ 3)* : la symétrie « polaire » de la littérature est un demi-tour, que la parité n'exclut pas ;
   - la face que choisit a modulo 3 dans la fiche 015 et la limite 2 de la fiche 021 sont le même nombre 3 ;
   - les périodes de Gauss du 17-gone sont des ombres du cube.
 - **Douze nouveaux tests**, la plupart en faisant varier un paramètre :
@@ -286,7 +287,7 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 | les arbres de Perron optimaux | l'aire exacte d'un arbre à 8 branches descend à 43/108, sous la famille télescopique (la partie V l'avait trouvé en nombres, 0,3981 ; minimum local, pas prouvé global) | pas de table publiée des rapports optimaux, ni de la constante de Kakeya au grain δ (entre π/2 et π·ln 2) ; la constante 3D de Wang et Zahl non calculée (à vérifier) | Schoenberg (1962) ; Keich (1999) ; Wang et Zahl (2025) |
 | le déplacement induit par la couleur | le centre de N sources colorées en symétrie d'ordre N dépend du poids et du seuil | les catalogues à source unique rangent ce déplacement dans le bruit ou dans le point zéro (à tester) | les solutions astrométriques de Gaia pour les étoiles non résolues |
 | un banc d'essai à vérités indépendantes | les presque-entiers de Heegner suivent la loi de l'écart −196 884·e^(−π√d) (rapport 0,9999 à 1 pour d = 19, 43, 67, 163, vérifié) ; e^π − π ≈ 20 (4,5·10⁻⁵) et π⁴ + π⁵ ≈ e⁶ (4,4·10⁻⁸) n'ont pas de mécanisme connu | pas de liste publique de relations de nature démontrée et de presque-entiers sans mécanisme, pour juger les tests eux-mêmes (dossier méthode) | Cox, *Primes of the Form x² + ny²* (1989) ; Diaconis et Mosteller (1989) |
-| un Venn antipodal | la parité exclut à 17 courbes un Venn simple dont le complément est une symétrie ; elle ne l'exclut pas à 19 et 23 | ni connu ni cherché : aucun texte du dépôt de Dzoba n'en parle ; la notion voisine de Venn « à symétrie polaire » est à lire | Ruskey et Weston, *A survey of Venn diagrams* (DS5) ; Grünbaum (1975) ; Henderson (1963) |
+| un Venn antipodal | la parité exclut à 17 courbes un Venn simple dont le complément est une symétrie ; elle ne l'exclut pas à 19 et 23 | aucun texte du dépôt de Dzoba n'en parle. La notion voisine de Venn « à symétrie polaire » est un demi-tour, que la parité n'exclut pas : elle existe à 3, 5 et 7 courbes, et aucun cas ne serait connu à 11 (bilan, § 3, à vérifier). Le cas antipodal ne semble pas étudié | Ruskey et Weston, *A survey of Venn diagrams* (DS5) ; Grünbaum (1975) ; Henderson (1963) |
 | les certificats à 23 courbes | la part des triangles dérive (35,95 ; 35,76 ; 35,12 %) ; le premier rang non monotone vaut 2 ou 3 de 11 à 19 courbes | publiés (six fois 889 Mo) mais lus nulle part : k₁, les croisements par niveau, l'histogramme des degrés ; les droites au hasard donnent 2 − π²/6 = 35,51 % de triangles (Miles, à vérifier) | l'archive Zenodo du dépôt de Dzoba ; Miles (1964) |
 | les tests de coïncidences | la loi de l'écart tranche ce que les tests à tolérance déclarent « hasard » | on corrige pour le nombre d'essais, on fait rarement varier le paramètre (à vérifier sur quelques analyses publiées) | Gross et Vitells (2010) ; Gelman et Loken (2014) |
 
