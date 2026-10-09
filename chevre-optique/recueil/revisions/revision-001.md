@@ -365,7 +365,8 @@ Chaque dossier a son tableau (§ 6.3), avec des références marquées « sûre 
 - La palette réelle de l'image à 17 courbes. L'intervention est faite sur un système modèle (le Venn à 13 courbes du traceur, dossier méthode) ; sur l'image elle-même, il faudrait le code de rendu de Dzoba.
 - Un banc d'essai à vérités indépendantes, avec plus de cas négatifs.
 - δ₂ ≈ δ₃ (1,7·10⁻⁴ pour une racine au hasard : ouvert, pas « hasard »).
-- Un Venn antipodal à 19 ou 23 courbes.
+- Un Venn antipodal à 19 ou 23 courbes. C'est le premier « ouvert » de la partie XXX : la révision le ferme à 17 courbes (au sens fort), pas à 19.
+- Trois autres « ouverts » de la partie XXX, qu'aucun dossier n'a testés (relevés par l'agent de fin d'arc) : une théorie exacte de l'inversion par défocalisation pour des arcs courbes ; les 17 couleurs comme 17 motifs structurés, pour dépasser le facteur 2 ; le dessin sphérique « naturel » dont la pression serait la projection de Lambert.
 - Le premier rang non monotone à 23 courbes : 2 ou 3 si l'épaisseur du gel est constante, 4 si elle croît avec n.
 - La cause commune du logarithme (K7).
 - Le lien entre la chèvre et les réseaux records.

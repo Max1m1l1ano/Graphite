@@ -1,0 +1,142 @@
+arc,ordre,horodatage,message,script,entree,sortie,type_sortie,partie,dimension,observation,commit
+000,1,2026-10-07T13:56:28+00:00,1,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/certificates/,donnees_externes,XXX,D6,,e9c3c53
+000,2,2026-10-07T13:56:28+00:00,1,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,donnees_externes,XXX,D6,,e9c3c53
+000,3,2026-10-07T13:56:28+00:00,1,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/images/venn17-rose-dark-2000.png,donnees_externes,XXX,D6,,e9c3c53
+000,4,2026-10-07T13:56:28+00:00,1,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,resultats/centre_venn.md,resultats,XXX,D3,002;003;005;006;007;008;009;010;011;012,e9c3c53
+000,5,2026-10-07T13:56:28+00:00,1,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,figures/ae1_centre_moitie.png,figure,XXX,D6,005;006;008,e9c3c53
+000,6,2026-10-07T13:56:28+00:00,1,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,figures/ae2_diaphragmes_diffraction.png,figure,XXX,D4,009;010,e9c3c53
+000,7,2026-10-07T13:56:28+00:00,1,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,figures/ae3_grains_hasard.png,figure,XXX,D3,002;003;004;007;011;012,e9c3c53
+000,8,2026-10-07T13:56:28+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md; figures/ae1_centre_moitie.png; figures/ae2_diaphragmes_diffraction.png; figures/ae3_grains_hasard.png,centre-venn.md,document,XXX,D3,002;003;004;005;006;007;008;009;010;011;012,e9c3c53
+000,9,2026-10-07T13:56:28+00:00,1,,centre-venn.md,venn-ppm.md,document,XXIX,D6,,e9c3c53
+000,10,2026-10-07T13:56:28+00:00,1,,centre-venn.md,CLAUDE.md,config,XXX,D3,,e9c3c53
+000,11,2026-10-07T13:56:28+00:00,1,,centre-venn.md,README.md,config,XXX,D3,,e9c3c53
+001,1,2026-10-07T18:38:08+00:00,1,scripts/recueil_verifications.py,msg:1,resultats/recueil_verifications.md,resultats,recueil,D2,013;014;015,92814fc
+001,2,2026-10-07T18:38:08+00:00,1,scripts/recueil_index.py,recueil/observations/,recueil/index.csv,resultats,recueil,D7,,92814fc
+001,3,2026-10-07T18:38:08+00:00,1,scripts/recueil_index.py,recueil/observations/,recueil/index.md,document,recueil,D7,,92814fc
+001,4,2026-10-07T18:38:08+00:00,1,scripts/venn_ppm.py,resultats/venn_ppm.md,recueil/observations/001-2-moins-17-chiffres-de-5-puissance-17.md,fiche,XXIX,D2,001,92814fc
+001,5,2026-10-07T18:38:08+00:00,1,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md; resultats/centre_venn.md,recueil/observations/002-diesis-fois-lumiere-du-17-gone.md,fiche,XXIX et XXX,D7,002,92814fc
+001,6,2026-10-07T18:38:08+00:00,1,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/003-34-tan-pi-sur-34-et-pi.md,fiche,XXIX et XXX,D6,003,92814fc
+001,7,2026-10-07T18:38:08+00:00,1,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md,recueil/observations/004-triangles-et-ombres-egales-octaedre.md,fiche,XXIX et XXX,D7,004,92814fc
+001,8,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/005-moitie-exacte-venn-19-ramp12h.md,fiche,XXX,D6,005,92814fc
+001,9,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/006-centre-de-la-lumiere-selon-la-pesee.md,fiche,XXX,D3,006,92814fc
+001,10,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/007-premier-centre-faux-point-de-depart.md,fiche,XXX,D7,007,92814fc
+001,11,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/008-dessin-centre-au-millieme-de-pixel.md,fiche,XXX,D3,008,92814fc
+001,12,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/009-34-plus-34-aigrettes.md,fiche,XXX,D4,009,92814fc
+001,13,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/010-ullisch-39-34-pourcent-de-chaque-anneau.md,fiche,XXX,D1,010,92814fc
+001,14,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md,fiche,XXX,D3,011,92814fc
+001,15,2026-10-07T18:38:08+00:00,1,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/012-tests-a-tolerance-et-liens-de-structure.md,fiche,XXX,D7,012,92814fc
+001,16,2026-10-07T18:38:08+00:00,1,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md,fiche,recueil,D2,013,92814fc
+001,17,2026-10-07T18:38:08+00:00,1,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/014-fractions-continues-imaginaires.md,fiche,recueil,D2,014,92814fc
+001,18,2026-10-07T18:38:08+00:00,1,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/015-dizaines-de-premiers-cube-et-reste-modulo-3.md,fiche,recueil,D2,015,92814fc
+001,19,2026-10-07T18:38:08+00:00,1,,msg:1,CLAUDE.md,config,recueil,D7,,92814fc
+001,20,2026-10-07T18:38:08+00:00,1,,msg:1,README.md,config,recueil,D7,,92814fc
+001,21,2026-10-07T18:38:08+00:00,1,,msg:1,recueil/README.md,config,recueil,D7,,92814fc
+001,22,2026-10-07T18:38:08+00:00,1,,msg:1,recueil/arcs/README.md,config,recueil,D7,,92814fc
+001,23,2026-10-07T18:59:30+00:00,1,scripts/recueil_index.py,recueil/observations/,recueil/index.md,document,recueil,D7,,f614e7f
+001,24,2026-10-07T18:59:30+00:00,1,,scripts/revision_001.py,CLAUDE.md,config,recueil,D7,,f614e7f
+001,25,2026-10-07T18:59:30+00:00,1,,scripts/recueil_index.py,recueil/README.md,config,recueil,D7,,f614e7f
+001,26,2026-10-07T18:59:52+00:00,1,,CLAUDE.md; recueil/README.md; recueil/index.md; recueil/observations/; README.md; carte-connexions.md,recueil/revisions/plan-001.md,document,révision 001,D7,,9aa5274
+001,27,2026-10-07T20:32:02+00:00,1,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,donnees_externes,révision 001,D6,,a749b4a
+001,28,2026-10-07T20:32:02+00:00,1,scripts/revision_001.py,recueil/index.csv; recueil/revisions/plan-001.md; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,resultats/revision_001.md,resultats,révision 001,D7,016;017;018;019;020;021,a749b4a
+001,29,2026-10-07T20:32:02+00:00,1,scripts/revision_001.py,recueil/index.csv; recueil/revisions/plan-001.md; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,figures/rev001_diagonale_cadre.png,figure,révision 001,D7,016;017;018;021,a749b4a
+001,30,2026-10-07T20:32:02+00:00,1,scripts/revision_001.py,recueil/index.csv; recueil/revisions/plan-001.md; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,figures/rev001_perron_venn.png,figure,révision 001,D7,,a749b4a
+001,31,2026-10-07T20:32:02+00:00,1,,CLAUDE.md; recueil/README.md; recueil/index.md; recueil/observations/; README.md; carte-connexions.md,recueil/revisions/plan-001.md,document,révision 001,D7,,a749b4a
+001,32,2026-10-07T21:26:40+00:00,2,scripts/revision_001.py,ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; resultats/centre_venn.md,resultats/revision_001.md,resultats,révision 001,D3,018,3bf627f
+001,33,2026-10-07T21:26:40+00:00,2,scripts/revision_001.py,ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,figures/rev001_diagonale_cadre.png,figure,révision 001,D3,018,3bf627f
+001,34,2026-10-07T21:28:57+00:00,2,scripts/revision_001.py,ext:dzoba/venn17/images/venn17-pressure-dark-2000.png,resultats/revision_001.md,resultats,révision 001,D3,018,1fbf39c
+001,35,2026-10-08T00:35:57+00:00,1,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/corde-et-dimensions.md,document,révision 001,D1,,2792d42
+001,36,2026-10-08T00:35:57+00:00,1,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/moities-et-crans.md,document,révision 001,D1,,2792d42
+001,37,2026-10-08T00:35:57+00:00,1,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/bases-congruences-premiers.md,document,révision 001,D2,,2792d42
+001,38,2026-10-08T00:35:57+00:00,1,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/grain-pixels-centres.md,document,révision 001,D3,,2792d42
+001,39,2026-10-08T00:39:29+00:00,1,scripts/revision_001.py,resultats/revision_001.md; recueil/dossiers/grain-pixels-centres.md,centre-venn.md,document,XXX,D3,,2324dd9
+001,40,2026-10-08T00:39:29+00:00,1,scripts/revision_001.py,resultats/revision_001.md; recueil/dossiers/grain-pixels-centres.md,venn-ppm.md,document,XXIX,D6,,2324dd9
+001,41,2026-10-08T00:39:29+00:00,1,,recueil/observations/,CLAUDE.md,config,recueil,D7,,2324dd9
+001,42,2026-10-08T00:39:29+00:00,1,,recueil/observations/,recueil/README.md,config,recueil,D7,,2324dd9
+001,43,2026-10-08T00:42:43+00:00,1,scripts/revision_001.py,recueil/dossiers/corde-et-dimensions.md; recueil/dossiers/bases-congruences-premiers.md,resultats/revision_001.md,resultats,révision 001,D2,,84c1336
+001,44,2026-10-08T00:43:59+00:00,1,scripts/angle_or_aiguilles.py,recueil/dossiers/bases-congruences-premiers.md,resultats/angle_or_aiguilles.md,resultats,XI,D2,,ec52958
+001,45,2026-10-08T00:43:59+00:00,1,scripts/bases_objets.py,recueil/dossiers/bases-congruences-premiers.md,resultats/bases_objets.md,resultats,XIX,D2,,ec52958
+001,46,2026-10-08T00:43:59+00:00,1,scripts/bases_objets.py,resultats/bases_objets.md; recueil/dossiers/bases-congruences-premiers.md,bases-objets.md,document,XIX,D2,,ec52958
+001,47,2026-10-08T00:43:59+00:00,1,scripts/lentilles_boules_grain.py,recueil/dossiers/corde-et-dimensions.md,lentilles-boules-grain.md,document,XXIII,D3,,ec52958
+001,48,2026-10-08T00:43:59+00:00,1,scripts/pixels_longitudes.py,recueil/dossiers/bases-congruences-premiers.md,pixels-longitudes.md,document,XVIII,D3,,ec52958
+001,49,2026-10-08T00:44:22+00:00,1,scripts/revision_001.py,resultats/revision_001.md,aiguille-grille.md,document,XIV,D5,019,bfa41a0
+001,50,2026-10-08T00:44:22+00:00,1,scripts/revision_001.py,resultats/revision_001.md,carte-connexions.md,document,XXVII,D7,019,bfa41a0
+001,51,2026-10-08T00:46:50+00:00,1,scripts/revision_001.py,recueil/dossiers/corde-et-dimensions.md; recueil/dossiers/moities-et-crans.md; recueil/dossiers/bases-congruences-premiers.md; recueil/dossiers/grain-pixels-centres.md; resultats/revision_001.md; recueil/revisions/plan-001.md,recueil/revisions/revision-001.md,document,révision 001,D7,,f63b282
+001,52,2026-10-09T17:55:09+00:00,3,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/aiguilles-kakeya-perron.md,document,révision 001,D5,,489e049
+001,53,2026-10-09T17:55:09+00:00,3,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/lumiere-et-physique.md,document,révision 001,D4,,489e049
+001,54,2026-10-09T17:59:28+00:00,3,scripts/revision_001.py,recueil/dossiers/lumiere-et-physique.md; resultats/centre_venn.md,resultats/revision_001.md,resultats,révision 001,D4,,e1ea425
+001,55,2026-10-09T17:59:28+00:00,3,scripts/revision_001.py,resultats/revision_001.md,centre-venn.md,document,XXX,D3,,e1ea425
+001,56,2026-10-09T17:59:28+00:00,3,,resultats/revision_001.md,CLAUDE.md,config,XXX,D3,,e1ea425
+001,57,2026-10-09T18:09:09+00:00,3,scripts/revision_001.py,recueil/dossiers/aiguilles-kakeya-perron.md; scripts/aiguille.py,resultats/revision_001.md,resultats,révision 001,D5,,3a20ebe
+001,58,2026-10-09T18:09:09+00:00,3,scripts/revision_001.py,recueil/revisions/plan-001.md; recueil/dossiers/lumiere-et-physique.md,figures/rev001_perron_venn.png,figure,révision 001,D7,,3a20ebe
+001,59,2026-10-09T18:09:09+00:00,3,scripts/revision_001.py,resultats/revision_001.md; recueil/dossiers/lumiere-et-physique.md; recueil/dossiers/aiguilles-kakeya-perron.md,recueil/revisions/revision-001.md,document,révision 001,D7,,3a20ebe
+001,60,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,recueil/revisions/verification-croisee-001.md,resultats/revision_001.md,resultats,révision 001,D7,,86dc919
+001,61,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,recueil/revisions/verification-croisee-001.md,figures/rev001_perron_venn.png,figure,révision 001,D7,,86dc919
+001,62,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,recueil/dossiers/*.md; recueil/revisions/plan-001.md,recueil/revisions/verification-croisee-001.md,document,révision 001,D7,,86dc919
+001,63,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md; recueil/revisions/verification-croisee-001.md,recueil/revisions/revision-001.md,document,révision 001,D7,016;017;018;019;020;021,86dc919
+001,64,2026-10-09T18:21:49+00:00,3,scripts/octaedre_perron_venn.py,resultats/revision_001.md,octaedre-perron-venn.md,document,XXVIII,D6,,86dc919
+001,65,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/observations/016-classification-naive-simplexe-thales.md,fiche,révision 001 (parties XX et XXIV),D1,016,86dc919
+001,66,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/observations/017-le-cadre-fabrique-des-liens.md,fiche,révision 001,D7,017,86dc919
+001,67,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py; scripts/centre_venn.py,resultats/revision_001.md,recueil/observations/018-le-seuil-deplace-le-centre-de-la-lumiere.md,fiche,révision 001 (partie XXX),D3,018,86dc919
+001,68,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/observations/019-la-moitie-de-kakeya-fini-vient-de-bonferroni.md,fiche,révision 001 (parties XIV et XXVII),D5,019,86dc919
+001,69,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/observations/020-le-seuil-du-centre-du-venn-est-isoperimetrique.md,fiche,révision 001 (partie XXX),D3,020,86dc919
+001,70,2026-10-09T18:21:49+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/observations/021-les-dizaines-de-premiers-croisent-pi-puis-2-racine-2.md,fiche,révision 001 (fiche 015),D2,021,86dc919
+001,71,2026-10-09T18:21:49+00:00,3,,resultats/revision_001.md; scripts/centre_venn.py; recueil/dossiers/hasard-et-methode.md,CLAUDE.md,config,recueil,D7,,86dc919
+001,72,2026-10-09T18:23:53+00:00,3,scripts/venn_ppm.py,resultats/venn_ppm.md,recueil/observations/001-2-moins-17-chiffres-de-5-puissance-17.md,fiche,XXIX,D2,001,4720407
+001,73,2026-10-09T18:23:53+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md; resultats/centre_venn.md,recueil/observations/002-diesis-fois-lumiere-du-17-gone.md,fiche,XXIX et XXX,D7,002,4720407
+001,74,2026-10-09T18:23:53+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/003-34-tan-pi-sur-34-et-pi.md,fiche,XXIX et XXX,D6,003,4720407
+001,75,2026-10-09T18:23:53+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md,recueil/observations/004-triangles-et-ombres-egales-octaedre.md,fiche,XXIX et XXX,D7,004,4720407
+001,76,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/005-moitie-exacte-venn-19-ramp12h.md,fiche,XXX,D6,005,4720407
+001,77,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/006-centre-de-la-lumiere-selon-la-pesee.md,fiche,XXX,D3,006,4720407
+001,78,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/007-premier-centre-faux-point-de-depart.md,fiche,XXX,D7,007,4720407
+001,79,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/008-dessin-centre-au-millieme-de-pixel.md,fiche,XXX,D3,008,4720407
+001,80,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/009-34-plus-34-aigrettes.md,fiche,XXX,D4,009,4720407
+001,81,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/010-ullisch-39-34-pourcent-de-chaque-anneau.md,fiche,XXX,D1,010,4720407
+001,82,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md,fiche,XXX,D3,011,4720407
+001,83,2026-10-09T18:23:53+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/012-tests-a-tolerance-et-liens-de-structure.md,fiche,XXX,D7,012,4720407
+001,84,2026-10-09T18:23:53+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md,fiche,recueil,D2,013,4720407
+001,85,2026-10-09T18:23:53+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/014-fractions-continues-imaginaires.md,fiche,recueil,D2,014,4720407
+001,86,2026-10-09T18:23:53+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/015-dizaines-de-premiers-cube-et-reste-modulo-3.md,fiche,recueil,D2,015,4720407
+001,87,2026-10-09T18:23:53+00:00,3,scripts/recueil_index.py,recueil/observations/,recueil/index.csv,resultats,recueil,D7,,4720407
+001,88,2026-10-09T18:23:53+00:00,3,scripts/recueil_index.py,recueil/observations/,recueil/index.md,document,recueil,D7,,4720407
+001,89,2026-10-09T18:23:53+00:00,3,,recueil/revisions/revision-001.md,README.md,config,recueil,D7,,4720407
+001,90,2026-10-09T18:23:53+00:00,3,scripts/revision_001.py,resultats/revision_001.md; recueil/revisions/verification-croisee-001.md,recueil/revisions/revision-001.md,document,révision 001,D7,,4720407
+001,91,2026-10-09T18:28:58+00:00,3,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,resultats/centre_venn.md,resultats,XXX,D3,002;003;005;006;007;008;009;010;011;012,6dd36f4
+001,92,2026-10-09T18:28:58+00:00,3,scripts/centre_venn.py,ext:dzoba/venn17/certificates/; ext:dzoba/venn17/images/venn17-pressure-dark-2000.png; ext:dzoba/venn17/images/venn17-rose-dark-2000.png,figures/ae3_grains_hasard.png,figure,XXX,D3,002;003;004;012,6dd36f4
+001,93,2026-10-09T18:28:58+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md; recueil/dossiers/hasard-et-methode.md,centre-venn.md,document,XXX,D3,002;003;011;012,6dd36f4
+001,94,2026-10-09T18:28:58+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md; resultats/centre_venn.md,recueil/observations/002-diesis-fois-lumiere-du-17-gone.md,fiche,XXIX et XXX,D7,002,6dd36f4
+001,95,2026-10-09T18:28:58+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/003-34-tan-pi-sur-34-et-pi.md,fiche,XXIX et XXX,D6,003,6dd36f4
+001,96,2026-10-09T18:28:58+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md,fiche,XXX,D3,011,6dd36f4
+001,97,2026-10-09T18:28:58+00:00,3,scripts/revision_001.py,resultats/revision_001.md,recueil/revisions/revision-001.md,document,révision 001,D7,,6dd36f4
+001,98,2026-10-09T18:52:34+00:00,3,scripts/revision_001.py,recueil/dossiers/hasard-et-methode.md; recueil/dossiers/aiguilles-kakeya-perron.md,recueil/revisions/revision-001.md,document,révision 001,D7,,f1682d2
+001,99,2026-10-09T19:01:13+00:00,3,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/hasard-et-methode.md,document,révision 001,D7,,0cf5302
+001,100,2026-10-09T19:01:13+00:00,3,scripts/revision_001.py; scripts/centre_venn.py,resultats/revision_001.md,recueil/observations/018-le-seuil-deplace-le-centre-de-la-lumiere.md,fiche,révision 001 (partie XXX),D3,018,0cf5302
+001,101,2026-10-09T19:01:13+00:00,3,scripts/revision_001.py,recueil/dossiers/hasard-et-methode.md,recueil/revisions/revision-001.md,document,révision 001,D7,,0cf5302
+001,102,2026-10-09T19:34:21+00:00,3,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/plotter/venn-13-color.svg,donnees_externes,révision 001,D6,,a7de788
+001,103,2026-10-09T19:34:21+00:00,3,,github.com/dzoba/venn17 (CC BY 4.0),ext:dzoba/venn17/plotter/venn-13-color.svg.png,donnees_externes,révision 001,D6,,a7de788
+001,104,2026-10-09T19:34:21+00:00,3,scripts/revision_001.py,recueil/revisions/verification-croisee-001.md; ext:dzoba/venn17/plotter/venn-13-color.svg; ext:dzoba/venn17/plotter/venn-13-color.svg.png,resultats/revision_001.md,resultats,révision 001,D7,018,a7de788
+001,105,2026-10-09T19:34:21+00:00,3,scripts/revision_001.py,recueil/revisions/verification-croisee-001.md,figures/rev001_perron_venn.png,figure,révision 001,D7,,a7de788
+001,106,2026-10-09T19:34:21+00:00,3,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/ombres-cube-venn.md,document,révision 001,D6,,a7de788
+001,107,2026-10-09T19:34:21+00:00,3,,recueil/revisions/plan-001.md; scripts/revision_001.py; resultats/revision_001.md,recueil/dossiers/hasard-et-methode.md,document,révision 001,D7,,a7de788
+001,108,2026-10-09T19:34:21+00:00,3,,recueil/dossiers/*.md,recueil/revisions/sorties-agents-001.json,resultats,révision 001,D7,,a7de788
+001,109,2026-10-09T19:34:21+00:00,3,scripts/revision_001.py,recueil/dossiers/corde-et-dimensions.md; recueil/dossiers/moities-et-crans.md; recueil/dossiers/bases-congruences-premiers.md; recueil/dossiers/grain-pixels-centres.md; recueil/dossiers/lumiere-et-physique.md; recueil/dossiers/aiguilles-kakeya-perron.md; recueil/dossiers/ombres-cube-venn.md; recueil/dossiers/hasard-et-methode.md; recueil/revisions/sorties-agents-001.json,recueil/revisions/verification-croisee-001.md,document,révision 001,D7,,a7de788
+001,110,2026-10-09T19:34:21+00:00,3,scripts/revision_001.py,resultats/revision_001.md; recueil/revisions/verification-croisee-001.md; recueil/dossiers/corde-et-dimensions.md; recueil/dossiers/moities-et-crans.md; recueil/dossiers/bases-congruences-premiers.md; recueil/dossiers/grain-pixels-centres.md; recueil/dossiers/lumiere-et-physique.md; recueil/dossiers/aiguilles-kakeya-perron.md; recueil/dossiers/ombres-cube-venn.md; recueil/dossiers/hasard-et-methode.md,recueil/revisions/revision-001.md,document,révision 001,D7,016;017;018;019;020;021,a7de788
+001,111,2026-10-09T19:34:21+00:00,3,scripts/recueil_index.py,recueil/observations/,recueil/index.csv,resultats,recueil,D7,,a7de788
+001,112,2026-10-09T19:34:21+00:00,3,scripts/recueil_index.py,recueil/observations/,recueil/index.md,document,recueil,D7,,a7de788
+001,113,2026-10-09T19:34:21+00:00,3,scripts/venn_ppm.py,resultats/venn_ppm.md,recueil/observations/001-2-moins-17-chiffres-de-5-puissance-17.md,fiche,XXIX,D2,001,a7de788
+001,114,2026-10-09T19:34:21+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md; resultats/centre_venn.md,recueil/observations/002-diesis-fois-lumiere-du-17-gone.md,fiche,XXIX et XXX,D7,002,a7de788
+001,115,2026-10-09T19:34:21+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/003-34-tan-pi-sur-34-et-pi.md,fiche,XXIX et XXX,D6,003,a7de788
+001,116,2026-10-09T19:34:21+00:00,3,scripts/venn_ppm.py; scripts/centre_venn.py,resultats/venn_ppm.md,recueil/observations/004-triangles-et-ombres-egales-octaedre.md,fiche,XXIX et XXX,D7,004,a7de788
+001,117,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/005-moitie-exacte-venn-19-ramp12h.md,fiche,XXX,D6,005,a7de788
+001,118,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/006-centre-de-la-lumiere-selon-la-pesee.md,fiche,XXX,D3,006,a7de788
+001,119,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/007-premier-centre-faux-point-de-depart.md,fiche,XXX,D7,007,a7de788
+001,120,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/008-dessin-centre-au-millieme-de-pixel.md,fiche,XXX,D3,008,a7de788
+001,121,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/009-34-plus-34-aigrettes.md,fiche,XXX,D4,009,a7de788
+001,122,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/010-ullisch-39-34-pourcent-de-chaque-anneau.md,fiche,XXX,D1,010,a7de788
+001,123,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/011-centre-du-venn-19-a-la-limite-a-2000-px.md,fiche,XXX,D3,011,a7de788
+001,124,2026-10-09T19:34:21+00:00,3,scripts/centre_venn.py,resultats/centre_venn.md,recueil/observations/012-tests-a-tolerance-et-liens-de-structure.md,fiche,XXX,D7,012,a7de788
+001,125,2026-10-09T19:34:21+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/013-racines-digitales-de-2-et-5-et-periode-de-1-sur-7.md,fiche,recueil,D2,013,a7de788
+001,126,2026-10-09T19:34:21+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/014-fractions-continues-imaginaires.md,fiche,recueil,D2,014,a7de788
+001,127,2026-10-09T19:34:21+00:00,3,scripts/recueil_verifications.py,resultats/recueil_verifications.md,recueil/observations/015-dizaines-de-premiers-cube-et-reste-modulo-3.md,fiche,recueil,D2,015,a7de788
+001,128,2026-10-09T19:34:21+00:00,3,scripts/revision_001.py; scripts/centre_venn.py,resultats/revision_001.md,recueil/observations/018-le-seuil-deplace-le-centre-de-la-lumiere.md,fiche,révision 001 (partie XXX),D3,018,a7de788
+001,129,2026-10-09T19:34:21+00:00,3,,resultats/revision_001.md; recueil/dossiers/ombres-cube-venn.md,CLAUDE.md,config,recueil,D7,,a7de788
+001,130,2026-10-09T19:34:21+00:00,3,,resultats/revision_001.md,README.md,config,recueil,D7,,a7de788

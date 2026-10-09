@@ -171,7 +171,7 @@ Figure : [`rev001_perron_venn.png`](../../figures/rev001_perron_venn.png), panne
 - **K2, les trois 34.** Lumière et aiguilles l'ont calculé chacun pour N = 3 à 20 ; moitiés l'a relié à x ↦ −x.
 - **K4, la moitié de Kakeya fini.** Moitiés, aiguilles et le test T5 concluent tous trois à deux procédés.
 - **Le minimum 2/(k + 2).** Moitiés (pour k = 2, l'aire vaut ½ sur tout un segment de rapports) et aiguilles (pour k = 3, 43/108 < 2/5, vérifié au § 4.10) trouvent chacun que c'est le minimum de la borne, pas celui de l'aire. La partie V l'avait vu en nombres (0,3981). CLAUDE.md et la partie XXVIII sont précisés.
-- **La palette comme cause du centre de la lumière.** Grain et lumière l'ont trouvée tous deux ; ils ne s'accordent pas sur les détails (§ 5.2). Méthode tranche le statut : la cause est établie sur l'analyse (la pesée, le seuil), par des interventions ; sur l'image, ce n'est encore qu'un ajustement.
+- **La palette comme cause du centre de la lumière.** Grain et lumière l'ont trouvée tous deux ; ils ne s'accordent pas sur les détails (§ 5.2). Méthode tranche le statut : la cause est établie par intervention sur un système modèle (le Venn à 13 courbes repeint, refait au § 4.12 du script) ; sur l'image à 17 courbes, la palette n'est encore qu'ajustée.
 - **Le « 93 % » et le banc d'essai.** Lumière a montré que le 93 % est le taux de base ; méthode, que le « 10/10 » de la variation est en partie écrit à la main. Deux erreurs de la même partie XXX, trouvées par deux chemins : un score cité sans son témoin.
 
 ### 5.2 Les désaccords entre agents
