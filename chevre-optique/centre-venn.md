@@ -41,7 +41,7 @@ Tout est recalculé par [`scripts/centre_venn.py`](scripts/centre_venn.py) (≈ 
   - L'image n'a que des harmoniques multiples de 17, sa diffraction que des multiples de 34. Aux plus hautes fréquences, c'est l'ordre 4 des pixels qui domine.
 - **Au plus près du centre.**
   - Empiler les 17 copies tournées (le « drizzle » du télescope Hubble) donne le centre au quart de pixel.
-  - Défocalisé, le centre inverse ses rayons là où la théorie le prévoit (93 % des signes en accord).
+  - Défocalisé, le centre inverse ses rayons près de là où la théorie le prévoit : une couronne inversée de 16 à 21 px, prévue de 9,7 à 17,7 px. *(Correction de la révision 001 : le « 93 % des signes en accord » est le taux de base, car un prédicteur « positif partout » en fait 92 % ; la couronne est réelle, la statistique ne la testait pas.)*
   - Le centre est le goulot de la granularité : à 2 000 px, il résout jusqu'à 19,0 courbes. Repositionner les grains fait gagner au plus deux courbes.
 - **Le hasard, testé.**
   - Sur dix relations de nature connue, les tests à tolérance déclarent « hasard » des liens de structure. Seules la précision poussée et la variation du paramètre ne se trompent jamais.
@@ -367,7 +367,7 @@ On empile les 17 copies autour d'un centre décalé de d, puis on mesure la part
 **Le calcul.**
 - Le centre de ton Venn est une étoile de Siemens à 17 rayons. À la distance r du centre, l'harmonique 17 a la fréquence 17/(2πr) cycle par pixel. On s'attend donc à une inversion quand 17b/r tombe entre 3,83 et 7,02.
 - Pour b = 4 px, la théorie prévoit l'inversion entre 9,7 et 17,7 px. Je la mesure de 16 à 21 px.
-- Les signes de 2 J₁(x)/x sont respectés sur 93 % des 76 rayons fiables, entre 15 et 90 px.
+- Les signes de 2 J₁(x)/x sont respectés sur 93 % des 76 rayons fiables, entre 15 et 90 px. *Correction de la révision 001 (dossier lumière ; `resultats/revision_001.md`, § 4.11) : c'est 71 rayons sur 76, et un prédicteur « positif partout » en fait 70. Ce score est le taux de base ; il ne teste pas l'inversion. Le bon test fait varier le rayon du flou et l'harmonique.*
 
 **Ce qui reste approché.** La zone mesurée est décalée de quelques pixels vers l'extérieur. La formule suppose des rayons droits et fins ; ceux du Venn sont courbes et épais, et le trou (14,6 px) coupe la zone prévue.
 

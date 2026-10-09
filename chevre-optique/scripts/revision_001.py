@@ -1161,6 +1161,38 @@ assert ok_a and ok_b and all(ok_c)
 TESTS.append(("dossiers corde et bases", "trois énoncés refaits", "dérangements (j ≤ 20), Φ₆(10) = 7 × 13, lemme des chiffres (q ≤ 30) : vérifiés"))
 
 
+# --- 4.11 le « 93 % » de la défocalisation, contre le taux de base (dossier lumière, N4) --------------------------------
+from scipy.special import j1  # noqa: E402
+
+ligne()
+ligne("### 4.11 Le « 93 % » de la défocalisation, contre un prédicteur constant (dossier lumière)")
+ligne()
+with open(os.path.join(ICI, "..", "resultats", "centre_venn.md"), encoding="utf-8") as fh:
+    txt_cv = fh.read()
+m_def = re.search(r"mesurée de (\d+) à (\d+) px\. Signes en accord avec 2 J₁\(x\)/x sur (\d+) % des rayons fiables"
+                  r" au-delà du trou \((\d+) rayons de (\d+) à (\d+) px", txt_cv)
+r_inv0, r_inv1, pct, n_ray, r0_, r1_ = (int(g) for g in m_def.groups())
+RS_ = np.arange(r0_, r1_ + 1)
+assert len(RS_) == n_ray
+signe_th = np.sign(2 * j1(4 * 17 / RS_) / (4 * 17 / RS_))          # le modèle de Hopkins (disque de 4 px, harmonique 17)
+signe_mes = np.where((RS_ >= r_inv0) & (RS_ <= r_inv1), -1, 1)      # l'inversion mesurée par la partie XXX
+acc_modele = int(np.sum(signe_th == signe_mes))
+acc_constant = int(np.sum(signe_mes == 1))
+ligne(f"La partie XXX (§ 6.3) annonce des signes en accord avec 2 J₁(x)/x sur {pct} % des {n_ray} rayons de {r0_} à {r1_} px,"
+      f" avec une inversion mesurée de {r_inv0} à {r_inv1} px. Le modèle prévoit l'inversion de 9,7 à 17,7 px : sur les rayons"
+      f" étudiés, seulement {int(np.sum(signe_th < 0))} sont négatifs ({', '.join(str(r) for r in RS_[signe_th < 0])} px).")
+ligne()
+ligne(f"- Le modèle est d'accord sur {acc_modele} rayons sur {n_ray} ({fr(100 * acc_modele / n_ray, '{:.1f}')} %).")
+ligne(f"- Un prédicteur constant, « positif partout », l'est sur {acc_constant} ({fr(100 * acc_constant / n_ray, '{:.1f}')} %) :"
+      " c'est le taux de base.")
+ligne(f"- **Verdict** : le 93 % ne bat le taux de base que d'{'un rayon' if acc_modele - acc_constant == 1 else str(acc_modele - acc_constant) + ' rayons'}."
+      " La couronne inversée est réelle (de 16 à 21 px), mais cette statistique ne la teste pas : presque tous les rayons"
+      " sont positifs, pour le modèle comme pour la mesure. Le bon test fait varier le rayon du flou b et l'harmonique"
+      " (17, 34, 51) et vérifie que la couronne suit r entre m·b/7,016 et m·b/3,832 (dossier lumière, N4).")
+assert acc_modele == 71 and acc_constant == 70
+TESTS.append(("XXX § 6.3", "le score du modèle contre un prédicteur constant", f"{acc_modele}/{n_ray} contre {acc_constant}/{n_ray} : le « 93 % » est le taux de base"))
+
+
 # ===========================================================================
 # La figure (panneau a : la diagonale √2)
 # ===========================================================================
