@@ -708,12 +708,15 @@ XJ = B_DEF * 17 / RS
 GAIN_TH = 2 * j1(XJ) / XJ
 Z1 = jn_zeros(1, 2)
 ACC_SIGNE = float(np.mean(np.sign(GAIN[FIABLE]) == np.sign(GAIN_TH[FIABLE])))
+BASE_SIGNE = float(np.mean(GAIN[FIABLE] > 0))          # le prédicteur constant « positif partout » (révision 001)
 INV = RS[(GAIN < 0) & FIABLE]
 ligne(f"**Défocalisation** (disque de rayon {fr(B_DEF, '{:g}')} px, harmonique 17) : inversion prévue entre"
       f" {fr(B_DEF * 17 / Z1[1], '{:.1f}')} et {fr(B_DEF * 17 / Z1[0], '{:.1f}')} px (zéros de J₁) ; mesurée de"
       f" {fr(INV.min(), '{:.0f}')} à {fr(INV.max(), '{:.0f}')} px. Signes en accord avec 2 J₁(x)/x sur"
       f" {fr(100 * ACC_SIGNE, '{:.0f}')} % des rayons fiables au-delà du trou ({int(FIABLE.sum())} rayons de 15 à 90 px ;"
-      f" on écarte ceux où l'harmonique 17 est presque nulle).\n")
+      f" on écarte ceux où l'harmonique 17 est presque nulle). Ce score est surtout le taux de base : « positif partout »"
+      f" fait {fr(100 * BASE_SIGNE, '{:.0f}')} %. C'est la couronne inversée qui confirme le modèle, pas ce pourcentage"
+      " (révision 001).\n")
 
 # les limites de granularité : le centre contre le reste
 ligne("**Largeur d'image nécessaire** (pixels) : le reste à 2 px par côté de croisement, le centre à 2 px d'arc entre"
@@ -1288,7 +1291,8 @@ ax.legend(loc="center right", bbox_to_anchor=(0.99, 0.33), fontsize=8.4)
 ax.set_title(f"d)  Défocalisé, le centre inverse ses rayons (b = {fr(B_DEF, '{:g}')} px)")
 legende(ax, "Un flou de défocalisation est un disque ; sa fonction de transfert 2 J₁(x)/x devient négative (ta figure de"
         " la FTO, partie VIII) : là, le noir et le blanc des rayons s'échangent, comme sur une mire de Siemens défocalisée"
-        f" (la « fausse résolution »). Signes en accord sur {fr(100 * ACC_SIGNE, '{:.0f}')} % des rayons hors du trou.", y=-0.13)
+        f" (la « fausse résolution »). Signes en accord sur {fr(100 * ACC_SIGNE, '{:.0f}')} % des rayons hors du trou, mais"
+        f" « positif partout » fait {fr(100 * BASE_SIGNE, '{:.0f}')} % : la preuve est la couronne inversée (révision 001).", y=-0.13)
 
 ax = fig.add_subplot(gs[1, 1])
 nn_ = np.array([n for n, _, _ in GRAN])
@@ -1341,7 +1345,7 @@ for i, c in enumerate(BANC):
 ax.set_title("f)  Quel test du hasard convient ici ?")
 legende(ax, "Six techniques jugent dix relations dont on connaît la nature. Vert : verdict juste ; rouge : faux ; « non » :"
         " pas le hasard. Les tests à tolérance (colonnes 1 à 3, 6) déclarent « hasard » des liens de structure qui ont un"
-        " petit écart connu ; la précision poussée et la variation du paramètre ne se trompent jamais ici. C'est ta"
-        " remarque : plusieurs techniques concluraient au hasard.", y=-0.03)
+        " petit écart connu ; la précision poussée et la variation du paramètre ne se trompent pas ici, en partie par"
+        " construction (révision 001). C'est ta remarque : plusieurs techniques concluraient au hasard.", y=-0.03)
 F.sauver(fig, "ae3_grains_hasard.png")
 print(f"figures : {time.time() - T1_:.1f} s ; total : {time.time() - T0:.1f} s")

@@ -166,7 +166,7 @@ Tableaux complets, recalculés par `scripts/centre_venn.py` à partir du dépôt
 - Autour de mon premier centre (2,36 px du bon) : incohérence 76,2 %.
 - Grille 4 fois plus fine (0,25 px) : 4,3 échantillons par case en moyenne (17 copies, gouttes de 0,5 px).
 
-**Défocalisation** (disque de rayon 4 px, harmonique 17) : inversion prévue entre 9,7 et 17,7 px (zéros de J₁) ; mesurée de 16 à 21 px. Signes en accord avec 2 J₁(x)/x sur 93 % des rayons fiables au-delà du trou (76 rayons de 15 à 90 px ; on écarte ceux où l'harmonique 17 est presque nulle).
+**Défocalisation** (disque de rayon 4 px, harmonique 17) : inversion prévue entre 9,7 et 17,7 px (zéros de J₁) ; mesurée de 16 à 21 px. Signes en accord avec 2 J₁(x)/x sur 93 % des rayons fiables au-delà du trou (76 rayons de 15 à 90 px ; on écarte ceux où l'harmonique 17 est presque nulle). Ce score est surtout le taux de base : « positif partout » fait 92 %. C'est la couronne inversée qui confirme le modèle, pas ce pourcentage (révision 001).
 
 **Largeur d'image nécessaire** (pixels) : le reste à 2 px par côté de croisement, le centre à 2 px d'arc entre les n croisements de l'orbite centrale ; repositionner les grains divise ces largeurs par 2 au mieux.
 
@@ -220,4 +220,4 @@ Tableaux complets, recalculés par `scripts/centre_venn.py` à partir du dépôt
 - Sur 20 000 paires tirées au hasard (log-uniformes sur 4 décades), part déclarée « pas le hasard » : p naïve (une comparaison) : 5,81 % ; Bonferroni (× 1 240) : 0,00 % ; nul brouillé (partie XXIX) : 0,00 % ; longueur de description : 0,00 %.
 - Un réel tombe pile sur une constante donnée, à 50 chiffres, avec une probabilité de l'ordre de 10⁻⁵⁰ ; un compte entier dispersé de ±25 orbites tombe pile sur sa moitié avec 1,6 %.
 
-(calculs : 50 s)
+(calculs : 80 s)

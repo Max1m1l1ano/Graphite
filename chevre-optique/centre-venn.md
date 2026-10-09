@@ -44,7 +44,7 @@ Tout est recalculé par [`scripts/centre_venn.py`](scripts/centre_venn.py) (≈ 
   - Défocalisé, le centre inverse ses rayons près de là où la théorie le prévoit : une couronne inversée de 16 à 21 px, prévue de 9,7 à 17,7 px. *(Correction de la révision 001 : le « 93 % des signes en accord » est le taux de base, car un prédicteur « positif partout » en fait 92 % ; la couronne est réelle, la statistique ne la testait pas.)*
   - Le centre est le goulot de la granularité : à 2 000 px, il résout jusqu'à 19,0 courbes. Repositionner les grains fait gagner au plus deux courbes.
 - **Le hasard, testé.**
-  - Sur dix relations de nature connue, les tests à tolérance déclarent « hasard » des liens de structure. Seules la précision poussée et la variation du paramètre ne se trompent jamais.
+  - Sur dix relations de nature connue, les tests à tolérance déclarent « hasard » des liens de structure. Seules la précision poussée et la variation du paramètre ne se trompent jamais. *(Précision de la révision 001 : « jamais » est trop fort. Dans ce banc, la précision ne peut que confirmer ou s'abstenir, et trois verdicts de la variation sont posés à la main dans le script ; la table reste juste comme pratique.)*
   - Ta remarque est donc juste, avec une nuance : un entier peut tomber pile par hasard (1,6 % pour la moitié exacte à 19 courbes) ; un réel exact à 50 chiffres, jamais.
 
 ![Le centre et la moitié](figures/ae1_centre_moitie.png)
@@ -444,6 +444,7 @@ Combien de pixels faut-il pour dessiner un Venn à n courbes ? J'impose deux con
     - C1 ne vaut 1 qu'en N = 16,70, un simple passage par zéro ;
     - la part des triangles vaut 36,0, 37,3, 35,8 et 35,7 % pour 11, 13, 17 et 19 courbes, sans jamais suivre 35,10 %.
 - **Une honnêteté nécessaire.** La variation du paramètre n'est pas indépendante de la « vérité » du banc : c'est l'épreuve même qui permet de dire qu'un lien a une structure. Le banc montre surtout que les tests à tolérance, eux, échouent sur les liens de structure.
+  - *Précision de la révision 001 (dossier méthode, vérifiée dans le script).* La précision poussée rend « pas le hasard » ou « sans objet », jamais « hasard » : son 4 / 4 vient de six abstentions sur dix. Dans la fonction `varie`, les verdicts de C1, C2 et E4 sont écrits à la main, à partir des calculs affichés ; quatre cas sur dix sont des identités, où tous les tests ont raison. Le 10 / 10 et le 4 / 4 sont donc en partie construits. Un vrai banc demanderait des vérités établies par une source indépendante, et plus de cas négatifs.
 
 ### 7.3 La moitié exacte du Venn à 19 courbes
 

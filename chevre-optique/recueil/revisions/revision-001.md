@@ -218,6 +218,8 @@ C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s
 | XIV § 5 et XXVII § 9 | la moitié de Kakeya fini expliquée par les carrés | plan (K4), test T5 | elle vient de l'inclusion–exclusion ; la piste XIV–XX se ferme |
 | XXX (En bref et § 6.3), CLAUDE.md § 6 | « 93 % des signes en accord » avec la défocalisation | dossier lumière | c'est le taux de base : 71 rayons sur 76, contre 70 pour un prédicteur constant (§ 4.11) |
 | XXVIII, En bref | « la formule 2/(k + 2) … démontrée pour tout k », sans dire laquelle | dossier aiguilles | précisé : c'est l'aire des arbres télescopiques ; l'arbre optimal fait mieux dès 8 branches (§ 2.6 de la partie) |
+| XXX, figure ae3 (panneau d) et résultats § 6 | le « 93 % » répété sans son taux de base | dossiers lumière et méthode | la légende et la ligne de résultats donnent le taux de base : « positif partout » fait 92 % (script de la partie XXX relancé) |
+| XXX (En bref, § 7.2, figure ae3 panneau f), CLAUDE.md § 10 | « la précision poussée et la variation du paramètre ne se trompent jamais » | dossier méthode | précisé, après lecture du script : la précision ne peut que confirmer ou s'abstenir, et trois verdicts de la variation (C1, C2, E4) sont posés à la main. La table du § 10 reste juste comme pratique |
 | CLAUDE.md § 6 (partie XXVIII) | « minimum 2/(k + 2) » lu comme l'aire minimale | dossier aiguilles | c'est le minimum d'une borne ; l'aire exacte descend à 43/108 < 2/5 pour k = 3 (§ 4.10). La partie V l'avait trouvé en nombres (0,3981482) ; le dossier en reconnaît les fractions, 7/9, 25/42 et 43/50 |
 
 **Signalées, pas encore corrigées** (à vérifier une à une à la prochaine révision ; le dossier qui les signale donne la preuve) :

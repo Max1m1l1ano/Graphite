@@ -34,5 +34,5 @@ Fiches 003 et 004 (les autres rapprochements du même test) ; fiche 012 (le banc
 
 Synthèse : [revision-001.md](../revisions/revision-001.md).
 - Le diésis reste un hasard testé ; le dossier corde en fait le comparant de K1 (la lumière du polygone inscrit).
-- Dossier [corde](../dossiers/corde-et-dimensions.md) : ajoutée par moi (facultatif) : comparant de K1 (lumière du polygone inscrit) ; lien de comparaison et non de structure ; « hasard » reste juste.
+- Dossier [corde](../dossiers/corde-et-dimensions.md) : ajoutée au dossier par son agent (facultatif) : comparant de K1 (lumière du polygone inscrit) ; lien de comparaison et non de structure ; « hasard » reste juste.
 - Dossier [lumière](../dossiers/lumiere-et-physique.md) : hasard, avec sa loi : 845 ppm est au rang 0,6 de la loi uniforme des passages par 1 (calcul de l'agent, à refaire) ; la fiche est un nœud de trois arbres (P3 par la lumière, P6 par le diésis, P7 par le verdict).
