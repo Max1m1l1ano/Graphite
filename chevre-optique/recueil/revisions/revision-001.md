@@ -227,6 +227,8 @@ Presque chaque test fait varier un paramètre, comme le demande le choix du test
 
 C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s'accumulent d'une partie à l'autre parce qu'une phrase reste après sa correction, ou parce qu'un choix devient un fait.
 
+*Précision du [bilan](bilan-001.md) (CLAUDE.md, § 10).* Ce que les agents signalent sont des drapeaux, pas des erreurs. Les corrections ci-dessous ont été jugées par la session ; celles d'association ou d'assemblage sont à confirmer par toi. Les « signalées » sont des drapeaux à juger. Le registre [`drapeaux-001.csv`](drapeaux-001.csv) donne la nature, le verdict et la raison de chacun.
+
 **Corrigées par la révision, après vérification :**
 
 | où | l'erreur | signalée par | la correction |

@@ -253,6 +253,24 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
   - Pousser la précision ne peut que confirmer ou s'abstenir, jamais dire « hasard ».
   - « Ne se trompent jamais » est donc trop fort. La table reste juste comme pratique. Un vrai banc demanderait des vérités établies par une source indépendante, et plus de cas négatifs.
 
+**Les agents lèvent des drapeaux, pas des erreurs** (remarque de l'auteur, 10 octobre 2026, sur le bilan de la révision 001).
+> « C'est seulement toi et moi qui pouvons juger correctement d'une erreur et donc les agents peuvent soulever des flags mais pas des erreurs. »
+- **Un signalement d'agent est un drapeau.** C'est peut-être une erreur, peut-être pas : un chat de Schrödinger, tant que la session et l'auteur ne l'ont pas jugé.
+  - Pour ce qu'un agent rapporte, écris « drapeau » ou « signalement », jamais « erreur trouvée ».
+  - Le rôle des agents est de repérer, dans toute l'information, les endroits où il pourrait y en avoir une. Le jugement revient à la session et à l'auteur.
+- **Il n'y a pas de rendement en erreurs.** Compter les erreurs trouvées par heure ou par kilo-octet ne mesure rien : un agent rapide peut signaler une erreur là où il n'y en a pas.
+  - Le bilan 001 avait comparé ainsi 6,8 signalements par heure à 2,8, sans les juger.
+  - Le registre des drapeaux le montre ([`drapeaux-001.csv`](recueil/revisions/drapeaux-001.csv)). 11 des 23 drapeaux des dossiers longs sont confirmés, contre 2 des 22 des dossiers concis. Mais 23 restent à juger, et l'ordre de vérification a favorisé les longs, arrivés les premiers : aucun rendement ne se calcule avant le jugement.
+  - Ce qui se compte, c'est le verdict de chaque drapeau.
+- **La nature du drapeau est ce qu'il faut rapporter d'abord.**
+  - *Un procédé court* : une erreur de script dans les résultats, un nombre qui ne correspond pas à son fichier, un libellé, un chemin, un format. Il se juge tout de suite, en relançant ou en comparant : ce n'est pas un chat de Schrödinger, et la session peut le trancher seule.
+  - *Une erreur d'association* (deux choses reliées ou attribuées à tort, une lecture qui devient un fait) ou *d'assemblage* (des morceaux justes, mal mis ensemble : des notations, des renvois, un choix de cadre non écrit). Elle sort de la charge de travail d'un agent, qui ne voit qu'une tranche du corpus. Elle reste un drapeau jusqu'au jugement de la session et de l'auteur.
+  - Quand la session corrige un drapeau d'association ou d'assemblage, elle le montre à l'auteur, avec sa raison.
+- **Affiche quand et pourquoi on crée quelque chose.** C'est ce qui permet de juger un drapeau par un procédé court.
+  - Chaque fichier, résultat, figure ou fiche dit quand il a été créé et pourquoi. *Quand*, c'est la partie ou l'arc, pas l'heure du dernier passage du script, que git garde. *Pourquoi*, c'est le message ou la question qui l'a demandé.
+  - Chaque section d'un fichier de résultats dit la raison de sa création.
+- **Les sorties structurées des agents** donnent, pour chaque drapeau, sa nature : procédé court, association, assemblage, référence ou plan. La session y ajoute le verdict (à juger, confirmé, infirmé), qui l'a jugé, quand, et pourquoi. C'est le registre des drapeaux de la révision, `recueil/revisions/drapeaux-NNN.csv`.
+
 **Le recueil** (son mode d'emploi détaillé est dans [`recueil/README.md`](recueil/README.md)).
 - **Une fiche par observation** : `recueil/observations/NNN-titre.md`, numérotée à la suite.
 - **Le tableau d'en-tête** : type (les six mots), statut (exact, structure, calculé, hasard, ouvert, à tester), partie et document, **le script qui traite les données (et sa section)**, les données (`resultats/…`), **l'image `.png` et son panneau, s'il y en a une**, la dimension (d'abord une seule, D1 à D8), le test appliqué, l'arc, « révisé ».
@@ -276,7 +294,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 - **Comment.**
   1. Envoie un agent Opus (outil Agent, `model: "opus"`). Il lit le recueil, les données brutes des arcs et ce fichier. Il produit un plan de synthèse avec un rapport de lancement de workflow : quels agents Sonnet, sur quels scripts et quelles données, avec quelles questions.
   2. Lance ce workflow (outil Workflow, agents Sonnet, moins de dix). Chaque agent relit ses scripts et ses données, et relie les observations entre elles et au reste du corpus.
-     - Chaque agent écrit son dossier dans le dépôt au fur et à mesure, et rend une sortie structurée : ses corrections du recouvrement, ses verdicts sur les fiches, ses congruences, ses erreurs trouvées et ses fiches proposées.
+     - Chaque agent écrit son dossier dans le dépôt au fur et à mesure, et rend une sortie structurée : ses corrections du recouvrement, ses verdicts sur les fiches, ses congruences, ses drapeaux (des erreurs possibles, chacune avec sa nature, voir plus haut) et ses fiches proposées.
      - Réunis ces sorties dans `recueil/revisions/sorties-agents-NNN.json` : ce sont les données brutes de la révision suivante. À la révision 001, deux redémarrages et une limite d'usage ont fait perdre une sortie ; le dossier, déjà écrit, a permis de la relever à la main.
      - Fais ensuite la vérification croisée, `recueil/revisions/verification-croisee-NNN.md` : le recouvrement corrigé en JSON (le script de la révision en tire le nerf), les congruences vues par plusieurs dossiers, les doublons (des confirmations) et les contradictions entre agents.
   3. Écris la synthèse `recueil/revisions/revision-NNN.md`, dont la première ligne est `<!-- arcs: N -->` (le nombre d'arcs qu'elle couvre). Elle contient :

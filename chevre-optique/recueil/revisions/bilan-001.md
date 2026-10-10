@@ -9,7 +9,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 ## En bref
 
 - **L'exercice a marché, mais il coûte cher et il est fragile** (§ 1 et 2).
-  - Il a produit 8 dossiers, 12 corrections du corpus, 26 erreurs signalées, 12 tests nouveaux, 6 fiches (8 avec ce bilan) et une intervention qui établit une cause.
+  - Il a produit 8 dossiers, 12 corrections du corpus, 45 drapeaux levés par les agents, 12 tests nouveaux, 6 fiches (8 avec ce bilan) et une intervention qui établit une cause.
   - Il a demandé 15 h d'agents, 49 h de calendrier (dont 40 h d'attente) et 1,4 Mo de texte, 1,7 fois le corpus qu'il révise.
 - **Ce qui vaut le plus, ce sont les corrections et les tests** (§ 3).
   - Les résultats neufs portent sur la chaîne de production du corpus : le seuil, la palette, le banc d'essai, le « 93 % ». C'est ton sujet d'étude, la restriction du cadre.
@@ -25,7 +25,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
   - La diagonale √2 plafonne à 6,9 % avec 8 dimensions : il faudra les diviser.
 - **Les agents et les données** (§ 6 et 7).
   - Le plan Opus est trop long et n'a pas de budgets.
-  - Les dossiers concis trouvent autant d'erreurs que les longs, en deux fois moins de temps ; ils proposent un peu moins de fiches et de congruences.
+  - Les dossiers concis lèvent autant de drapeaux que les longs, en deux fois moins de temps. Mais un drapeau n'est pas une erreur : 13 des 45 sont confirmés, 23 restent à juger, et aucun rendement ne se calcule avant (§ 1 ; CLAUDE.md, § 10).
   - La mémoire est le point faible.
   - Les mêmes nombres sont recopiés dans 11 ou 12 fichiers. Je propose un registre des résultats.
 - **La suite** : une forme en huit étapes avec des budgets (§ 8), onze problématiques (§ 9), mes listes de tâches et sept questions pour toi (§ 10).
@@ -60,9 +60,9 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 | **total (texte)** | | **1,38 Mo** |
 | pour comparer : le corpus | 29 documents, README et CLAUDE.md | 0,83 Mo |
 
-**Le rendement des dossiers** (d'après leurs sorties structurées ; celle de lumière est perdue).
+**Ce que les dossiers ont produit** (d'après leurs sorties structurées ; celle de lumière est perdue).
 
-| dossier | taille | durée | erreurs trouvées | fiches proposées | congruences | références (dont à vérifier) |
+| dossier | taille | durée | drapeaux levés | fiches proposées | congruences | références (dont à vérifier) |
 |---|---:|---:|---:|---:|---:|---:|
 | corde | 95 Ko | 110 min | 8 | 9 | 11 | 31 (9) |
 | moitiés | 105 Ko | 116 min | 5 | 10 | 13 | 26 (8) |
@@ -73,12 +73,39 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 | ombres | 46 Ko | 74 min | 9 | 7 | 8 | 16 (7) |
 | méthode | 46 Ko | 64 min | 7 | 7 | 11 | 28 (10) |
 
-**Ce que le tableau dit.**
-- Les dossiers concis trouvent 6,8 erreurs par heure, contre 2,8 pour les longs. Par 100 Ko de texte, c'est 17 contre 5. La longueur n'achète donc pas le rendement.
-- Par dossier, les concis trouvent un peu plus d'erreurs (7,3 contre 5,8), mais proposent un peu moins de fiches (7,3 contre 8,8) et de congruences (8,7 contre 11,5).
-- *Prudence* : la comparaison mêle trois effets, le gabarit, le sujet et l'ordre. Les dossiers concis venaient après, et méthode lisait les dossiers déjà écrits.
+**Ce que le tableau ne dit pas : un rendement.**
+- Une première version de ce bilan en tirait un : 6,8 « erreurs » par heure pour les dossiers concis, contre 2,8 pour les longs. Tu l'as corrigée, à raison.
+- Ce qu'un agent rapporte est un drapeau, pas une erreur, et un agent rapide peut signaler une erreur là où il n'y en a pas (CLAUDE.md, § 10).
+- Le registre [`drapeaux-001.csv`](drapeaux-001.csv) donne, pour chacun des 45 drapeaux, sa nature, son verdict, qui l'a jugé, quand et pourquoi. Il est écrit par [`outils-001/drapeaux.py`](outils-001/drapeaux.py).
 
-**Le compte des erreurs.** Les sorties structurées en rapportent 45, et lumière en a signalé d'autres dans son dossier. La synthèse en retient 38 : 12 corrigées et 26 signalées. L'écart vient des doublons entre dossiers et des erreurs que je n'ai pas retenues. Je n'en ai pas gardé le compte détaillé, et c'est une des choses que le registre (§ 7) doit tracer.
+| dossiers | drapeaux | confirmés | infirmés | à juger | sur le plan | réglés ailleurs |
+|---|---:|---:|---:|---:|---:|---:|
+| longs (corde, moitiés, bases, grain) | 23 | 11 | 0 | 10 | 2 | 0 |
+| concis (aiguilles, ombres, méthode) | 22 | 2 | 1 | 13 | 3 | 3 |
+| **tous** | **45** | **13** | **1** | **23** | **5** | **3** |
+
+| nature | drapeaux | confirmés | infirmés | à juger | sur le plan | réglés ailleurs |
+|---|---:|---:|---:|---:|---:|---:|
+| procédé court | 16 | 6 | 1 | 7 | 0 | 2 |
+| association | 15 | 6 | 0 | 8 | 0 | 1 |
+| assemblage | 7 | 1 | 0 | 6 | 0 | 0 |
+| référence | 2 | 0 | 0 | 2 | 0 | 0 |
+| plan | 5 | 0 | 0 | 0 | 5 | 0 |
+
+**Ce que les deux tableaux disent.**
+- *Ta remarque se vérifie en partie.* Parmi les drapeaux jugés, ceux des dossiers longs sont bien plus souvent confirmés : 11 sur 23, contre 2 sur 22. Le classement « 6,8 contre 2,8 » s'inverse dès qu'on regarde les verdicts.
+- *Mais on ne peut pas conclure.* 23 drapeaux restent à juger, et j'ai vérifié d'abord les dossiers longs, arrivés les premiers : l'ordre du vérificateur biaise le compte. La comparaison mêle aussi le gabarit et le sujet.
+- *Les 7 drapeaux de procédé court encore ouverts se jugent vite*, en relançant ou en comparant. J'en ai jugé un pour ce bilan. La lecture du nul brouillé par une expression régulière (`scripts/centre_venn.py`, section 7) n'est pas une erreur des résultats : λ = 402 y est bien lu, sur 7 lignes. C'est une fragilité, car si le format change, le script se replie sans rien dire sur 410.
+- *Sept corrections ont été jugées par moi seul* pendant la révision : six d'association et une d'assemblage. Sous la nouvelle règle, elles sont à confirmer par toi. Ce sont les drapeaux D11, D12, D16, D17, D18, D25 et D26 du registre.
+- *Le reste de la comparaison tient, avec la même prudence* : les dossiers concis proposent un peu moins de fiches (7,3 contre 8,8 en moyenne) et de congruences (8,7 contre 11,5), en deux fois moins de temps.
+
+**Les drapeaux et la synthèse.**
+- Les 13 drapeaux confirmés portent sur 11 corrections, parce que deux paires de dossiers ont signalé la même chose : la fiche 010, et CLAUDE.md, § 6.
+- Neuf de ces corrections sont parmi les 12 de la synthèse. Les trois autres de la synthèse viennent du dossier lumière, dont la sortie est perdue, et du texte du dossier méthode.
+- Deux corrections manquaient à la liste de la synthèse :
+  - la fiche 010, rangée parmi les signalées alors que son texte était corrigé ;
+  - le statut « calculé » du README du recueil.
+- Les 26 « signalées » de la synthèse sont des drapeaux à juger.
 
 ## 2. Étape par étape : ce qui a marché, ce qui a cassé
 
@@ -221,10 +248,11 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 - Lui faire proposer une division des dimensions.
 
 **Les agents Sonnet (les dossiers).**
-- Fixer des limites : 30 Ko, 60 min et 150 appels au plus. Les dossiers concis montrent que c'est possible sans perdre d'erreurs trouvées (§ 1, avec sa prudence).
+- Fixer des limites : 30 Ko, 60 min et 150 appels au plus. Les dossiers concis montrent qu'on peut les tenir. Ce que valent leurs drapeaux, on ne le saura qu'en les jugeant (§ 1).
 - Écrire la sortie structurée sur disque, section par section : c'est ce qui a manqué pour lumière.
 - Garder le code dans le dépôt (`recueil/revisions/NNN/code/<dossier>/`) : c'est ce qui a obligé à refaire l'intervention de méthode.
 - Pas de première personne. Chaque nombre (A) donne son fichier de code.
+- Des drapeaux, pas des erreurs. Chacun donne sa nature (procédé court, association, assemblage, référence ou plan), son fichier et sa raison (CLAUDE.md, § 10).
 - **Ajouter un contradicteur** : un agent avec d'autres consignes, ou un autre modèle, qui refait seulement les trois énoncés les plus forts de chaque dossier.
 
 **Moi (la session principale).**
@@ -239,7 +267,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 - Un script déduit le CSV de git à chaque arc.
 - Le récit Sonnet, de 10 Ko au plus, seulement aux révisions ou tous les N arcs (question 3 du § 10.7).
 - **Mesuré à l'arc 002.** Avec une consigne allégée (12 Ko au plus), l'agent a pris autant de temps qu'à l'arc 001 : 28 min et 146 appels, contre 29 min et 94 appels.
-  - La vérification a pris la place de la rédaction : il a trouvé six incohérences dans ce bilan, toutes réelles, et corrigées avant le message final ([`arc-002.md`](../arcs/arc-002.md), § h).
+  - La vérification a pris la place de la rédaction : il a levé six drapeaux sur ce bilan. Je les ai jugés : les six étaient justes, et ils sont corrigés ([`arc-002.md`](../arcs/arc-002.md), § h).
   - Sa valeur est donc surtout celle d'un vérificateur. C'est ce rôle qu'il faudrait lui donner, avec le CSV fait par script.
 
 ## 7. Les données : la quantité et l'organisation
@@ -253,6 +281,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
   - Un script vérifie que chaque nombre cité est celui du registre.
   - Une correction devient une ligne, et le script dit où la reporter.
   - C'est le principe FAIR : des données qu'on retrouve par un identifiant et qu'on réutilise.
+- **Le registre des drapeaux**, fait pour la révision 001 : [`drapeaux-001.csv`](drapeaux-001.csv), une ligne par drapeau, avec sa nature, son verdict, qui l'a jugé, quand et pourquoi (CLAUDE.md, § 10).
 - **Les sorties structurées** (248 Ko) sont la bonne couche pour la révision suivante, parce qu'elles se lisent par script. Les dossiers devraient les citer, pas les recopier.
 - **Les outils** sont archivés avec les chemins de cette session ; ils sont à réunir en `scripts/revision_outils.py`.
 
@@ -263,7 +292,7 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 | 0. préparer | script | `revisions/NNN/paquet.md` : index, registre, fiches nouvelles, arcs, graphe des fichiers, ouverts | 60 Ko |
 | 1. planifier | Opus | `plan-NNN.md` et `plan-NNN.json` : dossiers, lectures, questions, congruences, tests, budgets | 30 Ko, 45 min |
 | 2. écrire les dossiers | Sonnet, 8 au plus, 2 à la fois, puis un contradicteur | le dossier, son JSON écrit au fil des sections, son code dans `revisions/NNN/code/` | 30 Ko, 60 min, 150 appels chacun |
-| 3. croiser | script, puis moi | `verification-croisee-NNN.md` : v2, doublons, contradictions, erreurs du plan ; ma lecture | 10 Ko de lecture |
+| 3. croiser et juger | script, puis moi, puis toi | `verification-croisee-NNN.md` (v2, doublons, contradictions, erreurs du plan, ma lecture) et `drapeaux-NNN.csv` (la nature et le verdict de chaque drapeau : les procédés courts par moi, l'association et l'assemblage avec toi) | 10 Ko de lecture |
 | 4. tester | moi | `scripts/revision_NNN.py` : tout ce qui entre dans l'En bref, refait et reproductible | ≈ 5 min |
 | 5. synthétiser | moi | `revision-NNN.md`, chaque nombre avec son id du registre | 25 Ko |
 | 6. mettre à jour | script | les fiches, le registre, l'index, la vérification des nombres cités | — |
@@ -281,10 +310,10 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 |---|---|---|---|
 | 1 | robustesse | 2 redémarrages, 1 limite d'usage, une sortie et du code perdus | le disque d'abord ; un commit par étape |
 | 2 | volume | 1,4 Mo pour un corpus de 0,83 Mo | des budgets ; une couche courte |
-| 3 | cohérence | des nombres recopiés dans 11 ou 12 fichiers ; 26 erreurs en attente | le registre, vérifié par script |
+| 3 | cohérence | des nombres recopiés dans 11 ou 12 fichiers ; 23 drapeaux à juger | le registre, vérifié par script |
 | 4 | reproductibilité | 29 énoncés (A) non refaits ; un nul qui changeait d'une exécution à l'autre | le code dans le dépôt ; pas de (A) dans les En bref |
-| 5 | validité | liens vrais par construction ; dérives ; erreurs corrélées entre agents ; 0 à 21 faux liens selon le classement ; p = 0,047 parmi beaucoup de tests | les deux questions ; un classement fixé avant le calcul ; le contradicteur |
-| 6 | coût | 15 h d'agents pour 12 corrections, 26 erreurs signalées et 6 fiches | des budgets ; le rendement par erreur trouvée |
+| 5 | validité | liens vrais par construction ; dérives ; des drapeaux comptés comme des erreurs ; erreurs corrélées entre agents ; 0 à 21 faux liens selon le classement ; p = 0,047 parmi beaucoup de tests | les deux questions ; un classement fixé avant le calcul ; le contradicteur |
+| 6 | coût | 15 h d'agents pour 45 drapeaux, dont 13 confirmés, et 6 fiches | des budgets ; le verdict de chaque drapeau, pas leur nombre |
 | 7 | gouvernance | mes lectures de tes images (la diagonale par le simplexe, la cohomologie par le nerf, les disques placés à la main) ne sont pas validées | tes réponses au § 10.7 |
 | 8 | taxonomie | 8 dimensions plafonnent la diagonale ; D8 est vide ; D7 tient 30 % ; 18 fiches sur 23 ont deux ou trois types | diviser, pondérer |
 | 9 | références | 17 « à vérifier » dans la synthèse ; ni les agents ni ce bilan ne lisent les articles (arXiv et combinatorics.org sont bloqués par le réseau de la session) | une passe de vérification ; « sûre » seulement avec un DOI relu |
@@ -300,9 +329,14 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 - [ ] Écrire `scripts/revision_outils.py`, avec des chemins relatifs : préparer, extraire, construire le v2, croiser, classer, réunir les sorties, mettre à jour les fiches.
 - [ ] Créer `recueil/registre.csv` et le script qui vérifie les nombres cités.
 - [ ] Refaire dans le script de la révision les énoncés (A) de l'En bref de la synthèse, ou les en retirer.
+- [x] Le registre des drapeaux de la révision 001 (`drapeaux-001.csv`, écrit par `outils-001/drapeaux.py`).
+- [ ] Afficher, dans chaque fichier de résultats, quand et pourquoi chaque section a été créée (CLAUDE.md, § 10).
+- [ ] Remplacer le repli silencieux sur 410 de `scripts/centre_venn.py` (section 7) par un arrêt avec message.
 
-**10.2 Corriger le corpus.** Il s'agit des 26 erreurs signalées, une à une, avec la preuve du dossier.
-- Les plus simples d'abord :
+**10.2 Juger, puis corriger le corpus.** Les 26 « signalées » de la synthèse sont des drapeaux : je les juge un à un, avec la preuve du dossier, avant de corriger.
+- D'abord les 7 drapeaux de procédé court encore ouverts, qui se jugent en relançant ou en comparant.
+- Puis te montrer les 7 corrections d'association et d'assemblage que j'ai jugées seul (D11, D12, D16, D17, D18, D25, D26).
+- Ensuite, les plus simples :
   - le README, § 7, contre CLAUDE.md, § 1 ;
   - les parties V § 3, VIII § 7, XIV § 6, XVI § 2, et XXIX § 2.2 et § 5.3 ;
   - les deux « Córdoba (1977) » ;
@@ -349,7 +383,8 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 
 ## Le tri
 
-- **Mesuré** : les durées, les appels, le contexte cumulé, les tailles, les nombres recopiés et le rendement des dossiers.
+- **Mesuré** : les durées, les appels, le contexte cumulé, les tailles, les nombres recopiés et les drapeaux par dossier.
+- **Jugé par moi, à confirmer par toi** : la nature et le verdict des 45 drapeaux (`drapeaux-001.csv`).
 - **Exact**, en une ligne chacun :
   - l'arête √(2K/(K − 1)) et son plafond pour K = 8 ;
   - le dipôle des poids rationnels, nul seulement à poids égaux ;

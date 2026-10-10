@@ -28,5 +28,6 @@ Ce sont les outils qui ont produit la révision 001, archivés tels qu'ils ont t
 | `sorties.py` | Réunit les sorties structurées des huit agents. | `resultats_*.json` | `sorties-agents-001.json` |
 | `maj_fiches.py` | Marque les fiches 001 à 015 « révisé : 001 », avec les dimensions confirmées et les verdicts. Il est idempotent. | `resultats_*.json` | `recueil/observations/001` à `015` |
 | `stats_agents.py` | Mesure, pour chaque agent, la durée, les appels d'outils et le contexte cumulé (bilan, § 1). | les transcriptions des agents | un tableau sur la sortie standard |
+| `drapeaux.py` | Créé le 10 octobre 2026 (arc 003), après la remarque de l'auteur : les agents lèvent des drapeaux, pas des erreurs. Donne à chacun des 45 signalements sa nature, son verdict, qui l'a jugé, quand et pourquoi. Il se relance tel quel (chemins relatifs). | `sorties-agents-001.json` | `drapeaux-001.csv`, et les deux tableaux du § 1 du bilan |
 
 L'ordre d'emploi, après les workflows : `extraire.py`, `v2.py`, puis `scripts/revision_001.py`, qui lit le v2 pour refaire le nerf. Viennent ensuite `croisee.py`, `fiches_par_dimension.py`, `sorties.py` et `maj_fiches.py`.
