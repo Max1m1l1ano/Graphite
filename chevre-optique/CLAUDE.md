@@ -260,7 +260,7 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
   - Le rôle des agents est de repérer, dans toute l'information, les endroits où il pourrait y en avoir une. Le jugement revient à la session et à l'auteur.
 - **Il n'y a pas de rendement en erreurs.** Compter les erreurs trouvées par heure ou par kilo-octet ne mesure rien : un agent rapide peut signaler une erreur là où il n'y en a pas.
   - Le bilan 001 avait comparé ainsi 6,8 signalements par heure à 2,8, sans les juger.
-  - Le registre des drapeaux le montre ([`drapeaux-001.csv`](recueil/revisions/drapeaux-001.csv)). 11 des 23 drapeaux des dossiers longs sont confirmés, contre 2 des 22 des dossiers concis. Mais 23 restent à juger, et l'ordre de vérification a favorisé les longs, arrivés les premiers : aucun rendement ne se calcule avant le jugement.
+  - Le registre des drapeaux le montre ([`drapeaux-001.csv`](recueil/revisions/drapeaux-001.csv)). 11 des 23 drapeaux des dossiers longs sont confirmés, contre 6 des 22 des dossiers concis, et aucun n'a été infirmé. L'écart tient à ce qui reste à juger (10 contre 13), et l'ordre de vérification a favorisé les longs, arrivés les premiers : aucun rendement ne se calcule avant le jugement.
   - Ce qui se compte, c'est le verdict de chaque drapeau.
 - **La nature du drapeau est ce qu'il faut rapporter d'abord.**
   - *Un procédé court* : une erreur de script dans les résultats, un nombre qui ne correspond pas à son fichier, un libellé, un chemin, un format. Il se juge tout de suite, en relançant ou en comparant : ce n'est pas un chat de Schrödinger, et la session peut le trancher seule.
@@ -269,7 +269,8 @@ La partie XXIII a corrigé trois phrases de la partie XXII qui contredisaient de
 - **Affiche quand et pourquoi on crée quelque chose.** C'est ce qui permet de juger un drapeau par un procédé court.
   - Chaque fichier, résultat, figure ou fiche dit quand il a été créé et pourquoi. *Quand*, c'est la partie ou l'arc, pas l'heure du dernier passage du script, que git garde. *Pourquoi*, c'est le message ou la question qui l'a demandé.
   - Chaque section d'un fichier de résultats dit la raison de sa création.
-- **Les sorties structurées des agents** donnent, pour chaque drapeau, sa nature : procédé court, association, assemblage, référence ou plan. La session y ajoute le verdict (à juger, confirmé, infirmé), qui l'a jugé, quand, et pourquoi. C'est le registre des drapeaux de la révision, `recueil/revisions/drapeaux-NNN.csv`.
+- **Les sorties structurées des agents** donnent, pour chaque drapeau, sa nature (procédé court, association, assemblage, référence ou plan), et s'il peut se juger par un procédé court. La nature et la façon de juger sont deux choses : une association peut se trancher par un calcul.
+- **La session tient le registre des drapeaux de la révision**, `recueil/revisions/drapeaux-NNN.csv`. Elle y ajoute le verdict (à juger, confirmé, infirmé, ou plan quand le drapeau porte sur le plan et pas sur le corpus), qui l'a jugé, quand, pourquoi, et où en est la correction. Le registre est écrit par un script ; un jugement se note dans le script, pas dans le CSV.
 
 **Le recueil** (son mode d'emploi détaillé est dans [`recueil/README.md`](recueil/README.md)).
 - **Une fiche par observation** : `recueil/observations/NNN-titre.md`, numérotée à la suite.

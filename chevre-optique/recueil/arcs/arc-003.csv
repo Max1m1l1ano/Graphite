@@ -1,0 +1,7 @@
+arc,ordre,horodatage,message,script,entree,sortie,type_sortie,partie,dimension,observation,commit
+003,1,2026-10-10T00:05:56+00:00,1,,msg:1; recueil/revisions/sorties-agents-001.json,recueil/revisions/outils-001/drapeaux.py,script,révision 001,D7,,a3f1c75
+003,2,2026-10-10T00:05:56+00:00,1,,msg:1; recueil/revisions/drapeaux-001.csv,CLAUDE.md,config,recueil,D7,,a3f1c75
+003,3,2026-10-10T00:05:56+00:00,1,recueil/revisions/outils-001/drapeaux.py,recueil/revisions/sorties-agents-001.json,recueil/revisions/drapeaux-001.csv,resultats,révision 001,D7,004;010;012,a3f1c75
+003,4,2026-10-10T00:05:56+00:00,1,,recueil/revisions/bilan-001.md; recueil/revisions/drapeaux-001.csv,recueil/revisions/revision-001.md,document,révision 001,D7,,a3f1c75
+003,5,2026-10-10T00:05:56+00:00,1,recueil/revisions/outils-001/drapeaux.py,recueil/revisions/drapeaux-001.csv; scripts/centre_venn.py; resultats/venn_ppm.md; msg:1,recueil/revisions/bilan-001.md,document,révision 001,D7,,a3f1c75
+003,6,2026-10-10T00:05:56+00:00,1,,recueil/revisions/outils-001/drapeaux.py,recueil/revisions/outils-001/README.md,document,révision 001,D7,,a3f1c75

@@ -9,7 +9,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 ## En bref
 
 - **L'exercice a marché, mais il coûte cher et il est fragile** (§ 1 et 2).
-  - Il a produit 8 dossiers, 12 corrections du corpus, 45 drapeaux levés par les agents, 12 tests nouveaux, 6 fiches (8 avec ce bilan) et une intervention qui établit une cause.
+  - Il a produit 8 dossiers, 12 corrections du corpus, 58 drapeaux levés (dont 45 dans les sorties structurées des agents), 12 tests nouveaux, 6 fiches (8 avec ce bilan) et une intervention qui établit une cause.
   - Il a demandé 15 h d'agents, 49 h de calendrier (dont 40 h d'attente) et 1,4 Mo de texte, 1,7 fois le corpus qu'il révise.
 - **Ce qui vaut le plus, ce sont les corrections et les tests** (§ 3).
   - Les résultats neufs portent sur la chaîne de production du corpus : le seuil, la palette, le banc d'essai, le « 93 % ». C'est ton sujet d'étude, la restriction du cadre.
@@ -25,7 +25,7 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
   - La diagonale √2 plafonne à 6,9 % avec 8 dimensions : il faudra les diviser.
 - **Les agents et les données** (§ 6 et 7).
   - Le plan Opus est trop long et n'a pas de budgets.
-  - Les dossiers concis lèvent autant de drapeaux que les longs, en deux fois moins de temps. Mais un drapeau n'est pas une erreur : 13 des 45 sont confirmés, 23 restent à juger, et aucun rendement ne se calcule avant (§ 1 ; CLAUDE.md, § 10).
+  - Les dossiers concis lèvent autant de drapeaux que les longs, en deux fois moins de temps. Mais un drapeau n'est pas une erreur : sur 58, 20 sont confirmés, aucun n'est infirmé, et 28 restent à juger. Aucun rendement ne se calcule avant (§ 1 ; CLAUDE.md, § 10).
   - La mémoire est le point faible.
   - Les mêmes nombres sont recopiés dans 11 ou 12 fichiers. Je propose un registre des résultats.
 - **La suite** : une forme en huit étapes avec des budgets (§ 8), onze problématiques (§ 9), mes listes de tâches et sept questions pour toi (§ 10).
@@ -76,36 +76,48 @@ Les mesures viennent des transcriptions des agents (lues par [`outils-001/stats_
 **Ce que le tableau ne dit pas : un rendement.**
 - Une première version de ce bilan en tirait un : 6,8 « erreurs » par heure pour les dossiers concis, contre 2,8 pour les longs. Tu l'as corrigée, à raison.
 - Ce qu'un agent rapporte est un drapeau, pas une erreur, et un agent rapide peut signaler une erreur là où il n'y en a pas (CLAUDE.md, § 10).
-- Le registre [`drapeaux-001.csv`](drapeaux-001.csv) donne, pour chacun des 45 drapeaux, sa nature, son verdict, qui l'a jugé, quand et pourquoi. Il est écrit par [`outils-001/drapeaux.py`](outils-001/drapeaux.py).
+- Le registre [`drapeaux-001.csv`](drapeaux-001.csv) donne, pour chaque drapeau, sa nature, son verdict, qui l'a jugé, quand et pourquoi. Il est écrit par [`outils-001/drapeaux.py`](outils-001/drapeaux.py).
+- Il compte 58 drapeaux : les 45 des sorties structurées, plus 13 que la synthèse tenait du texte des dossiers ou de la vérification croisée.
+- *Une précision sur la méthode* : la nature et le verdict sont mes jugements, rendus après coup. L'agent de fin d'arc 003 y a levé onze drapeaux ; je les ai jugés, et le registre a été refait en conséquence.
 
-| dossiers | drapeaux | confirmés | infirmés | à juger | sur le plan | réglés ailleurs |
-|---|---:|---:|---:|---:|---:|---:|
-| longs (corde, moitiés, bases, grain) | 23 | 11 | 0 | 10 | 2 | 0 |
-| concis (aiguilles, ombres, méthode) | 22 | 2 | 1 | 13 | 3 | 3 |
-| **tous** | **45** | **13** | **1** | **23** | **5** | **3** |
+| drapeaux | confirmés | infirmés | à juger | sur le plan |
+|---|---:|---:|---:|---:|
+| dossiers longs (corde, moitiés, bases, grain) : 23 | 11 | 0 | 10 | 2 |
+| dossiers concis (aiguilles, ombres, méthode) : 22 | 6 | 0 | 13 | 3 |
+| les 45 des sorties structurées | 17 | 0 | 23 | 5 |
+| **les 58, avec ceux de la synthèse** | **20** | **0** | **28** | **10** |
 
-| nature | drapeaux | confirmés | infirmés | à juger | sur le plan | réglés ailleurs |
-|---|---:|---:|---:|---:|---:|---:|
-| procédé court | 16 | 6 | 1 | 7 | 0 | 2 |
-| association | 15 | 6 | 0 | 8 | 0 | 1 |
-| assemblage | 7 | 1 | 0 | 6 | 0 | 0 |
-| référence | 2 | 0 | 0 | 2 | 0 | 0 |
-| plan | 5 | 0 | 0 | 0 | 5 | 0 |
+| nature | drapeaux | confirmés | à juger | sur le plan | se jugent par un procédé court |
+|---|---:|---:|---:|---:|---:|
+| procédé court (script, calcul) | 14 | 9 | 5 | 0 | 14 |
+| association | 19 | 9 | 10 | 0 | 12 |
+| assemblage | 11 | 2 | 9 | 0 | 6 |
+| référence | 4 | 0 | 4 | 0 | 4 |
+| plan | 10 | 0 | 0 | 10 | 8 |
 
 **Ce que les deux tableaux disent.**
-- *Ta remarque se vérifie en partie.* Parmi les drapeaux jugés, ceux des dossiers longs sont bien plus souvent confirmés : 11 sur 23, contre 2 sur 22. Le classement « 6,8 contre 2,8 » s'inverse dès qu'on regarde les verdicts.
-- *Mais on ne peut pas conclure.* 23 drapeaux restent à juger, et j'ai vérifié d'abord les dossiers longs, arrivés les premiers : l'ordre du vérificateur biaise le compte. La comparaison mêle aussi le gabarit et le sujet.
-- *Les 7 drapeaux de procédé court encore ouverts se jugent vite*, en relançant ou en comparant. J'en ai jugé un pour ce bilan. La lecture du nul brouillé par une expression régulière (`scripts/centre_venn.py`, section 7) n'est pas une erreur des résultats : λ = 402 y est bien lu, sur 7 lignes. C'est une fragilité, car si le format change, le script se replie sans rien dire sur 410.
-- *Sept corrections ont été jugées par moi seul* pendant la révision : six d'association et une d'assemblage. Sous la nouvelle règle, elles sont à confirmer par toi. Ce sont les drapeaux D11, D12, D16, D17, D18, D25 et D26 du registre.
+- *Aucun drapeau n'a encore été infirmé*, ni chez les longs ni chez les concis. L'idée que les dossiers concis signalent des erreurs qui n'en sont pas n'est donc pas confirmée. Elle n'est pas infirmée non plus : elle n'est pas encore testée.
+- *L'écart entre longs et concis tient surtout à ce qui reste à juger* : 10 drapeaux contre 13. J'ai vérifié d'abord les dossiers longs, arrivés les premiers. Aucun rendement ne se calcule avant le jugement.
+- *Beaucoup de drapeaux se jugent vite.* 17 des 28 qui restent se tranchent par un procédé court : en relançant, en recalculant, en comparant, ou en lisant la source d'une référence. Les 11 autres demandent ton jugement et le mien.
+- *La nature et la façon de juger sont deux choses.* Une association peut se juger par un calcul : c'est le cas de 12 des 19, comme l'aire 43/108, qui tranche « le minimum de la borne, pas de l'aire ».
+- *Onze drapeaux d'association ou d'assemblage, soit dix corrections, ont été jugés par moi seul* : D11, D12 (la même correction que D25), D16, D17, D18, D26, D42, D46, D47 et D48. Sous la nouvelle règle, ils sont à confirmer par toi.
+- *Quatre corrections sont incomplètes, et une reste à faire.*
+  - D01 : les résultats de la partie XXIII gardent 0,6668 et 0,6661, et le script les réécrit.
+  - D04 et D09 : `centre-venn.md`, § 4.3, et la légende de la figure ae2 disent encore « 39,34 % de chaque anneau ».
+  - D11 : `carte-connexions.md`, § 9, et `aiguille-grille.md` gardent « les carrés modulo q ».
+  - D45 : le repli silencieux de `scripts/centre_venn.py` est à remplacer par un arrêt avec message.
 - *Le reste de la comparaison tient, avec la même prudence* : les dossiers concis proposent un peu moins de fiches (7,3 contre 8,8 en moyenne) et de congruences (8,7 contre 11,5), en deux fois moins de temps.
 
 **Les drapeaux et la synthèse.**
-- Les 13 drapeaux confirmés portent sur 11 corrections, parce que deux paires de dossiers ont signalé la même chose : la fiche 010, et CLAUDE.md, § 6.
-- Neuf de ces corrections sont parmi les 12 de la synthèse. Les trois autres de la synthèse viennent du dossier lumière, dont la sortie est perdue, et du texte du dossier méthode.
-- Deux corrections manquaient à la liste de la synthèse :
+- Les 20 drapeaux confirmés portent sur 18 corrections, car deux paires disent la même chose : D04 et D09 ; D12 et D25.
+- Les 12 corrections de la synthèse en font partie. Le registre en ajoute six :
   - la fiche 010, rangée parmi les signalées alors que son texte était corrigé ;
-  - le statut « calculé » du README du recueil.
+  - le statut « calculé » du README du recueil ;
+  - la fiche 004, deux fois : sa section Révision 001, puis sa ligne « test », précisée dans cet arc ;
+  - l'intervention, qui tranche le modèle à deux causes ;
+  - la fragilité de `scripts/centre_venn.py`, encore à corriger.
 - Les 26 « signalées » de la synthèse sont des drapeaux à juger.
+- Les 10 drapeaux « plan » réunissent les 7 erreurs du plan de la vérification croisée (§ 5.3) et 3 corrections du recouvrement par le dossier ombres.
 
 ## 2. Étape par étape : ce qui a marché, ce qui a cassé
 
@@ -310,10 +322,10 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 |---|---|---|---|
 | 1 | robustesse | 2 redémarrages, 1 limite d'usage, une sortie et du code perdus | le disque d'abord ; un commit par étape |
 | 2 | volume | 1,4 Mo pour un corpus de 0,83 Mo | des budgets ; une couche courte |
-| 3 | cohérence | des nombres recopiés dans 11 ou 12 fichiers ; 23 drapeaux à juger | le registre, vérifié par script |
+| 3 | cohérence | des nombres recopiés dans 11 ou 12 fichiers ; 28 drapeaux à juger | le registre, vérifié par script |
 | 4 | reproductibilité | 29 énoncés (A) non refaits ; un nul qui changeait d'une exécution à l'autre | le code dans le dépôt ; pas de (A) dans les En bref |
 | 5 | validité | liens vrais par construction ; dérives ; des drapeaux comptés comme des erreurs ; erreurs corrélées entre agents ; 0 à 21 faux liens selon le classement ; p = 0,047 parmi beaucoup de tests | les deux questions ; un classement fixé avant le calcul ; le contradicteur |
-| 6 | coût | 15 h d'agents pour 45 drapeaux, dont 13 confirmés, et 6 fiches | des budgets ; le verdict de chaque drapeau, pas leur nombre |
+| 6 | coût | 15 h d'agents pour 58 drapeaux, dont 20 confirmés, et 6 fiches | des budgets ; le verdict de chaque drapeau, pas leur nombre |
 | 7 | gouvernance | mes lectures de tes images (la diagonale par le simplexe, la cohomologie par le nerf, les disques placés à la main) ne sont pas validées | tes réponses au § 10.7 |
 | 8 | taxonomie | 8 dimensions plafonnent la diagonale ; D8 est vide ; D7 tient 30 % ; 18 fiches sur 23 ont deux ou trois types | diviser, pondérer |
 | 9 | références | 17 « à vérifier » dans la synthèse ; ni les agents ni ce bilan ne lisent les articles (arXiv et combinatorics.org sont bloqués par le réseau de la session) | une passe de vérification ; « sûre » seulement avec un DOI relu |
@@ -334,8 +346,9 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 - [ ] Remplacer le repli silencieux sur 410 de `scripts/centre_venn.py` (section 7) par un arrêt avec message.
 
 **10.2 Juger, puis corriger le corpus.** Les 26 « signalées » de la synthèse sont des drapeaux : je les juge un à un, avec la preuve du dossier, avant de corriger.
-- D'abord les 7 drapeaux de procédé court encore ouverts, qui se jugent en relançant ou en comparant.
-- Puis te montrer les 7 corrections d'association et d'assemblage que j'ai jugées seul (D11, D12, D16, D17, D18, D25, D26).
+- D'abord les 17 drapeaux ouverts qui se jugent par un procédé court (relancer, recalculer, comparer, lire la source).
+- Puis te montrer les 10 corrections d'association et d'assemblage que j'ai jugées seul (D11, D12 = D25, D16, D17, D18, D26, D42, D46, D47, D48).
+- Finir les corrections incomplètes : D01, D04 et D09, D11, D45.
 - Ensuite, les plus simples :
   - le README, § 7, contre CLAUDE.md, § 1 ;
   - les parties V § 3, VIII § 7, XIV § 6, XVI § 2, et XXIX § 2.2 et § 5.3 ;
@@ -384,7 +397,7 @@ La ligne 7 mérite un mot. Une lecture non validée qui devient un fait, c'est e
 ## Le tri
 
 - **Mesuré** : les durées, les appels, le contexte cumulé, les tailles, les nombres recopiés et les drapeaux par dossier.
-- **Jugé par moi, à confirmer par toi** : la nature et le verdict des 45 drapeaux (`drapeaux-001.csv`).
+- **Jugé par moi, à confirmer par toi** : la nature et le verdict des 58 drapeaux (`drapeaux-001.csv`), en priorité les onze d'association ou d'assemblage déjà corrigés.
 - **Exact**, en une ligne chacun :
   - l'arête √(2K/(K − 1)) et son plafond pour K = 8 ;
   - le dipôle des poids rationnels, nul seulement à poids égaux ;

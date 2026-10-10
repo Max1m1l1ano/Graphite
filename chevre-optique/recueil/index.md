@@ -2,8 +2,8 @@
 
 Régénéré par `python3 scripts/recueil_index.py` à partir des fiches de `observations/`. Le protocole est dans [CLAUDE.md, § 10](../CLAUDE.md) et [`README.md`](README.md).
 
-- Fiches : 23, dont 8 non révisées. Arcs réponses : 2 (1 depuis la dernière révision). Révisions : 1.
-- État : pas de révision due (8 fiches non révisées, 1 arcs depuis la dernière révision).
+- Fiches : 23, dont 8 non révisées. Arcs réponses : 3 (2 depuis la dernière révision). Révisions : 1.
+- État : pas de révision due (8 fiches non révisées, 2 arcs depuis la dernière révision).
 - La diagonale √2 : K = 7 dimensions principales occupées, nombre effectif 1/Σp² = 4,85, arête du simplexe à parts égales √(2K/(K − 1)) = 1,5275 (√2 = 1,4142) ; paires de dimensions liées par le seul cadre : 6 (D1–D4, D1–D5, D1–D6, D4–D5, D4–D6, D5–D6) ; fiches rangées sur plusieurs dimensions : 15.
 
 | n° | observation | type | statut | partie | script | image | dimension | révisé |

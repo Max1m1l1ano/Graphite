@@ -223,7 +223,7 @@ Presque chaque test fait varier un paramètre, comme le demande le choix du test
 | 4.12 | la palette, puis l'ordre de dessin, d'un Venn à 13 courbes repeint ; le seuil sur son PNG | G·H₁ prédit l'écart sans paramètre libre ; l'ordre ne compte presque pas ; un seuil n'agit que sur une grandeur qui varie d'une courbe à l'autre | la cause du centre de la lumière est établie par une intervention (dossier méthode) |
 | T8 (dossier méthode, (A)) | le nerf v1 contre la carte des connexions, sur les paires de parties non reliées | ρ(Adamic–Adar, dossiers partagés) = −0,035 (p = 0,65) ; les deux méthodes ne sont pas indépendantes (rapport des chances 1,69, p = 0,024) | pas de signal, ni en v1 ni en v2 (ρ = +0,090, p = 0,23). Et le prédicteur de la partie XXVII n'est validé que par les liens qu'il a fait chercher : sans eux, p = 0,28 |
 
-## 8. Les erreurs trouvées dans les chaînes de production
+## 8. Les drapeaux des chaînes de production : les corrections et les signalements
 
 C'est la partie de ton sujet d'étude qui se mesure le mieux : des erreurs qui s'accumulent d'une partie à l'autre parce qu'une phrase reste après sa correction, ou parce qu'un choix devient un fait.
 

@@ -10,7 +10,7 @@
 | données | [`resultats/venn_ppm.md`](../../resultats/venn_ppm.md) |
 | image | [`ad1_venn_ppm.png`](../../figures/ad1_venn_ppm.png), panneau d ; [`ae3_grains_hasard.png`](../../figures/ae3_grains_hasard.png), panneau f |
 | dimension | D7 hasard et méthode ; puis, à la révision 001 : D6 sphères, cubes, Venn et symétries |
-| test | variation du paramètre : 36,0, 37,3, 35,8 et 35,7 % pour 11, 13, 17 et 19 courbes ; rien ne suit 35,10 % |
+| test | variation du paramètre : 36,0, 37,3, 35,8 et 35,7 % pour 11, 13, 17 et 19 courbes, un certificat par n (à 17 courbes, les quatre certificats vont de 35,3 à 36,7 % : dossiers ombres et méthode, (A)) ; rien ne suit 35,10 % |
 | arc | 2026-10-07, parties XXIX et XXX (avant le recueil) |
 | révisé | 001 (2026-10-09) |
 

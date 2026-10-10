@@ -2,7 +2,7 @@
 
 Ce sont les outils qui ont produit la révision 001, archivés tels qu'ils ont tourné. Le bilan ([`bilan-001.md`](../bilan-001.md), § 7 et 10.1) propose de les réunir dans un script du dépôt, `scripts/revision_outils.py`.
 
-**Ils ne se relancent pas tels quels.**
+**Ils ne se relancent pas tels quels**, sauf `drapeaux.py`, écrit après coup avec des chemins relatifs.
 - Ils gardent les chemins absolus de la session : le dépôt `/home/user/Graphite/chevre-optique`, et un dossier de travail `/tmp/claude-0/…/scratchpad/revision-001/`, effacé avec le conteneur.
 - Leurs entrées (`resultats_*.json`, `journal.jsonl`, `v2.json`) étaient dans ce dossier de travail. Leur contenu utile est conservé dans [`sorties-agents-001.json`](../sorties-agents-001.json) et dans le bloc JSON du § 1 de [`verification-croisee-001.md`](../verification-croisee-001.md).
 - `stats_agents.py` lit les transcriptions des agents de la session (`/root/.claude/projects/…/subagents/`), qui ne sont pas dans le dépôt.
@@ -28,6 +28,6 @@ Ce sont les outils qui ont produit la révision 001, archivés tels qu'ils ont t
 | `sorties.py` | Réunit les sorties structurées des huit agents. | `resultats_*.json` | `sorties-agents-001.json` |
 | `maj_fiches.py` | Marque les fiches 001 à 015 « révisé : 001 », avec les dimensions confirmées et les verdicts. Il est idempotent. | `resultats_*.json` | `recueil/observations/001` à `015` |
 | `stats_agents.py` | Mesure, pour chaque agent, la durée, les appels d'outils et le contexte cumulé (bilan, § 1). | les transcriptions des agents | un tableau sur la sortie standard |
-| `drapeaux.py` | Créé le 10 octobre 2026 (arc 003), après la remarque de l'auteur : les agents lèvent des drapeaux, pas des erreurs. Donne à chacun des 45 signalements sa nature, son verdict, qui l'a jugé, quand et pourquoi. Il se relance tel quel (chemins relatifs). | `sorties-agents-001.json` | `drapeaux-001.csv`, et les deux tableaux du § 1 du bilan |
+| `drapeaux.py` | Créé le 10 octobre 2026 (arc 003), après la remarque de l'auteur : les agents lèvent des drapeaux, pas des erreurs. Refait le même jour (arc 004), après les drapeaux de l'agent de fin d'arc 003. Donne à chacun des 58 drapeaux sa nature, s'il se juge par un procédé court, son verdict, qui l'a jugé, quand, pourquoi, et où en est la correction. Le CSV est réécrit à chaque passage : un jugement se note dans le script. | `sorties-agents-001.json` | `drapeaux-001.csv`, et les deux tableaux du § 1 du bilan |
 
 L'ordre d'emploi, après les workflows : `extraire.py`, `v2.py`, puis `scripts/revision_001.py`, qui lit le v2 pour refaire le nerf. Viennent ensuite `croisee.py`, `fiches_par_dimension.py`, `sorties.py` et `maj_fiches.py`.
