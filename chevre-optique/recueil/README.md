@@ -11,7 +11,7 @@ Le recueil garde les moments où une remarque surgit pendant le travail. Ce peut
 | [`index.md`](index.md) et `index.csv` | le tableau de toutes les fiches, régénéré par `python3 scripts/recueil_index.py` |
 | `observations/NNN-titre.md` | une fiche par observation (numérotation continue) |
 | [`arcs/`](arcs/README.md) | les données brutes de chaque arc réponse : `arc-NNN.md` (le récit) et `arc-NNN.csv` (une ligne par production) |
-| `revisions/` | les synthèses de révision, `revision-NNN.md`, avec leur plan, leur vérification croisée et les sorties des agents ; le registre des drapeaux, `drapeaux-NNN.csv` (CLAUDE.md, § 10) ; leur bilan, `bilan-NNN.md` ; et leurs outils, `outils-NNN/` |
+| `revisions/` | les synthèses de révision, `revision-NNN.md`, avec leur plan, leur vérification croisée et les sorties des agents ; le registre des drapeaux, `drapeaux-NNN.csv` (CLAUDE.md, § 10) ; leur bilan, `bilan-NNN.md` ; leurs outils, `outils-NNN/` ; et la forme proposée pour la suivante, `forme-revision.md`, avec son registre des scénarios |
 | `dossiers/` | les dossiers thématiques nés des révisions |
 
 ## Une fiche

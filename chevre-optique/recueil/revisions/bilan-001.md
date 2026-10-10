@@ -316,6 +316,8 @@ Une connexion compte quand on peut dire ce qui est partagé exactement, ce qui e
 
 **Le coût estimé** (une estimation, pas une mesure) : ≈ 10 h d'agents au lieu de 15, et ≈ 0,5 Mo de texte au lieu de 1,4.
 
+**La suite de cette forme** : [`forme-revision.md`](forme-revision.md) (arc 004) la reprend avec Lean comme juge des énoncés exacts, un but et une prédiction pour chaque agent, et un registre des scénarios de requête, [`scenarios-revision.csv`](scenarios-revision.csv).
+
 ## 9. Les problématiques
 
 | # | problématique | ce qui la montre | le levier |
